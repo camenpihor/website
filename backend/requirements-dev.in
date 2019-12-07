@@ -1,0 +1,4 @@
+black ~= 19.10b0
+pydocstyle ~= 4.0
+pylint ~= 2.4
+pytest-cov ~= 2.8
