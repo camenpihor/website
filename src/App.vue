@@ -1,23 +1,51 @@
 <template>
   <div id="app">
-    <h1>Hai :) </h1>
+    <Navigation/>
+    <router-view/>
   </div>
 </template>
 
 <script>
+import Navigation from "./components/Navigation.vue";
 
 export default {
-  name: 'app',
-}
+  name: "app",
+  components: {
+    Navigation
+  }
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
+</style>
+
+<style lang="scss">
+@import "~bulma/sass/utilities/_all";
+
+$gap: 200px;
+$family-primary: "Roboto";
+$primary: #00660e;
+$primary-invert: findColorInvert($primary);
+
+$colors: (
+    "white": ($white, $black),
+    "black": ($black, $white),
+    "light": ($light, $light-invert),
+    "dark": ($dark, $dark-invert),
+    "primary": ($primary, $primary-invert),
+    "info": ($info, $info-invert),
+    "success": ($success, $success-invert),
+    "warning": ($warning, $warning-invert),
+    "danger": ($danger, $danger-invert),
+);
+
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
 </style>
