@@ -11,7 +11,12 @@ const router = new VueRouter({
     {
       path: '/rogue-sky',
       component: () =>
-        import('./RogueSky.vue'),
+        import('./rogue_sky/Home.vue'),
+    },
+    {
+      path: '/rogue-sky/:latitude/:longitude',
+      component: () =>
+        import('./rogue_sky/Forecast.vue'),
     },
     {
       path: '/404',
