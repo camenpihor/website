@@ -16,8 +16,16 @@
   </b-navbar>
 </template>
 
-<style>
+<style >
 .navbar-brand a {
   font-weight: bold;
+}
+
+a.navbar-item:hover {
+  color: #002505 !important;
+}
+
+a.navbar-link:hover {
+  color: #002505 !important;
 }
 </style>

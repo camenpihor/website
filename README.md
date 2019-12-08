@@ -6,10 +6,10 @@
   - deploy
   - home page to current project's home page
   - documentation to current project's documentation
-  - navbar on hover color text
   - waitress for flask
   - real server for vuejs
   - readme
+  - error handling
 - roguesky
   - parse dates
     - use user's local time
