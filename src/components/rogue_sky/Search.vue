@@ -1,6 +1,14 @@
 <template>
   <section id="forecast-search">
-    <b-input class="container" @keyup.native.enter="search" v-model="input" rounded icon="search" icon-clickable @icon-click="search"></b-input>
+    <b-input
+      class="container"
+      @keyup.native.enter="search"
+      v-model="input" rounded icon="search"
+      icon-clickable
+      @icon-click="search"
+      placeholder="Seattle, WA"
+    >
+    </b-input>
   </section>
 </template>
 

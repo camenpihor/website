@@ -1,6 +1,5 @@
 <template>
   <section>
-
     <div v-if="star_forecast !== null">
       <Search v-bind:value="city + ', ' + state"/>
       <div id="current-summary">
