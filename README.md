@@ -7,7 +7,6 @@
   - home page to current project's home page
   - documentation to current project's documentation
   - navbar on hover color text
-  - add script to set up databases
   - waitress for flask
   - real server for vuejs
   - readme
