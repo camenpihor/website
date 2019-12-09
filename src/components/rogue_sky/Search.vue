@@ -2,6 +2,8 @@
   <section id="forecast-search">
     <b-input
       class="container"
+      @click.native="clearInput"
+      @blur="defaultInput"
       @keyup.native.enter="search"
       v-model="input" rounded icon="search"
       icon-clickable
@@ -24,6 +26,12 @@ export default {
     };
   },
   methods: {
+    clearInput() {
+      this.input = null;
+    },
+    defaultInput() {
+      this.input = this.value;
+    },
     search() {
       getCoordinates(this.input).then(response => {
         this.$router.push(
