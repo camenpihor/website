@@ -15,8 +15,8 @@ export default {
   methods: {
     getUserLocation() {
       navigator.geolocation.getCurrentPosition(pos => {
-        let latitude = pos.coords.latitude.toFixed(2)
-        let longitude = pos.coords.longitude.toFixed(2)
+        let latitude = pos.coords.latitude
+        let longitude = pos.coords.longitude
         this.$router.push(`/rogue-sky/${latitude}/${longitude}`)
       })
     }

@@ -113,12 +113,16 @@ export default {
   },
   methods: {
     getForecast(latitude, longitude) {
-      getStarForecast(latitude, longitude).then(response => {
-        this.star_forecast = response.data.daily_forecast;
-        this.today = this.star_forecast[0];
-        this.city = response.data.city;
-        this.state = response.data.state;
-      });
+      getStarForecast(latitude, longitude)
+        .then(response => {
+          this.star_forecast = response.data.daily_forecast;
+          this.today = this.star_forecast[0];
+          this.city = response.data.city;
+          this.state = response.data.state;
+        })
+        .catch(() => {
+          this.$router.push({ name: "404"})
+        });
     }
   },
   mounted() {

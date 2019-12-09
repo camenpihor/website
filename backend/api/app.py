@@ -7,7 +7,7 @@ from flask_cors import CORS
 from rogue_sky import darksky, stars
 
 app = Flask(__name__)  # pylint: disable=invalid-name
-CORS(app, resources={"/api/*": {"origins": "http://localhost:8080/*"},})
+CORS(app, resources={"/api/*": {"origins": "*"},})
 
 app.config.from_object("api.config.DevelopmentConfig")
 logging.basicConfig(level=logging.INFO)
