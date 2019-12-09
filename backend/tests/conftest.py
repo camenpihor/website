@@ -61,6 +61,16 @@ def darksky_json_response():
     )
 
 
+@pytest.fixture(scope="function")
+def serialized_star_response():
+    """JSON-Serialized star visibility forecast."""
+    return json.loads(
+        pkg_resources.resource_string(
+            "tests.resources", "test_serialized_star_response.json"
+        )
+    )
+
+
 @pytest.fixture
 def backend_api_client(scope="method"):
     app.config.from_object("api.config.TestingConfig")

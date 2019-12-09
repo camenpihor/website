@@ -3,8 +3,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
-  faCloudMoonRain, faSearch, faSnowflake, faSun, faMoon, faCloudShowersHeavy, faWind,
-  faCloud, faCloudSun, faCloudMoon, faArrowUp
+  faCloudMoonRain, faSearch, faSnowflake, faMoon, faCloudShowersHeavy, faWind,
+  faCloud, faCloudMoon, faArrowUp, faSyncAlt
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -15,8 +15,8 @@ import router from './routes/router.js'
 
 
 library.add(
-  faCloudMoonRain, faSearch, faSnowflake, faSun, faMoon, faCloudShowersHeavy, faWind,
-  faCloud, faCloudSun, faCloudMoon, faArrowUp
+  faCloudMoonRain, faSearch, faSnowflake, faMoon, faCloudShowersHeavy, faWind,
+  faCloud, faCloudMoon, faArrowUp, faSyncAlt
 );
 Vue.component('vue-fontawesome', FontAwesomeIcon);
 

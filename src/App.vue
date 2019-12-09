@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <Navigation/>
-    <router-view/>
+    <router-view id="page-container"/>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Navigation from "./components/Navigation.vue";
+import Footer from "./components/Footer.vue"
 
 export default {
   name: "app",
   components: {
-    Navigation
+    Navigation,
+    Footer
   }
 };
 </script>
@@ -19,6 +22,9 @@ export default {
 <style>
 #app {
   text-align: center;
+}
+#page-container {
+  min-height: 100vh;
 }
 </style>
 

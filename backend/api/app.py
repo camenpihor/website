@@ -1,6 +1,7 @@
 """Flask application for the backend API."""
 import logging
 
+import arrow
 from flask import Flask
 from flask_cors import CORS
 
@@ -29,24 +30,38 @@ def get_coordinates(query):
     return {"latitude": latitude, "longitude": longitude}
 
 
-@app.route("/api/weather/<latitude>,<longitude>")
-def weather_forecast(latitude, longitude):
-    """Get daily weather forecast for location."""
-    return darksky.get_weather_forecast(
-        latitude=float(latitude),
-        longitude=float(longitude),
-        api_key=app.config["DARKSKY_API_KEY"],
-        database_url=app.config["DATABASE_URL"],
-    )
-
-
 @app.route("/api/stars/<latitude>/<longitude>")
 def star_visibility_forecast(latitude, longitude):
     """Get daily star visibility forecast for location."""
-    _logger.info("Getting star forecast for (%s, %s)", latitude, longitude)
-    return stars.get_star_forecast(
+    _logger.info(
+        "Getting star forecast for (%s, %s)", latitude, longitude,
+    )
+    forecast = stars.get_star_forecast(
         latitude=float(latitude),
         longitude=float(longitude),
         api_key=app.config["DARKSKY_API_KEY"],
         database_url=app.config["DATABASE_URL"],
     )
+    return _format_times(forecast=forecast)
+
+
+def _parse_datetime(datetime_string, is_date):
+    value = arrow.get(datetime_string)
+    if is_date:
+        return value.format("MMM D")
+    return value.format("h:mm a")
+
+
+def _format_times(forecast):
+    daily_forecast_parsed = [
+        {
+            key: value if "local" not in key else _parse_datetime(value, "date" in key)
+            for key, value in day_prediction.items()
+        }
+        for day_prediction in forecast["daily_forecast"]
+    ]
+
+    return {
+        key: value if key != "daily_forecast" else daily_forecast_parsed
+        for key, value in forecast.items()
+    }
