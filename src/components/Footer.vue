@@ -5,7 +5,7 @@
           <aside class="menu column">
             <p class="menu-label">Website of Camen Piho</p>
             <ul class="menu-list">
-              <li><router-link to="/about">About</router-link></li>
+              <li><router-link :to="{ name: 'about' }">About</router-link></li>
               <li><a href="https://github.com/camenpihor">GitHub</a></li>
             </ul>
           </aside>

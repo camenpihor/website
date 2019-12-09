@@ -4,7 +4,7 @@
       <b-navbar-item tag="router-link" :to="{ name: 'home'}">Camen Piho</b-navbar-item>
     </template>
     <template slot="end">
-      <b-navbar-dropdown label="Projects">
+      <b-navbar-dropdown id="project-menu" label="Projects">
         <b-navbar-item href="#">Thoughts</b-navbar-item>
         <b-navbar-item href="#">Books</b-navbar-item>
         <b-navbar-item tag="router-link" :to="{ name: 'rogue-sky-home'}">RogueSky</b-navbar-item>
@@ -26,5 +26,9 @@ a.navbar-item:hover {
 
 a.navbar-link:hover {
   color: #002505 !important;
+}
+
+#project-menu a.navbar-item:hover {
+  color: #00660e !important;
 }
 </style>

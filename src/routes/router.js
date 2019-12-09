@@ -17,6 +17,11 @@ const router = new VueRouter({
       name: "documentation"
     },
     {
+      path: '/about',
+      component: () => import('./About.vue'),
+      name: "about"
+    },
+    {
       path: '/rogue-sky',
       component: () => import('./rogue_sky/Home.vue'),
       name: "rogue-sky-home"
