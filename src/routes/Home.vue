@@ -1,9 +1,6 @@
 <template>
   <section class="hero is-large has-bg-img">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-      </div>
-    </div>
+    <div class="hero-body"></div>
   </section>
 </template>
 

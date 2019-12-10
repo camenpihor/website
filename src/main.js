@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faCloudMoonRain, faSearch, faSnowflake, faMoon, faCloudShowersHeavy, faWind,
-  faCloud, faCloudMoon, faArrowUp, faSyncAlt
+  faCloud, faCloudMoon, faArrowUp, faSyncAlt, faChevronDown
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -16,7 +16,7 @@ import router from './routes/router.js'
 
 library.add(
   faCloudMoonRain, faSearch, faSnowflake, faMoon, faCloudShowersHeavy, faWind,
-  faCloud, faCloudMoon, faArrowUp, faSyncAlt
+  faCloud, faCloudMoon, faArrowUp, faSyncAlt, faChevronDown
 );
 Vue.component('vue-fontawesome', FontAwesomeIcon);
 
@@ -24,7 +24,6 @@ Vue.use(Buefy, {
   defaultIconComponent: 'vue-fontawesome',
   defaultIconPack: 'fas',
 })
-Vue.use(require('vue-moment'));
 Vue.use(VueRouter)
 
 new Vue({

@@ -1,5 +1,20 @@
 # Website
 
+## Productionize
+
+### mac
+
+1. install nginx `brew install nginx`
+1. start ngingx `brew services start nginx`
+1. update `vim /usr/local/etc/nginx/nginx.conf`
+  1. 
+
+### linux
+
+1. install nginx `sudo apt install nginx`
+1. check nginx install `service nginx status`
+1.
+
 ## TODO
 
 - general
@@ -8,12 +23,7 @@
   - real server for vuejs
   - readme
 - roguesky
-  - parse dates
-    - use user's local time
-  - summary above table, where each star prediction is a color
   - detailed description of columns
-  - use user's current location as default search
-    - after this remove home page?
 - thoughts
 - books
 - treecounter
