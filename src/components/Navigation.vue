@@ -1,5 +1,5 @@
 <template>
-  <b-navbar type="is-primary" wrapper-class="container" transparent>
+  <b-navbar v-if="this.$route.path !== '/'" type="is-primary" wrapper-class="container" transparent>
     <template slot="brand">
       <b-navbar-item tag="router-link" :to="{ name: 'home'}">Camen Piho</b-navbar-item>
     </template>

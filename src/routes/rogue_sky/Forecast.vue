@@ -152,7 +152,7 @@ export default {
 
 <style>
 #icon-current-summary {
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 #current-summary-text {

@@ -40,7 +40,6 @@
 
 <style>
 #footer {
-  margin-top: 100px;
   background: #343434;
   color: #aaa;
 }

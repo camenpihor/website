@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <Navigation/>
-    <router-view id="page-container"/>
-    <Footer/>
+    <Navigation />
+    <router-view id="page-container" />
+    <Footer />
   </div>
 </template>
 
 <script>
 import Navigation from "./components/Navigation.vue";
-import Footer from "./components/Footer.vue"
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "app",
@@ -25,6 +25,7 @@ export default {
 }
 #page-container {
   min-height: 100vh;
+  padding-bottom: 300px;
 }
 </style>
 
@@ -32,20 +33,47 @@ export default {
 @import "~bulma/sass/utilities/_all";
 
 $gap: 200px;
-$family-primary: "Roboto";
+$family-primary: "Open Sans";
 $primary: #00660e;
 $primary-invert: findColorInvert($primary);
 
 $colors: (
-    "white": ($white, $black),
-    "black": ($black, $white),
-    "light": ($light, $light-invert),
-    "dark": ($dark, $dark-invert),
-    "primary": ($primary, $primary-invert),
-    "info": ($info, $info-invert),
-    "success": ($success, $success-invert),
-    "warning": ($warning, $warning-invert),
-    "danger": ($danger, $danger-invert),
+  "white": (
+    $white,
+    $black
+  ),
+  "black": (
+    $black,
+    $white
+  ),
+  "light": (
+    $light,
+    $light-invert
+  ),
+  "dark": (
+    $dark,
+    $dark-invert
+  ),
+  "primary": (
+    $primary,
+    $primary-invert
+  ),
+  "info": (
+    $info,
+    $info-invert
+  ),
+  "success": (
+    $success,
+    $success-invert
+  ),
+  "warning": (
+    $warning,
+    $warning-invert
+  ),
+  "danger": (
+    $danger,
+    $danger-invert
+  )
 );
 
 $link: $primary;
