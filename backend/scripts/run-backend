@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+import subprocess
+
+import click
+import waitress
+
+try:
+    from api import app
+except ImportError:
+    print("Try installing the package `python setup.py install`")
+    raise
+
+
+@click.command()
+@click.option("--dev", is_flag=True)
+def start(dev):
+    if dev:
+        print("Starting development server...")
+        subprocess.run(["flask", "run"])
+
+    else:
+        print("Starting production server...")
+        waitress.serve(app.app, host="127.0.0.1", port=5000)
+
+
+if __name__ == "__main__":
+    start()
