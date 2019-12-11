@@ -52,4 +52,13 @@
 #footer-info .column {
   border: white 1px;
 }
+
+#footer-info .menu-list a {
+    color: #4a4a4a;
+}
+
+#footer-info .menu-list a:hover {
+    background-color: transparent;
+    color: white;
+}
 </style>

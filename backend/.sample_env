@@ -1,0 +1,5 @@
+DARKSKY_SECRET_KEY=<secret>
+DATABASE_URL=postgresql://<USER>:<PASSWORD>@<HOST>:<PORT>/<DB_NAME>
+TEST_DATABASE_URL=postgresql://<USER>:<PASSWORD>@<HOST>:<PORT>/<DB_NAME>
+FLASK_ENV=development
+FLASK_APP=api.app

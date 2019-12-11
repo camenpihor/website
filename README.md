@@ -1,22 +1,26 @@
 # Website
 
-## Productionize
+## Install
 
-### linux
+1. `npm install` to install frontend
+2. `npm install http-server -g` to install frontend production server package and executable
+3. Install backend
+   1. Follow instructions at `backend/README.md`
 
-1. install nginx `sudo apt install nginx`
-1. check nginx install `service nginx status`
-1.
+## Run Servers
+
+In separate processes:
+
+1. development
+   1. `scripts/run-frontend --dev`
+   2. `cd backend`
+   3. `scripts/run-backend --dev`
 
 ## TODO
 
 - general
-  - deploy
-  - waitress for flask
   - real server for vuejs
   - readme
-- roguesky
-  - detailed description of columns
 - thoughts
 - books
 - treecounter
