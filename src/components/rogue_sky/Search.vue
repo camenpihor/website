@@ -1,15 +1,14 @@
 <template>
   <section id="forecast-search">
-    <b-input
-      class="container"
-      @keyup.native.enter="search"
-      v-model="input"
-      rounded
-      icon="search"
-      icon-clickable
-      @icon-click="search"
-      placeholder="Seattle, WA"
-    ></b-input>
+    <div id="forecast-search-container" class="container">
+      <b-input
+        id="forecast-search-input"
+        @keyup.native.enter="search"
+        v-model="input"
+        rounded
+        placeholder="Seattle, WA"
+      ></b-input>
+    </div>
   </section>
 </template>
 
@@ -32,6 +31,11 @@ export default {
         );
       });
     }
+  },
+  watch: {
+    value() {
+      this.input = this.value;
+    }
   }
 };
 </script>
@@ -40,10 +44,14 @@ export default {
 #forecast-search {
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #3c3f7d;
+  background-color: #6b606013;
 }
 
-#forecast-search .input {
+#forecast-search-container {
+  max-width: 400px;
+}
+
+#forecast-search-input {
   text-align: center;
   font-weight: bold;
 }

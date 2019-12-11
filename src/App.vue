@@ -34,7 +34,7 @@ export default {
 
 $gap: 200px;
 $family-primary: "Open Sans";
-$primary: #00660e;
+$primary: #057715;
 $primary-invert: findColorInvert($primary);
 
 $colors: (

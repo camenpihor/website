@@ -6,7 +6,7 @@
 
 <style>
 .has-bg-img {
-  background-image: url("../assets/space3.jpg");
+  background-image: url("../assets/space.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
