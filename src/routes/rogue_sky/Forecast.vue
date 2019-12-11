@@ -121,6 +121,7 @@ export default {
   },
   methods: {
     getForecast(latitude, longitude) {
+      this.star_forecast = null;
       getStarForecast(latitude, longitude)
         .then(response => {
           this.star_forecast = response.data.daily_forecast;
@@ -138,10 +139,7 @@ export default {
   },
   watch: {
     $route() {
-      this.getForecast(
-        this.$route.params.latitude,
-        this.$route.params.longitude
-      );
+      this.getForecast( this.$route.params.latitude, this.$route.params.longitude);
     }
   }
 };
