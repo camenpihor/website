@@ -3,7 +3,7 @@
     <Loading v-if="star_forecast === null" />
     <div v-else>
       <Search v-bind:value="city + ', ' + state" />
-      <div class="scrolling-wrapper">
+      <!-- <div class="scrolling-wrapper">
         <div
           class="scrolling-card"
           v-for="prediction in star_forecast"
@@ -41,7 +41,7 @@
         </div>
         <div id="current-summary-text">{{ today.summary }}</div>
       </div>
-      <b-table id="forecast-table" :data="star_forecast" :columns="columns"></b-table>
+      <b-table id="forecast-table" :data="star_forecast" :columns="columns"></b-table>-->
     </div>
   </section>
 </template>
