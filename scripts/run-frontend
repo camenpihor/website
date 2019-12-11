@@ -11,7 +11,7 @@ def start(dev):
         subprocess.run(["npm", "run", "serve"])
 
     else:
-        print("Starting production pserver...")
+        print("Starting production server...")
         subprocess.run(["http-server", "dist", "-a" "127.0.0.1"])
 
 
