@@ -1,8 +1,22 @@
 <template>
   <section>
-    <Loading v-if="star_forecast === null"/>
+    <Loading v-if="star_forecast === null" />
     <div v-else>
       <Search v-bind:value="city + ', ' + state" />
+      <div class="scrolling-wrapper">
+        <div
+          class="scrolling-card"
+          v-for="prediction in star_forecast"
+          v-bind:key="prediction.weather_date_utc"
+        >
+          <p>
+            <vue-fontawesome v-if="prediction.star_visibility < 0.5" icon="cloud" />
+            <vue-fontawesome v-else-if="prediction.star_visibility < 0.85" icon="cloud-moon" />
+            <vue-fontawesome v-else icon="moon" />
+          </p>
+          {{ prediction.weather_date_local }}
+        </div>
+      </div>
       <div id="current-summary">
         <div id="icon-current-summary">
           <vue-fontawesome v-if="today.icon === 'rain'" icon="cloud-moon-rain" size="5x" />
@@ -27,21 +41,6 @@
         </div>
         <div id="current-summary-text">{{ today.summary }}</div>
       </div>
-      <div id="forecast-summary" class="columns is-centered is-multiline">
-        <div v-for="prediction in star_forecast" v-bind:key="prediction.weather_date_utc" >
-          <div class="column">
-            <p>
-              <vue-fontawesome v-if="prediction.star_visibility < 0.5" icon="cloud"/>
-              <vue-fontawesome
-                v-else-if="prediction.star_visibility < 0.85"
-                icon="cloud-moon"
-              />
-              <vue-fontawesome v-else icon="moon"/>
-            </p>
-            {{ prediction.weather_date_local }}
-          </div>
-        </div>
-      </div>
       <b-table id="forecast-table" :data="star_forecast" :columns="columns"></b-table>
     </div>
   </section>
@@ -50,7 +49,7 @@
 <script>
 import { getStarForecast } from "@/api.js";
 import Search from "@/components/rogue_sky/Search.vue";
-import Loading from "@/components/Loading.vue"
+import Loading from "@/components/Loading.vue";
 
 export default {
   name: "forecast",
@@ -121,7 +120,7 @@ export default {
     };
   },
   methods: {
-    getForecast(latitude, longitude,) {
+    getForecast(latitude, longitude) {
       getStarForecast(latitude, longitude)
         .then(response => {
           this.star_forecast = response.data.daily_forecast;
@@ -135,9 +134,7 @@ export default {
     }
   },
   mounted() {
-    this.getForecast(
-      this.$route.params.latitude, this.$route.params.longitude
-    );
+    this.getForecast(this.$route.params.latitude, this.$route.params.longitude);
   },
   watch: {
     $route() {
@@ -152,7 +149,7 @@ export default {
 
 <style>
 #icon-current-summary {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 #current-summary-text {
@@ -160,11 +157,21 @@ export default {
   font-weight: bold;
 }
 
-#forecast-summary {
-  margin-top: 10px;
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-top: 10px;
+  background-color: #6b606013;
+}
+
+.scrolling-card {
+  display: inline-block;
+  margin: 0 12px;
+  font-size: 12px;
 }
 
 #forecast-table {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 </style>

@@ -3,6 +3,8 @@
     <div id="forecast-search-container" class="container">
       <b-input
         id="forecast-search-input"
+        @click.native="clearInput"
+        @blur="defaultInput"
         @keyup.native.enter="search"
         v-model="input"
         rounded
@@ -30,6 +32,12 @@ export default {
           `/rogue-sky/${response.data.latitude}/${response.data.longitude}`
         );
       });
+    },
+    clearInput() {
+      this.input = null;
+    },
+    defaultInput() {
+      this.input = this.value;
     }
   },
   watch: {
