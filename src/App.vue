@@ -25,7 +25,6 @@ export default {
 }
 #page-container {
   min-height: 100vh;
-  padding-bottom: 300px;
 }
 </style>
 
@@ -38,41 +37,9 @@ $primary: #057715;
 $primary-invert: findColorInvert($primary);
 
 $colors: (
-  "white": (
-    $white,
-    $black
-  ),
-  "black": (
-    $black,
-    $white
-  ),
-  "light": (
-    $light,
-    $light-invert
-  ),
-  "dark": (
-    $dark,
-    $dark-invert
-  ),
   "primary": (
     $primary,
     $primary-invert
-  ),
-  "info": (
-    $info,
-    $info-invert
-  ),
-  "success": (
-    $success,
-    $success-invert
-  ),
-  "warning": (
-    $warning,
-    $warning-invert
-  ),
-  "danger": (
-    $danger,
-    $danger-invert
   )
 );
 
