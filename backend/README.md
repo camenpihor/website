@@ -10,4 +10,4 @@
 3. `pip install -r requirements-dev.in` to install testing/development requirements
 4. `pip install -r requirements.txt` to install requirements
 5. `python setup.py install` to install package
-7. scripts/test to verify install
+6. scripts/test to verify install

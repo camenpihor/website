@@ -18,6 +18,8 @@ In separate processes:
 
 ## TODO
 
+- general
+  - environment variables to make api calling working on ubunty and mac
 - thoughts
   - database
   - how to save file with formatting
