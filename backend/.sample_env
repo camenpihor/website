@@ -1,3 +1,0 @@
-DARKSKY_SECRET_KEY=<secret>
-FLASK_ENV=development
-FLASK_APP=api.app

@@ -13,7 +13,6 @@ CORS(app, resources={"/api/*": {"origins": "*"}})
 app.config.from_object("api.config.DevelopmentConfig")
 logging.basicConfig(level=logging.INFO)
 _logger = logging.getLogger(__name__)
-logging.getLogger("flask_cors").level = logging.DEBUG
 
 
 @app.route("/")
