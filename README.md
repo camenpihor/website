@@ -27,6 +27,5 @@ In separate processes:
 - treecounter
   - python cnn repository
 - rogue-sky
-  - remove postgres database
   - make things larger
   - css on mobile

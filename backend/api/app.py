@@ -13,7 +13,8 @@ CORS(app, resources={"/api/*": {"origins": "*"}})
 app.config.from_object("api.config.DevelopmentConfig")
 logging.basicConfig(level=logging.INFO)
 _logger = logging.getLogger(__name__)
-logging.getLogger('flask_cors').level = logging.DEBUG
+logging.getLogger("flask_cors").level = logging.DEBUG
+
 
 @app.route("/")
 def ping_test():
@@ -39,7 +40,6 @@ def star_visibility_forecast(latitude, longitude):
         latitude=float(latitude),
         longitude=float(longitude),
         api_key=app.config["DARKSKY_API_KEY"],
-        database_url=app.config["DATABASE_URL"],
     )
     return _format_times(forecast=forecast)
 

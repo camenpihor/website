@@ -10,7 +10,6 @@ class DevelopmentConfig:
     """
 
     DARKSKY_API_KEY = os.environ["DARKSKY_SECRET_KEY"]
-    DATABASE_URL = os.environ["DATABASE_URL"]
 
 
 class TestingConfig:
@@ -18,5 +17,4 @@ class TestingConfig:
 
     TESTING = True
     DEBUG = True
-    DATABASE_URL = os.environ["TEST_DATABASE_URL"]
     DARKSKY_API_KEY = "test_api_key"

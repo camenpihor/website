@@ -1,7 +1,7 @@
 import json
 
 import arrow
-from rogue_sky import darksky, postgres_utilities
+from rogue_sky import darksky
 
 from api import app
 
@@ -11,15 +11,11 @@ def test_ping(backend_api_client):
     assert response.status_code == 200
 
 
-def test_star_forecast(
-    requests_mock, backend_api_client, test_database, darksky_json_response
-):
+def test_star_forecast(requests_mock, backend_api_client, darksky_json_response):
     latitude = 47.6038321
     longitude = -122.3300624
     api_key = backend_api_client.application.config["DARKSKY_API_KEY"]
 
-    postgres_utilities.create_weather_table(pg_url=test_database.pg_url)
-    postgres_utilities.create_star_table(pg_url=test_database.pg_url)
     requests_mock.get(
         darksky.DARKSKY_URL.format(
             api_key=api_key, latitude=latitude, longitude=longitude
