@@ -8,13 +8,12 @@ from flask_cors import CORS
 from rogue_sky import darksky, stars
 
 app = Flask(__name__)  # pylint: disable=invalid-name
-CORS(app, resources={"/api/*": {"origins": "*"},})
+CORS(app, resources={"/api/*": {"origins": "*"}})
 
 app.config.from_object("api.config.DevelopmentConfig")
 logging.basicConfig(level=logging.INFO)
-
 _logger = logging.getLogger(__name__)
-
+logging.getLogger('flask_cors').level = logging.DEBUG
 
 @app.route("/")
 def ping_test():
