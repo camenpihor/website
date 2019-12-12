@@ -1,11 +1,11 @@
 <template>
-  <section class="hero is-large has-bg-img">
+  <section class="hero is-large has-background-image">
     <div class="hero-body"></div>
   </section>
 </template>
 
 <style>
-.has-bg-img {
+.has-background-image {
   background-image: url("../assets/space.jpg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -19,7 +19,7 @@
   color: rgba(170, 170, 170, 0.575);
 }
 
-.has-bg-img .navbar {
+.has-background-image .navbar {
   display: none;
 }
 </style>

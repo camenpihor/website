@@ -2,7 +2,7 @@ import VueRouter from 'vue-router'
 
 const router = new VueRouter({
   mode: 'history',
-  scrollBehavior () {
+  scrollBehavior() {
     return { x: 0, y: 0 }
   },
   routes: [
@@ -23,8 +23,8 @@ const router = new VueRouter({
     },
     {
       path: '/rogue-sky',
-      component: () => import('./rogue_sky/Home.vue'),
-      name: "rogue-sky-home"
+      name: "rogue-sky-home",
+      redirect: 'rogue-sky/47.687/-122.377'
     },
     {
       path: '/rogue-sky/:latitude/:longitude',
