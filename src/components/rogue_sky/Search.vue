@@ -28,9 +28,9 @@ export default {
   methods: {
     search() {
       getCoordinates(this.input).then(response => {
-        this.$router.push(
-          `/rogue-sky/${response.data.latitude}/${response.data.longitude}`
-        );
+        let latitude = response.data.latitude.toFixed(3);
+        let longitude = response.data.longitude.toFixed(3);
+        this.$router.push(`/rogue-sky/${latitude}/${longitude}`);
       });
     },
     clearInput() {
