@@ -18,8 +18,4 @@
   font-size: 300%;
   color: rgba(170, 170, 170, 0.575);
 }
-
-.has-background-image .navbar {
-  display: none;
-}
 </style>

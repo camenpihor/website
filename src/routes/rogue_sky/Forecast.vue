@@ -139,7 +139,7 @@ export default {
   },
   watch: {
     $route() {
-      this.getForecast( this.$route.params.latitude, this.$route.params.longitude);
+      this.getForecast(this.$route.params.latitude, this.$route.params.longitude);
     }
   }
 };

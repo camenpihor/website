@@ -20,7 +20,6 @@ In separate processes:
 
 - general
   - real server for vuejs
-  - readme
 - thoughts
 - books
 - treecounter
