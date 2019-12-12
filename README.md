@@ -18,8 +18,15 @@ In separate processes:
 
 ## TODO
 
-- general
-  - real server for vuejs
 - thoughts
-- books
+  - database
+  - how to save file with formatting
+  - script to upload file (while on local copy to server)
+  - listing
+  - searching
 - treecounter
+  - python cnn repository
+- rogue-sky
+  - remove postgres database
+  - make things larger
+  - css on mobile
