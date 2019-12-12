@@ -2,9 +2,14 @@
 
 ## Install
 
-1. `npm install` to install frontend
-2. Install backend
-   1. Follow instructions at `backend/README.md`
+1. `cp .sample_env .env` and fill out anything in `<>`
+   1. DARKSKY_API_KEY is the DarkSky secret key from your DarkSky developer account
+   2. VUE_APP_BACKEND_URL is the base URL that the frontend should use to communicate with the Flask server
+      1. e.g. development `http://127.0.0.1:5000/api`
+      1. e.g. production `https://camenpiho.com/api`
+2. `set -o allexport && source .env && set +o allexport` to export environment variables
+3. `npm install` to install frontend
+4. Follow instructions at `backend/README.md` to install backend
 
 ## Run Servers
 
@@ -14,11 +19,15 @@ In separate processes:
    1. `scripts/run-frontend`
    2. `cd backend`
    3. `scripts/run-backend --dev`
+2. production flow
+   1. ngingx
+   2. `cd backend`
+   3. `scripts/run-backend`
 
 ## TODO
 
 - general
-  - environment variables to make api calling working on ubunty and mac
+  - fix page width on mobile
 - thoughts
   - database
   - how to save file with formatting
@@ -27,6 +36,3 @@ In separate processes:
   - searching
 - treecounter
   - python cnn repository
-- rogue-sky
-  - make things larger
-  - css on mobile

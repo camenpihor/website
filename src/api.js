@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const backendUrl = 'https://www.camenpiho.com/api'
+// production 'https://www.camenpiho.com/api'
+// development 'http://127.0.0.1:5000/api'
+const backendUrl = process.env.VUE_APP_BACKEND_URL
 
 function getStarForecast(latitude, longitude) {
   const url = `${backendUrl}/stars/${latitude}/${longitude}`
