@@ -1,1 +1,2 @@
 DARKSKY_SECRET_KEY=<secret>
+VUE_APP_BACKEND_URL=<backend_url>
