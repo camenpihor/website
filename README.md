@@ -26,8 +26,6 @@ In separate processes:
 
 ## TODO
 
-- general
-  - fix page width on mobile
 - thoughts
   - database
   - how to save file with formatting

@@ -20,10 +20,6 @@ export default {
 </script>
 
 <style>
-body {
-  overflow-x: hidden;
-}
-
 #app {
   text-align: center;
 }
