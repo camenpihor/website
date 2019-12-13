@@ -25,7 +25,7 @@ export default {
 }
 #page-container {
   min-height: 100vh;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 </style>
 
