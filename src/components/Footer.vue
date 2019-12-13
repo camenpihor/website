@@ -34,7 +34,9 @@
   </section>
 </template>
 
-<style>
+<style scoped>
+
+
 #footer {
   background: #343434;
   color: #aaa;
@@ -49,8 +51,14 @@
   border: white 1px;
 }
 
+#footer .menu-label {
+  color: #a3a3a3;
+  font-size: 14px;
+}
+
 #footer-info .menu-list a {
-  color: #4a4a4a;
+  color: #5f5f5f;
+  font-size: 16px;
 }
 
 #footer-info .menu-list a:hover {
