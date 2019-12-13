@@ -54,11 +54,13 @@
 #footer .menu-label {
   color: #a3a3a3;
   font-size: 14px;
+  margin-top: 14px;
 }
 
 #footer-info .menu-list a {
   color: #5f5f5f;
   font-size: 16px;
+  padding: 0.8em 0.75em
 }
 
 #footer-info .menu-list a:hover {
