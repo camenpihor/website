@@ -34,3 +34,7 @@ In separate processes:
   - searching
 - treecounter
   - python cnn repository
+- roguesky
+  - more padding around search and summary
+  - show more not tell more
+  - summary icons should be a bit larger?

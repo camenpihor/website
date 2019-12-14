@@ -121,7 +121,6 @@ export default {
   },
   methods: {
     getForecast(latitude, longitude) {
-      this.star_forecast = null;
       getStarForecast(latitude, longitude)
         .then(response => {
           this.star_forecast = response.data.daily_forecast;

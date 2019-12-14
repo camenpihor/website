@@ -27,6 +27,7 @@ export default {
   },
   methods: {
     search() {
+      this.$parent.star_forecast = null;
       getCoordinates(this.input).then(response => {
         let latitude = response.data.latitude.toFixed(3);
         let longitude = response.data.longitude.toFixed(3);
