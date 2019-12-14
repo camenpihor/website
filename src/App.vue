@@ -23,6 +23,7 @@ export default {
 #app {
   text-align: center;
 }
+
 #page-container {
   min-height: 100vh;
   padding-bottom: 50px;

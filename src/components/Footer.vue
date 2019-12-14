@@ -34,9 +34,7 @@
   </section>
 </template>
 
-<style scoped>
-
-
+<style>
 #footer {
   background: #343434;
   color: #aaa;
@@ -45,10 +43,8 @@
 #footer-info {
   padding-top: 50px;
   padding-bottom: 50px;
-}
-
-#footer-info .column {
-  border: white 1px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 #footer .menu-label {
