@@ -2,19 +2,21 @@
   <section>
     <Loading v-if="star_forecast === null" />
     <div v-else>
-      <Search v-bind:value="city + ', ' + state" />
-      <div class="scrolling-wrapper">
-        <div
-          class="scrolling-card"
-          v-for="prediction in star_forecast"
-          v-bind:key="prediction.weather_date_utc"
-        >
-          <p>
-            <vue-fontawesome v-if="prediction.star_visibility < 0.5" icon="cloud" />
-            <vue-fontawesome v-else-if="prediction.star_visibility < 0.85" icon="cloud-moon" />
-            <vue-fontawesome v-else icon="moon" />
-          </p>
-          {{ prediction.weather_date_local }}
+      <div id="search-wrapper">
+        <Search v-bind:value="city + ', ' + state" />
+        <div class="scrolling-wrapper">
+          <div
+            class="scrolling-card"
+            v-for="prediction in star_forecast"
+            v-bind:key="prediction.weather_date_utc"
+          >
+            <p>
+              <vue-fontawesome v-if="prediction.star_visibility < 0.5" icon="cloud" />
+              <vue-fontawesome v-else-if="prediction.star_visibility < 0.85" icon="cloud-moon" />
+              <vue-fontawesome v-else icon="moon" />
+            </p>
+            {{ prediction.weather_date_local }}
+          </div>
         </div>
       </div>
       <div id="current-summary">
@@ -138,15 +140,25 @@ export default {
   },
   watch: {
     $route() {
-      this.getForecast(this.$route.params.latitude, this.$route.params.longitude);
+      this.getForecast(
+        this.$route.params.latitude,
+        this.$route.params.longitude
+      );
     }
   }
 };
 </script>
 
 <style>
-#icon-current-summary {
+#search-wrapper {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #6b606013;
+}
+
+#current-summary {
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 #current-summary-text {
@@ -159,16 +171,11 @@ export default {
   overflow-y: hidden;
   white-space: nowrap;
   padding-top: 10px;
-  background-color: #6b606013;
 }
 
 .scrolling-card {
   display: inline-block;
-  margin: 0 12px;
-  font-size: 12px;
-}
-
-#forecast-table {
-  margin-top: 50px;
+  margin: 0 18px;
+  font-size: 14px;
 }
 </style>

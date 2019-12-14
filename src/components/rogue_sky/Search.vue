@@ -53,7 +53,6 @@ export default {
 #forecast-search {
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #6b606013;
 }
 
 #forecast-search-container {
