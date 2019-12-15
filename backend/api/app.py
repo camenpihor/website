@@ -35,31 +35,8 @@ def star_visibility_forecast(latitude, longitude):
     _logger.info(
         "Getting star forecast for (%s, %s)", latitude, longitude,
     )
-    forecast = stars.get_star_forecast(
+    return stars.get_star_forecast(
         latitude=float(latitude),
         longitude=float(longitude),
         api_key=app.config["DARKSKY_API_KEY"],
     )
-    return _format_times(forecast=forecast)
-
-
-def _parse_datetime(datetime_string, is_date):
-    value = arrow.get(datetime_string)
-    if is_date:
-        return value.format("MMM D")
-    return value.format("h:mm a")
-
-
-def _format_times(forecast):
-    daily_forecast_parsed = [
-        {
-            key: value if "local" not in key else _parse_datetime(value, "date" in key)
-            for key, value in day_prediction.items()
-        }
-        for day_prediction in forecast["daily_forecast"]
-    ]
-
-    return {
-        key: value if key != "daily_forecast" else daily_forecast_parsed
-        for key, value in forecast.items()
-    }

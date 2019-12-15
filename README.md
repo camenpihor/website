@@ -36,3 +36,5 @@ In separate processes:
   - python cnn repository
 - roguesky
   - show more not tell more
+  - idea for table: title = day name, summary, star forecast; data underneath = everything
+  else and try to think of a way to combine precip prob, type, and intensity

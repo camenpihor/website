@@ -15,7 +15,7 @@
               <vue-fontawesome v-else-if="prediction.star_visibility < 0.85" icon="cloud-moon" />
               <vue-fontawesome v-else icon="moon" />
             </p>
-            {{ prediction.weather_date_local }}
+            {{ prediction.weather_date_local | moment("MMM DD") }}
           </div>
         </div>
       </div>
@@ -43,7 +43,38 @@
         </div>
         <div id="current-summary-text">{{ today.summary }}</div>
       </div>
-      <b-table id="forecast-table" :data="star_forecast" :columns="columns"></b-table>
+      <b-table id="forecast-table" :data="star_forecast" class="container">
+        <template slot-scope="props">
+          <b-table-column label="Date" centered>{{ props.row.weather_date_local | moment("dddd") }}</b-table-column>
+          <b-table-column
+            label="Star Visibility"
+            centered
+            numeric
+          >{{ (props.row.star_visibility * 100).toFixed(0) }}%</b-table-column>
+          <b-table-column label="Summary" centered>{{ props.row.summary }}</b-table-column>
+          <b-table-column
+            label="Cloud Cover"
+            centered
+            numeric
+          >{{ (props.row.cloud_cover_pct * 100).toFixed(0) }}%</b-table-column>
+          <b-table-column
+            label="Sunset"
+            centered
+          >{{ props.row.sunset_time_local | moment("h:MM a") }}</b-table-column>
+          <b-table-column label="Moon Phase" centered numeric>
+            {{ (props.row.moon_phase_pct * 100).toFixed(0) }}%
+          </b-table-column>
+          <b-table-column
+            label="Precipitation"
+            class="capitalize"
+            centered
+          >{{ props.row.precip_type }} ({{ props.row.precip_probability * 100 }}%)</b-table-column>
+          <b-table-column
+            label="Temperature"
+            centered
+          >{{ props.row.temperature_min_f.toFixed(0) }}°F - {{ props.row.temperature_max_f.toFixed(0) }}°F</b-table-column>
+        </template>
+      </b-table>
     </div>
   </section>
 </template>
@@ -64,61 +95,7 @@ export default {
       today: null,
       star_forecast: null,
       city: null,
-      state: null,
-      isFullPage: true,
-      columns: [
-        {
-          field: "weather_date_local",
-          label: "Date",
-          centered: true
-        },
-        {
-          field: "star_visibility",
-          label: "Star Visibility",
-          centered: true,
-          numeric: true
-        },
-        {
-          field: "summary",
-          label: "Summary",
-          centered: true
-        },
-        {
-          field: "cloud_cover_pct",
-          label: "Clould Cover",
-          centered: true
-        },
-        {
-          field: "sunset_time_local",
-          label: "Sunset",
-          centered: true
-        },
-        {
-          field: "moon_phase_pct",
-          label: "Moon Phase",
-          centered: true
-        },
-        {
-          field: "precip_probability",
-          label: "Precipitation Probability",
-          centered: true
-        },
-        {
-          field: "precip_type",
-          label: "Pricipitation Type",
-          centered: true
-        },
-        {
-          field: "temperature_min_f",
-          label: "Min Temperature",
-          centered: true
-        },
-        {
-          field: "temperature_max_f",
-          label: "Max Temperature",
-          centered: true
-        }
-      ]
+      state: null
     };
   },
   methods: {
@@ -177,5 +154,9 @@ export default {
   display: inline-block;
   margin: 0 18px;
   font-size: 14px;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 </style>
