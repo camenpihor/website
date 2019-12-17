@@ -4,7 +4,7 @@
     <div v-else>
       <div id="search-wrapper">
         <Search v-bind:value="city + ', ' + state" />
-        <div class="scrolling-wrapper">
+        <div id="scrolling-wrapper">
           <div
             class="scrolling-card"
             v-for="prediction in star_forecast"
@@ -21,60 +21,51 @@
       </div>
       <div id="current-summary">
         <div id="icon-current-summary">
-          <vue-fontawesome v-if="today.icon === 'rain'" icon="cloud-moon-rain" size="5x" />
-          <vue-fontawesome v-else-if="today.icon === 'snow'" icon="snowflake" size="5x" />
-          <vue-fontawesome v-else-if="today.icon === 'clear-day'" icon="moon" size="5x" />
-          <vue-fontawesome v-else-if="today.icon === 'clear-night'" icon="moon" size="5x" />
-          <vue-fontawesome v-else-if="today.icon === 'sleet'" icon="cloud-showers-heavy" size="5x" />
-          <vue-fontawesome v-else-if="today.icon === 'wind'" icon="wind" size="5x" />
-          <vue-fontawesome v-else-if="today.icon === 'fog'" icon="cloud" size="5x" />
-          <vue-fontawesome v-else-if="today.icon === 'cloudy'" icon="cloud" size="5x" />
-          <vue-fontawesome
-            v-else-if="today.icon === 'partly-cloudy-day'"
-            icon="cloud-moon"
-            size="5x"
-          />
-          <vue-fontawesome
-            v-else-if="today.icon === 'partly-cloudy-night'"
-            icon="cloud-moon"
-            size="5x"
-          />
-          <vue-fontawesome v-else icon="cloud-moon" size="3x" />
+          <vue-fontawesome :icon="getIcon(today.icon)" size="5x" />
         </div>
         <div id="current-summary-text">{{ today.summary }}</div>
+        <div>Sunset today is at {{ today.sunset_time_local | moment("h:MM a") }}</div>
       </div>
-      <b-table id="forecast-table" :data="star_forecast" class="container">
+      <b-table id="forecast-table" :data="star_forecast" class="container" hoverable narrowed>
         <template slot-scope="props">
-          <b-table-column label="Date" centered>{{ props.row.weather_date_local | moment("dddd") }}</b-table-column>
+          <b-table-column>
+            <span>
+              {{ props.row.weather_date_local | moment("calendar", null, {
+              sameDay: '[Today]',
+              nextDay: '[Tomorrow]',
+              nextWeek: 'dddd',
+              sameElse: '[Next] dddd'
+              }) }}
+            </span>
+          </b-table-column>
           <b-table-column
             label="Star Visibility"
             centered
             numeric
           >{{ (props.row.star_visibility * 100).toFixed(0) }}%</b-table-column>
-          <b-table-column label="Summary" centered>{{ props.row.summary }}</b-table-column>
+          <b-table-column label="Summary" centered>
+            <div>{{ props.row.summary }}</div>
+            <div
+              v-if="props.row.precip_probability > 0.2"
+            >There is a {{ (props.row.precip_probability * 100).toFixed(0) }}% of {{ getPrecipitationIdentifier(props.row.precip_intensity_max_in_hr) }} {{ props.row.precip_type }}.</div>
+          </b-table-column>
           <b-table-column
             label="Cloud Cover"
             centered
             numeric
           >{{ (props.row.cloud_cover_pct * 100).toFixed(0) }}%</b-table-column>
           <b-table-column
-            label="Sunset"
-            centered
-          >{{ props.row.sunset_time_local | moment("h:MM a") }}</b-table-column>
-          <b-table-column
             label="Moon Phase"
             centered
             numeric
           >{{ (props.row.moon_phase_pct * 100).toFixed(0) }}%</b-table-column>
-          <b-table-column
-            label="Precipitation"
-            class="capitalize"
-            centered
-          >{{ props.row.precip_type }} ({{ (props.row.precip_probability * 100).toFixed(0) }}%)</b-table-column>
-          <b-table-column
-            label="Temperature"
-            centered
-          >{{ props.row.temperature_min_f.toFixed(0) }}°F - {{ props.row.temperature_max_f.toFixed(0) }}°F</b-table-column>
+          <b-table-column label="Temperature" centered>
+            <div>Low: {{ props.row.temperature_min_f.toFixed(0) }}°F</div>
+            <div>High: {{ props.row.temperature_max_f.toFixed(0) }}°F</div>
+          </b-table-column>
+        </template>
+        <template slot="footer">
+          <div id="table-footer" class="has-text-right">from darksky</div>
         </template>
       </b-table>
     </div>
@@ -112,6 +103,30 @@ export default {
         .catch(() => {
           this.$router.push({ name: "404" });
         });
+    },
+    getIcon(icon) {
+      let iconLookup = {
+        snow: "snowflake",
+        "clear-day": "moon",
+        "clear-night": "moon",
+        sleet: "cloud-showers-heavy",
+        wind: "wind",
+        fog: "cloud",
+        cloudy: "cloud",
+        "partly-cloudy-day": "cloud-moon",
+        "partly-cloudy-night": "cloud-moon",
+        rain: "cloud-moon-rain"
+      };
+      return iconLookup[icon];
+    },
+    getPrecipitationIdentifier(precip_in_per_hour) {
+      if (precip_in_per_hour < 0.1) {
+        return "light";
+      } else if (precip_in_per_hour < 0.3) {
+        return "moderate";
+      } else {
+        return "heavy";
+      }
     }
   },
   mounted() {
@@ -145,7 +160,13 @@ export default {
   font-weight: bold;
 }
 
-.scrolling-wrapper {
+#table-footer {
+  font-weight: normal;
+  color: rgba(119, 136, 153, 0.349);
+  font-size: 80%;
+}
+
+#scrolling-wrapper {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -160,5 +181,9 @@ export default {
 
 .capitalize {
   text-transform: capitalize;
+}
+
+#forecast-table td {
+  vertical-align: middle;
 }
 </style>
