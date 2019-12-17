@@ -43,11 +43,11 @@
             centered
             numeric
           >{{ (props.row.star_visibility * 100).toFixed(0) }}%</b-table-column>
-          <b-table-column label="Summary" centered>
-            <div>{{ props.row.summary }}</div>
-            <div
+          <b-table-column label="Summary" centered width="300">
+            {{ props.row.summary }}
+            <span
               v-if="props.row.precip_probability > 0.2"
-            >There is a {{ (props.row.precip_probability * 100).toFixed(0) }}% of {{ getPrecipitationIdentifier(props.row.precip_intensity_max_in_hr) }} {{ props.row.precip_type }}.</div>
+            >There is a {{ (props.row.precip_probability * 100).toFixed(0) }}% of {{ getPrecipitationIdentifier(props.row.precip_intensity_max_in_hr) }} {{ props.row.precip_type }}.</span>
           </b-table-column>
           <b-table-column
             label="Cloud Cover"
