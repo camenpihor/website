@@ -43,11 +43,13 @@
             centered
             numeric
           >{{ (props.row.star_visibility * 100).toFixed(0) }}%</b-table-column>
-          <b-table-column label="Summary" centered width="300">
+          <b-table-column class="day-summary" label="Summary" centered width="300">
+            <span>
             {{ props.row.summary }}
             <span
               v-if="props.row.precip_probability > 0.2"
             >There is a {{ (props.row.precip_probability * 100).toFixed(0) }}% of {{ getPrecipitationIdentifier(props.row.precip_intensity_max_in_hr) }} {{ props.row.precip_type }}.</span>
+            </span>
           </b-table-column>
           <b-table-column
             label="Cloud Cover"
@@ -185,5 +187,9 @@ export default {
 
 #forecast-table td {
   vertical-align: middle;
+}
+
+#forecast-table span {
+  text-align: right;
 }
 </style>
