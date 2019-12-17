@@ -61,14 +61,16 @@
             label="Sunset"
             centered
           >{{ props.row.sunset_time_local | moment("h:MM a") }}</b-table-column>
-          <b-table-column label="Moon Phase" centered numeric>
-            {{ (props.row.moon_phase_pct * 100).toFixed(0) }}%
-          </b-table-column>
+          <b-table-column
+            label="Moon Phase"
+            centered
+            numeric
+          >{{ (props.row.moon_phase_pct * 100).toFixed(0) }}%</b-table-column>
           <b-table-column
             label="Precipitation"
             class="capitalize"
             centered
-          >{{ props.row.precip_type }} ({{ props.row.precip_probability * 100 }}%)</b-table-column>
+          >{{ props.row.precip_type }} ({{ (props.row.precip_probability * 100).toFixed(0) }}%)</b-table-column>
           <b-table-column
             label="Temperature"
             centered
