@@ -48,7 +48,7 @@
             {{ props.row.summary }}
             <span
               v-if="props.row.precip_probability > 0.2"
-            >There is a {{ (props.row.precip_probability * 100).toFixed(0) }}% of {{ getPrecipitationIdentifier(props.row.precip_intensity_max_in_hr) }} {{ props.row.precip_type }}.</span>
+            >There is a {{ (props.row.precip_probability * 100).toFixed(0) }}% chance of {{ getPrecipitationIdentifier(props.row.precip_intensity_max_in_hr) }} {{ props.row.precip_type }}.</span>
             </span>
           </b-table-column>
           <b-table-column
