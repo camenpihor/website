@@ -7,20 +7,12 @@
 arrow==0.15.4
 certifi==2019.11.28       # via requests
 chardet==3.0.4            # via requests
-click==7.0
-flask-cors==3.0.8
-flask==1.1.1
 geographiclib==1.50       # via geopy
 geopy==1.20.0
 idna==2.8                 # via requests
-itsdangerous==1.1.0       # via flask
-jinja2==2.10.3            # via flask
-markupsafe==1.1.1         # via jinja2
 numpy==1.17.4
 python-dateutil==2.8.1    # via arrow
 requests==2.22.0
 git+git://github.com/camenpihor/rogue-sky.git#egg=rogue-sky
-six==1.13.0               # via flask-cors, python-dateutil
+six==1.13.0               # via python-dateutil
 urllib3==1.25.7           # via requests
-waitress==1.3.1
-werkzeug==0.16.0          # via flask
