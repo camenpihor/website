@@ -63,12 +63,13 @@
 
     var draw = new MapboxDraw({
       displayControlsDefault: false,
+      boxSelect: true,
       controls: {
         polygon: true,
         trash: true
       }
     });
-    map.addControl(draw);
+    map.addControl(draw, 'top-left');
 
     map.on('draw.create', updateArea);
     map.on('draw.delete', updateArea);
