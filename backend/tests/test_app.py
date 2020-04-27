@@ -1,9 +1,6 @@
 import json
 
-import arrow
 from rogue_sky import darksky
-
-from api import app
 
 
 def test_ping(backend_api_client):

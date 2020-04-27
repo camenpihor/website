@@ -8,3 +8,8 @@
 2. `pip install -r requirements.txt` to install requirements
 3. `python setup.py install` to install package
 4. scripts/test to verify install
+
+## TODO
+
+- write install script
+- add dev reqs to requirements.txt

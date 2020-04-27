@@ -1,7 +1,6 @@
 """Flask application for the backend API."""
 import logging
 
-import arrow
 from flask import Flask
 from flask_cors import CORS
 
