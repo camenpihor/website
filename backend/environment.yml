@@ -1,0 +1,20 @@
+name: website3.8
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pip=20.0.2
+  - pip:
+    - click==7.0
+    - flask==1.1
+    - waitress==1.4
+    - git+git://github.com/camenpihor/rogue-sky.git#egg=rogue-sky
+
+    - black==19.10b0
+    - pip-tools==4.5
+    - pydocstyle==5.0
+    - pylint==2.5
+    - pytest==5.4
+    - pytest-cov==2.8
+    - requests-mock==1.7

@@ -1,6 +1,0 @@
-black ~= 19.10b0
-pip-tools ~= 4.3
-pydocstyle ~= 4.0
-pylint ~= 2.4
-pytest-cov ~= 2.8
-requests-mock ~= 1.7

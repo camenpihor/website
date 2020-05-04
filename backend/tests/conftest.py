@@ -1,4 +1,5 @@
 import contextlib
+import logging
 import os
 import json
 
@@ -6,6 +7,8 @@ import pkg_resources
 import pytest
 
 from api.app import app
+
+logging.disable(logging.CRITICAL)
 
 
 @pytest.fixture(scope="function")
@@ -28,7 +31,8 @@ def serialized_star_response():
 
 @pytest.fixture
 def backend_api_client(scope="method"):
-    app.config.from_object("api.config.TestingConfig")
+    app.config["TESTING"] = True
+    os.environ["DARKSKY_SECRET_KEY"] = "testing"
 
     with app.test_client() as client:
         yield client

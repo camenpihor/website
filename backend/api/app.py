@@ -1,17 +1,17 @@
 """Flask application for the backend API."""
-import logging
+import json
+import os
 
-from flask import Flask
-from flask_cors import CORS
-
+from flask import Flask, Response
 from rogue_sky import darksky, stars
 
-app = Flask(__name__)  # pylint: disable=invalid-name
-CORS(app, resources={"/api/*": {"origins": "*"}})
+from api import logger
 
-app.config.from_object("api.config.DevelopmentConfig")
-logging.basicConfig(level=logging.INFO)
-_logger = logging.getLogger(__name__)
+app = Flask(__name__)  # pylint: disable=invalid-name
+_logger = logger.setup(__name__)
+
+FRONTEND_ADDRESS = os.environ.get("FRONTEND_ADDRESS", None)
+DARKSKY_SECRET_KEY = os.environ["DARKSKY_SECRET_KEY"]
 
 
 @app.route("/")
@@ -25,7 +25,7 @@ def get_coordinates(query):
     """Get coordinates from query."""
     _logger.info("Getting coordinates for %s", query)
     latitude, longitude = darksky.parse_address(address=query)
-    return {"latitude": latitude, "longitude": longitude}
+    return _json_response(data={"latitude": latitude, "longitude": longitude})
 
 
 @app.route("/api/stars/<latitude>/<longitude>")
@@ -34,8 +34,17 @@ def star_visibility_forecast(latitude, longitude):
     _logger.info(
         "Getting star forecast for (%s, %s)", latitude, longitude,
     )
-    return stars.get_star_forecast(
-        latitude=float(latitude),
-        longitude=float(longitude),
-        api_key=app.config["DARKSKY_API_KEY"],
+    return _json_response(
+        data=stars.get_star_forecast(
+            latitude=float(latitude),
+            longitude=float(longitude),
+            api_key=DARKSKY_SECRET_KEY,
+        )
     )
+
+
+def _json_response(data):
+    """Return a Flask response with the mimetype set to JSON."""
+    resp = Response(json.dumps(data), mimetype="application/json")
+    resp.headers["Access-Control-Allow-Origin"] = FRONTEND_ADDRESS
+    return resp

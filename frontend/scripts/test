@@ -1,0 +1,5 @@
+#!/bin/bash
+set -ex # fail on first error, print commands
+
+echo "there are currently no tests for the frontend. Skipping..."
+true

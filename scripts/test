@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+import logging
+import subprocess
+
+logging.basicConfig(level=logging.INFO)
+_logger = logging.getLogger(__name__)
+
+
+def test():
+    _logger.info("Testing backend...")
+    subprocess.check_call("scripts/test", cwd="./backend")
+
+    _logger.info("Testing frontend...")
+    subprocess.check_call("scripts/test", cwd="./frontend")
+
+    _logger.info("Success!")
+
+
+if __name__ == "__main__":
+    test()

@@ -16,9 +16,6 @@ setup(
     author_email="camenpihor@gmail.com",
     packages=find_packages(),
     include_package_data=True,
-    install_requires=open("requirements.in").readlines(),
-    dependency_links=open("requirements.private.in").readlines(),
-    tests_require=open("requirements-dev.in").readlines(),
-    description="TODO",
+    description="Backend for personal website.",
     long_description="\n" + open("README.md").read(),
 )

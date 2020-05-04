@@ -1,0 +1,16 @@
+#!/bin/bash
+
+conda env create --force -f environment.yml
+source activate website3.8
+python setup.py install
+conda deactivate
+
+echo "#
+# To activate this environment, use
+#
+#       $ source activate website3.8
+#
+# To deactivate, use
+#
+#       $ conda deactivate
+"

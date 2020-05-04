@@ -1,4 +1,0 @@
-#!/bin/bash
-set -eoux pipefail
-
-pip-compile --no-index requirements.in requirements.private.in -o requirements.txt
