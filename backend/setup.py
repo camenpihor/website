@@ -17,5 +17,4 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     description="Backend for personal website.",
-    long_description="\n" + open("README.md").read(),
 )
