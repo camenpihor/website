@@ -6,6 +6,7 @@ FLASK_ENV=development
 
 BACKEND_HOST=127.0.0.1
 BACKEND_PORT=5000
+# any variables to be used in Vue, must be prepended by "VUE_APP_"
 VUE_APP_BACKEND_ENDPOINT=http://${BACKEND_HOST}:${BACKEND_PORT}/api
 
 FRONTEND_HOST=127.0.0.1
