@@ -5,6 +5,7 @@ dist/
 .env
 __pycache__
 logs/
+frontend/public/fontawesome-pro-5.9.0-web/
 
 # node
 node_modules/
