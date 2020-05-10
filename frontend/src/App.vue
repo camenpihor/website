@@ -1,43 +1,49 @@
 <template>
   <div id="app">
+    <NavBar />
     <router-view id="router-view" />
+    <Footer />
   </div>
 </template>
 
 <script>
+import Footer from "@/components/Footer.vue";
+import NavBar from "@/components/NavBar.vue";
+
 export default {
-  name: "app"
+  name: "app",
+  components: {
+    Footer,
+    NavBar
+  }
 };
 </script>
 
 <style>
+body {
+  font-family: "Helvetica" !important;
+}
+
 #app {
   text-align: center;
 }
 
 #router-view {
-  min-height: 105vh;
+  min-height: 100vh;
 }
 </style>
 
 <style lang="scss">
 @import "~bulma/sass/utilities/_all";
 
-$gap: 200px;
-$family-primary: "Open Sans";
-$primary: #057715;
-$primary-invert: findColorInvert($primary);
+$off-white: #f0f0f0;
 
 $colors: (
-  "primary": (
-    $primary,
-    $primary-invert
+  "off-white": (
+    $off-white,
+    findColorInvert($off-white)
   )
 );
-
-$link: $primary;
-$link-invert: $primary-invert;
-$link-focus-border: $primary;
 
 @import "~bulma";
 @import "~buefy/src/scss/buefy";

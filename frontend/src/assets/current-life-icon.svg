@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>current-logo</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="phone-home" transform="translate(-296.000000, -218.000000)">
+            <g id="life-icons" transform="translate(20.000000, 218.000000)">
+                <g id="current-logo" transform="translate(276.000000, 0.000000)">
+                    <circle id="Oval" fill="#000000" cx="30" cy="30" r="30"></circle>
+                    <g id="camen-logo" fill="#FFFFFF" transform="translate(7.000000, 10.000000)" stroke="#979797">
+                        <g id="camen-logo-icon" fill="none" transform="translate(0.000000, 5.086957)" stroke-linecap="square">
+                            <line x1="11.1916667" y1="11.1630435" x2="22.2416667" y2="11.1630435" id="Line"></line>
+                            <line x1="0.141666667" y1="22.4673913" x2="11.1916667" y2="22.4673913" id="Line"></line>
+                            <line x1="11.1916667" y1="11.4456522" x2="11.1916667" y2="22.4673913" id="Line"></line>
+                            <line x1="22.2416667" y1="0.141304348" x2="33.2916667" y2="0.141304348" id="Line"></line>
+                            <line x1="22.2416667" y1="0.141304348" x2="22.2416667" y2="11.1630435" id="Line"></line>
+                            <line x1="33.2916667" y1="0.141304348" x2="33.2916667" y2="11.1630435" id="Line"></line>
+                            <line x1="33.2916667" y1="11.4456522" x2="33.2916667" y2="22.4673913" id="Line"></line>
+                            <line x1="33.2916667" y1="22.75" x2="33.2916667" y2="33.7717391" id="Line"></line>
+                        </g>
+                        <ellipse id="Oval" fill="#D8D8D8" cx="31.5916667" cy="0.989130435" rx="1" ry="1"></ellipse>
+                        <line x1="31.5916667" y1="2.11956522" x2="31.5916667" y2="4.66304348" id="Line" fill="none" stroke-linecap="square"></line>
+                        <line x1="31.5916667" y1="4.66304348" x2="33.8583333" y2="4.66304348" id="Line-2" fill="none" stroke-linecap="square"></line>
+                        <line x1="33.8583333" y1="4.66304348" x2="33.8583333" y2="7.48913043" id="Line-3" fill="none" stroke-linecap="square"></line>
+                        <line x1="31.875" y1="2.68478261" x2="32.725" y2="3.5326087" id="Line-4" fill="none" stroke-linecap="square"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

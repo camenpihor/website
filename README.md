@@ -24,17 +24,9 @@ Vue
 
 ## TODO
 
-- thoughts
-  - database
-  - how to save file with formatting
-  - script to upload file (while on local copy to server)
-  - listing
-  - searching
-- treecounter
-  - python cnn repository
-- roguesky
-  - show more not tell more
-  - idea for table: title = day name, summary, star forecast; data underneath = everything
-  else and try to think of a way to combine precip prob, type, and intensity
-- fade in star image
-- update global page layout
+- larger font on desktop
+- sidebar to always out on desktop, but collapsed
+- broken life icon width on mobile
+- broken margin on mobile
+- slow down speed of sidebar opening/closing on mobile
+- lock background page when sidebar is open
