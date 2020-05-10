@@ -30,3 +30,5 @@ Vue
 - broken margin on mobile
 - slow down speed of sidebar opening/closing on mobile
 - lock background page when sidebar is open
+- add links to everything
+- add on-hover to links
