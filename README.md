@@ -25,6 +25,5 @@ Vue
 ## TODO
 
 - sidebar to always out on desktop, but collapsed
-- lock background page when sidebar is open
 - add links to everything
-- add on-hover to links
+- make background image a forever scroll
