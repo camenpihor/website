@@ -1,70 +1,20 @@
 <template>
   <div class="home">
-    <Background class="background" :filePath="backgroundFilePath" />
-    <div class="page">
-      <div class="life-summary">
-        <div
-          class="life-summary-icons columns is-mobile is-vcentered is-centered"
-        >
-          <div class="column" v-on:click="activeLifeIcon = 'wolf'">
-            <LifeIcon
-              :filePath="wolfFilePath"
-              v-bind:class="{ highlight: activeLifeIcon === 'wolf' }"
-            />
-          </div>
-          <div class="column" v-on:click="activeLifeIcon = 'sunset'">
-            <LifeIcon
-              :filePath="sunsetFilePath"
-              v-bind:class="{ highlight: activeLifeIcon === 'sunset' }"
-            />
-          </div>
-          <div class="column" v-on:click="activeLifeIcon = 'unknown'">
-            <LifeIcon
-              :filePath="unknownLifeFilePath"
-              v-bind:class="{ highlight: activeLifeIcon === 'unknown' }"
-            />
-          </div>
-          <div class="column" v-on:click="activeLifeIcon = 'stairs'">
-            <LifeIcon
-              :filePath="currentLifeFilePath"
-              v-bind:class="{ highlight: activeLifeIcon === 'stairs' }"
-            />
-          </div>
-        </div>
-        <div class="life-summary-text">
-          <p v-if="activeLifeIcon === 'wolf'">
-            This is for the wolf. Torquatos nostros? quos tu tam egregios viros
-            censes tantas res gessisse sine dubio praeclara sunt, explicabo nemo
-            enim ad modum, quaeso, interpretaris? sicine eos censes tantas res
-            gessisse sine dubio praeclara sunt, fecerint, virtutem iis per. Tap
-            the sunset next!
-          </p>
-          <p v-if="activeLifeIcon === 'sunset'">
-            This is for the sunset. Torquatos nostros? quos tu tam egregios
-            viros censes tantas res gessisse sine dubio praeclara sunt,
-            explicabo nemo enim ad modum, quaeso, interpretaris? sicine eos
-            censes tantas res gessisse sine dubio praeclara sunt, fecerint,
-            virtutem iis per. Tap the red circle next!
-          </p>
-          <p v-if="activeLifeIcon === 'unknown'">
-            This is for the unknown. Torquatos nostros? quos tu tam egregios
-            viros censes tantas res gessisse sine dubio praeclara sunt,
-            explicabo nemo enim ad modum, quaeso, interpretaris? sicine eos
-            censes tantas res gessisse sine dubio praeclara sunt, fecerint,
-            virtutem iis per. Tap the stairs next!
-          </p>
-          <p v-if="activeLifeIcon === 'stairs'">
-            This is for the stairs. Torquatos nostros? quos tu tam egregios
-            viros censes tantas res gessisse sine dubio praeclara sunt,
-            explicabo nemo enim ad modum, quaeso, interpretaris? sicine eos
-            censes tantas res gessisse sine dubio praeclara sunt, fecerint,
-            virtutem iis per. Tap the wolf next!
-          </p>
-        </div>
+    <div v-on:click="isImageModalActive = true">
+      <Background class="home__image" :filePath="backgroundFilePath" />
+    </div>
+    <b-modal full-screen can-cancel :active.sync="isImageModalActive">
+      <ForeverBackground :filePath="backgroundFilePath" />
+    </b-modal>
+    <div class="home__text">
+      <div class="section">
+        <LifeIcons />
       </div>
-      <hr class="break-line" />
-      <div class="bio-info">
-        <h1 class="section-title">Hai! I'm Camen :)</h1>
+
+      <hr class="home__break-line" />
+
+      <div class="section">
+        <h1 class="section__title">Hai! I'm Camen :)</h1>
         <img class="person-wave-image" :src="personWaveFilePath" />
         <p>
           And this is my short bio. I made this website for these reason, and it
@@ -73,37 +23,58 @@
           page, which will also include a list of blogs and online resources
           that I like to peruse.
         </p>
-        <p class="bio-text">
+        <p style="margin-top: 20px;">
           et aperta iudicari ea voluptate velit esse, quam interrogare aut
           contra sit, amet, consectetur, adipisci velit, sed quia consequuntur
           magni dolores et expedita distinctio nam libero tempore, cum
           memoriter, tum etiam erga nos amice et via.
         </p>
       </div>
-      <hr class="break-line" />
-      <div class="website-info">
-        <h1 class="section-title">And this is my website</h1>
+
+      <hr class="home__break-line" />
+
+      <div class="section">
+        <h1 class="section__title">And this is my website</h1>
         <img class="person-parachute-image" :src="personParachuteFilePath" />
-        <div class="site-map columns is-mobile is-centered">
-          <div class="column site-map-section">
-            <h1 class="site-map-header">General</h1>
-            <ul class="site-map-list">
-              <li class="site-map-item">Home</li>
-              <li class="site-map-item">About</li>
-              <li class="site-map-item">Recommendations</li>
-              <li class="site-map-item">GitHub</li>
+        <div class="columns is-mobile">
+          <div class="column">
+            <h1 class="home__site-map__header">General</h1>
+            <ul class="home__site-map__list">
+              <li class="home__site-map__item">
+                <router-link to="/foo">Home</router-link>
+              </li>
+              <li class="home__site-map__item">
+                <router-link to="/foo">About</router-link>
+              </li>
+              <li class="home__site-map__item">
+                <router-link to="/foo">Recommendations</router-link>
+              </li>
+              <li class="home__site-map__item">
+                <router-link to="/foo">GitHub</router-link>
+              </li>
             </ul>
           </div>
-
-          <div class="column site-map-section">
-            <h1 class="site-map-header">Projects</h1>
-            <ul class="site-map-list">
-              <li class="site-map-item">Blog</li>
-              <li class="site-map-item">Math Implementations</li>
-              <li class="site-map-item">Measurements for Humans</li>
-              <li class="site-map-item">Nature Identifications</li>
-              <li class="site-map-item">RogueSky</li>
-              <li class="site-map-item">TreeCount</li>
+          <div class="column">
+            <h1 class="home__site-map__header">Projects</h1>
+            <ul class="home__site-map__group">
+              <li class="home__site-map__item">
+                <router-link to="/foo">Blog</router-link>
+              </li>
+              <li class="home__site-map__item">
+                <router-link to="/foo">Math Implementations</router-link>
+              </li>
+              <li class="home__site-map__item">
+                <router-link to="/foo">Measurements for Humans</router-link>
+              </li>
+              <li class="home__site-map__item">
+                <router-link to="/foo">Nature Identifications</router-link>
+              </li>
+              <li class="home__site-map__item">
+                <router-link to="/foo">RogueSky</router-link>
+              </li>
+              <li class="home__site-map__item">
+                <router-link to="/foo">TreeCount</router-link>
+              </li>
             </ul>
           </div>
         </div>
@@ -115,81 +86,74 @@
 
 <script>
 import Background from "@/components/Background.vue";
-import LifeIcon from "@/components/LifeIcon.vue";
+import ForeverBackground from "@/components/ForeverBackground.vue";
+import LifeIcons from "@/components/LifeIcons.vue";
 
 export default {
   name: "home",
   components: {
     Background,
-    LifeIcon
+    ForeverBackground,
+    LifeIcons
   },
   data() {
     return {
       backgroundFilePath: require("@/assets/space.jpg"),
-      wolfFilePath: require("@/assets/wolf-icon.svg"),
-      unknownLifeFilePath: require("@/assets/unknown-life-icon.svg"),
-      sunsetFilePath: require("@/assets/sunset-icon.svg"),
-      currentLifeFilePath: require("@/assets/current-life-icon.svg"),
       personWaveFilePath: require("@/assets/person-wave.svg"),
       personParachuteFilePath: require("@/assets/person-parachute.svg"),
       personSittingFilePath: require("@/assets/person-sitting.svg"),
-      activeLifeIcon: "wolf"
+      isImageModalActive: false
     };
   }
 };
 </script>
 
-<style>
-.background {
+<style style="scss">
+.home__image {
   position: relative;
-  top: -60px;
+  top: -60px; /* offset navbar */
   height: 33vh;
 }
 
-.page {
-  margin-top: -60px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-bottom: 40px;
+.home__text {
+  position: relative;
+  top: -60px; /* offset navbar */
   max-width: 700px;
   margin: auto;
 }
 
-.life-summary {
-  margin-top: 20px;
+.home__site-map__header {
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
-.life-summary-icons {
-  width: 100%;
+.home__site-map__item {
+  font-size: 0.8rem;
+  padding: 10px;
 }
 
-.highlight {
-  border: 2px solid rgb(0, 110, 255);
-  border-radius: 50%;
+.home__site-map__item a:hover {
+  color: #3273dc;
 }
 
-.life-summary-text {
-  margin-top: 8px;
-}
-
-.break-line {
-  margin-top: 40px;
+.home__break-line {
   margin-left: 39.5px;
   margin-right: 39.5px;
-  margin-bottom: 40px;
   color: #979797;
   background-color: #979797;
   height: 1px;
   border: none;
 }
 
-.section-title {
+.section__title {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
-.bio-text {
-  margin-top: 20px;
+.person-sitting-image {
+  position: relative;
+  right: 135px;
+  top: 75px;
 }
 
 .person-wave-image {
@@ -198,34 +162,9 @@ export default {
   top: -26px;
 }
 
-.site-map {
-  margin-top: 10px;
-  width: 100%;
-}
-
 .person-parachute-image {
   position: relative;
   right: -105px;
-  top: -26px;
-}
-
-.site-map-header {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.site-map-item {
-  padding: 10px;
-  font-size: 14px;
-}
-
-.site-map-section {
-  padding: 0;
-}
-
-.person-sitting-image {
-  position: relative;
-  right: 135px;
-  top: 75px;
+  top: 10px;
 }
 </style>

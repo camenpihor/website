@@ -1,6 +1,6 @@
 <template>
   <div
-    class="background__image"
+    class="image"
     v-bind:style="{ 'background-image': 'url(' + filePath + ')' }"
   />
 </template>
@@ -12,10 +12,16 @@ export default {
 </script>
 
 <style>
-.background__image {
+.image {
   background-position: center center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-attachment: fixed;
   background-size: cover;
+  height: 100vw;
+  cursor: grab;
+}
+
+.image:active {
+  cursor: grabbing;
 }
 </style>

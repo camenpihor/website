@@ -19,8 +19,7 @@ export default {};
   height: 40px;
   background-color: #5b5b5f;
   color: black;
-  font-size: 9px;
-  /* font-weight: lighter; */
+  font-size: 0.6rem;
   display: flex;
 }
 

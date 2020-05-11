@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NavBar />
+    <Navigation />
     <router-view id="router-view" />
     <Footer />
   </div>
@@ -8,20 +8,50 @@
 
 <script>
 import Footer from "@/components/Footer.vue";
-import NavBar from "@/components/NavBar.vue";
+import Navigation from "@/components/Navigation.vue";
 
 export default {
   name: "app",
   components: {
     Footer,
-    NavBar
+    Navigation
   }
 };
 </script>
 
-<style>
-body {
-  font-family: "Helvetica" !important;
+<style lang="scss">
+@import "~bulma/sass/utilities/_all";
+
+$family-primary: "Helvetica";
+$off-white: #f0f0f0;
+
+$colors: (
+  "off-white": (
+    $off-white,
+    findColorInvert($off-white)
+  ),
+  "transparent": (
+    #f0f0f000,
+    #000000
+  )
+);
+
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
+html {
+  font-size: 16px;
+  @include from($desktop) {
+    font-size: 20px;
+  }
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  -webkit-tap-highlight-color: transparent;
 }
 
 #app {
@@ -31,20 +61,4 @@ body {
 #router-view {
   min-height: 100vh;
 }
-</style>
-
-<style lang="scss">
-@import "~bulma/sass/utilities/_all";
-
-$off-white: #f0f0f0;
-
-$colors: (
-  "off-white": (
-    $off-white,
-    findColorInvert($off-white)
-  )
-);
-
-@import "~bulma";
-@import "~buefy/src/scss/buefy";
 </style>

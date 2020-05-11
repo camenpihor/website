@@ -24,11 +24,7 @@ Vue
 
 ## TODO
 
-- larger font on desktop
 - sidebar to always out on desktop, but collapsed
-- broken life icon width on mobile
-- broken margin on mobile
-- slow down speed of sidebar opening/closing on mobile
 - lock background page when sidebar is open
 - add links to everything
 - add on-hover to links
