@@ -1,7 +1,7 @@
 <template>
   <div class="navigation">
     <nav class="navigation__top" v-bind:class="{ transparent: isTransparent }">
-      <ul class="navigation__top__left">
+      <ul v-if="currentRoute !== 'home'" class="navigation__top__left">
         <li class="navigation__top__item">
           <span class="navigation__top__current-route">{{ currentRoute }}</span>
         </li>
@@ -13,8 +13,8 @@
           class="navigation__top__item"
           ><img class="navigation__home-icon" src="camen-logo-icon.svg"
         /></router-link>
-        <li class="navigation__top__item">
-          <i v-on:click="open = true" class="fal fa-bars"></i>
+        <li class="navigation__top__item" v-on:click="open = true">
+          <i class="fal fa-bars"></i>
         </li>
       </ul>
     </nav>
