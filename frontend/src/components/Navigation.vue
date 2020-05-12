@@ -1,6 +1,11 @@
 <template>
   <div class="navigation">
     <nav class="navigation__top" v-bind:class="{ transparent: isTransparent }">
+      <ul class="navigation__top__left">
+        <li class="navigation__top__item">
+          <span class="navigation__top__current-route">{{ currentRoute }}</span>
+        </li>
+      </ul>
       <ul class="navigation__top__right">
         <router-link
           :to="{ name: 'home' }"
@@ -245,6 +250,12 @@ export default {
 .navigation__top__left {
   float: left;
   list-style-type: none;
+}
+
+.navigation__top__current-route {
+  font-size: 20px;
+  padding-top: 14px;
+  text-transform: capitalize;
 }
 
 .navigation__top__right {

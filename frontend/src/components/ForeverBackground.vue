@@ -17,7 +17,7 @@ export default {
   background-repeat: repeat;
   background-attachment: fixed;
   background-size: cover;
-  height: 100vw;
+  height: 100vh;
   cursor: grab;
 }
 
