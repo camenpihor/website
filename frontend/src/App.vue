@@ -24,6 +24,8 @@ export default {
 
 $family-primary: "Helvetica";
 $off-white: #f0f0f0;
+$menu-item-hover-color: #3273dc;
+$menu-item-hover-background-color: transparent;
 
 $colors: (
   "off-white": (

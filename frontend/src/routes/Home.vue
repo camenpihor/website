@@ -41,16 +41,18 @@
             <h1 class="home__site-map__header">General</h1>
             <ul class="home__site-map__list">
               <li class="home__site-map__item">
-                <router-link to="/foo">Home</router-link>
+                <router-link :to="{ name: 'home' }">Home</router-link>
               </li>
               <li class="home__site-map__item">
-                <router-link to="/foo">About</router-link>
+                <router-link :to="{ name: 'about' }">About</router-link>
               </li>
               <li class="home__site-map__item">
-                <router-link to="/foo">Recommendations</router-link>
+                <router-link :to="{ name: 'error' }"
+                  >Recommendations</router-link
+                >
               </li>
               <li class="home__site-map__item">
-                <router-link to="/foo">GitHub</router-link>
+                <router-link :to="{ name: 'error' }">GitHub</router-link>
               </li>
             </ul>
           </div>
@@ -58,22 +60,28 @@
             <h1 class="home__site-map__header">Projects</h1>
             <ul class="home__site-map__group">
               <li class="home__site-map__item">
-                <router-link to="/foo">Blog</router-link>
+                <router-link :to="{ name: 'error' }">Blog</router-link>
               </li>
               <li class="home__site-map__item">
-                <router-link to="/foo">Math Implementations</router-link>
+                <router-link :to="{ name: 'error' }"
+                  >Math Implementations</router-link
+                >
               </li>
               <li class="home__site-map__item">
-                <router-link to="/foo">Measurements for Humans</router-link>
+                <router-link :to="{ name: 'error' }"
+                  >Measurements for Humans</router-link
+                >
               </li>
               <li class="home__site-map__item">
-                <router-link to="/foo">Nature Identifications</router-link>
+                <router-link :to="{ name: 'error' }"
+                  >Nature Identifications</router-link
+                >
               </li>
               <li class="home__site-map__item">
-                <router-link to="/foo">RogueSky</router-link>
+                <router-link :to="{ name: 'error' }">RogueSky</router-link>
               </li>
               <li class="home__site-map__item">
-                <router-link to="/foo">TreeCount</router-link>
+                <router-link :to="{ name: 'error' }">TreeCount</router-link>
               </li>
             </ul>
           </div>
@@ -104,6 +112,11 @@ export default {
       personSittingFilePath: require("@/assets/person-sitting.svg"),
       isImageModalActive: false
     };
+  },
+  methods: {
+    log: function(event) {
+      console.log(event);
+    }
   }
 };
 </script>
@@ -152,19 +165,19 @@ export default {
 
 .person-sitting-image {
   position: relative;
-  right: 135px;
+  left: -10rem;
   top: 75px;
 }
 
 .person-wave-image {
   position: relative;
-  right: -105px;
-  top: -26px;
+  left: 7.5rem;
+  top: -1.5rem;
 }
 
 .person-parachute-image {
   position: relative;
-  right: -105px;
-  top: 10px;
+  left: 1.5rem;
+  top: 1.5rem;
 }
 </style>
