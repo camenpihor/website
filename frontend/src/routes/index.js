@@ -8,19 +8,24 @@ const router = new VueRouter({
   routes: [
     {
       path: "/",
+      name: "home",
       component: () => import("./Home.vue"),
-      name: "home"
     },
     {
       path: "/about",
-      component: () => import("./About.vue"),
-      name: "about"
+      name: "about",
+      component: () => import("./About.vue")
+    },
+    {
+      path: "/github",
+      name: "github",
+      beforeEnter() { location.href = "http://github.com/camenpihor" }
     },
     {
       path: "/404",
+      name: "error",
       component: () => import("./NotFound.vue"),
       props: (route) => ({ requestedPath: route.fullPath }),
-      name: "error",
     },
     {
       path: '*',

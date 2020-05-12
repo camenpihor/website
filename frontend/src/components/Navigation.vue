@@ -1,9 +1,6 @@
 <template>
   <div class="navigation">
     <nav class="navigation__top" v-bind:class="{ transparent: isTransparent }">
-      <ul class="navigation__top__left">
-        <li class="navigation__top__item">{{ currentRoute }}</li>
-      </ul>
       <ul class="navigation__top__right">
         <router-link
           :to="{ name: 'home' }"
@@ -95,7 +92,7 @@ export default {
           label: "Recommendations"
         },
         {
-          name: "error",
+          name: "github",
           label: "GitHub"
         }
       ],

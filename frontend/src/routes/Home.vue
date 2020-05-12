@@ -52,7 +52,7 @@
                 >
               </li>
               <li class="home__site-map__item">
-                <router-link :to="{ name: 'error' }">GitHub</router-link>
+                <router-link :to="{ name: 'github' }">GitHub</router-link>
               </li>
             </ul>
           </div>
@@ -112,11 +112,6 @@ export default {
       personSittingFilePath: require("@/assets/person-sitting.svg"),
       isImageModalActive: false
     };
-  },
-  methods: {
-    log: function(event) {
-      console.log(event);
-    }
   }
 };
 </script>
