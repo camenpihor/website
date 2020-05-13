@@ -4,15 +4,18 @@
     <p class="about__name">Camen</p>
     <p class="about__job">Data Scientist</p>
     <ul class="about__externals">
-      <router-link :to="{ name: 'github' }" tag="li" class="about__external"
-        ><i class="fab fa-github"
+      <router-link :to="{ name: 'github' }" tag="li" class="about__external">
+        <img :src="githubIconFilePath" class="about__icon"
       /></router-link>
-      <li class="about__external"><i class="fal fa-file-user" /></li>
       <li class="about__external">
-        <div class="about__email">
-          <p class="about__email__text">camenrogue[at]</p>
-          <p class="about__email__text">gmail[dot]com</p>
-        </div>
+        <a href="camen_piho_resume.pdf"
+          ><img :src="resumeIconFilePath" class="about__icon"
+        /></a>
+      </li>
+      <li class="about__external">
+        <a href="mailto:camenrogue@gmail.com">
+          <img :src="emailIconFilePath" class="about__icon" />
+        </a>
       </li>
     </ul>
     <img class="person-hot-air-balloon" :src="personHotAirBalloonFilePath" />
@@ -63,8 +66,11 @@ export default {
   data() {
     return {
       meFilePath: require("@/assets/me.svg"),
-      personHotAirBalloonFilePath: require("@/assets/person-hot-air-balloon.svg"),
-      personTreeReadingFilePath: require("@/assets/person-tree-reading.svg"),
+      personHotAirBalloonFilePath: require("@/assets/people/person-hot-air-balloon.svg"),
+      personTreeReadingFilePath: require("@/assets/people/person-tree-reading.svg"),
+      resumeIconFilePath: require("@/assets/icons/resume-icon.svg"),
+      githubIconFilePath: require("@/assets/icons/github-icon.svg"),
+      emailIconFilePath: require("@/assets/icons/email-icon.svg"),
       blogRoutes: [
         {
           to: "https://slatestarcodex.com/",
@@ -125,8 +131,8 @@ export default {
 }
 
 .about__image {
-  height: 150px;
-  width: 150px;
+  height: 10rem;
+  width: 10rem;
 }
 
 .about__name {
@@ -146,21 +152,20 @@ export default {
 }
 
 .about__external {
-  padding-right: 20px;
-  padding-left: 20px;
-  font-size: 3rem;
   display: inline-block;
   cursor: pointer;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
 }
 
-.about__external i:hover {
-  color: #3273dc;
+.about__icon {
+  height: 3rem;
+  width: 3rem;
 }
 
-.about__email {
-  font-size: 0.8rem;
-  margin-top: 20px;
-  cursor: default;
+.about__icon:hover {
+  background-color: rgba(165, 159, 159, 0.199);
+  border-radius: 6px;
 }
 
 .person-hot-air-balloon {

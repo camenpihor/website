@@ -107,9 +107,9 @@ export default {
   data() {
     return {
       backgroundFilePath: require("@/assets/space.jpg"),
-      personWaveFilePath: require("@/assets/person-wave.svg"),
-      personParachuteFilePath: require("@/assets/person-parachute.svg"),
-      personSittingFilePath: require("@/assets/person-sitting.svg"),
+      personWaveFilePath: require("@/assets/people/person-wave.svg"),
+      personParachuteFilePath: require("@/assets/people/person-parachute.svg"),
+      personSittingFilePath: require("@/assets/people/person-sitting.svg"),
       isImageModalActive: false
     };
   }

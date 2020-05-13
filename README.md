@@ -26,11 +26,5 @@ Vue
 
 - sidebar to always out on desktop, but collapsed
 - make background image a forever scroll
-- about
-  - make it clear the recommendations are links
-  - resume icon should go to resume
-- home
-  - home button background should go away after navigating
-- navigation
-  - little snappier on closing sidebar after clicking to external link
-
+- recommendations
+  - search functionality

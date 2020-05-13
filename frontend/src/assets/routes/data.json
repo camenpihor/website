@@ -1,0 +1,120 @@
+{
+    "general": [
+        {
+            "name": "home",
+            "label": "Home"
+        },
+        {
+            "name": "about",
+            "label": "About"
+        },
+        {
+            "name": "recommendations",
+            "label": "Recommendations"
+        },
+        {
+            "name": "github",
+            "label": "GitHub"
+        }
+    ],
+    "projects": [
+        {
+            "name": "error",
+            "label": "Blog"
+        },
+        {
+            "name": "error",
+            "label": "Math Implementations"
+        },
+        {
+            "name": "error",
+            "label": "Measurements for Humans"
+        },
+        {
+            "name": "error",
+            "label": "Nature Identification"
+        },
+        {
+            "name": "error",
+            "label": "RogueSky"
+        },
+        {
+            "name": "error",
+            "label": "TreeCount"
+        }
+    ],
+    "blogs": [
+        {
+            "to": "https://slatestarcodex.com/",
+            "label": "SlateStarCodex"
+        },
+        {
+            "to": "http://mindingourway.com/",
+            "label": "Minding Our Way"
+        },
+        {
+            "to": "https://eukaryotewritesblog.com/",
+            "label": "EukaryoteWritesBlog"
+        },
+        {
+            "to": "https://www.lesswrong.com/",
+            "label": "LessWrong"
+        },
+        {
+            "to": "https://theunitofcaring.tumblr.com/",
+            "label": "The Unit of Caring"
+        },
+        {
+            "to": "http://www.bldgblog.com/",
+            "label": "BLDGBLOG"
+        }
+    ],
+    "youtube": [
+        {
+            "to": "https://www.youtube.com/user/vlogbrothers",
+            "label": "VlogBrothers"
+        },
+        {
+            "to": "https://www.youtube.com/user/minuteearth",
+            "label": "MinuteEarth"
+        },
+        {
+            "to": "https://www.youtube.com/channel/UC3KEoMzNz8eYnwBC34RaKCQ",
+            "label": "Simone Giertz"
+        },
+        {
+            "to": "https://www.youtube.com/user/CGPGrey",
+            "label": "CGP Grey"
+        },
+        {
+            "to": "https://www.youtube.com/channel/UCHsRtomD4twRf5WVHHk-cMw",
+            "label": "TierZoo"
+        },
+        {
+            "to": "https://www.youtube.com/user/thebrainscoop",
+            "label": "TheBrainScoop"
+        },
+        {
+            "to": "https://www.youtube.com/watch?v=0rHUDWjR5gg&list=PL8dPuuaLjXtPAJr1ysd5yGIyiSFuh0mIL",
+            "label": "Crash Course - Astronomy"
+        },
+        {
+            "to": "https://www.youtube.com/user/alectheblacksmith",
+            "label": "Alec Steele"
+        }
+    ],
+    "webfiction": [
+        {
+            "to": "https://practicalguidetoevil.wordpress.com/",
+            "label": "A Practical Guide to Evil"
+        },
+        {
+            "to": "https://wanderinginn.com/",
+            "label": "The Wandering Inn"
+        },
+        {
+            "to": "http://www.hpmor.com/",
+            "label": "Harry Potter and the Methods of Rationality"
+        }
+    ]
+}

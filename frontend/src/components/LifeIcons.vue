@@ -71,10 +71,10 @@
 export default {
   data() {
     return {
-      wolfFilePath: require("@/assets/wolf-icon.svg"),
-      unknownFilePath: require("@/assets/unknown-life-icon.svg"),
-      sunsetFilePath: require("@/assets/sunset-icon.svg"),
-      stairsFilePath: require("@/assets/current-life-icon.svg"),
+      wolfFilePath: require("@/assets/icons/wolf-icon.svg"),
+      unknownFilePath: require("@/assets/icons/unknown-life-icon.svg"),
+      sunsetFilePath: require("@/assets/icons/sunset-icon.svg"),
+      stairsFilePath: require("@/assets/icons/current-life-icon.svg"),
       activeIcon: "wolf"
     };
   }

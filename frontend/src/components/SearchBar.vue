@@ -39,8 +39,7 @@ export default {
 
 <style>
 .search-bar {
-  margin-left: 20px;
-  margin-right: 20px;
+  max-width: 20rem;
 }
 
 /* buefy class */

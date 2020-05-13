@@ -19,8 +19,8 @@ export default {
   },
   data() {
     return {
-      fishPeopleingFilePath: require("@/assets/fish-peopleing.svg"),
-      personFishingFilePath: require("@/assets/person-fishing.svg")
+      fishPeopleingFilePath: require("@/assets/people/fish-peopleing.svg"),
+      personFishingFilePath: require("@/assets/people/person-fishing.svg")
     };
   },
   methods: {
