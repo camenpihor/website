@@ -4,7 +4,9 @@
     <p class="about__name">Camen</p>
     <p class="about__job">Data Scientist</p>
     <ul class="about__externals">
-      <li class="about__external"><i class="fab fa-github" /></li>
+      <router-link :to="{ name: 'github' }" tag="li" class="about__external"
+        ><i class="fab fa-github"
+      /></router-link>
       <li class="about__external"><i class="fal fa-file-user" /></li>
       <li class="about__external">
         <div class="about__email">
@@ -134,13 +136,13 @@ export default {
 }
 
 .about__job {
-  font-weight: lighter;
   font-size: 0.8rem;
   margin-top: -8px;
 }
 
 .about__externals {
   margin-top: 35px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .about__external {
@@ -156,9 +158,9 @@ export default {
 }
 
 .about__email {
-  font-weight: lighter;
   font-size: 0.8rem;
   margin-top: 20px;
+  cursor: default;
 }
 
 .person-hot-air-balloon {
@@ -182,6 +184,10 @@ export default {
 
 .about__me__text a:hover {
   text-decoration: underline;
+}
+
+.about__me__list {
+  margin-top: 30px;
 }
 
 .about__me__list__header {

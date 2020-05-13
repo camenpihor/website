@@ -47,7 +47,7 @@
                 <router-link :to="{ name: 'about' }">About</router-link>
               </li>
               <li class="home__site-map__item">
-                <router-link :to="{ name: 'error' }"
+                <router-link :to="{ name: 'recommendations' }"
                   >Recommendations</router-link
                 >
               </li>

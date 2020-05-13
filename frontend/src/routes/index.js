@@ -17,6 +17,11 @@ const router = new VueRouter({
       component: () => import("./About.vue")
     },
     {
+      path: "/recommendations",
+      name: "recommendations",
+      component: () => import("./Recommendations.vue")
+    },
+    {
       path: "/github",
       name: "github",
       beforeEnter() { location.href = "http://github.com/camenpihor" }

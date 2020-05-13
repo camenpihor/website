@@ -93,7 +93,7 @@ export default {
           label: "About"
         },
         {
-          name: "error",
+          name: "recommendations",
           label: "Recommendations"
         },
         {
@@ -190,15 +190,15 @@ export default {
       ],
       webfictionRoutes: [
         {
-          to: "https://slatestarcodex.com/",
+          to: "https://practicalguidetoevil.wordpress.com/",
           label: "A Practical Guide to Evil"
         },
         {
-          to: "http://mindingourway.com/",
+          to: "https://wanderinginn.com/",
           label: "The Wandering Inn"
         },
         {
-          to: "https://eukaryotewritesblog.com/",
+          to: "http://www.hpmor.com/",
           label: "Harry Potter and the Methods of Rationality"
         }
       ]

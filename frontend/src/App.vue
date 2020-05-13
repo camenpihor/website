@@ -26,6 +26,12 @@ $family-primary: "Helvetica";
 $off-white: #f0f0f0;
 $menu-item-hover-color: #3273dc;
 $menu-item-hover-background-color: transparent;
+$input-background-color: #EBEBEB;
+$input-border-color: #979797;
+$input-focus-border-color: #979797;
+$input-hover-border-color: #979797;
+$input-focus-box-shadow-size: 0 0 0;
+$input-focus-box-shadow-color: #979797;
 
 $colors: (
   "off-white": (
