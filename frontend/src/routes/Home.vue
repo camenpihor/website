@@ -44,28 +44,16 @@
           />
         </h1>
         <div class="columns is-mobile">
-          <div class="column">
-            <h1 class="home__site-map__header">General</h1>
+          <div
+            class="column"
+            v-for="group in siteMapGroups"
+            :key="group.groupLabel"
+          >
+            <h1 class="home__site-map__header">{{ group.groupLabel }}</h1>
             <ul class="home__site-map__list">
               <li
                 class="home__site-map__item"
-                v-for="route in routeJson.general"
-                :key="route.label"
-              >
-                <router-link
-                  class="home__site-map__item__label"
-                  :to="{ name: route.name }"
-                  >{{ route.label }}</router-link
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="column">
-            <h1 class="home__site-map__header">Projects</h1>
-            <ul class="home__site-map__list">
-              <li
-                class="home__site-map__item"
-                v-for="route in routeJson.projects"
+                v-for="route in group.routes"
                 :key="route.label"
               >
                 <router-link
@@ -104,8 +92,16 @@ export default {
       personParachuteFilePath: require("@/assets/people/person-parachute.svg"),
       personSittingFilePath: require("@/assets/people/person-sitting.svg"),
       isImageModalActive: false,
-      routeJson: routeJson,
-      siteMapGroups: ["general", "projects"]
+      siteMapGroups: [
+        {
+          groupLabel: "General",
+          routes: routeJson.general
+        },
+        {
+          groupLabel: "Projects",
+          routes: routeJson.projects
+        }
+      ]
     };
   }
 };
