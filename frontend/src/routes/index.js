@@ -42,6 +42,11 @@ const router = new VueRouter({
       meta: { pageHome: "blog" }
     },
     {
+      path: "/math",
+      name: "math",
+      beforeEnter() { location.href = "https://github.com/camenpihor/math-implementations/tree/master/notebooks" }
+    },
+    {
       path: "/404",
       name: "error",
       component: () => import("./NotFound.vue"),
