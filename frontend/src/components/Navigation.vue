@@ -131,9 +131,7 @@ export default {
   background-color: #5b5b5f;
   color: white;
   position: relative;
-  height: 60px;
-  padding-left: 10px;
-  padding-right: 10px;
+  height: 3.75rem;
   z-index: 30;
 }
 
@@ -149,7 +147,6 @@ export default {
 
 .navigation__top__route-home {
   font-size: 20px;
-  padding-top: 14px;
   text-transform: capitalize;
   font-weight: bold;
 }
@@ -163,7 +160,7 @@ export default {
   color: white;
   float: left;
   font-size: 25px;
-  padding: 12px;
+  padding: 0.95rem;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }

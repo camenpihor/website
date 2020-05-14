@@ -15,7 +15,11 @@ export default {};
 
 <style>
 .footer-custom {
-  height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5rem;
   background-color: #5b5b5f;
   color: black;
   font-size: 0.6rem;

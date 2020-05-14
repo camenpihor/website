@@ -123,13 +123,6 @@ export default {
 </script>
 
 <style>
-.about {
-  margin-top: 60px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .about__image {
   height: 10rem;
   width: 10rem;

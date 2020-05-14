@@ -57,11 +57,7 @@ export default {
 
 <style>
 .recommendations {
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 60px;
+  padding-bottom: 6.25rem;
 }
 
 .recommendations__search {

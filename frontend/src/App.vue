@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navigation />
-    <router-view id="router-view" />
+    <router-view class="route-view" />
     <Footer />
   </div>
 </template>
@@ -26,7 +26,7 @@ $family-primary: "Helvetica";
 $off-white: #f0f0f0;
 $menu-item-hover-color: #3273dc;
 $menu-item-hover-background-color: transparent;
-$input-background-color: #EBEBEB;
+$input-background-color: #ebebeb;
 $input-border-color: #979797;
 $input-focus-border-color: #979797;
 $input-hover-border-color: #979797;
@@ -63,10 +63,17 @@ a:hover {
 }
 
 #app {
-  text-align: center;
+  position: relative;
+  min-height: 100vh;
 }
 
-#router-view {
-  min-height: 100vh;
+.route-view {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 </style>

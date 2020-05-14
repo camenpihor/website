@@ -6,36 +6,43 @@
     <b-modal full-screen can-cancel :active.sync="isImageModalActive">
       <ForeverBackground :filePath="backgroundFilePath" />
     </b-modal>
-    <div class="home__text">
-      <div class="section">
-        <LifeIcons />
+    <div class="home__page">
+      <LifeIcons class="home__section" />
+
+      <hr class="home__break-line" />
+
+      <div class="home__section">
+        <h1 class="home__section__title">
+          Hai! I'm Camen :)
+          <img class="person-wave-image" :src="personWaveFilePath" />
+        </h1>
+
+        <div class="home__section__bio__text">
+          <p>
+            And this is my short bio. I made this website for these reason, and
+            it holds these types sorts of things because I like these sorts of
+            things. To read more about me and what I like, check out my About
+            page, which will also include a list of blogs and online resources
+            that I like to peruse.
+          </p>
+          <p>
+            et aperta iudicari ea voluptate velit esse, quam interrogare aut
+            contra sit, amet, consectetur, adipisci velit, sed quia consequuntur
+            magni dolores et expedita distinctio nam libero tempore, cum
+            memoriter, tum etiam erga nos amice et via.
+          </p>
+        </div>
       </div>
 
       <hr class="home__break-line" />
 
-      <div class="section">
-        <h1 class="section__title">Hai! I'm Camen :)</h1>
-        <img class="person-wave-image" :src="personWaveFilePath" />
-        <p>
-          And this is my short bio. I made this website for these reason, and it
-          holds these types sorts of things because I like these sorts of
-          things. To read more about me and what I like, check out my About
-          page, which will also include a list of blogs and online resources
-          that I like to peruse.
-        </p>
-        <p style="margin-top: 20px;">
-          et aperta iudicari ea voluptate velit esse, quam interrogare aut
-          contra sit, amet, consectetur, adipisci velit, sed quia consequuntur
-          magni dolores et expedita distinctio nam libero tempore, cum
-          memoriter, tum etiam erga nos amice et via.
-        </p>
-      </div>
-
-      <hr class="home__break-line" />
-
-      <div class="section">
-        <h1 class="section__title">And this is my website</h1>
-        <img class="person-parachute-image" :src="personParachuteFilePath" />
+      <div class="home__section home__site-map">
+        <h1 class="home__section__title">
+          And this is my website<img
+            class="person-parachute-image"
+            :src="personParachuteFilePath"
+          />
+        </h1>
         <div class="columns is-mobile">
           <div class="column">
             <h1 class="home__site-map__header">General</h1>
@@ -117,17 +124,58 @@ export default {
 </script>
 
 <style style="scss">
+.home {
+  padding-top: 0;
+}
+
+.section:first-of-type {
+  padding-top: 0;
+}
+
 .home__image {
-  position: relative;
-  top: -60px; /* offset navbar */
+  position: absolute;
+  top: -3.75rem; /* offset navbar */
+  left: 0;
+  right: 0;
+  margin: 0;
   height: 33vh;
 }
 
-.home__text {
-  position: relative;
-  top: -60px; /* offset navbar */
-  max-width: 700px;
-  margin: auto;
+.home__page {
+  padding-top: calc(
+    33vh - (2 * 3.75rem)
+  ); /* home__image height - navbar height */
+}
+
+.home__section {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.home__section:first-of-type {
+  margin-top: 2.5rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.home__section__title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.home__break-line {
+  margin-left: 39.5px;
+  margin-right: 39.5px;
+  color: #979797;
+  background-color: #979797;
+  height: 1px;
+  border: none;
+}
+
+.home__section__bio__text p {
+  margin-top: 1rem;
 }
 
 .home__site-map__header {
@@ -144,30 +192,16 @@ export default {
   color: #3273dc;
 }
 
-.home__break-line {
-  margin-left: 39.5px;
-  margin-right: 39.5px;
-  color: #979797;
-  background-color: #979797;
-  height: 1px;
-  border: none;
-}
-
-.section__title {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
 .person-sitting-image {
   position: relative;
   left: -10rem;
-  top: 15px;
+  top: 0.85rem;
 }
 
 .person-wave-image {
   position: relative;
-  left: 7.5rem;
-  top: -1.5rem;
+  left: 1rem;
+  top: 0.3rem;
 }
 
 .person-parachute-image {

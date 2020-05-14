@@ -1,7 +1,7 @@
 <template>
   <div class="life">
-    <div class="columns is-mobile is-gapless">
-      <div class="column">
+    <div class="columns is-mobile">
+      <div class="column life__column">
         <img
           :src="wolfFilePath"
           v-on:click="activeIcon = 'wolf'"
@@ -9,7 +9,7 @@
           v-bind:class="{ highlight: activeIcon === 'wolf' }"
         />
       </div>
-      <div class="column">
+      <div class="column life__column">
         <img
           :src="sunsetFilePath"
           v-on:click="activeIcon = 'sunset'"
@@ -17,7 +17,7 @@
           v-bind:class="{ highlight: activeIcon === 'sunset' }"
         />
       </div>
-      <div class="column">
+      <div class="column life__column">
         <img
           :src="unknownFilePath"
           v-on:click="activeIcon = 'unknown'"
@@ -25,7 +25,7 @@
           v-bind:class="{ highlight: activeIcon === 'unknown' }"
         />
       </div>
-      <div class="column">
+      <div class="column life__column">
         <img
           :src="stairsFilePath"
           v-on:click="activeIcon = 'stairs'"
@@ -82,6 +82,10 @@ export default {
 </script>
 
 <style>
+.life__column {
+  text-align: center;
+}
+
 .life__icon {
   height: 3.75rem;
   width: 3.75rem;
