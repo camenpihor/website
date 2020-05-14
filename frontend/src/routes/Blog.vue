@@ -58,10 +58,10 @@ export default {
 }
 
 .blog__posts {
-  margin-top: 40px;
+  margin-top: 60px;
   text-align: left;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .blog__post:first-of-type {
@@ -75,7 +75,7 @@ export default {
 
 .blog__post:hover {
   margin-left: 10px;
-  margin-right: auto;
+  margin-right: -10px;
 }
 
 .blog__post__title {

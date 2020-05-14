@@ -78,10 +78,10 @@ export default {
 }
 
 .blog-post__body {
-  margin-top: 40px;
+  margin-top: 60px;
   text-align: left;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .blog-post__title {

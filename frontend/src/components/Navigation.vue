@@ -6,7 +6,7 @@
           class="navigation__top__item"
           tag="li"
           :to="{ name: routeHome }"
-          ><span class="navigation__top__current-route">{{
+          ><span class="navigation__top__route-home">{{
             routeHome
           }}</span></router-link
         >
@@ -146,10 +146,11 @@ export default {
   list-style-type: none;
 }
 
-.navigation__top__current-route {
+.navigation__top__route-home {
   font-size: 20px;
   padding-top: 14px;
   text-transform: capitalize;
+  font-weight: bold;
 }
 
 .navigation__top__right {
