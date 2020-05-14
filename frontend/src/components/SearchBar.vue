@@ -12,9 +12,7 @@
       @icon-click="search"
       maxlength="30"
       :has-counter="false"
-    >
-      > ></b-input
-    >
+    />
   </div>
 </template>
 

@@ -65,24 +65,12 @@ export default {
   margin-right: auto;
 }
 
-.person-hanging {
-  position: relative;
-  top: -12px;
-  left: 150px;
-}
-
-.recommendation__group:first-of-type {
-  margin-top: 20px;
-}
-
 .recommendations__groups {
-  margin-left: 20px;
-  margin-right: 20px;
-  text-align: left;
+  margin-top: 4rem;
 }
 
 .recommendation__group {
-  margin-top: 30px;
+  margin-top: 2rem;
 }
 
 .recommendation__group__header {
@@ -91,7 +79,7 @@ export default {
 }
 
 .recommendation__group__item {
-  margin-left: 20px;
+  margin-left: 1rem;
 }
 
 .recommendation__group__item a:hover {
@@ -99,8 +87,15 @@ export default {
 }
 
 .recommendation__group__item__label {
-  text-indent: -20px;
-  padding-left: 20px;
+  text-indent: -1rem;
+  padding-left: 1rem;
+}
+
+.person-hanging {
+  position: relative;
+  top: -10px;
+  float: right;
+  left: -9rem;
 }
 
 .person-computer {
