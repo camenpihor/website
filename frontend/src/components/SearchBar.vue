@@ -13,12 +13,26 @@
       maxlength="30"
       :has-counter="false"
     />
+    <img
+      v-if="imageFilePath !== null"
+      class="search__image"
+      :src="imageFilePath"
+    />
   </div>
 </template>
 
 <script>
 export default {
-  props: ["placeholder"],
+  props: {
+    placeholder: {
+      type: String,
+      default: "search..."
+    },
+    imageFilePath: {
+      type: String,
+      default: null
+    }
+  },
   data() {
     return {
       input: null

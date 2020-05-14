@@ -3,8 +3,8 @@
     <SearchBar
       class="recommendations__search"
       placeholder="'type: book' or 'topic: nature'"
+      :imageFilePath="personHangingFilePath"
     />
-    <img class="person-hanging" :src="personHangingFilePath" />
     <div class="recommendations__groups">
       <ul
         class="recommendation__group"
@@ -91,11 +91,10 @@ export default {
   padding-left: 1rem;
 }
 
-.person-hanging {
-  position: relative;
-  top: -10px;
+.search__image {
   float: right;
-  left: -9rem;
+  position: relative;
+  top: -12px;
 }
 
 .person-computer {
