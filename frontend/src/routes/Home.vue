@@ -134,7 +134,7 @@ export default {
 
 .home__image {
   position: absolute;
-  top: -3.75rem; /* offset navbar */
+  top: -60px; /* offset navbar */
   left: 0;
   right: 0;
   margin: 0;
@@ -143,7 +143,7 @@ export default {
 
 .home__page {
   padding-top: calc(
-    33vh - (2 * 3.75rem)
+    33vh - (2 * 60px)
   ); /* home__image height - navbar height */
 }
 

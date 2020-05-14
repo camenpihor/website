@@ -131,7 +131,7 @@ export default {
   background-color: #5b5b5f;
   color: white;
   position: relative;
-  height: 3.75rem;
+  height: 60px;
   z-index: 30;
 }
 
@@ -160,7 +160,8 @@ export default {
   color: white;
   float: left;
   font-size: 25px;
-  padding: 0.95rem;
+  padding: 12px;
+  border-radius: 18px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
