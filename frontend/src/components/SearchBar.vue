@@ -44,6 +44,6 @@ export default {
 
 /* buefy class */
 .search-bar .input {
-  border-radius: 7px;
+  border-radius: 15px;
 }
 </style>
