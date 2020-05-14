@@ -1,7 +1,10 @@
 <template>
   <div class="blog">
-    <SearchBar class="blog__search" placeholder="search..." />
-    <img class="person-reading" :src="personReadingFilePath" />
+    <SearchBar
+      class="blog__search"
+      placeholder="search..."
+      :imageFilePath="personReadingFilePath"
+    />
     <div class="blog__posts">
       <div class="blog__post" v-for="post in blogPostsJson" :key="post.title">
         <router-link :to="{ name: 'blog-post', params: { id: post.url } }">
@@ -39,37 +42,21 @@ export default {
 </script>
 
 <style>
-.blog {
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-}
-
 .blog__search {
   margin-left: auto;
   margin-right: auto;
 }
 
-.person-reading {
-  position: relative;
-  top: -1.3rem;
-  left: 10.6rem;
-}
-
 .blog__posts {
-  margin-top: 60px;
-  text-align: left;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-top: 5rem;
 }
 
 .blog__post:first-of-type {
-  margin-top: 0px;
+  margin-top: 0rem;
 }
 
 .blog__post {
-  margin-top: 60px;
+  margin-top: 3rem;
   cursor: pointer;
 }
 
@@ -96,5 +83,12 @@ export default {
 .person-wave {
   position: relative;
   top: 4.2rem;
+}
+
+.search__image {
+  float: right;
+  position: relative;
+  top: -25px;
+  left: 23px;
 }
 </style>

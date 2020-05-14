@@ -66,11 +66,15 @@ export default {
 }
 
 .recommendations__groups {
-  margin-top: 4rem;
+  margin-top: 5rem;
+}
+
+.recommendation__group:first-of-type {
+  margin-top: 0rem;
 }
 
 .recommendation__group {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .recommendation__group__header {
@@ -91,13 +95,13 @@ export default {
   padding-left: 1rem;
 }
 
+.person-computer {
+  margin-left: -1rem;
+}
+
 .search__image {
   float: right;
   position: relative;
   top: -12px;
-}
-
-.person-computer {
-  margin-left: -1rem;
 }
 </style>
