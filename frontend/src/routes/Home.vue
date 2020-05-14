@@ -142,9 +142,7 @@ export default {
 }
 
 .home__page {
-  padding-top: calc(
-    33vh - (2 * 60px)
-  ); /* home__image height - navbar height */
+  padding-top: calc(33vh - (2 * 60px)); /* home__image height - navbar height */
 }
 
 .home__section {
@@ -192,12 +190,6 @@ export default {
   color: #3273dc;
 }
 
-.person-sitting-image {
-  position: relative;
-  left: -10rem;
-  top: 0.85rem;
-}
-
 .person-wave-image {
   position: relative;
   left: 1rem;
@@ -208,5 +200,12 @@ export default {
   position: relative;
   left: 1.5rem;
   top: 1.5rem;
+}
+
+.person-sitting-image {
+  position: absolute;
+  bottom: 2rem; /* height of footer - a smidgeon */
+  z-index: 91; /* footer is 90 */
+  left: 23vw;
 }
 </style>

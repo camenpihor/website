@@ -219,7 +219,6 @@ export default {
 
 .person-tree-reading {
   position: absolute;
-  position: absolute;
   bottom: 2.3rem; /* height of footer - a smidgeon */
   right: 2rem;
   z-index: -1;
