@@ -45,14 +45,14 @@ const router = new VueRouter({
       path: "/404",
       name: "error",
       component: () => import("./NotFound.vue"),
-      props: (route) => ({ requestedPath: route.fullPath }),
       meta: { pageHome: "error" }
     },
     {
       path: '*',
       component: () => import("./NotFound.vue"),
       props: (route) => ({ requestedPath: route.fullPath }),
-      alias: "/404"
+      alias: "/404",
+      meta: { pageHome: "error" }
     },
   ],
 });

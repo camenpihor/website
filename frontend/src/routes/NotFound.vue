@@ -5,7 +5,12 @@
     <p v-if="requestedPath !== ''" class="not-found__requested-url">
       {{ createUrl() }}
     </p>
-    <img class="not-found__image" :src="chooseImage()" />
+    <img
+      class="not-found__image"
+      v-if="Math.random() > 0.5"
+      :src="fishPeopleingFilePath"
+    />
+    <img class="not-found__image" v-else :src="personFishingFilePath" />
   </div>
 </template>
 
@@ -24,11 +29,6 @@ export default {
     };
   },
   methods: {
-    chooseImage: function() {
-      let filepaths = [this.fishPeopleingFilePath, this.personFishingFilePath];
-      let randomIdx = Math.floor(Math.random() * filepaths.length);
-      return filepaths[randomIdx];
-    },
     createUrl: function() {
       return window.location.origin + this.requestedPath;
     }
@@ -38,17 +38,17 @@ export default {
 
 <style>
 .not-found {
-  margin-top: 60px;
+  text-align: center;
 }
 
 .not-found__header {
   font-weight: bold;
-  font-size: 1.875rem;
+  font-size: 2rem;
   color: black;
 }
 
 .not-found__message {
-  margin-top: 20px;
+  margin-top: 1rem;
   font-weight: lighter;
 }
 
@@ -57,8 +57,7 @@ export default {
 }
 
 .not-found__image {
-  margin-top: 55px;
-  width: 18rem;
-  height: 9rem;
+  margin-top: 8rem;
+  width: 20rem;
 }
 </style>
