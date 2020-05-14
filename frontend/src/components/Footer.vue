@@ -15,7 +15,6 @@ export default {};
 
 <style>
 .footer-custom {
-  margin-top: 60px;
   height: 40px;
   background-color: #5b5b5f;
   color: black;

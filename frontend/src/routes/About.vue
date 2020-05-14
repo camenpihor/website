@@ -209,7 +209,7 @@ export default {
 
 .person-tree-reading {
   position: relative;
-  bottom: -73px;
+  bottom: -13px;
   right: -100px;
   z-index: -1;
 }

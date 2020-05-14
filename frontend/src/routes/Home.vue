@@ -131,12 +131,12 @@ export default {
 }
 
 .home__site-map__header {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
 .home__site-map__item {
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding: 10px;
 }
 
@@ -155,13 +155,13 @@ export default {
 
 .section__title {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .person-sitting-image {
   position: relative;
   left: -10rem;
-  top: 75px;
+  top: 15px;
 }
 
 .person-wave-image {
