@@ -1,27 +1,29 @@
 <template>
   <div class="navigation">
     <nav class="navigation__top" v-bind:class="{ transparent: isTransparent }">
-      <ul v-if="currentRoute !== 'home'" class="navigation__top__left">
-        <router-link
-          class="navigation__top__item"
-          tag="li"
-          :to="{ name: routeHome }"
-          ><span class="navigation__top__route-home">{{
-            routeHome
-          }}</span></router-link
-        >
-      </ul>
-      <ul class="navigation__top__right">
-        <router-link
-          :to="{ name: 'home' }"
-          tag="li"
-          class="navigation__top__item"
-          ><img class="navigation__home-icon" :src="siteIconFilePath"
-        /></router-link>
-        <li class="navigation__top__item" v-on:click="open = true">
-          <i class="fal fa-bars"></i>
-        </li>
-      </ul>
+      <div class="navigation__top__wrapper">
+        <ul v-if="currentRoute !== 'home'" class="navigation__top__left">
+          <router-link
+            class="navigation__top__item"
+            tag="li"
+            :to="{ name: routeHome }"
+            ><span class="navigation__top__route-home">{{
+              routeHome
+            }}</span></router-link
+          >
+        </ul>
+        <ul class="navigation__top__right">
+          <router-link
+            :to="{ name: 'home' }"
+            tag="li"
+            class="navigation__top__item"
+            ><img class="navigation__home-icon" :src="siteIconFilePath"
+          /></router-link>
+          <li class="navigation__top__item" v-on:click="open = true">
+            <i class="fal fa-bars"></i>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <b-sidebar type="is-off-white" fullheight overlay right :open.sync="open">
@@ -133,6 +135,11 @@ export default {
   position: relative;
   height: 60px;
   z-index: 30;
+}
+
+.navigation__top__wrapper {
+  max-width: 800px;
+  margin: auto;
 }
 
 .transparent {
