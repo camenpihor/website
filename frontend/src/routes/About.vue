@@ -1,23 +1,25 @@
 <template>
   <div class="about">
-    <img class="about__image" :src="meFilePath" />
-    <p class="about__name">Camen</p>
-    <p class="about__job">Data Scientist</p>
-    <ul class="about__externals">
-      <router-link :to="{ name: 'github' }" tag="li" class="about__external">
-        <img :src="githubIconFilePath" class="about__icon"
-      /></router-link>
-      <li class="about__external">
-        <a href="camen_piho_resume.pdf"
-          ><img :src="resumeIconFilePath" class="about__icon"
-        /></a>
-      </li>
-      <li class="about__external">
-        <a href="mailto:camenrogue@gmail.com">
-          <img :src="emailIconFilePath" class="about__icon" />
-        </a>
-      </li>
-    </ul>
+    <div class="about__intro">
+      <img class="about__image" :src="meFilePath" />
+      <p class="about__name">Camen</p>
+      <p class="about__job">Data Scientist</p>
+      <ul class="about__externals">
+        <router-link :to="{ name: 'github' }" tag="li" class="about__external">
+          <img :src="githubIconFilePath" class="about__icon"
+        /></router-link>
+        <li class="about__external">
+          <a href="camen_piho_resume.pdf"
+            ><img :src="resumeIconFilePath" class="about__icon"
+          /></a>
+        </li>
+        <li class="about__external">
+          <a href="mailto:camenrogue@gmail.com">
+            <img :src="emailIconFilePath" class="about__icon" />
+          </a>
+        </li>
+      </ul>
+    </div>
     <img class="person-hot-air-balloon" :src="personHotAirBalloonFilePath" />
     <div class="about__me">
       <div class="section">
@@ -123,6 +125,10 @@ export default {
 </script>
 
 <style>
+.about__intro {
+  text-align: center;
+}
+
 .about__image {
   height: 10rem;
   width: 10rem;
@@ -163,8 +169,8 @@ export default {
 
 .person-hot-air-balloon {
   position: relative;
-  top: 35px;
-  left: -9rem;
+  top: 0;
+  left: -2rem;
 }
 
 .about__me {
