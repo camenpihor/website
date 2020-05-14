@@ -27,7 +27,7 @@
       </div>
       <img class="person-hot-air-balloon" :src="personHotAirBalloonFilePath" />
       <div class="about__me">
-        <div class="section">
+        <div class="about__me__section">
           <p class="about__me__header">And here is some stuff about me…</p>
           <p class="about__me__text">
             Space, earth systems, nature, wonder, thinking, speaking. Laudem et
@@ -38,7 +38,7 @@
             sis aequitate.
           </p>
         </div>
-        <div class="section">
+        <div class="about__me__section">
           <p class="about__me__header">And here are some things that I like…</p>
           <p class="about__me__text">
             <span>(I post a lot more recommendations </span>
@@ -186,6 +186,14 @@ export default {
 
 .about__me {
   text-align: left;
+}
+
+.about__me__section {
+  margin-top: 3.75rem;
+}
+
+.about__me__section:first-of-type {
+  margin-top: 0;
 }
 
 .about__me__header {
