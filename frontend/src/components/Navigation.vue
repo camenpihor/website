@@ -2,9 +2,14 @@
   <div class="navigation">
     <nav class="navigation__top" v-bind:class="{ transparent: isTransparent }">
       <ul v-if="currentRoute !== 'home'" class="navigation__top__left">
-        <li class="navigation__top__item">
-          <span class="navigation__top__current-route">{{ currentRoute }}</span>
-        </li>
+        <router-link
+          class="navigation__top__item"
+          tag="li"
+          :to="{ name: routeHome }"
+          ><span class="navigation__top__current-route">{{
+            routeHome
+          }}</span></router-link
+        >
       </ul>
       <ul class="navigation__top__right">
         <router-link
@@ -80,13 +85,14 @@
 </template>
 
 <script>
-import routeJson from "@/assets/routes/data.json";
+import routeJson from "@/assets/routes.json";
 
 export default {
   data() {
     return {
       open: false,
       isTransparent: false,
+      routeHome: this.$route.meta.pageHome,
       currentRoute: this.$route.name,
       routes: routeJson
     };
@@ -97,6 +103,7 @@ export default {
       let currentRoute = this.$route.name;
 
       this.open = false;
+      this.routeHome = this.$route.meta.pageHome;
       this.currentRoute = currentRoute;
 
       if (transparentRoutes.includes(currentRoute)) {

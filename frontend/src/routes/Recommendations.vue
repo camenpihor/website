@@ -38,7 +38,7 @@
 
 <script>
 import SearchBar from "@/components/SearchBar.vue";
-import recommendationJson from "@/assets/recommendations/data.json";
+import recommendationJson from "@/assets/recommendations.json";
 
 export default {
   components: {
