@@ -5,14 +5,14 @@
       :requestedPath="this.$route.fullPath"
     />
     <div v-if="post !== null" class="blog-post">
-      <SearchBar class="blog__search" placeholder="search..." />
+      <SearchBar class="blog-post__search" />
       <div class="blog-post__body">
         <h1 class="blog-post__title">{{ post.title }}</h1>
         <p class="blog-post__date">{{ post.created }}</p>
         <div class="blog-post__text" v-html="post.html" />
       </div>
-      <img class="person-bowling" :src="personBowlingFilepath" />
     </div>
+    <img class="person-bowling" :src="personBowlingFilepath" />
   </div>
 </template>
 
@@ -66,22 +66,16 @@ export default {
 
 <style>
 .blog-post {
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
+  padding-bottom: 7rem;
 }
 
-.blog__search {
+.blog-post__search {
   margin-left: auto;
   margin-right: auto;
 }
 
 .blog-post__body {
-  margin-top: 60px;
-  text-align: left;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-top: 5rem;
 }
 
 .blog-post__title {
@@ -104,7 +98,8 @@ export default {
 }
 
 .person-bowling {
-  position: relative;
-  top: 3.5rem;
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2rem;
 }
 </style>
