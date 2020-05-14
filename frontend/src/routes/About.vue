@@ -1,62 +1,69 @@
 <template>
   <div class="about">
-    <div class="about__intro">
-      <img class="about__image" :src="meFilePath" />
-      <p class="about__name">Camen</p>
-      <p class="about__job">Data Scientist</p>
-      <ul class="about__externals">
-        <router-link :to="{ name: 'github' }" tag="li" class="about__external">
-          <img :src="githubIconFilePath" class="about__icon"
-        /></router-link>
-        <li class="about__external">
-          <a href="camen_piho_resume.pdf"
-            ><img :src="resumeIconFilePath" class="about__icon"
-          /></a>
-        </li>
-        <li class="about__external">
-          <a href="mailto:camenrogue@gmail.com">
-            <img :src="emailIconFilePath" class="about__icon" />
-          </a>
-        </li>
-      </ul>
-    </div>
-    <img class="person-hot-air-balloon" :src="personHotAirBalloonFilePath" />
-    <div class="about__me">
-      <div class="section">
-        <p class="about__me__header">And here is some stuff about me…</p>
-        <p class="about__me__text">
-          Space, earth systems, nature, wonder, thinking, speaking. Laudem et
-          impetus quo minus id, de homine sensibus reliqui nihil impedit, quo
-          ignorare vos arbitrer, sed et dolorum effugiendorum gratia et dolorem?
-          sunt autem nusquam hoc epicurus in armatum hostem impetum fecisse aut
-          ad respondendum reddidisti quorum facta quem modo ista sis aequitate.
-        </p>
-      </div>
-      <div class="section">
-        <p class="about__me__header">And here are some things that I like…</p>
-        <p class="about__me__text">
-          <span>(I post a lot more recommendations </span>
-          <router-link :to="{ name: 'recommendations' }">here</router-link>
-          <span>!)</span>
-        </p>
-        <ul class="about__me__list">
-          <li class="about__me__list__header">Blogs</li>
-          <ul class="about__me__list__sub">
-            <li v-for="blog in blogRoutes" :key="blog.label">
-              <a class="about__me__list__item" :href="blog.to">
-                {{ blog.label }}
-              </a>
-            </li>
-          </ul>
-          <li class="about__me__list__header">Books</li>
-          <ul class="about__me__list__sub">
-            <li v-for="book in bookRoutes" :key="book.label">
-              <a class="about__me__list__item" :href="book.to">
-                {{ book.label }}
-              </a>
-            </li>
-          </ul>
+    <div class="about__wrapper">
+      <div class="about__intro">
+        <img class="about__image" :src="meFilePath" />
+        <p class="about__name">Camen</p>
+        <p class="about__job">Data Scientist</p>
+        <ul class="about__externals">
+          <router-link
+            :to="{ name: 'github' }"
+            tag="li"
+            class="about__external"
+          >
+            <img :src="githubIconFilePath" class="about__icon"
+          /></router-link>
+          <li class="about__external">
+            <a href="camen_piho_resume.pdf"
+              ><img :src="resumeIconFilePath" class="about__icon"
+            /></a>
+          </li>
+          <li class="about__external">
+            <a href="mailto:camenrogue@gmail.com">
+              <img :src="emailIconFilePath" class="about__icon" />
+            </a>
+          </li>
         </ul>
+      </div>
+      <img class="person-hot-air-balloon" :src="personHotAirBalloonFilePath" />
+      <div class="about__me">
+        <div class="section">
+          <p class="about__me__header">And here is some stuff about me…</p>
+          <p class="about__me__text">
+            Space, earth systems, nature, wonder, thinking, speaking. Laudem et
+            impetus quo minus id, de homine sensibus reliqui nihil impedit, quo
+            ignorare vos arbitrer, sed et dolorum effugiendorum gratia et
+            dolorem? sunt autem nusquam hoc epicurus in armatum hostem impetum
+            fecisse aut ad respondendum reddidisti quorum facta quem modo ista
+            sis aequitate.
+          </p>
+        </div>
+        <div class="section">
+          <p class="about__me__header">And here are some things that I like…</p>
+          <p class="about__me__text">
+            <span>(I post a lot more recommendations </span>
+            <router-link :to="{ name: 'recommendations' }">here</router-link>
+            <span>!)</span>
+          </p>
+          <ul class="about__me__list">
+            <li class="about__me__list__header">Blogs</li>
+            <ul class="about__me__list__sub">
+              <li v-for="blog in blogRoutes" :key="blog.label">
+                <a class="about__me__list__item" :href="blog.to">
+                  {{ blog.label }}
+                </a>
+              </li>
+            </ul>
+            <li class="about__me__list__header">Books</li>
+            <ul class="about__me__list__sub">
+              <li v-for="book in bookRoutes" :key="book.label">
+                <a class="about__me__list__item" :href="book.to">
+                  {{ book.label }}
+                </a>
+              </li>
+            </ul>
+          </ul>
+        </div>
       </div>
     </div>
     <img class="person-tree-reading" :src="personTreeReadingFilePath" />
@@ -125,6 +132,10 @@ export default {
 </script>
 
 <style>
+.about__wrapper {
+  padding-bottom: 7rem;
+}
+
 .about__intro {
   text-align: center;
 }
@@ -207,9 +218,10 @@ export default {
 }
 
 .person-tree-reading {
-  position: relative;
-  bottom: -13px;
-  right: -100px;
+  position: absolute;
+  position: absolute;
+  bottom: 2.3rem; /* height of footer - a smidgeon */
+  right: 2rem;
   z-index: -1;
 }
 </style>

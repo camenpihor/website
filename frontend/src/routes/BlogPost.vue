@@ -99,7 +99,7 @@ export default {
 
 .person-bowling {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 2.5rem; /* height of footer */
   left: 2rem;
 }
 </style>
