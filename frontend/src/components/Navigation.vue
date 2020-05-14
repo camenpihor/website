@@ -16,7 +16,7 @@
           :to="{ name: 'home' }"
           tag="li"
           class="navigation__top__item"
-          ><img class="navigation__home-icon" src="camen-logo-icon.svg"
+          ><img class="navigation__home-icon" :src="siteIconFilePath"
         /></router-link>
         <li class="navigation__top__item" v-on:click="open = true">
           <i class="fal fa-bars"></i>
@@ -94,7 +94,8 @@ export default {
       isTransparent: false,
       routeHome: this.$route.meta.pageHome,
       currentRoute: this.$route.name,
-      routes: routeJson
+      routes: routeJson,
+      siteIconFilePath: require("@/assets/icons/site-icon.svg")
     };
   },
   methods: {
