@@ -11,12 +11,13 @@
         v-for="(groupData, groupLabel, index) in recommendations"
         :key="groupLabel"
       >
-        <img
-          v-if="index === 2"
-          class="person-computer"
-          :src="personComputerFilePath"
-        />
-        <p class="recommendation__group__header">{{ groupLabel }}</p>
+        <p class="recommendation__group__header">
+          <img
+            v-if="index === 2"
+            class="person-computer"
+            :src="personComputerFilePath"
+          />{{ groupLabel }}
+        </p>
         <li
           class="recommendation__group__item"
           v-for="item in groupData"
@@ -107,8 +108,6 @@ export default {
 }
 
 .person-computer {
-  position: relative;
-  top: 2rem;
-  left: -1.1rem;
+  margin-left: -1rem;
 }
 </style>
