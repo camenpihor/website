@@ -18,10 +18,5 @@ export default {
   background-attachment: fixed;
   background-size: cover;
   height: 100vh;
-  cursor: grab;
-}
-
-.image:active {
-  cursor: grabbing;
 }
 </style>

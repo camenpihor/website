@@ -170,4 +170,8 @@ export default {
   font-size: 18px;
   color: #000000;
 }
+
+.sidebar-content a {
+  color: inherit !important;
+}
 </style>

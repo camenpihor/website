@@ -5,12 +5,22 @@
       placeholder="search..."
       :imageFilePath="personReadingFilePath"
     />
-    <div class="blog__posts">
+    <div class="blog__posts blog__posts__desktop">
       <div class="blog__post" v-for="post in blogPostsJson" :key="post.title">
         <router-link :to="{ name: 'blog-post', params: { id: post.url } }">
           <h1 class="blog__post__title">{{ post.title }}</h1>
           <p class="blog__post__date">{{ post.created }}</p>
           <div class="blog__post__text">{{ truncateText(post.intro) }}</div>
+        </router-link>
+      </div>
+    </div>
+    <div class="blog__posts blog__posts__touch">
+      <div class="blog__post" v-for="post in blogPostsJson" :key="post.title">
+          <h1 class="blog__post__title">{{ post.title }}</h1>
+          <p class="blog__post__date">{{ post.created }}</p>
+          <div class="blog__post__text">{{ truncateText(post.intro) }}</div>
+        <router-link :to="{ name: 'blog-post', params: { id: post.url } }">
+          read more
         </router-link>
       </div>
     </div>
@@ -30,7 +40,8 @@ export default {
     return {
       blogPostsJson: blogPostsJson,
       personReadingFilePath: require("@/assets/people/person-reading.svg"),
-      personWaveFilePath: require("@/assets/people/person-wave.svg")
+      personWaveFilePath: require("@/assets/people/person-wave.svg"),
+      isSmallWindow: window.innerWidth <= 1023
     };
   },
   methods: {
@@ -57,12 +68,6 @@ export default {
 
 .blog__post {
   margin-top: 3rem;
-  cursor: pointer;
-}
-
-.blog__post:hover {
-  margin-left: 10px;
-  margin-right: -10px;
 }
 
 .blog__post__title {
@@ -82,7 +87,7 @@ export default {
 
 .person-wave {
   position: absolute;
-  bottom: 2.5rem;  /* footer height */
+  bottom: 2.5rem; /* footer height */
 }
 
 .search__image {
@@ -90,5 +95,38 @@ export default {
   position: relative;
   top: -25px;
   left: 23px;
+}
+
+.blog__posts__desktop {
+  display: none;
+}
+
+.blog__posts__touch {
+  display: none;
+}
+
+@media only screen and (max-width: 1023px) {
+  .blog__posts__desktop {
+    display: none;
+  }
+
+  .blog__posts__touch {
+    display: inherit;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .blog__post:hover {
+    margin-left: 10px;
+    margin-right: -10px;
+  }
+
+  .blog__posts__touch {
+    display: none;
+  }
+
+  .blog__posts__desktop {
+    display: inherit;
+  }
 }
 </style>

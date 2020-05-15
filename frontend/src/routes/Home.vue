@@ -58,7 +58,7 @@
               >
                 <router-link
                   class="home__site-map__item__label"
-                  :to="{ name: route.name }"
+                  :to="route.to"
                   >{{ route.label }}</router-link
                 >
               </li>
@@ -144,7 +144,6 @@ export default {
   margin-bottom: 0;
 }
 
-
 .home__section__title {
   text-align: center;
   font-weight: bold;
@@ -177,10 +176,6 @@ export default {
 
 .home__site-map__item__label {
   font-size: 1rem;
-}
-
-.home__site-map__item__label:hover {
-  color: #3273dc;
 }
 
 .person-wave-image {

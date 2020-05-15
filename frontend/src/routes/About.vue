@@ -205,10 +205,6 @@ export default {
   color: #3273dc;
 }
 
-.about__me__text a:hover {
-  text-decoration: underline;
-}
-
 .about__me__list {
   margin-top: 30px;
 }
@@ -219,10 +215,6 @@ export default {
 
 .about__me__list__sub {
   margin-left: 10px;
-}
-
-.about__me__list__item:hover {
-  color: #3273dc;
 }
 
 .person-tree-reading {

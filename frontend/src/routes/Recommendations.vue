@@ -24,12 +24,10 @@
           :key="item.label"
         >
           <p class="recommendation__group__item__label">
-            <a :href="item.url">
-              <span>{{ item.label }}</span
-              ><span v-if="item.group_label !== null">
-                by {{ item.group_label }}</span
-              >
-            </a>
+            <a :href="item.url">{{ item.label }}</a>
+            <span v-if="item.group_label !== null">
+              by {{ item.group_label }}</span
+            >
           </p>
         </li>
       </ul>
@@ -80,10 +78,6 @@ export default {
 
 .recommendation__group__item {
   margin-left: 1rem;
-}
-
-.recommendation__group__item a:hover {
-  color: #3273dc;
 }
 
 .recommendation__group__item__label {

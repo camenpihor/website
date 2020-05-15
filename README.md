@@ -28,10 +28,6 @@ Vue
   - verify all links
   - link checker test
   - navbar
-  - make links more linky on mobile
-
-- positioning
-  - improve person image above footer
 
 - pages
   - rogue sky
