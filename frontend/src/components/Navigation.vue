@@ -1,28 +1,57 @@
 <template>
   <div class="navigation">
-    <nav class="navigation__top" v-bind:class="{ transparent: isTransparent }">
-      <div class="navigation__top__wrapper">
-        <ul v-if="currentRoute !== 'home'" class="navigation__top__left">
-          <router-link
-            class="navigation__top__item"
-            tag="li"
-            :to="{ name: routeHome }"
-            ><span class="navigation__top__route-home">{{
-              routeHome
-            }}</span></router-link
+    <nav
+      class="navbar"
+      v-bind:class="{
+        'is-transparent-2': isTransparent,
+        'is-dark': !isTransparent
+      }"
+    >
+      <div class="navbar-brand">
+        <router-link :to="{ name: routeHome }" class="navbar-item" tag="li"
+          ><span class="navigation__top__route-home">{{
+            routeHome
+          }}</span></router-link
+        >
+
+        <div
+          role="button"
+          class="navbar-burger burger"
+          v-on:click="open = true"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <div
+            class="navbar-item has-dropdown is-hoverable"
+            v-for="(groupRoutes, groupName) in routes"
+            :key="groupName"
           >
-        </ul>
-        <ul class="navigation__top__right">
-          <router-link
-            :to="{ name: 'home' }"
-            tag="li"
-            class="navigation__top__item"
-            ><img class="navigation__home-icon" :src="siteIconFilePath"
-          /></router-link>
-          <li class="navigation__top__item" v-on:click="open = true">
-            <i class="fal fa-bars"></i>
-          </li>
-        </ul>
+            <a class="navbar-link is-arrowless">
+              {{ groupName }}
+            </a>
+
+            <div class="navbar-dropdown is-right">
+              <div v-for="route in groupRoutes" :key="route.label">
+                <router-link
+                  v-if="route.internal"
+                  :to="route.to"
+                  class="navbar-item"
+                  tag="li"
+                  >{{ route.label }}
+                </router-link>
+                <a v-else class="navbar-item" :href="route.to">
+                  {{ route.label }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
 
@@ -98,27 +127,17 @@ export default {
 };
 </script>
 <style>
-.navigation__top {
-  background-color: #5b5b5f;
-  color: white;
-  position: relative;
-  height: 60px;
-  z-index: 10;
+.navbar {
+  height: 3.25rem;
 }
 
-.navigation__top__wrapper {
-  max-width: 800px;
-  margin: auto;
+.navbar-brand .navbar-item {
+  color: white !important;
+  cursor: pointer;
 }
 
-.transparent {
-  background-color: transparent;
-  color: white;
-}
-
-.navigation__top__left {
-  float: left;
-  list-style-type: none;
+.navbar-brand .navbar-item:hover {
+  background-color: #4f4f52;
 }
 
 .navigation__top__route-home {
@@ -127,30 +146,12 @@ export default {
   font-weight: bold;
 }
 
-.navigation__top__right {
-  float: right;
-  list-style-type: none;
+.navbar-dropdown .navbar-item:hover {
+  background-color: #f5f5f5;
 }
 
-.navigation__top__item {
-  color: white;
-  float: left;
-  font-size: 25px;
-  padding: 12px;
-  border-radius: 18px;
+.navbar-dropdown .navbar-item {
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .navigation__top__item:hover {
-    background-color: rgba(128, 128, 128, 0.521);
-  }
-}
-
-.navigation__home-icon {
-  height: 18px;
-  width: 24px;
 }
 
 .sidebar__item {

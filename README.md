@@ -27,7 +27,7 @@ Vue
 - next steps
   - verify all links
   - link checker test
-  - navbar
+  - navbar onclick dropdown should close
 
 - pages
   - rogue sky

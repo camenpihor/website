@@ -43,9 +43,13 @@ $colors: (
     $off-white,
     findColorInvert($off-white)
   ),
-  "transparent": (
+  "transparent-2": (
     #f0f0f000,
-    #000000
+    #ffffff
+  ),
+  "dark": (
+    #5b5b5f,
+    #ffffff
   )
 );
 
