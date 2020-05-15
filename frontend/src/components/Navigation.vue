@@ -10,7 +10,7 @@
       <div class="navbar-brand">
         <router-link :to="{ name: routeHome }" class="navbar-item" tag="li"
           ><span class="navigation__top__route-home">{{
-            routeHome
+            formatName(routeHome)
           }}</span></router-link
         >
 
@@ -111,6 +111,15 @@ export default {
         this.isTransparent = true;
       } else {
         this.isTransparent = false;
+      }
+    },
+    formatName: function(name) {
+      if (name != null) {
+        return name
+          .toLowerCase()
+          .split("-")
+          .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+          .join("");
       }
     }
   },
