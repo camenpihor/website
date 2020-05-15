@@ -81,8 +81,8 @@ export default {
 }
 
 .person-wave {
-  position: relative;
-  top: 4.2rem;
+  position: absolute;
+  bottom: 2.5rem;  /* footer height */
 }
 
 .search__image {

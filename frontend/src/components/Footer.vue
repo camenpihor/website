@@ -24,7 +24,7 @@ export default {};
   color: black;
   font-size: 0.6rem;
   display: flex;
-  z-index: 90;
+  z-index: 10;
 }
 
 .footer-left {

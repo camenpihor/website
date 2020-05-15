@@ -56,10 +56,6 @@ export default {
 </script>
 
 <style>
-.recommendations {
-  padding-bottom: 6.25rem;
-}
-
 .recommendations__search {
   margin-left: auto;
   margin-right: auto;

@@ -133,7 +133,7 @@ export default {
 
 <style>
 .about__wrapper {
-  padding-bottom: 7rem;
+  padding-bottom: 1rem;
 }
 
 .about__intro {

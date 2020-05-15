@@ -74,6 +74,6 @@ a:hover {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 10rem;
 }
 </style>

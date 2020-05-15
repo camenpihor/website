@@ -28,58 +28,27 @@
 
     <b-sidebar type="is-off-white" fullheight overlay right :open.sync="open">
       <b-menu>
-        <b-menu-list class="sidebar__header" label="General">
-          <b-menu-item
-            v-for="route in routes.general"
-            :key="route.label"
-            :to="{ name: route.name }"
-            :label="route.label"
-            class="sidebar__item"
-            tag="router-link"
-          />
-        </b-menu-list>
-        <b-menu-list class="sidebar__header" label="Projects">
-          <b-menu-item
-            v-for="route in routes.projects"
-            :key="route.label"
-            :to="{ name: route.name }"
-            :label="route.label"
-            class="sidebar__item"
-            tag="router-link"
-          />
-        </b-menu-list>
-        <b-menu-list label="Blog Roll">
-          <b-menu-item
-            v-for="route in routes.blogs"
-            :key="route.label"
-            :href="route.to"
-            :label="route.label"
-            class="sidebar__item"
-            tag="a"
-            v-on:click="initialize()"
-          />
-        </b-menu-list>
-        <b-menu-list class="sidebar__header" label="YouTube">
-          <b-menu-item
-            v-for="route in routes.youtube"
-            :key="route.label"
-            :href="route.to"
-            :label="route.label"
-            class="sidebar__item"
-            tag="a"
-            v-on:click="initialize()"
-          />
-        </b-menu-list>
-        <b-menu-list class="sidebar__header" label="Web Fiction">
-          <b-menu-item
-            v-for="route in routes.webfiction"
-            :key="route.label"
-            :href="route.to"
-            :label="route.label"
-            class="sidebar__item"
-            tag="a"
-            v-on:click="initialize()"
-          />
+        <b-menu-list
+          v-for="(groupRoutes, groupName) in routes"
+          :key="groupName"
+          :label="groupName"
+        >
+          <div v-for="route in groupRoutes" :key="route.label">
+            <b-menu-item
+              v-if="route.internal"
+              v-on:click="initialize()"
+              :label="route.label"
+              :to="route.to"
+              tag="router-link"
+            />
+            <b-menu-item
+              v-else
+              v-on:click="initialize()"
+              :label="route.label"
+              :href="route.to"
+              tag="a"
+            />
+          </div>
         </b-menu-list>
       </b-menu>
     </b-sidebar>
@@ -134,7 +103,7 @@ export default {
   color: white;
   position: relative;
   height: 60px;
-  z-index: 30;
+  z-index: 10;
 }
 
 .navigation__top__wrapper {
@@ -197,7 +166,7 @@ export default {
 
 .sidebar-content p {
   font-weight: bold;
-  text-transform: none;
+  text-transform: capitalize;
   font-size: 18px;
   color: #000000;
 }

@@ -140,6 +140,11 @@ export default {
   margin-right: -1rem;
 }
 
+.home__section:last-of-type {
+  margin-bottom: 0;
+}
+
+
 .home__section__title {
   text-align: center;
   font-weight: bold;

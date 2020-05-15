@@ -1,118 +1,165 @@
 {
     "general": [
         {
-            "name": "home",
+            "internal": true,
+            "to": {
+                "name": "home"
+            },
             "label": "Home"
         },
         {
-            "name": "about",
+            "internal": true,
+            "to": {
+                "name": "about"
+            },
             "label": "About"
         },
         {
-            "name": "recommendations",
+            "internal": true,
+            "to": {
+                "name": "recommendations"
+            },
             "label": "Recommendations"
         },
         {
-            "name": "github",
+            "internal": true,
+            "to": {
+                "name": "github"
+            },
             "label": "GitHub"
         }
     ],
     "projects": [
         {
-            "name": "blog",
+            "internal": true,
+            "to": {
+                "name": "blog"
+            },
             "label": "Blog"
         },
         {
-            "name": "math",
+            "internal": true,
+            "to": {
+                "name": "math"
+            },
             "label": "Math Implementations"
         },
         {
-            "name": "error",
+            "internal": true,
+            "to": {
+                "name": "error"
+            },
             "label": "Measurements for Humans"
         },
         {
-            "name": "error",
+            "internal": true,
+            "to": {
+                "name": "error"
+            },
             "label": "Nature Identification"
         },
         {
-            "name": "error",
+            "internal": true,
+            "to": {
+                "name": "error"
+            },
             "label": "RogueSky"
         },
         {
-            "name": "error",
+            "internal": true,
+            "to": {
+                "name": "error"
+            },
             "label": "TreeCount"
         }
     ],
     "blogs": [
         {
+            "internal": false,
             "to": "https://slatestarcodex.com/",
             "label": "SlateStarCodex"
         },
         {
+            "internal": false,
             "to": "http://mindingourway.com/",
             "label": "Minding Our Way"
         },
         {
+            "internal": false,
             "to": "https://eukaryotewritesblog.com/",
             "label": "EukaryoteWritesBlog"
         },
         {
+            "internal": false,
             "to": "https://www.lesswrong.com/",
             "label": "LessWrong"
         },
         {
+            "internal": false,
             "to": "https://theunitofcaring.tumblr.com/",
             "label": "The Unit of Caring"
         },
         {
+            "internal": false,
             "to": "http://www.bldgblog.com/",
             "label": "BLDGBLOG"
         }
     ],
     "youtube": [
         {
+            "internal": false,
             "to": "https://www.youtube.com/user/vlogbrothers",
             "label": "VlogBrothers"
         },
         {
+            "internal": false,
             "to": "https://www.youtube.com/user/minuteearth",
             "label": "MinuteEarth"
         },
         {
+            "internal": false,
             "to": "https://www.youtube.com/channel/UC3KEoMzNz8eYnwBC34RaKCQ",
             "label": "Simone Giertz"
         },
         {
+            "internal": false,
             "to": "https://www.youtube.com/user/CGPGrey",
             "label": "CGP Grey"
         },
         {
+            "internal": false,
             "to": "https://www.youtube.com/channel/UCHsRtomD4twRf5WVHHk-cMw",
             "label": "TierZoo"
         },
         {
+            "internal": false,
             "to": "https://www.youtube.com/user/thebrainscoop",
             "label": "TheBrainScoop"
         },
         {
+            "internal": false,
             "to": "https://www.youtube.com/watch?v=0rHUDWjR5gg&list=PL8dPuuaLjXtPAJr1ysd5yGIyiSFuh0mIL",
             "label": "Crash Course - Astronomy"
         },
         {
+            "internal": false,
             "to": "https://www.youtube.com/user/alectheblacksmith",
             "label": "Alec Steele"
         }
     ],
     "webfiction": [
         {
+            "internal": false,
             "to": "https://practicalguidetoevil.wordpress.com/",
             "label": "A Practical Guide to Evil"
         },
         {
+            "internal": false,
             "to": "https://wanderinginn.com/",
             "label": "The Wandering Inn"
         },
         {
+            "internal": false,
             "to": "http://www.hpmor.com/",
             "label": "Harry Potter and the Methods of Rationality"
         }

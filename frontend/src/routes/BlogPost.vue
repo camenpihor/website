@@ -11,8 +11,8 @@
         <p class="blog-post__date">{{ post.created }}</p>
         <div class="blog-post__text" v-html="post.html" />
       </div>
+      <img class="person-bowling" :src="personBowlingFilepath" />
     </div>
-    <img class="person-bowling" :src="personBowlingFilepath" />
   </div>
 </template>
 

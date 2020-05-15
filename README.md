@@ -25,10 +25,10 @@ Vue
 ## TODO
 
 - next steps
-  - see what css I can generalize
   - verify all links
   - link checker test
-  - sidebar to always out on desktop, but collapsed
+  - navbar
+  - make links more linky on mobile
 
 - positioning
   - improve person image above footer
@@ -41,6 +41,5 @@ Vue
   - nature identification
 
 - pair programming
-  - make background image a forever scroll
   - recommendations search
   - blog post search
