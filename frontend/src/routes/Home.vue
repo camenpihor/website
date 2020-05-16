@@ -7,10 +7,6 @@
       <ForeverBackground :filePath="backgroundFilePath" />
     </b-modal>
     <div class="home__page">
-      <LifeIcons class="home__section" />
-
-      <hr class="home__break-line" />
-
       <div class="home__section">
         <h1 class="home__section__title">
           Hai! I'm Camen :)
@@ -33,7 +29,6 @@
           </p>
         </div>
       </div>
-
       <hr class="home__break-line" />
 
       <div class="home__section home__site-map">
@@ -66,6 +61,8 @@
           </div>
         </div>
       </div>
+      <hr class="home__break-line" />
+      <LifeIcons class="home__section" />
     </div>
     <img class="person-sitting-image" :src="personSittingFilePath" />
   </div>
