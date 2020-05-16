@@ -122,7 +122,9 @@ export default {
 }
 
 .home__page {
-  padding-top: calc(33vh - (2 * 3.25rem)); /* home__image height - navbar height */
+  padding-top: calc(
+    33vh - (2 * 3.25rem)
+  ); /* home__image height - navbar height */
 }
 
 .home__section {

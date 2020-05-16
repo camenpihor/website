@@ -1,6 +1,6 @@
 <template>
   <Mapbox
-    access-token="pk.eyJ1IjoiY2FtZW5waWhvciIsImEiOiJjazlpem43N2swMmUyM2RtcGo2Nmo1c25qIn0.xG-XxGg8DLWESXnlwhUBdw"
+    :access-token="this.getToken()"
     :map-options="{
       style: 'mapbox://styles/mapbox/dark-v10',
       center: [lat, lon],
@@ -34,6 +34,11 @@ export default {
     lon: {
       type: Number,
       default: 37.8
+    }
+  },
+  methods: {
+    getToken: function() {
+      return process.env.VUE_APP_MAPBOX_SECRET_TOKEN;
     }
   }
 };
