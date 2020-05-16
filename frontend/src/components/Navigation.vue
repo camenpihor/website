@@ -8,7 +8,11 @@
       }"
     >
       <div class="navbar-brand">
-        <router-link :to="{ name: routeHome }" class="navbar-item" tag="li"
+        <router-link
+          v-if="!isTransparent"
+          :to="{ name: routeHome }"
+          class="navbar-item"
+          tag="li"
           ><span class="navigation__top__route-home">{{
             formatName(routeHome)
           }}</span></router-link
@@ -27,28 +31,81 @@
 
       <div class="navbar-menu">
         <div class="navbar-end">
-          <div
-            class="navbar-item has-dropdown is-hoverable"
-            v-for="(groupRoutes, groupName) in routes"
-            :key="groupName"
-          >
+          <router-link :to="{ name: 'home' }" class="navbar-item" tag="li"
+            >home
+          </router-link>
+          <router-link :to="{ name: 'about' }" class="navbar-item" tag="li"
+            >about
+          </router-link>
+
+          <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link is-arrowless">
-              {{ groupName }}
+              projects
             </a>
 
             <div class="navbar-dropdown is-right">
-              <div v-for="route in groupRoutes" :key="route.label">
-                <router-link
-                  v-if="route.internal"
-                  :to="route.to"
-                  class="navbar-item"
-                  tag="li"
-                  >{{ route.label }}
-                </router-link>
-                <a v-else class="navbar-item" :href="route.to">
-                  {{ route.label }}
-                </a>
+              <router-link
+                v-for="route in routes.projects"
+                :key="route.label"
+                :to="route.to"
+                tag="li"
+                class="navbar-item"
+                >{{ route.label }}
+              </router-link>
+            </div>
+          </div>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link is-arrowless">
+              recommendations
+            </a>
+
+            <div class="navbar-dropdown is-right">
+              <router-link
+                :to="{ name: 'recommendations' }"
+                class="navbar-item"
+                tag="li"
+                >more...
+              </router-link>
+
+              <hr class="navbar-divider" />
+              <div class="navbar-item navbar-dropdown-group-header">
+                Blogs
               </div>
+              <router-link
+                v-for="route in routes.blogs"
+                :key="route.label"
+                :to="route.to"
+                tag="li"
+                class="navbar-item navbar-dropdown-group-subitem"
+                >{{ route.label }}
+              </router-link>
+
+              <hr class="navbar-divider" />
+              <div class="navbar-item navbar-dropdown-group-header">
+                YouTube
+              </div>
+              <router-link
+                v-for="route in routes.youtube"
+                :key="route.label"
+                :to="route.to"
+                tag="li"
+                class="navbar-item navbar-dropdown-group-subitem"
+                >{{ route.label }}
+              </router-link>
+
+              <hr class="navbar-divider" />
+              <div class="navbar-item navbar-dropdown-group-header">
+                Web Fiction
+              </div>
+              <router-link
+                v-for="route in routes.webfiction"
+                :key="route.label"
+                :to="route.to"
+                tag="li"
+                class="navbar-item navbar-dropdown-group-subitem"
+                >{{ route.label }}
+              </router-link>
             </div>
           </div>
         </div>
@@ -140,13 +197,16 @@ export default {
   height: 3.25rem;
 }
 
-.navbar-brand .navbar-item {
-  color: white !important;
+li.navbar-item:hover {
+  background-color: #4f4f52;
+}
+
+li.navbar-item {
   cursor: pointer;
 }
 
-.navbar-brand .navbar-item:hover {
-  background-color: #4f4f52;
+a.navbar-link:hover {
+  background-color: #4f4f52 !important;
 }
 
 .navigation__top__route-home {
@@ -159,8 +219,18 @@ export default {
   background-color: #f5f5f5;
 }
 
-.navbar-dropdown .navbar-item {
-  cursor: pointer;
+.navbar-dropdown-group-header {
+  font-weight: bold;
+  cursor: default !important;
+}
+
+.navbar-dropdown-group-header:hover {
+  font-weight: bold;
+  background-color: inherit !important;
+}
+
+.navbar-dropdown-group-subitem {
+  margin-left: 1em;
 }
 
 .sidebar__item {

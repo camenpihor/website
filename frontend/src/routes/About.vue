@@ -14,7 +14,7 @@
             <img :src="githubIconFilePath" class="about__icon"
           /></router-link>
           <li class="about__external">
-            <a href="camen_piho_resume.pdf"
+            <a href="camen_piho_resume.pdf" target="_blank"
               ><img :src="resumeIconFilePath" class="about__icon"
             /></a>
           </li>

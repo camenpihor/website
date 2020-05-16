@@ -27,13 +27,8 @@ Vue
 - next steps
   - verify all links
   - link checker test
-  - cv should open in new tab
-  - desktop navbar maybe dropdowns
-    - recommendations
-      - with a more page linking to the page
-      - sub-header youtube/blog/webfiction
-    - projects
-    - move everything in genersl to its own link
+  - clean css for navigation
+  - sidebar onhover blue
 
 - pages
   - rogue sky
