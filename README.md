@@ -27,8 +27,6 @@ Vue
 - next steps
   - verify all links
   - link checker test
-  - clean css for navigation
-  - sidebar onhover blue
 
 - pages
   - rogue sky

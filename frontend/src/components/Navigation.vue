@@ -74,6 +74,7 @@
           <div v-for="route in groupRoutes" :key="route.label">
             <b-menu-item
               v-if="route.internal"
+              class="sidebar__item"
               v-on:click="initialize()"
               :label="route.label"
               :to="route.to"
@@ -81,6 +82,7 @@
             />
             <b-menu-item
               v-else
+              class="sidebar__item"
               v-on:click="initialize()"
               :label="route.label"
               :href="route.to"
@@ -164,10 +166,6 @@ li.navbar-item {
   cursor: pointer;
 }
 
-a.navbar-link:hover {
-  background-color: #4f4f52 !important;
-}
-
 .navigation__top__route-home {
   font-size: 20px;
   text-transform: capitalize;
@@ -176,20 +174,6 @@ a.navbar-link:hover {
 
 .navbar-dropdown .navbar-item:hover {
   background-color: #f5f5f5;
-}
-
-.navbar-dropdown-group-header {
-  font-weight: bold;
-  cursor: default !important;
-}
-
-.navbar-dropdown-group-header:hover {
-  font-weight: bold;
-  background-color: inherit !important;
-}
-
-.navbar-dropdown-group-subitem {
-  margin-left: 1em;
 }
 
 .sidebar__item {
@@ -212,5 +196,9 @@ a.navbar-link:hover {
 
 .sidebar-content a {
   color: inherit !important;
+}
+
+.sidebar__item:hover {
+  color: #3273dc;
 }
 </style>

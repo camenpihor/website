@@ -25,6 +25,7 @@ export default {
 $off-white: #f0f0f0;
 $blue: #3273dc;
 $green: rgb(0, 117, 0);
+$purple: #7957d5;
 $button-over-grey: #979797;
 
 // buefy and bulma variables
@@ -90,9 +91,7 @@ a:hover {
 @media only screen and (max-width: 1023px) {
   // all touch screens
   a {
-    // color: $green !important;
     color: $blue !important;
-    // color: #7957d5 !important;
   }
 }
 </style>
