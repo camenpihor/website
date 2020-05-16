@@ -112,10 +112,6 @@ export default {
   padding-top: 0;
 }
 
-.section:first-of-type {
-  padding-top: 0;
-}
-
 .home__image {
   position: absolute;
   top: -3.25rem; /* offset navbar */

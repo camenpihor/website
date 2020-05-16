@@ -91,8 +91,8 @@ a:hover {
   // all touch screens
   a {
     // color: $green !important;
-    // color: $blue !important;
-    color: #7957d5 !important;
+    color: $blue !important;
+    // color: #7957d5 !important;
   }
 }
 </style>

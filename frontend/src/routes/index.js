@@ -47,6 +47,12 @@ const router = new VueRouter({
       beforeEnter() { location.href = "https://github.com/camenpihor/math-implementations/tree/master/notebooks" }
     },
     {
+      path: "/roguesky",
+      name: "rogue-sky",
+      component: () => import("./RogueSky.vue"),
+      meta: { pageHome: "rogue-sky" }
+    },
+    {
       path: "/404",
       name: "error",
       component: () => import("./NotFound.vue"),

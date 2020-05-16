@@ -39,9 +39,7 @@ export default {
     };
   },
   methods: {
-    search() {
-      console.log("Searching '" + this.input + "'");
-    },
+    search() {},
     clearInput() {
       this.input = null;
     }
