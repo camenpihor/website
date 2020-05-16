@@ -37,6 +37,12 @@
           <router-link :to="{ name: 'about' }" class="navbar-item" tag="li"
             >about
           </router-link>
+          <router-link
+            :to="{ name: 'recommendations' }"
+            class="navbar-item"
+            tag="li"
+            >recommendations
+          </router-link>
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link is-arrowless">
@@ -50,60 +56,6 @@
                 :to="route.to"
                 tag="li"
                 class="navbar-item"
-                >{{ route.label }}
-              </router-link>
-            </div>
-          </div>
-
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link is-arrowless">
-              recommendations
-            </a>
-
-            <div class="navbar-dropdown is-right">
-              <router-link
-                :to="{ name: 'recommendations' }"
-                class="navbar-item"
-                tag="li"
-                >more...
-              </router-link>
-
-              <hr class="navbar-divider" />
-              <div class="navbar-item navbar-dropdown-group-header">
-                Blogs
-              </div>
-              <router-link
-                v-for="route in routes.blogs"
-                :key="route.label"
-                :to="route.to"
-                tag="li"
-                class="navbar-item navbar-dropdown-group-subitem"
-                >{{ route.label }}
-              </router-link>
-
-              <hr class="navbar-divider" />
-              <div class="navbar-item navbar-dropdown-group-header">
-                YouTube
-              </div>
-              <router-link
-                v-for="route in routes.youtube"
-                :key="route.label"
-                :to="route.to"
-                tag="li"
-                class="navbar-item navbar-dropdown-group-subitem"
-                >{{ route.label }}
-              </router-link>
-
-              <hr class="navbar-divider" />
-              <div class="navbar-item navbar-dropdown-group-header">
-                Web Fiction
-              </div>
-              <router-link
-                v-for="route in routes.webfiction"
-                :key="route.label"
-                :to="route.to"
-                tag="li"
-                class="navbar-item navbar-dropdown-group-subitem"
                 >{{ route.label }}
               </router-link>
             </div>
@@ -195,6 +147,13 @@ export default {
 <style>
 .navbar {
   height: 3.25rem;
+}
+
+@media only screen and (min-width: 1023px) {
+  .navbar {
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
 }
 
 li.navbar-item:hover {
