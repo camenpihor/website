@@ -53,7 +53,13 @@
       <div class="rogue-sky__month rogue-sky__section">
         <h1 class="rogue-sky__header">Month</h1>
         <div class="rogue-sky__calendar__wrapper">
-          <Calendar class="rogue-sky__calendar" />
+          <Calendar
+            class="rogue-sky__calendar"
+            :attributes="attributes"
+            minDate="2020-01-02"
+            maxDate="2021-01-01"
+            :colorKey="colors"
+          />
         </div>
       </div>
 
@@ -95,6 +101,9 @@ import SearchBar from "@/components/SearchBar.vue";
 import StarVizIcon from "@/components/StarVizIcon.vue";
 import WeatherSummary from "@/components/WeatherSummary.vue";
 
+import astronomicalJson from "@/assets/astronomical_events.json";
+
+
 export default {
   components: {
     Calendar,
@@ -105,8 +114,62 @@ export default {
   },
   data() {
     return {
-      personMountainMoonFilePath: require("@/assets/people/person-mountain-moon.svg")
+      personMountainMoonFilePath: require("@/assets/people/person-mountain-moon.svg"),
+      colors: {
+        moon: "green",
+        eclipse: "gray",
+        planetary: "red",
+        meteorShower: "purple",
+        other: "blue"
+      },
+      bestDay: {
+        date: "2020-05-18",
+        starVisibility: 78,
+        event: "Best day of star visibility this week (78%)"
+      }
     };
+  },
+  computed: {
+    attributes() {
+      let today = {
+        key: "today",
+        highlight: "blue",
+        dates: new Date(),
+        popover: {
+          label: "Today",
+          placement: "auto"
+        },
+        customData: { event: "Today" }
+      };
+
+      let bestDay = {
+        key: "bestDay",
+        highlight: { color: "yellow" },
+        dates: this.bestDay.date,
+        popover: {
+          label: this.bestDay.event,
+          placement: "auto"
+        },
+        customData: this.bestDay
+      };
+
+      var blah = [today, bestDay];
+      for (const [label, data] of Object.entries(astronomicalJson)) {
+        blah = blah.concat([
+          ...data.map(datum => ({
+            dates: datum.date,
+            bar: this.colors[label],
+            popover: {
+              label: datum.event,
+              placement: "auto",
+              isInteractive: true
+            },
+            customData: datum
+          }))
+        ]);
+      }
+      return blah;
+    }
   }
 };
 </script>

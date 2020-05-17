@@ -1,8 +1,8 @@
 <template>
   <div class="calendar">
-    <ul class="calendar__key">
+    <ul v-if="colorKey != null" class="calendar__key">
       <li
-        v-for="(color, key) in colors"
+        v-for="(color, key) in colorKey"
         :key="key"
         class="calendar__key__value"
       >
@@ -15,8 +15,8 @@
     </ul>
     <vc-calendar
       is-expanded
-      min-date="2020-01-02"
-      max-date="2021-01-01"
+      :min-date="minDate"
+      :max-date="maxDate"
       :attributes="attributes"
     >
       <div
@@ -55,68 +55,25 @@
 <script>
 import PopoverRow from "v-calendar/lib/components/popover-row.umd.min";
 
-import astronomicalJson from "@/assets/astronomical_events.json";
-
 export default {
   components: {
     PopoverRow
   },
-  data() {
-    return {
-      colors: {
-        moon: "green",
-        eclipse: "gray",
-        planetary: "red",
-        meteorShower: "purple",
-        other: "blue"
-      },
-      bestDay: {
-        date: "2020-05-18",
-        starVisibility: 78,
-        event: "Best day of star visibility this week (78%)"
-      }
-    };
-  },
-  computed: {
-    attributes() {
-      let today = {
-        key: "today",
-        highlight: "blue",
-        dates: new Date(),
-        popover: {
-          label: "Today",
-          placement: "auto"
-        },
-        customData: { event: "Today" }
-      };
-
-      let bestDay = {
-        key: "bestDay",
-        highlight: { color: "yellow" },
-        dates: this.bestDay.date,
-        popover: {
-          label: this.bestDay.event,
-          placement: "auto"
-        },
-        customData: this.bestDay
-      };
-
-      var blah = [today, bestDay];
-      for (const [label, data] of Object.entries(astronomicalJson)) {
-        blah = blah.concat([
-          ...data.map(datum => ({
-            dates: datum.date,
-            bar: this.colors[label],
-            popover: {
-              label: datum.event,
-              placement: "auto",
-              isInteractive: true
-            },
-            customData: datum
-          }))
-        ]);
-      }
-      return blah;
+  props: {
+    attributes: {
+      type: Array
+    },
+    minDate: {
+      type: String,
+      default: "2020-01-02"
+    },
+    maxDate: {
+      type: String,
+      default: "2021-01-01"
+    },
+    colorKey: {
+      type: Object,
+      default: null
     }
   },
   methods: {
