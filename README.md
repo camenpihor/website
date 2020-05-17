@@ -22,11 +22,15 @@ Flask
 
 Vue
 
+- astronomical events data from https://www.photopills.com/articles/astronomical-events-photography-guide#step1
+
 ## TODO
 
 - next steps
   - verify all links
   - link checker test
+  - life icons to just paragraph summaries/remove all together?
+  - is sidebar jerky?
 
 - pages
   - rogue sky

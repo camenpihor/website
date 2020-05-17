@@ -153,7 +153,7 @@ export default {
 
 .about__job {
   font-size: 0.8rem;
-  margin-top: -8px;
+  margin-top: -8px; 
 }
 
 .about__externals {

@@ -1,9 +1,8 @@
 <template>
   <div class="rogue-sky">
-    <SearchBar class="rogue-sky__search" placeholder="Seattle, WA" />
+    <SearchBar class="rogue-sky__search" placeholder="Boston, MA" />
     <div class="rogue-sky__results">
       <div class="rogue-sky__location rogue-sky__section">
-        <h1 class="rogue-sky__header">Boston, MA</h1>
         <div class="rogue-sky__week columns is-mobile">
           <StarVizIcon class="column" word="clear" date="May 8" />
           <StarVizIcon class="column" word="cloudy" date="May 9" />
@@ -53,6 +52,9 @@
 
       <div class="rogue-sky__month rogue-sky__section">
         <h1 class="rogue-sky__header">Month</h1>
+        <div class="rogue-sky__calendar__wrapper">
+          <Calendar class="rogue-sky__calendar" />
+        </div>
       </div>
 
       <div class="rogue-sky__addition-info rogue-sky__section">
@@ -87,6 +89,7 @@
 </template>
 
 <script>
+import Calendar from "@/components/Calendar.vue";
 import Map from "@/components/Map.vue";
 import SearchBar from "@/components/SearchBar.vue";
 import StarVizIcon from "@/components/StarVizIcon.vue";
@@ -94,6 +97,7 @@ import WeatherSummary from "@/components/WeatherSummary.vue";
 
 export default {
   components: {
+    Calendar,
     Map,
     SearchBar,
     StarVizIcon,
@@ -109,7 +113,6 @@ export default {
 
 <style>
 .rogue-sky {
-  text-align: center;
   padding-bottom: 20rem;
 }
 
@@ -135,6 +138,7 @@ export default {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  text-align: left;
 }
 
 .rogue-sky__header__subtext {
@@ -143,10 +147,18 @@ export default {
   margin-top: -0.5rem;
 }
 
+.rogue-sky__week {
+  margin-left: -2rem; /* same as padding-left on router-view */
+  margin-right: -2rem; /* same as padding-right on router-view */
+}
+
 .rogue-sky__weather {
-  margin-left: -2rem;
-  margin-right: -2rem;
-  font-size: 0.8rem;
+  margin-left: -2rem; /* same as padding-left on router-view */
+  margin-right: -2rem; /* same as padding-right on router-view */
+}
+
+.rogue-sky__weather {
+  font-size: 0.9rem;
 }
 
 .rogue-sky__week {
@@ -156,14 +168,21 @@ export default {
 }
 
 .rogue-sky__map__wrapper {
-  height: 33vh; /* same height as map */
+  height: 50vh; /* same height as map */
 }
 
 .rogue-sky__map__image {
-  height: 33vh;
+  height: 50vh;
   position: absolute;
   left: 0;
   right: 0;
+  max-width: 700px; /* same as max-width on router-view */
+  margin: auto;
+}
+
+.rogue-sky__calendar__wrapper {
+  margin-left: -2rem; /* same as padding-left on router-view */
+  margin-right: -2rem; /* same as padding-right on router-view */
 }
 
 .person-mountain-moon {

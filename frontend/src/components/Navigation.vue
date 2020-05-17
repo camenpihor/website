@@ -9,10 +9,9 @@
     >
       <div class="navbar-brand">
         <router-link
+          class="mobile-only navbar-item"
           v-if="!isTransparent"
           :to="{ name: routeHome }"
-          class="navbar-item"
-          tag="li"
           ><span class="navigation__top__route-home">{{
             formatName(routeHome)
           }}</span></router-link
@@ -31,16 +30,13 @@
 
       <div class="navbar-menu">
         <div class="navbar-end">
-          <router-link :to="{ name: 'home' }" class="navbar-item" tag="li"
+          <router-link :to="{ name: 'home' }" class="navbar-item"
             >home
           </router-link>
-          <router-link :to="{ name: 'about' }" class="navbar-item" tag="li"
+          <router-link :to="{ name: 'about' }" class="navbar-item"
             >about
           </router-link>
-          <router-link
-            :to="{ name: 'recommendations' }"
-            class="navbar-item"
-            tag="li"
+          <router-link :to="{ name: 'recommendations' }" class="navbar-item"
             >recommendations
           </router-link>
 
@@ -54,8 +50,8 @@
                 v-for="route in routes.projects"
                 :key="route.label"
                 :to="route.to"
-                tag="li"
                 class="navbar-item"
+                tag="li"
                 >{{ route.label }}
               </router-link>
             </div>
@@ -151,15 +147,16 @@ export default {
   height: 3.25rem;
 }
 
-@media only screen and (min-width: 1023px) {
+.navigation__top__route-home {
+  color: white;
+}
+
+
+@media only screen and (min-width: 1024px) {
   .navbar {
     padding-left: 15rem;
     padding-right: 15rem;
   }
-}
-
-li.navbar-item:hover {
-  background-color: #4f4f52;
 }
 
 li.navbar-item {
@@ -196,7 +193,7 @@ li.navbar-item {
 
 .sidebar-content a {
   color: inherit !important;
-  padding: 0.75rem !important
+  padding: 0.75rem !important;
 }
 
 .sidebar__item:hover {

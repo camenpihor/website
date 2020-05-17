@@ -16,9 +16,9 @@
     </div>
     <div class="blog__posts blog__posts__touch">
       <div class="blog__post" v-for="post in blogPostsJson" :key="post.title">
-          <h1 class="blog__post__title">{{ post.title }}</h1>
-          <p class="blog__post__date">{{ post.created }}</p>
-          <div class="blog__post__text">{{ truncateText(post.intro) }}</div>
+        <h1 class="blog__post__title">{{ post.title }}</h1>
+        <p class="blog__post__date">{{ post.created }}</p>
+        <div class="blog__post__text">{{ truncateText(post.intro) }}</div>
         <router-link :to="{ name: 'blog-post', params: { id: post.url } }">
           read more
         </router-link>
@@ -105,7 +105,7 @@ export default {
   display: none;
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 1024px) {
   .blog__posts__desktop {
     display: none;
   }

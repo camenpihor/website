@@ -51,6 +51,18 @@ $colors: (
   "dark": (
     #5b5b5f,
     #ffffff
+  ),
+  "blue": (
+    $blue,
+    findColorInvert($blue)
+  ),
+  "green": (
+    $green,
+    findColorInvert($green)
+  ),
+  "purple": (
+    $purple,
+    findColorInvert($purple)
   )
 );
 
@@ -62,7 +74,6 @@ html {
   @include from($desktop) {
     font-size: 20px;
   }
-  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -88,7 +99,13 @@ a:hover {
   padding-bottom: 10rem;
 }
 
-@media only screen and (max-width: 1023px) {
+@include from($desktop) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
   // all touch screens
   a {
     color: $blue !important;
