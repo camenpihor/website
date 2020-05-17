@@ -103,7 +103,6 @@ import WeatherSummary from "@/components/WeatherSummary.vue";
 
 import astronomicalJson from "@/assets/astronomical_events.json";
 
-
 export default {
   components: {
     Calendar,
@@ -153,9 +152,9 @@ export default {
         customData: this.bestDay
       };
 
-      var blah = [today, bestDay];
+      var allEvents = [today, bestDay];
       for (const [label, data] of Object.entries(astronomicalJson)) {
-        blah = blah.concat([
+        allEvents = allEvents.concat([
           ...data.map(datum => ({
             dates: datum.date,
             bar: this.colors[label],
@@ -168,7 +167,7 @@ export default {
           }))
         ]);
       }
-      return blah;
+      return allEvents;
     }
   }
 };
