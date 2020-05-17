@@ -70,7 +70,6 @@ a {
 }
 
 a:hover {
-  -webkit-tap-highlight-color: transparent;
   color: $blue;
 }
 
