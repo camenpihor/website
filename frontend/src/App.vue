@@ -62,6 +62,7 @@ html {
   @include from($desktop) {
     font-size: 20px;
   }
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {

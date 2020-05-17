@@ -196,6 +196,7 @@ li.navbar-item {
 
 .sidebar-content a {
   color: inherit !important;
+  padding: 0.75rem !important
 }
 
 .sidebar__item:hover {
