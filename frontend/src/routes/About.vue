@@ -158,7 +158,6 @@ export default {
 
 .about__externals {
   margin-top: 35px;
-  -webkit-tap-highlight-color: transparent;
 }
 
 .about__external {

@@ -4,7 +4,10 @@
       <Background class="home__image" :filePath="backgroundFilePath" />
     </div>
     <b-modal full-screen can-cancel :active.sync="isImageModalActive">
-      <ForeverBackground :filePath="backgroundFilePath" />
+      <Background
+        class="home__image__fullscreen"
+        :filePath="backgroundFilePath"
+      />
     </b-modal>
     <div class="home__page">
       <div class="home__section">
@@ -61,8 +64,6 @@
           </div>
         </div>
       </div>
-      <hr class="home__break-line" />
-      <LifeIcons class="home__section" />
     </div>
     <img class="person-sitting-image" :src="personSittingFilePath" />
   </div>
@@ -70,17 +71,13 @@
 
 <script>
 import Background from "@/components/Background.vue";
-import ForeverBackground from "@/components/ForeverBackground.vue";
-import LifeIcons from "@/components/LifeIcons.vue";
 
 import routeJson from "@/assets/routes.json";
 
 export default {
   name: "home",
   components: {
-    Background,
-    ForeverBackground,
-    LifeIcons
+    Background
   },
   data() {
     return {
@@ -116,6 +113,10 @@ export default {
   right: 0;
   margin: 0;
   height: 33vh;
+}
+
+.home__image__fullscreen {
+  height: 100vh;
 }
 
 .home__page {
