@@ -8,7 +8,7 @@
       ref="search"
     />
     <NotFound v-if="error" :requestedPath="this.$route.fullPath" />
-    <Loading v-if="!error & (star_forecast == null)" :isFullPage="true" />
+    <Loading v-if="!error & (star_forecast == null)" :isFullPage="false" />
     <div v-if="star_forecast != null" class="rogue-sky">
       <div class="rogue-sky__location rogue-sky__section">
         <h1 class="rogue-sky__header rogue-sky__location__name">
@@ -332,7 +332,7 @@ export default {
 
 <style>
 .rogue-sky {
-  padding-bottom: 20rem;
+  padding-bottom: 10rem;
 }
 
 .rogue-sky__search {
