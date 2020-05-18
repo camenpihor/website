@@ -46,4 +46,8 @@ export default {
 .weather__title {
   font-weight: bold;
 }
+
+.weather__value {
+  font-weight: lighter;
+}
 </style>

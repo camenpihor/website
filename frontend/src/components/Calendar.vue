@@ -85,14 +85,20 @@ export default {
 </script>
 
 <style>
+.calendar__key {
+  text-align: center;
+}
+
 .calendar__key__value {
-  padding: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   display: inline-block;
+  font-weight: lighter;
+  font-size: 0.8rem;
 }
 
 .calendar__key__color:before {
   content: " \25AC";
-  font-size: 1rem;
 }
 
 .calendar__popover {

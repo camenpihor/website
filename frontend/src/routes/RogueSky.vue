@@ -30,10 +30,11 @@
         <hr class="rogue-sky__break-line" />
       </div>
 
-      <div class="rogue-sky__day__today rogue-sky__section">
-        <h1 class="rogue-sky__header">Today</h1>
+      <div class="rogue-sky__weather rogue-sky__section">
+        <h1 class="rogue-sky__header">Weather</h1>
+        <h1 class="rogue-sky__sub-header">Today</h1>
         <WeatherSummary
-          class="rogue-sky__weather"
+          class="rogue-sky__weather__day"
           :starVisibility="floatToPercent(today.star_visibility)"
           :precipitationProbability="floatToPercent(today.precip_probability)"
           :precipitationType="
@@ -45,9 +46,7 @@
           :temperatureHigh="Math.round(today.temperature_max_f)"
           :moonPhase="floatToPercent(today.moon_phase_pct)"
         />
-      </div>
-      <div class="rogue-sky__day__best rogue-sky__section">
-        <div class="rogue-sky__header">
+        <div class="rogue-sky__sub-header">
           <p>Best of Week</p>
           <p
             v-if="bestDay.weather_date_local != today.weather_date_local"
@@ -60,7 +59,7 @@
           </p>
         </div>
         <WeatherSummary
-          class="rogue-sky__weather"
+          class="rogue-sky__weather__day"
           :starVisibility="floatToPercent(bestDay.star_visibility)"
           :precipitationProbability="floatToPercent(bestDay.precip_probability)"
           :precipitationType="
@@ -75,7 +74,13 @@
       </div>
 
       <div class="rogue-sky__map rogue-sky__section">
-        <h1 class="rogue-sky__header">Map</h1>
+        <div class="rogue-sky__header">
+          Map
+          <p class="rogue-sky__header__subtext">
+            Star visibility spatial projections
+          </p>
+        </div>
+
         <div class="rogue-sky__map__wrapper">
           <Map
             class="rogue-sky__map__image"
@@ -87,7 +92,13 @@
       </div>
 
       <div class="rogue-sky__month rogue-sky__section">
-        <h1 class="rogue-sky__header">Month</h1>
+        <div class="rogue-sky__header">
+          Month
+          <div class="rogue-sky__header__subtext">
+            <p>Star visibility temporal projections</p>
+            <p style="margin-top: -0.3rem;">Astronomical events</p>
+          </div>
+        </div>
         <div class="rogue-sky__calendar__wrapper">
           <Calendar
             class="rogue-sky__calendar"
@@ -168,7 +179,7 @@ export default {
     return {
       personMountainMoonFilePath: require("@/assets/people/person-mountain-moon.svg"),
       calendarColors: {
-        best: "#d69e2e",  // yellow
+        best: "#d69e2e", // yellow
         moon: "green",
         eclipse: "gray",
         planetary: "red",
@@ -374,12 +385,12 @@ export default {
 }
 
 .rogue-sky__section {
-  margin-top: 4rem;
   margin-bottom: 4rem;
 }
 
 .rogue-sky__section:first-of-type {
   margin-top: 2.5rem;
+  margin-bottom: 4rem;
 }
 
 .rogue-sky__section:last-of-type {
@@ -390,7 +401,7 @@ export default {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  text-align: left;
+  text-align: center;
 }
 
 .rogue-sky__header__subtext {
@@ -418,12 +429,9 @@ export default {
   margin-right: -2rem; /* same as padding-right on router-view */
 }
 
-.rogue-sky__weather {
+.rogue-sky__weather__day {
   margin-left: -2rem; /* same as padding-left on router-view */
   margin-right: -2rem; /* same as padding-right on router-view */
-}
-
-.rogue-sky__weather {
   font-size: 0.9rem;
 }
 
