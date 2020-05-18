@@ -181,7 +181,7 @@ li.navbar-item {
 /* buefy class */
 .sidebar-content {
   padding: 32px;
-  transition: ease-in-out 0.5s !important;
+  transition-duration: 0.8s !important;
 }
 
 .sidebar-content p {

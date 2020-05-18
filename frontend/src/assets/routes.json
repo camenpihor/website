@@ -17,6 +17,13 @@
         {
             "internal": true,
             "to": {
+                "name": "documentation"
+            },
+            "label": "Documentation"
+        },
+        {
+            "internal": true,
+            "to": {
                 "name": "recommendations"
             },
             "label": "Recommendations"

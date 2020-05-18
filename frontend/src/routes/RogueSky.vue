@@ -1,17 +1,27 @@
 <template>
-  <div class="rogue-sky">
-    <SearchBar class="rogue-sky__search" placeholder="Boston, MA" />
-    <div class="rogue-sky__results">
+  <div>
+    <EventListener :method="searchListener" />
+    <SearchBar
+      class="rogue-sky__search"
+      placeholder="search address..."
+      :method="search"
+      ref="search"
+    />
+    <NotFound v-if="error" :requestedPath="this.$route.fullPath" />
+    <Loading v-if="!error & (star_forecast == null)" :isFullPage="true" />
+    <div v-if="star_forecast != null" class="rogue-sky">
       <div class="rogue-sky__location rogue-sky__section">
+        <h1 class="rogue-sky__header rogue-sky__location__name">
+          {{ this.city }}, {{ this.state }}
+        </h1>
         <div class="rogue-sky__week columns is-mobile">
-          <StarVizIcon class="column" word="clear" date="May 8" />
-          <StarVizIcon class="column" word="cloudy" date="May 9" />
-          <StarVizIcon class="column" word="very-cloudy" date="May 10" />
-          <StarVizIcon class="column" word="rain" date="May 11" />
-          <StarVizIcon class="column" word="best" date="May 12" />
-          <StarVizIcon class="column" word="cloudy" date="May 13" />
-          <StarVizIcon class="column" word="rain" date="May 14" />
-          <StarVizIcon class="column" word="clear" date="May 15" />
+          <StarVizIcon
+            class="column"
+            v-for="star in star_forecast"
+            :key="star.weather_date_local"
+            :word="star.icon"
+            :date="humanizeDate(star.weather_date_local)"
+          />
         </div>
       </div>
 
@@ -19,34 +29,55 @@
         <h1 class="rogue-sky__header">Today</h1>
         <WeatherSummary
           class="rogue-sky__weather"
-          starVisibility="62"
-          precipitationAmount="3"
-          precipitationType="heavy rain"
-          temperatureLow="52"
-          temperatureHigh="78"
-          moonPhase="83"
+          :starVisibility="floatToPercent(today.star_visibility)"
+          :precipitationProbability="floatToPercent(today.precip_probability)"
+          :precipitationType="
+            precipitationIntensityToType(today.precip_intensity_max_in_hr) +
+              ' ' +
+              today.precip_type
+          "
+          :temperatureLow="Math.round(today.temperature_min_f)"
+          :temperatureHigh="Math.round(today.temperature_max_f)"
+          :moonPhase="floatToPercent(today.moon_phase_pct)"
         />
       </div>
       <div class="rogue-sky__day__best rogue-sky__section">
         <div class="rogue-sky__header">
           <p>Best of Week</p>
-          <p class="rogue-sky__header__subtext">(Wednesday May 12)</p>
+          <p
+            v-if="bestDay.weather_date_local != today.weather_date_local"
+            class="rogue-sky__header__subtext"
+          >
+            {{ bestDay.weather_date_local | moment("dddd, MMMM Do") }}
+          </p>
+          <p v-else class="rogue-sky__header__subtext">
+            Today
+          </p>
         </div>
         <WeatherSummary
           class="rogue-sky__weather"
-          starVisibility="94"
-          precipitationAmount="0"
-          precipitationType="rain"
-          temperatureLow="60"
-          temperatureHigh="75"
-          moonPhase="100"
+          :starVisibility="floatToPercent(bestDay.star_visibility)"
+          :precipitationProbability="floatToPercent(bestDay.precip_probability)"
+          :precipitationType="
+            precipitationIntensityToType(bestDay.precip_intensity_max_in_hr) +
+              ' ' +
+              bestDay.precip_type
+          "
+          :temperatureLow="Math.round(bestDay.temperature_min_f)"
+          :temperatureHigh="Math.round(bestDay.temperature_max_f)"
+          :moonPhase="floatToPercent(bestDay.moon_phase_pct)"
         />
       </div>
 
       <div class="rogue-sky__map rogue-sky__section">
         <h1 class="rogue-sky__header">Map</h1>
         <div class="rogue-sky__map__wrapper">
-          <Map class="rogue-sky__map__image" />
+          <Map
+            class="rogue-sky__map__image"
+            :latitude="parseFloat(latitude)"
+            :longitude="parseFloat(longitude)"
+            :zoom="6"
+          />
         </div>
       </div>
 
@@ -58,7 +89,7 @@
             :attributes="attributes"
             minDate="2020-01-02"
             maxDate="2021-01-01"
-            :colorKey="colors"
+            :colorKey="calendarColors"
           />
         </div>
       </div>
@@ -67,25 +98,33 @@
         <h1 class="rogue-sky__header">Additional Information</h1>
         <ul>
           <li>
-            <a href="https://www.camenpiho.com/rogue-sky/documentation"
-              >www.camenpiho.com/rogue-sky/documentation</a
+            <router-link :to="{ name: 'documentation' }">{{
+              resolveURL({ name: "documentation" })
+            }}</router-link>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              :href="`https://www.darksky.net/forecast/${latitude},${longitude}`"
+              >www.darksky.net/forecast/{{ latitude }},{{ longitude }}</a
             >
           </li>
           <li>
-            <a href="https://www.darksky.net/forecast/40.7127,-74.0059"
-              >www.darksky.net/forecast/40.7127,-74.0059</a
-            >
-          </li>
-          <li>
-            <a href="https://www.darksitefinder.com/maps/world.html"
+            <a
+              target="_blank"
+              href="https://www.darksitefinder.com/maps/world.html"
               >www.darksitefinder.com/maps/world.html</a
             >
           </li>
           <li>
-            <a href="https://www.darksky.org">www.darksky.org</a>
+            <a target="_blank" href="https://www.darksky.org"
+              >www.darksky.org</a
+            >
           </li>
           <li>
-            <a href="https://www.starwalk.space">www.starwalk.space</a>
+            <a target="_blank" href="https://www.starwalk.space"
+              >www.starwalk.space</a
+            >
           </li>
         </ul>
       </div>
@@ -96,17 +135,24 @@
 
 <script>
 import Calendar from "@/components/Calendar.vue";
+import EventListener from "@/components/EventListener.vue";
+import Loading from "@/components/Loading.vue";
 import Map from "@/components/Map.vue";
+import NotFound from "@/routes/NotFound.vue";
 import SearchBar from "@/components/SearchBar.vue";
 import StarVizIcon from "@/components/StarVizIcon.vue";
 import WeatherSummary from "@/components/WeatherSummary.vue";
 
+import { getCoordinates, getStarForecast } from "@/api.js";
 import astronomicalJson from "@/assets/astronomical_events.json";
 
 export default {
   components: {
     Calendar,
+    EventListener,
+    Loading,
     Map,
+    NotFound,
     SearchBar,
     StarVizIcon,
     WeatherSummary
@@ -114,61 +160,172 @@ export default {
   data() {
     return {
       personMountainMoonFilePath: require("@/assets/people/person-mountain-moon.svg"),
-      colors: {
+      calendarColors: {
         moon: "green",
         eclipse: "gray",
         planetary: "red",
         meteorShower: "purple",
         other: "blue"
       },
-      bestDay: {
-        date: "2020-05-18",
-        starVisibility: 78,
-        event: "Best day of star visibility this week (78%)"
-      }
+      star_forecast: null,
+      city: null,
+      state: null,
+      latitude: null,
+      longitude: null,
+      error: false
     };
   },
-  computed: {
-    attributes() {
-      let today = {
-        key: "today",
-        highlight: "blue",
-        dates: new Date(),
-        popover: {
-          label: "Today",
-          placement: "auto"
-        },
-        customData: { event: "Today" }
-      };
-
-      let bestDay = {
-        key: "bestDay",
-        highlight: { color: "yellow" },
-        dates: this.bestDay.date,
-        popover: {
-          label: this.bestDay.event,
-          placement: "auto"
-        },
-        customData: this.bestDay
-      };
-
-      var allEvents = [today, bestDay];
-      for (const [label, data] of Object.entries(astronomicalJson)) {
-        allEvents = allEvents.concat([
-          ...data.map(datum => ({
-            dates: datum.date,
-            bar: this.colors[label],
-            popover: {
-              label: datum.event,
-              placement: "auto",
-              isInteractive: true
-            },
-            customData: datum
-          }))
-        ]);
+  methods: {
+    initialize: function() {
+      this.error = false;
+      this.latitude = this.$route.params.latitude;
+      this.longitude = this.$route.params.longitude;
+      this.forecast();
+    },
+    forecast: function() {
+      getStarForecast(this.latitude, this.longitude)
+        .then(response => {
+          this.star_forecast = response.data.daily_forecast;
+          this.city = response.data.city;
+          this.state = response.data.state;
+        })
+        .catch(() => {
+          this.error = true;
+        });
+    },
+    floatToPercent: function(float) {
+      return Math.round(float * 100);
+    },
+    precipitationIntensityToType: function(precip_in_per_hour) {
+      if (precip_in_per_hour < 0.1) {
+        return "light";
+      } else if (precip_in_per_hour < 0.3) {
+        return "moderate";
+      } else {
+        return "heavy";
       }
-      return allEvents;
+    },
+    search: function(input) {
+      this.star_forecast = null;
+      this.city = null;
+      this.state = null;
+      this.latitude = null;
+      this.longitude = null;
+      this.error = false;
+
+      getCoordinates(input)
+        .then(function(response) {
+          let latitude = response.data.latitude.toFixed(3);
+          let longitude = response.data.longitude.toFixed(3);
+          this.$router.push({
+            name: "rogue-sky-location",
+            params: { latitude: latitude, longitude: longitude }
+          });
+        })
+        .catch(function() {
+          console.log(this);
+        });
+    },
+    searchListener: function(event) {
+      let badTags = ["INPUT", "TEXTAREA"];
+      if ((event.code === "Slash") & !badTags.includes(event.target.tagName)) {
+        this.$refs.search.$el.getElementsByTagName("input")[0].focus();
+      }
+    },
+    humanizeDate: function(date) {
+      date = this.$moment(date);
+      if (date.isSame(this.$moment(), "day")) {
+        return "Today";
+      } else {
+        return date.format("ddd");
+      }
+    },
+    resolveURL: function(routerParams) {
+      let resolved = this.$router.resolve(routerParams);
+      return `www.${window.location.hostname}${resolved.route.fullPath}`;
     }
+  },
+  computed: {
+    today() {
+      if (this.star_forecast != null) {
+        return this.star_forecast[0];
+      }
+      return null;
+    },
+    bestDay() {
+      if (this.star_forecast != null) {
+        let arr = this.star_forecast;
+        let maxObject = arr[0];
+
+        for (let i = 0, len = arr.length; i < len; i++) {
+          let current = arr[i];
+          if (current.star_visibility > maxObject.star_visibility) {
+            maxObject = current;
+          }
+        }
+        return maxObject;
+      }
+      return null;
+    },
+    attributes() {
+      if (this.star_forecast != null) {
+        let todayDesc = `Today (${this.floatToPercent(
+          this.today.star_visibility
+        )}% star visibility)`;
+        let today = {
+          key: "today",
+          highlight: "blue",
+          dates: new Date(),
+          popover: {
+            label: todayDesc,
+            placement: "auto"
+          },
+          customData: { event: todayDesc }
+        };
+
+        let bestDayEvent = `Best day of star visibility this week (${this.floatToPercent(
+          this.bestDay.star_visibility
+        )}%)`;
+        let bestDay = {
+          key: "bestDay",
+          highlight: { color: "yellow" },
+          dates: this.bestDay.weather_date_local,
+          popover: {
+            label: bestDayEvent,
+            placement: "auto"
+          },
+          customData: { event: bestDayEvent }
+        };
+
+        var allEvents = [today, bestDay];
+        for (const [label, data] of Object.entries(astronomicalJson)) {
+          allEvents = allEvents.concat([
+            ...data.map(datum => ({
+              dates: datum.date,
+              bar: this.calendarColors[label],
+              popover: {
+                label: datum.event,
+                placement: "auto",
+                isInteractive: true
+              },
+              customData: datum
+            }))
+          ]);
+        }
+        return allEvents;
+      }
+      return null;
+    }
+  },
+  watch: {
+    $route(to, from) {
+      if (to !== from) {
+        this.initialize();
+      }
+    }
+  },
+  mounted() {
+    this.initialize();
   }
 };
 </script>
@@ -207,6 +364,10 @@ export default {
   font-size: 0.7rem;
   font-weight: lighter;
   margin-top: -0.5rem;
+}
+
+.rogue-sky__location__name {
+  text-align: center;
 }
 
 .rogue-sky__week {

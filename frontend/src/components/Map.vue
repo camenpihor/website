@@ -1,10 +1,11 @@
 <template>
   <Mapbox
+    class="map"
     :access-token="this.getToken()"
     :map-options="{
       style: 'mapbox://styles/mapbox/dark-v10',
-      center: [lat, lon],
-      zoom: 2,
+      center: [longitude, latitude],
+      zoom: zoom,
       dragRotate: false
     }"
     :geolocate-control="{
@@ -27,13 +28,17 @@ import Mapbox from "mapbox-gl-vue";
 export default {
   components: { Mapbox },
   props: {
-    lat: {
+    latitude: {
+      type: Number,
+      default: 37.8
+    },
+    longitude: {
       type: Number,
       default: -96
     },
-    lon: {
+    zoom: {
       type: Number,
-      default: 37.8
+      default: 2
     }
   },
   methods: {
@@ -45,4 +50,7 @@ export default {
 </script>
 
 <style>
+.map a {
+  color: inherit !important;
+}
 </style>

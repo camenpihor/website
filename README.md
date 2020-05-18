@@ -22,19 +22,17 @@ Flask
 
 Vue
 
-- astronomical events data from https://www.photopills.com/articles/astronomical-events-photography-guide#step1
-
 ## TODO
 
 - next steps
   - verify all links
   - link checker test
+  - add geographical star visibility to map
+  - add long-term forecast of star visibility to calendar
   - life icons to just paragraph summaries/remove all together?
-  - is sidebar jerky?
 
 - pages
-  - rogue sky
-  - math implementations
+  - documentation
   - tree count
   - measurements
   - nature identification

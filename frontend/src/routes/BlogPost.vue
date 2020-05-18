@@ -1,9 +1,6 @@
 <template>
   <div>
-    <NotFound
-      v-if="(post == null) & (error === true)"
-      :requestedPath="this.$route.fullPath"
-    />
+    <NotFound v-if="error === true" :requestedPath="this.$route.fullPath" />
     <div v-if="post !== null" class="blog-post">
       <SearchBar class="blog-post__search" />
       <div class="blog-post__body">

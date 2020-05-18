@@ -7,7 +7,7 @@
     <div class="column">
       <h1 class="weather__title">Precipitation</h1>
       <div class="weather__value">
-        {{ precipitationAmount }}% {{ precipitationType }}
+        {{ precipitationProbability }}% {{ precipitationType }}
       </div>
     </div>
     <div class="column">
@@ -15,7 +15,7 @@
       <div class="weather__value">
         <ul>
           <li>Low: {{ temperatureLow }}°F</li>
-          <li>High: {{ temperatureLow }}°F</li>
+          <li>High: {{ temperatureHigh }}°F</li>
         </ul>
       </div>
     </div>
@@ -30,7 +30,7 @@
 export default {
   props: [
     "starVisibility",
-    "precipitationAmount",
+    "precipitationProbability",
     "precipitationType",
     "temperatureLow",
     "temperatureHigh",

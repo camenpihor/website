@@ -10,13 +10,19 @@ export default {
   props: ["word", "date"],
   methods: {
     wordToIconClass: function() {
-      let cantFind = "fal fa-space-station-moon-alt";
+      let cantFind = "fas fa-monkey";
       let lookup = {
         best: "fas fa-moon-stars",
-        clear: "fas fa-moon",
-        cloudy: "fas fa-moon-cloud",
-        "very-cloudy": "fas fa-clouds-moon",
-        rain: "fas fa-cloud-moon-rain"
+        "clear-day": "fas fa-moon",
+        "clear-night": "fas fa-moon",
+        cloudy: "fas fa-cloud",
+        "very-cloudy": "fas fa-clouds",
+        rain: "fas fa-cloud-rain",
+        snow: "fas fa-cloud-snow",
+        sleet: "fas fa-cloud-sleet",
+        fog: "fas fa-clouds",
+        "partly-cloudy-day": "fas fa-moon-cloud",
+        "partly-cloudy-night": "fas fa-moon-cloud"
       };
       if (this.word in lookup) {
         return lookup[this.word];

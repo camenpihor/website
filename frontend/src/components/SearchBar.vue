@@ -1,7 +1,6 @@
 <template>
   <div class="search-bar">
     <b-input
-      @keyup.native.enter="search"
       v-model="input"
       rounded
       :placeholder="placeholder"
@@ -10,8 +9,9 @@
       icon="search"
       icon-clickable
       @icon-click="search"
-      maxlength="30"
-      :has-counter="false"
+      @keyup.native.enter="search"
+      @click.native="clearInput"
+      ref="search"
     />
     <img
       v-if="imageFilePath !== null"
@@ -31,6 +31,9 @@ export default {
     imageFilePath: {
       type: String,
       default: null
+    },
+    method: {
+      type: Function
     }
   },
   data() {
@@ -39,9 +42,15 @@ export default {
     };
   },
   methods: {
-    search() {},
-    clearInput() {
+    clearInput: function() {
       this.input = null;
+    },
+    search: function() {
+      if (this.input != null) {
+        return this.method(this.input);
+      } else {
+        this.$refs.search.$el.getElementsByTagName("input")[0].blur();
+      }
     }
   }
 };
