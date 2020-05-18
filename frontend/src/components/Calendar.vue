@@ -8,7 +8,7 @@
       >
         <span>{{ camelCaseToWords(key) }}: </span
         ><span
-          class="calendar__key__circle"
+          class="calendar__key__color"
           v-bind:style="{ color: color }"
         ></span>
       </li>
@@ -90,8 +90,8 @@ export default {
   display: inline-block;
 }
 
-.calendar__key__circle:before {
-  content: " \25CF";
+.calendar__key__color:before {
+  content: " \25AC";
   font-size: 1rem;
 }
 

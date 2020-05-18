@@ -10,7 +10,7 @@
       icon-clickable
       @icon-click="search"
       @keyup.native.enter="search"
-      @click.native="clearInput"
+      @keyup.native.esc="blurThis"
       ref="search"
     />
     <img
@@ -45,11 +45,13 @@ export default {
     clearInput: function() {
       this.input = null;
     },
+    blurThis: function() {
+      this.$refs.search.$el.getElementsByTagName("input")[0].blur();
+    },
     search: function() {
+      this.blurThis();
       if (this.input != null) {
         return this.method(this.input);
-      } else {
-        this.$refs.search.$el.getElementsByTagName("input")[0].blur();
       }
     }
   }
@@ -64,5 +66,9 @@ export default {
 /* buefy class */
 .search-bar .input {
   border-radius: 15px;
+}
+
+.search-bar input:not(:focus) {
+  color: #b1b1b1;
 }
 </style>

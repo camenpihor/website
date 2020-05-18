@@ -7,7 +7,10 @@
     <div class="column">
       <h1 class="weather__title">Precipitation</h1>
       <div class="weather__value">
-        {{ precipitationProbability }}% {{ precipitationType }}
+        {{ precipitationProbability }}%
+        <span v-if="precipitationProbability != 0">{{
+          precipitationType
+        }}</span>
       </div>
     </div>
     <div class="column">

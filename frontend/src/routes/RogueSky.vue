@@ -7,7 +7,11 @@
       :method="search"
       ref="search"
     />
-    <NotFound v-if="error" :requestedPath="this.$route.fullPath" />
+    <NotFound
+      class="rogue-sky__section"
+      v-if="error"
+      :requestedPath="this.$route.fullPath"
+    />
     <Loading v-if="!error & (star_forecast == null)" :isFullPage="false" />
     <div v-if="star_forecast != null" class="rogue-sky">
       <div class="rogue-sky__location rogue-sky__section">
@@ -23,6 +27,7 @@
             :date="humanizeDate(star.weather_date_local)"
           />
         </div>
+        <hr class="rogue-sky__break-line" />
       </div>
 
       <div class="rogue-sky__day__today rogue-sky__section">
@@ -105,7 +110,9 @@
           <li>
             <a
               target="_blank"
-              :href="`https://www.darksky.net/forecast/${latitude},${longitude}`"
+              :href="
+                `https://www.darksky.net/forecast/${latitude},${longitude}`
+              "
               >www.darksky.net/forecast/{{ latitude }},{{ longitude }}</a
             >
           </li>
@@ -161,6 +168,7 @@ export default {
     return {
       personMountainMoonFilePath: require("@/assets/people/person-mountain-moon.svg"),
       calendarColors: {
+        best: "#d69e2e",  // yellow
         moon: "green",
         eclipse: "gray",
         planetary: "red",
@@ -176,13 +184,49 @@ export default {
     };
   },
   methods: {
-    initialize: function() {
+    reset: function() {
       this.error = false;
-      this.latitude = this.$route.params.latitude;
-      this.longitude = this.$route.params.longitude;
-      this.forecast();
+      this.latitude = null;
+      this.longitude = null;
+      this.city = null;
+      this.state = null;
+      this.star_forecast = null;
     },
-    forecast: function() {
+    initialize: function() {
+      this.reset();
+      if (this.$route.query.address != null) {
+        this.fetchCoordinates();
+      } else if (
+        this.$route.params.latitude !== undefined ||
+        this.$route.params.longitude !== undefined
+      ) {
+        this.latitude = this.$route.params.latitude;
+        this.longitude = this.$route.params.longitude;
+        this.fetchForecast();
+      } else {
+        let seattle_lat = 47.687;
+        let seattle_lon = -122.377;
+        this.$router.replace({
+          name: "rogue-sky-location",
+          params: { latitude: seattle_lat, longitude: seattle_lon }
+        });
+      }
+    },
+    fetchCoordinates: function() {
+      getCoordinates(this.$route.query.address)
+        .then(response => {
+          let latitude = response.data.latitude.toFixed(3);
+          let longitude = response.data.longitude.toFixed(3);
+          this.$router.replace({
+            name: "rogue-sky-location",
+            params: { latitude: latitude, longitude: longitude }
+          });
+        })
+        .catch(() => {
+          this.error = true;
+        });
+    },
+    fetchForecast: function() {
       getStarForecast(this.latitude, this.longitude)
         .then(response => {
           this.star_forecast = response.data.daily_forecast;
@@ -206,25 +250,11 @@ export default {
       }
     },
     search: function(input) {
-      this.star_forecast = null;
-      this.city = null;
-      this.state = null;
-      this.latitude = null;
-      this.longitude = null;
-      this.error = false;
-
-      getCoordinates(input)
-        .then(function(response) {
-          let latitude = response.data.latitude.toFixed(3);
-          let longitude = response.data.longitude.toFixed(3);
-          this.$router.push({
-            name: "rogue-sky-location",
-            params: { latitude: latitude, longitude: longitude }
-          });
-        })
-        .catch(function() {
-          console.log(this);
-        });
+      this.reset();
+      this.$router.push({
+        name: "rogue-sky",
+        query: { address: input }
+      });
     },
     searchListener: function(event) {
       let badTags = ["INPUT", "TEXTAREA"];
@@ -274,7 +304,10 @@ export default {
         )}% star visibility)`;
         let today = {
           key: "today",
-          highlight: "blue",
+          highlight: {
+            color: "blue",
+            fillMode: "light"
+          },
           dates: new Date(),
           popover: {
             label: todayDesc,
@@ -288,7 +321,7 @@ export default {
         )}%)`;
         let bestDay = {
           key: "bestDay",
-          highlight: { color: "yellow" },
+          bar: "yellow",
           dates: this.bestDay.weather_date_local,
           popover: {
             label: bestDayEvent,
@@ -366,8 +399,18 @@ export default {
   margin-top: -0.5rem;
 }
 
+.rogue-sky__break-line {
+  margin-left: 39.5px;
+  margin-right: 39.5px;
+  color: #979797;
+  background-color: #979797;
+  height: 1px;
+  border: none;
+}
+
 .rogue-sky__location__name {
   text-align: center;
+  font-size: 2rem;
 }
 
 .rogue-sky__week {

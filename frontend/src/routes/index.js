@@ -50,7 +50,7 @@ const router = new VueRouter({
       path: "/roguesky",
       name: "rogue-sky",
       meta: { pageHome: "rogue-sky" },
-      redirect: { name: 'rogue-sky-location', params: { latitude: 47.687, longitude: -122.377 } }
+      component: () => import("./RogueSky.vue"),
     },
     {
       path: '/roguesky/:latitude/:longitude',
