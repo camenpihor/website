@@ -19,6 +19,7 @@
     :nav-control="{
       show: false
     }"
+    @map-load="onLoad"
   />
 </template>
 
@@ -39,6 +40,10 @@ export default {
     zoom: {
       type: Number,
       default: 2
+    },
+    onLoad: {
+      type: Function,
+      default: () => null
     }
   },
   methods: {

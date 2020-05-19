@@ -87,6 +87,7 @@
             :latitude="parseFloat(latitude)"
             :longitude="parseFloat(longitude)"
             :zoom="6"
+            :onLoad="cloudCoverLayer"
           />
         </div>
       </div>
@@ -284,6 +285,21 @@ export default {
     resolveURL: function(routerParams) {
       let resolved = this.$router.resolve(routerParams);
       return `www.${window.location.hostname}${resolved.route.fullPath}`;
+    },
+    cloudCoverLayer: function(map) {
+      map.addLayer({
+        id: "simple-tiles",
+        type: "raster",
+        source: {
+          type: "raster",
+          tiles: [
+            `https://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png?appid=${process.env.VUE_APP_WEATHERMAP_SECRET_TOKEN}`
+          ],
+          tileSize: 256
+        },
+        minzoom: 0,
+        maxzoom: 22
+      });
     }
   },
   computed: {
@@ -310,9 +326,6 @@ export default {
     },
     attributes() {
       if (this.star_forecast != null) {
-        let todayDesc = `Today (${this.floatToPercent(
-          this.today.star_visibility
-        )}% star visibility)`;
         let today = {
           key: "today",
           highlight: {
@@ -321,13 +334,13 @@ export default {
           },
           dates: new Date(),
           popover: {
-            label: todayDesc,
+            label: "Today",
             placement: "auto"
           },
-          customData: { event: todayDesc }
+          customData: { event: "Today" }
         };
 
-        let bestDayEvent = `Best day of star visibility this week (${this.floatToPercent(
+        let bestDayEvent = `Best day of star visibility over the next 8 days (${this.floatToPercent(
           this.bestDay.star_visibility
         )}%)`;
         let bestDay = {
@@ -457,6 +470,10 @@ export default {
 .rogue-sky__calendar__wrapper {
   margin-left: -2rem; /* same as padding-left on router-view */
   margin-right: -2rem; /* same as padding-right on router-view */
+}
+
+.rogue-sky__addition-info {
+  text-align: center;
 }
 
 .person-mountain-moon {
