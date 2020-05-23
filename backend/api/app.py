@@ -6,18 +6,20 @@ from flask import Flask, Response
 from rogue_sky import darksky, stars
 
 from api import logger
+from api.data import recommendations
 
 app = Flask(__name__)  # pylint: disable=invalid-name
 _logger = logger.setup(__name__)
 
 FRONTEND_ADDRESS = os.environ.get("FRONTEND_ADDRESS", None)
 DARKSKY_SECRET_KEY = os.environ["DARKSKY_SECRET_KEY"]
+DATABASE_URL = os.environ["DATABASE_URL"]
 
 
 @app.route("/")
 def ping_test():
     """Backend API ping test."""
-    return "Success"
+    return _json_response(data={"status": "ok"})
 
 
 @app.route("/api/coordinates/<query>")
@@ -41,6 +43,28 @@ def star_visibility_forecast(latitude, longitude):
             api_key=DARKSKY_SECRET_KEY,
         )
     )
+
+
+@app.route("/api/recommendations/kind/<kind>")
+def get_recommendations_kind(kind):
+    """Get recommendations by kind."""
+    _logger.info("Getting recommendations for kind=%s", kind)
+    if kind == "unique":
+        data = recommendations.get_unique_kinds(pg_url=DATABASE_URL)
+    else:
+        data = recommendations.get_by_kind(kind=kind, pg_url=DATABASE_URL)
+    return _json_response(data=data)
+
+
+@app.route("/api/recommendations/tag/<tag>")
+def get_recommendations_tag(tag):
+    """Get recommendations by tag."""
+    _logger.info("Getting recommendations for tag=%s", tag)
+    if tag == "unique":
+        data = recommendations.get_unique_tags(pg_url=DATABASE_URL)
+    else:
+        data = recommendations.get_by_tag(tag=tag, pg_url=DATABASE_URL)
+    return _json_response(data=data)
 
 
 def _json_response(data):

@@ -14,3 +14,7 @@ VUE_APP_WEATHERMAP_SECRET_TOKEN=<SECRET>
 FRONTEND_HOST=127.0.0.1
 FRONTEND_PORT=8000
 FRONTEND_ADDRESS=http://${FRONTEND_HOST}:${FRONTEND_PORT}
+
+
+DATABASE_URL=postgres://<user>:<pass>@<host>:<port>/<db_name>
+TEST_DATABASE_URL=postgres://<user>:<pass>@<host>:<port>/<db_name>
