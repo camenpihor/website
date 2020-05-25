@@ -241,7 +241,7 @@ export default {
     fetchForecast: function() {
       getStarForecast(this.latitude, this.longitude)
         .then(response => {
-          this.star_forecast = response.data.daily_forecast;
+          this.star_forecast = response.data.daily_forecast.slice(0, 7);
           this.city = response.data.city;
           this.state = response.data.state;
         })
@@ -340,7 +340,7 @@ export default {
           customData: { event: "Today" }
         };
 
-        let bestDayEvent = `Best day of star visibility over the next 8 days (${this.floatToPercent(
+        let bestDayEvent = `Best day of star visibility over the next week (${this.floatToPercent(
           this.bestDay.star_visibility
         )}%)`;
         let bestDay = {
