@@ -62,7 +62,7 @@ def test_get_unique_tags(database, recommendations_data):
         recommendations.insert_csv(cursor=cursor, csv=recommendations_data)
 
     actual = recommendations.get_unique_tags(pg_url=database)
-    assert len(actual["tags"]) == 20
+    assert len(actual) == 20
 
 
 def test_get_unique_kinds(database, recommendations_data):
@@ -70,4 +70,4 @@ def test_get_unique_kinds(database, recommendations_data):
         recommendations.insert_csv(cursor=cursor, csv=recommendations_data)
 
     actual = recommendations.get_unique_kinds(pg_url=database)
-    assert len(actual["kinds"]) == 5
+    assert len(actual) == 5

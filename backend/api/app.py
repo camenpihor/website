@@ -2,7 +2,7 @@
 import json
 import os
 
-from flask import Flask, Response
+from flask import Flask, Response, request
 from rogue_sky import darksky, stars
 
 from api import logger
@@ -45,25 +45,28 @@ def star_visibility_forecast(latitude, longitude):
     )
 
 
-@app.route("/api/recommendations/kind/<kind>")
-def get_recommendations_kind(kind):
-    """Get recommendations by kind."""
-    _logger.info("Getting recommendations for kind=%s", kind)
-    if kind == "unique":
-        data = recommendations.get_unique_kinds(pg_url=DATABASE_URL)
-    else:
-        data = recommendations.get_by_kind(kind=kind, pg_url=DATABASE_URL)
-    return _json_response(data=data)
+@app.route("/api/recommendations")
+def get_recommendations():
+    query = request.args
+    if not query:
+        data = recommendations.get(pg_url=DATABASE_URL)
 
+    elif "tag" in query:
+        tag = query.get("tag")
+        if tag == "unique":
+            data = recommendations.get_unique_tags(pg_url=DATABASE_URL)
+        else:
+            data = recommendations.get_by_tag(tag=tag, pg_url=DATABASE_URL)
 
-@app.route("/api/recommendations/tag/<tag>")
-def get_recommendations_tag(tag):
-    """Get recommendations by tag."""
-    _logger.info("Getting recommendations for tag=%s", tag)
-    if tag == "unique":
-        data = recommendations.get_unique_tags(pg_url=DATABASE_URL)
+    elif "kind" in query:
+        kind = query.get("kind")
+        if kind == "unique":
+            data = recommendations.get_unique_kinds(pg_url=DATABASE_URL)
+        else:
+            data = recommendations.get_by_kind(kind=kind, pg_url=DATABASE_URL)
     else:
-        data = recommendations.get_by_tag(tag=tag, pg_url=DATABASE_URL)
+        raise ValueError(f"Cannot handle query. Got {query}")
+
     return _json_response(data=data)
 
 

@@ -7,13 +7,19 @@ from .utilities import pg_cursor, execute_sql_file
 _logger = logger.setup(__name__)
 
 
+def get(pg_url):
+    with pg_cursor(pg_url=pg_url, cursor_factory=RealDictCursor) as cursor:
+        cursor.execute("SELECT * FROM recommendations;")
+        _logger.info(cursor.statusmessage)
+        return cursor.fetchall()
+
+
 def get_by_kind(kind, pg_url):
     with pg_cursor(pg_url=pg_url, cursor_factory=RealDictCursor) as cursor:
         query = "SELECT * FROM recommendations WHERE kind = %s;"
         cursor.execute(query, (kind,))
         _logger.info(cursor.statusmessage)
-        recommendations = cursor.fetchall()
-    return recommendations
+        return cursor.fetchall()
 
 
 def get_by_tag(tag, pg_url):
@@ -21,8 +27,7 @@ def get_by_tag(tag, pg_url):
         query = "SELECT * FROM recommendations WHERE %s = ANY(tags);"
         cursor.execute(query, (tag,))
         _logger.info(cursor.statusmessage)
-        recommendations = cursor.fetchall()
-    return recommendations
+        return cursor.fetchall()
 
 
 def get_unique_tags(pg_url):
@@ -31,7 +36,7 @@ def get_unique_tags(pg_url):
         cursor.execute(query)
         _logger.info(cursor.statusmessage)
         tags = cursor.fetchall()
-    return {"tags": [tag for tag, in tags]}
+    return [tag for tag, in tags]
 
 
 def get_unique_kinds(pg_url):
@@ -40,7 +45,7 @@ def get_unique_kinds(pg_url):
         cursor.execute(query)
         _logger.info(cursor.statusmessage)
         kinds = cursor.fetchall()
-    return {"kinds": [kind for kind, in kinds]}
+    return [kind for kind, in kinds]
 
 
 def create_table(cursor):

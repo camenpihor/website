@@ -5,13 +5,21 @@ import axios from "axios";
 const backendUrl = process.env.VUE_APP_BACKEND_ENDPOINT
 
 function getStarForecast(latitude, longitude) {
-  const url = `${backendUrl}/stars/${latitude}/${longitude}`
+  const url = `${backendUrl}/stars/${latitude}/${longitude}`;
   return axios.get(url)
 }
 
 function getCoordinates(query) {
-  const url = `${backendUrl}/coordinates/${query}`
+  const url = `${backendUrl}/coordinates/${query}`;
   return axios.get(url)
 }
 
-export { getStarForecast, getCoordinates }
+function getRecommendations(query) {
+  var url = `${backendUrl}/recommendations`;
+  if (query != null) {
+    url += `?${query}`;
+  }
+  return axios.get(url)
+}
+
+export { getStarForecast, getCoordinates, getRecommendations }

@@ -61,7 +61,7 @@
         {
             "internal": true,
             "to": {
-                "name": "error"
+                "name": "nature"
             },
             "label": "Nature Identification"
         },
