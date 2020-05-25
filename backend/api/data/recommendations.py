@@ -9,14 +9,14 @@ _logger = logger.setup(__name__)
 
 def get(pg_url):
     with pg_cursor(pg_url=pg_url, cursor_factory=RealDictCursor) as cursor:
-        cursor.execute("SELECT * FROM recommendations;")
+        cursor.execute("SELECT * FROM recommendations ORDER BY label;")
         _logger.info(cursor.statusmessage)
         return cursor.fetchall()
 
 
 def get_by_kind(kind, pg_url):
     with pg_cursor(pg_url=pg_url, cursor_factory=RealDictCursor) as cursor:
-        query = "SELECT * FROM recommendations WHERE kind = %s;"
+        query = "SELECT * FROM recommendations WHERE kind = %s ORDER BY label;"
         cursor.execute(query, (kind,))
         _logger.info(cursor.statusmessage)
         return cursor.fetchall()
@@ -24,7 +24,7 @@ def get_by_kind(kind, pg_url):
 
 def get_by_tag(tag, pg_url):
     with pg_cursor(pg_url=pg_url, cursor_factory=RealDictCursor) as cursor:
-        query = "SELECT * FROM recommendations WHERE %s = ANY(tags);"
+        query = "SELECT * FROM recommendations WHERE %s = ANY(tags) ORDER BY label;"
         cursor.execute(query, (tag,))
         _logger.info(cursor.statusmessage)
         return cursor.fetchall()
@@ -32,7 +32,17 @@ def get_by_tag(tag, pg_url):
 
 def get_unique_tags(pg_url):
     with pg_cursor(pg_url=pg_url) as cursor:
-        query = "SELECT DISTINCT(UNNEST(tags)) from recommendations;"
+        query = """
+        SELECT
+            *
+        FROM (
+            SELECT
+            DISTINCT(UNNEST(tags))
+            FROM recommendations
+        ) as uniq_tags
+        ORDER by uniq_tags
+        ;
+        """
         cursor.execute(query)
         _logger.info(cursor.statusmessage)
         tags = cursor.fetchall()
@@ -41,7 +51,7 @@ def get_unique_tags(pg_url):
 
 def get_unique_kinds(pg_url):
     with pg_cursor(pg_url=pg_url) as cursor:
-        query = "SELECT DISTINCT(kind) from recommendations;"
+        query = "SELECT DISTINCT(kind) from recommendations ORDER BY kind;"
         cursor.execute(query)
         _logger.info(cursor.statusmessage)
         kinds = cursor.fetchall()
