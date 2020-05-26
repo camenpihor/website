@@ -54,13 +54,6 @@
         {
             "internal": true,
             "to": {
-                "name": "error"
-            },
-            "label": "Measurements for Humans"
-        },
-        {
-            "internal": true,
-            "to": {
                 "name": "nature"
             },
             "label": "Nature Identification"
@@ -71,13 +64,6 @@
                 "name": "rogue-sky"
             },
             "label": "RogueSky"
-        },
-        {
-            "internal": true,
-            "to": {
-                "name": "error"
-            },
-            "label": "TreeCount"
         }
     ],
     "blogs": [

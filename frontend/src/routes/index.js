@@ -65,6 +65,12 @@ const router = new VueRouter({
       meta: { pageHome: "documentation" },
     },
     {
+      path: '/nature',
+      name: "nature",
+      component: () => import("./Nature.vue"),
+      meta: { pageHome: "nature" },
+    },
+    {
       path: "/404",
       name: "error",
       component: () => import("./NotFound.vue"),

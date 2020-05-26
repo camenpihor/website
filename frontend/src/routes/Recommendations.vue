@@ -2,6 +2,10 @@
   <div>
     <div v-if="allRecommendations != null" class="recommendations">
       <div class="recommendations__filters">
+        <img
+          class="person-computer"
+          :src="personComputerFilePath"
+        />
         <b-dropdown multiple>
           <button class="button is-dark" type="button" slot="trigger">
             <span>Kinds</span>
@@ -29,15 +33,11 @@
       <div class="recommendations__groups">
         <ul
           class="recommendation__group"
-          v-for="(groupData, groupLabel, index) in selectedRecommendations"
+          v-for="(groupData, groupLabel) in selectedRecommendations"
           :key="groupLabel"
         >
           <p class="recommendation__group__header">
-            <img
-              v-if="index === 2"
-              class="person-computer"
-              :src="personComputerFilePath"
-            />{{ groupLabel }}
+            {{ groupLabel }}
           </p>
           <li
             class="recommendation__group__item"
@@ -63,7 +63,6 @@ import { getRecommendations } from "@/api.js";
 export default {
   data() {
     return {
-      personHangingFilePath: require("@/assets/people/person-hanging.svg"),
       personComputerFilePath: require("@/assets/people/person-computer.svg"),
       allRecommendations: null,
       allKinds: null,
@@ -150,7 +149,7 @@ export default {
 }
 
 .recommendations__groups {
-  margin-top: -1rem;
+  margin-top: -2rem;
 }
 
 .recommendation__group:first-of-type {
@@ -177,7 +176,8 @@ export default {
 }
 
 .person-computer {
-  margin-left: -1rem;
+  position: relative;
+  top: 1rem;
 }
 
 .search__image {

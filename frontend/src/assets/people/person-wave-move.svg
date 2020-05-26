@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="68px" height="188px" viewBox="0 0 68 188" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>person-wave-move</title>
+    <g id="person-wave-move" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <ellipse id="Oval" stroke="#000000" cx="34" cy="33.84" rx="33.5" ry="33.34"></ellipse>
+        <line x1="37.7777778" y1="68.0152866" x2="37.4419753" y2="166.425368" id="Line" stroke="#000000" stroke-linecap="square"></line>
+        <line x1="37.7777778" y1="165.44" x2="15.1111111" y2="188" id="Line-2" stroke="#000000" stroke-linecap="square"></line>
+        <line x1="37.7777778" y1="165.44" x2="60.4444444" y2="188" id="Line-2-Copy" stroke="#000000" stroke-linecap="square"></line>
+        <line x1="37.5" y1="103.5" x2="7.89135802" y2="83.0422857" id="Line-3" stroke="#000000" stroke-linecap="square"></line>
+        <path d="M15.5,80.5 C18.9324177,81.6106527 21.5990843,82.7600153 23.5,83.9480875 C25.4009157,85.1361598 28.0675823,87.3201306 31.5,90.5" id="Line-4" stroke="#000000" stroke-width="0.5" stroke-linecap="square"></path>
+        <path d="M11,94 C11.4025676,95.3288163 12.3213635,96.495483 13.7563879,97.5 C15.1914122,98.504517 17.6059495,99.6711837 21,101" id="Line-5" stroke="#000000 " stroke-width="0.5" stroke-linecap="square"></path>
+    </g>
+</svg>

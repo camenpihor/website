@@ -6,6 +6,7 @@
       placeholder="search address..."
       :method="search"
       ref="search"
+      :imageFilePath="personHangingFilePath"
     />
     <NotFound
       class="rogue-sky__section"
@@ -76,6 +77,7 @@
       <div class="rogue-sky__map rogue-sky__section">
         <div class="rogue-sky__header">
           Map
+          <img class="person-wave-move-image" :src="personWaveMoveFilePath" />
           <p class="rogue-sky__header__subtext">
             Star visibility spatial projections
           </p>
@@ -178,7 +180,9 @@ export default {
   },
   data() {
     return {
+      personHangingFilePath: require("@/assets/people/person-hanging.svg"),
       personMountainMoonFilePath: require("@/assets/people/person-mountain-moon.svg"),
+      personWaveMoveFilePath: require("@/assets/people/person-wave-move.svg"),
       calendarColors: {
         best: "#d69e2e", // yellow
         moon: "green",
@@ -397,6 +401,12 @@ export default {
   margin-right: auto;
 }
 
+.rogue-sky__search .search__image {
+  float: right;
+  position: relative;
+  top: -12px;
+}
+
 .rogue-sky__section {
   margin-bottom: 4rem;
 }
@@ -452,6 +462,17 @@ export default {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+}
+
+.person-wave-move-image {
+  float: right;
+  position: relative;
+  width: 1rem;
+  right: 20%;
+}
+
+.rogue-sky__map .rogue-sky__header {
+  margin-right: -1rem;
 }
 
 .rogue-sky__map__wrapper {
