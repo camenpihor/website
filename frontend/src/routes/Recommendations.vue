@@ -2,10 +2,7 @@
   <div>
     <div v-if="allRecommendations != null" class="recommendations">
       <div class="recommendations__filters">
-        <img
-          class="person-computer"
-          :src="personComputerFilePath"
-        />
+        <img class="person-computer" :src="personComputerFilePath" />
         <b-dropdown multiple>
           <button class="button is-dark" type="button" slot="trigger">
             <span>Kinds</span>
@@ -75,6 +72,7 @@ export default {
   methods: {
     initialize: function() {
       this.fetchRecommendations();
+      this.fetchKinds();
       this.fetchTags();
     },
     groupBy: function(xs, key) {
@@ -85,17 +83,20 @@ export default {
       }, {});
     },
     fetchRecommendations: function() {
-      console.log("running fetchRecommendations");
       getRecommendations()
         .then(response => {
           let data = this.groupBy(response.data, "kind");
           this.allRecommendations = data;
-          this.allKinds = Object.keys(data);
-          this.selectedKinds = Object.keys(data);
         })
         .catch(() => {
           this.searchError = true;
         });
+    },
+    fetchKinds: function() {
+      getRecommendations("kind=unique").then(response => {
+        this.allKinds = response.data;
+        this.selectedKinds = response.data;
+      });
     },
     fetchTags: function() {
       getRecommendations("tag=unique").then(response => {
@@ -104,7 +105,6 @@ export default {
       });
     },
     handleKindChange: function(e) {
-      console.log("running handleKindChange");
       let kind = e.target.name;
 
       if (e.target.checked) {
@@ -116,7 +116,6 @@ export default {
   },
   computed: {
     selectedRecommendations() {
-      console.log("running selectedRecommendations");
       if (this.allRecommendations != null) {
         var recommendations = JSON.parse(
           JSON.stringify(this.allRecommendations)
