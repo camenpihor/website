@@ -21,6 +21,7 @@
           >
         </li>
         <li>mapbox</li>
+        <li>open weather map</li>
         <li>darksky</li>
         <li>model info</li>
       </ul>
