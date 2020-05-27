@@ -4,36 +4,47 @@
       class="blog__search"
       placeholder="search..."
       :imageFilePath="personReadingFilePath"
+      :keys="searchKeys"
+      :jsonUUID="searchUUID"
+      :json="blogPostsJson"
+      v-on:output="searchResults = $event"
     />
-    <div class="blog__posts blog__posts__desktop">
-      <div class="blog__post" v-for="post in blogPostsJson" :key="post.title">
-        <router-link :to="{ name: 'blog-post', params: { id: post.url } }">
+    <div v-if="searchResults.length > 0" class="blog__posts">
+      <div class="blog__posts__desktop">
+        <div class="blog__post" v-for="post in searchResults" :key="post.title">
+          <router-link :to="{ name: 'blog-post', params: { id: post.url } }">
+            <h1 class="blog__post__title">{{ post.title }}</h1>
+            <p class="blog__post__date">{{ post.created }}</p>
+            <div class="blog__post__text">{{ truncateText(post.intro) }}</div>
+          </router-link>
+        </div>
+      </div>
+      <div class="blog__posts__touch">
+        <div class="blog__post" v-for="post in searchResults" :key="post.title">
           <h1 class="blog__post__title">{{ post.title }}</h1>
           <p class="blog__post__date">{{ post.created }}</p>
           <div class="blog__post__text">{{ truncateText(post.intro) }}</div>
-        </router-link>
+          <router-link :to="{ name: 'blog-post', params: { id: post.url } }">
+            read more
+          </router-link>
+        </div>
       </div>
+      <img class="person-wave" :src="personWaveFilePath" />
     </div>
-    <div class="blog__posts blog__posts__touch">
-      <div class="blog__post" v-for="post in blogPostsJson" :key="post.title">
-        <h1 class="blog__post__title">{{ post.title }}</h1>
-        <p class="blog__post__date">{{ post.created }}</p>
-        <div class="blog__post__text">{{ truncateText(post.intro) }}</div>
-        <router-link :to="{ name: 'blog-post', params: { id: post.url } }">
-          read more
-        </router-link>
-      </div>
+    <div v-else>
+      <NoResults message="No Results :(" />
     </div>
-    <img class="person-wave" :src="personWaveFilePath" />
   </div>
 </template>
 
 <script>
+import NoResults from "@/components/NoResults.vue";
 import SearchBar from "@/components/SearchBar.vue";
 import blogPostsJson from "@/assets/blog_posts.json";
 
 export default {
   components: {
+    NoResults,
     SearchBar
   },
   data() {
@@ -41,7 +52,10 @@ export default {
       blogPostsJson: blogPostsJson,
       personReadingFilePath: require("@/assets/people/person-reading.svg"),
       personWaveFilePath: require("@/assets/people/person-wave.svg"),
-      isSmallWindow: window.innerWidth <= 1023
+      isSmallWindow: window.innerWidth <= 1023,
+      searchKeys: ["html", "title"],
+      searchUUID: "url",
+      searchResults: blogPostsJson
     };
   },
   methods: {
