@@ -53,7 +53,8 @@
 <script>
 import NoResults from "@/components/NoResults.vue";
 import SearchBar from "@/components/SearchBar.vue";
-import { getRecommendations } from "@/api.js";
+
+import recommendationsJson from "@/assets/recommendations.json";
 
 export default {
   components: {
@@ -64,32 +65,20 @@ export default {
     return {
       personComputerFilePath: require("@/assets/people/person-computer.svg"),
       personHangingFilePath: require("@/assets/people/person-hanging.svg"),
-      recommendations: null,
-      searchResults: null,
+      recommendations: recommendationsJson,
+      searchResults: recommendationsJson,
       searchKeys: ["group_label", "label", "kind", "tags"],
       searchUUID: "url"
     };
   },
   methods: {
-    initialize: function() {
-      this.fetchRecommendations();
-    },
     groupBy: function(xs, key) {
       // https://stackoverflow.com/a/38575908
       return xs.reduce(function(rv, x) {
         (rv[x[key]] = rv[x[key]] || []).push(x);
         return rv;
       }, {});
-    },
-    fetchRecommendations: function() {
-      getRecommendations().then(response => {
-        this.recommendations = response.data;
-        this.searchResults = response.data;
-      });
     }
-  },
-  created() {
-    this.initialize();
   }
 };
 </script>

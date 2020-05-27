@@ -14,12 +14,4 @@ function getCoordinates(query) {
   return axios.get(url)
 }
 
-function getRecommendations(query) {
-  var url = `${backendUrl}/recommendations`;
-  if (query != null) {
-    url += `?${query}`;
-  }
-  return axios.get(url)
-}
-
-export { getStarForecast, getCoordinates, getRecommendations }
+export { getStarForecast, getCoordinates }

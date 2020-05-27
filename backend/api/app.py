@@ -2,11 +2,10 @@
 import json
 import os
 
-from flask import Flask, Response, request
+from flask import Flask, Response
 from rogue_sky import darksky, stars
 
 from api import logger
-from api.data import recommendations
 
 app = Flask(__name__)  # pylint: disable=invalid-name
 _logger = logger.setup(__name__)
@@ -43,12 +42,6 @@ def star_visibility_forecast(latitude, longitude):
             api_key=DARKSKY_SECRET_KEY,
         )
     )
-
-
-@app.route("/api/recommendations")
-def get_recommendations():
-    data = recommendations.get(pg_url=DATABASE_URL)
-    return _json_response(data=data)
 
 
 def _json_response(data):

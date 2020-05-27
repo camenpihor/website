@@ -2,8 +2,6 @@ import os
 
 from rogue_sky import darksky
 
-from api.data import recommendations, utilities
-
 DARKSKY_API_KEY = os.environ["DARKSKY_SECRET_KEY"]
 
 
@@ -37,16 +35,3 @@ def test_star_forecast(requests_mock, backend_api_client, darksky_json_response)
         + ["star_visibility"]
     )
     assert actual["daily_forecast"][0]["sunset_time_local"] == "2019-11-10T16:29:00-05:00"
-
-
-def test_get_recommendations(backend_api_client, database, recommendations_data):
-    with utilities.pg_cursor(pg_url=database) as cursor:
-        recommendations.insert_csv(cursor=cursor, csv=recommendations_data)
-
-    response = backend_api_client.get("/api/recommendations")
-    assert response.status_code == 200
-    actual = response.get_json()
-    assert len(actual) == 28
-    assert not set(actual[0].keys()) - set(
-        ["url", "group_label", "label", "kind", "tags"]
-    )

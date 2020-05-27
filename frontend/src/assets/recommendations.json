@@ -1,0 +1,277 @@
+[
+    {
+        "url": "https://eukaryotewritesblog.com/2017/05/29/beespotting-on-i-5/",
+        "group_label": "eukaryote writes blog",
+        "label": "animal welfare approach to honey",
+        "tags": [
+            "ethics",
+            "animals",
+            "nature"
+        ],
+        "kind": "blog"
+    },
+    {
+        "url": "https://slatestarcodex.com/2014/09/30/i-can-tolerate-anything-except-the-outgroup/",
+        "group_label": "ssc",
+        "label": "i can tolerate anything except the outgroup",
+        "tags": [
+            "ethics",
+            "morality"
+        ],
+        "kind": "blog"
+    },
+    {
+        "url": "https://slatestarcodex.com/2014/02/23/in-favor-of-niceness-community-and-civilization/",
+        "group_label": "ssc",
+        "label": "in favor of niceness community and civilization",
+        "tags": [
+            "ethics",
+            "morality"
+        ],
+        "kind": "blog"
+    },
+    {
+        "url": "http://mindingourway.com/guilt/",
+        "group_label": "minding our way",
+        "label": "replacing guilt",
+        "tags": [
+            "ethics",
+            "morality"
+        ],
+        "kind": "blog"
+    },
+    {
+        "url": "https://en.wikipedia.org/wiki/Mistborn:_The_Final_Empire",
+        "group_label": "brandon sanderson",
+        "label": "mistborn: the final empire",
+        "tags": [
+            "fantasy"
+        ],
+        "kind": "book"
+    },
+    {
+        "url": "https://en.wikipedia.org/wiki/Mars_trilogy",
+        "group_label": "kim stanley robinson",
+        "label": "red mars",
+        "tags": [
+            "sci-fi",
+            "science",
+            "nature"
+        ],
+        "kind": "book"
+    },
+    {
+        "url": "https://en.wikipedia.org/wiki/The_Fifth_Season_(novel)",
+        "group_label": "n.k. jemisin",
+        "label": "the fifth season",
+        "tags": [
+            "fantasy",
+            "female author"
+        ],
+        "kind": "book"
+    },
+    {
+        "url": "https://en.wikipedia.org/wiki/The_Lies_of_Locke_Lamora",
+        "group_label": "scott lynch",
+        "label": "the lies of locke lamora",
+        "tags": [
+            "fantasy"
+        ],
+        "kind": "book"
+    },
+    {
+        "url": "https://en.wikipedia.org/wiki/The_Way_of_Kings",
+        "group_label": "brandon sanderson",
+        "label": "the way of kings",
+        "tags": [
+            "fantasy"
+        ],
+        "kind": "book"
+    },
+    {
+        "url": "https://www.givewell.org/",
+        "group_label": null,
+        "label": "give well",
+        "tags": [
+            "ethics",
+            "morality",
+            "effective altruism"
+        ],
+        "kind": "random"
+    },
+    {
+        "url": "https://www.sony.com/electronics/headband-headphones/wh-1000xm3",
+        "group_label": null,
+        "label": "these headphones",
+        "tags": [
+            "programming",
+            "music",
+            "technology"
+        ],
+        "kind": "random"
+    },
+    {
+        "url": "https://www.outdoorresearch.com/us/mens-ferrosi-pants-269176",
+        "group_label": null,
+        "label": "these pants",
+        "tags": [
+            "clothing"
+        ],
+        "kind": "random"
+    },
+    {
+        "url": "https://www.amazon.com/MAXROCK-Sleep-Earplugs-Headphones-Meditation/dp/B071WRSL38",
+        "group_label": null,
+        "label": "these sleep earbuds",
+        "tags": [
+            "technology",
+            "music",
+            "sleeping"
+        ],
+        "kind": "random"
+    },
+    {
+        "url": "https://coophomegoods.com/products/king-bamboo-shredded-memory-foam-pillow",
+        "group_label": null,
+        "label": "this pillow",
+        "tags": [
+            "sleeping"
+        ],
+        "kind": "random"
+    },
+    {
+        "url": "https://code.visualstudio.com/",
+        "group_label": null,
+        "label": "vscode",
+        "tags": [
+            "programming"
+        ],
+        "kind": "random"
+    },
+    {
+        "url": "https://practicalguidetoevil.wordpress.com/",
+        "group_label": "erraticerrata",
+        "label": "a practical guide to evil",
+        "tags": [
+            "fantasy"
+        ],
+        "kind": "web fiction"
+    },
+    {
+        "url": "http://www.hpmor.com/",
+        "group_label": "eliezer yudkowsky",
+        "label": "harry potter and the methods of rationality",
+        "tags": [
+            "fantasy"
+        ],
+        "kind": "web fiction"
+    },
+    {
+        "url": "https://wanderinginn.com/",
+        "group_label": "pirateaba",
+        "label": "the wandering inn",
+        "tags": [
+            "fantasy",
+            "female author"
+        ],
+        "kind": "web fiction"
+    },
+    {
+        "url": "http://unsongbook.com/",
+        "group_label": "scott alexander",
+        "label": "unsong",
+        "tags": [
+            "fantasy"
+        ],
+        "kind": "web fiction"
+    },
+    {
+        "url": "https://parahumans.wordpress.com/",
+        "group_label": "wildbow",
+        "label": "worm",
+        "tags": [
+            "fantasy"
+        ],
+        "kind": "web fiction"
+    },
+    {
+        "url": "https://www.youtube.com/user/alectheblacksmith",
+        "group_label": null,
+        "label": "alec steele",
+        "tags": [
+            "engineering"
+        ],
+        "kind": "youtube"
+    },
+    {
+        "url": "https://www.youtube.com/watch?v=0rHUDWjR5gg&list=PL8dPuuaLjXtPAJr1ysd5yGIyiSFuh0mIL",
+        "group_label": "crash course",
+        "label": "astronomy",
+        "tags": [
+            "education",
+            "astonomy"
+        ],
+        "kind": "youtube"
+    },
+    {
+        "url": "https://www.youtube.com/user/CGPGrey",
+        "group_label": null,
+        "label": "cgp grey",
+        "tags": [
+            "education"
+        ],
+        "kind": "youtube"
+    },
+    {
+        "url": "https://www.youtube.com/user/minuteearth",
+        "group_label": null,
+        "label": "minuteearth",
+        "tags": [
+            "nature",
+            "education"
+        ],
+        "kind": "youtube"
+    },
+    {
+        "url": "https://www.youtube.com/channel/UC3KEoMzNz8eYnwBC34RaKCQ",
+        "group_label": null,
+        "label": "simone giertz",
+        "tags": [
+            "engineering",
+            "funny"
+        ],
+        "kind": "youtube"
+    },
+    {
+        "url": "https://www.youtube.com/user/thebrainscoop",
+        "group_label": null,
+        "label": "the brain scoop",
+        "tags": [
+            "nature",
+            "education"
+        ],
+        "kind": "youtube"
+    },
+    {
+        "url": "https://www.youtube.com/channel/UCHsRtomD4twRf5WVHHk-cMw",
+        "group_label": null,
+        "label": "tier zoo",
+        "tags": [
+            "nature",
+            "education",
+            "zoology"
+        ],
+        "kind": "youtube"
+    },
+    {
+        "url": "https://www.youtube.com/user/vlogbrothers",
+        "group_label": null,
+        "label": "vlogbrothers",
+        "tags": [
+            "nerdy",
+            "education",
+            "funny"
+        ],
+        "kind": "youtube"
+    }
+]
