@@ -12,7 +12,6 @@ _logger = logger.setup(__name__)
 
 FRONTEND_ADDRESS = os.environ.get("FRONTEND_ADDRESS", None)
 DARKSKY_SECRET_KEY = os.environ["DARKSKY_SECRET_KEY"]
-DATABASE_URL = os.environ["DATABASE_URL"]
 
 
 @app.route("/")
