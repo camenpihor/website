@@ -5,7 +5,7 @@
         class="recommendations__search"
         :keys="searchKeys"
         :json="recommendations"
-        :jsonUUID="recommendationsUUIDField"
+        :jsonUUID="searchUUID"
         :imageFilePath="personHangingFilePath"
         v-on:output="searchResults = $event"
       />
@@ -43,8 +43,7 @@
           </ul>
         </div>
         <div v-else class="recommendations__no-results">
-          No results :(
-          <NoResults />
+          <NoResults message="No Results :(" />
         </div>
       </div>
     </div>
@@ -67,14 +66,12 @@ export default {
       personHangingFilePath: require("@/assets/people/person-hanging.svg"),
       recommendations: null,
       searchResults: null,
-      error: false,
       searchKeys: ["group_label", "label", "kind", "tags"],
-      recommendationsUUIDField: "url"
+      searchUUID: "url"
     };
   },
   methods: {
     initialize: function() {
-      this.error = false;
       this.fetchRecommendations();
     },
     groupBy: function(xs, key) {
@@ -85,14 +82,10 @@ export default {
       }, {});
     },
     fetchRecommendations: function() {
-      getRecommendations()
-        .then(response => {
-          this.recommendations = response.data;
-          this.searchResults = response.data;
-        })
-        .catch(() => {
-          this.error = true;
-        });
+      getRecommendations().then(response => {
+        this.recommendations = response.data;
+        this.searchResults = response.data;
+      });
     }
   },
   created() {
@@ -145,13 +138,4 @@ export default {
   top: -12px;
 }
 
-.recommendations__no-results {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.recommendations__no-results .no-results__image {
-  margin-top: 2rem;
-}
 </style>
