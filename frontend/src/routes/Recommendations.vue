@@ -100,10 +100,6 @@ export default {
   margin-right: auto;
 }
 
-.recommendations__groups {
-  margin-top: 5rem;
-}
-
 .recommendation__group {
   margin-top: 3rem;
 }
@@ -137,5 +133,4 @@ export default {
   position: relative;
   top: -12px;
 }
-
 </style>
