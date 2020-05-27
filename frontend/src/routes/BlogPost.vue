@@ -16,7 +16,7 @@
 <script>
 import NotFound from "@/routes/NotFound.vue";
 
-import blogPostsJson from "@/assets/blog_posts.json";
+import blogPostsJson from "@/assets/json/blog_posts.json";
 
 export default {
   components: {

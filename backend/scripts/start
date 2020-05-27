@@ -30,6 +30,7 @@ def start(production):
         PORT,
     )
 
+    subprocess.check_call(["python", "setup.py", "install"])
     if production:
         waitress.serve(app.app, host=HOST, port=PORT)
 

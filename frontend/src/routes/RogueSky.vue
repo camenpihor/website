@@ -1,7 +1,7 @@
 <template>
   <div>
     <EventListener :method="searchListener" />
-    <SearchBar
+    <BackendSearch
       class="rogue-sky__search"
       placeholder="search address..."
       :method="search"
@@ -155,26 +155,26 @@
 </template>
 
 <script>
+import BackendSearch from "@/components/search/BackendSearch.vue";
 import Calendar from "@/components/Calendar.vue";
 import EventListener from "@/components/EventListener.vue";
 import Loading from "@/components/Loading.vue";
 import Map from "@/components/Map.vue";
 import NotFound from "@/routes/NotFound.vue";
-import SearchBar from "@/components/SearchBar.vue";
 import StarVizIcon from "@/components/StarVizIcon.vue";
 import WeatherSummary from "@/components/WeatherSummary.vue";
 
-import { getCoordinates, getStarForecast } from "@/api.js";
-import astronomicalJson from "@/assets/astronomical_events.json";
+import { getCoordinates, getStarForecast } from "@/assets/js/api.js";
+import astronomicalJson from "@/assets/json/astronomical_events.json";
 
 export default {
   components: {
+    BackendSearch,
     Calendar,
     EventListener,
     Loading,
     Map,
     NotFound,
-    SearchBar,
     StarVizIcon,
     WeatherSummary
   },

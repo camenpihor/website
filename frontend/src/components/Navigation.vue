@@ -92,7 +92,7 @@
 </template>
 
 <script>
-import routeJson from "@/assets/routes.json";
+import routeJson from "@/assets/json/routes.json";
 
 export default {
   data() {

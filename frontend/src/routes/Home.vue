@@ -72,7 +72,7 @@
 <script>
 import Background from "@/components/Background.vue";
 
-import routeJson from "@/assets/routes.json";
+import routeJson from "@/assets/json/routes.json";
 
 export default {
   name: "home",

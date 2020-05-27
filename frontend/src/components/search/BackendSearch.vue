@@ -7,8 +7,9 @@
       type="search"
       icon-pack="fal"
       icon="search"
-      @input="search"
-      @keyup.native.enter="blurThis"
+      icon-clickable
+      @icon-click="search"
+      @keyup.native.enter="search"
       ref="search"
     />
     <img
@@ -20,24 +21,23 @@
 </template>
 
 <script>
-import * as JsSearch from "js-search";
-
 export default {
   props: {
     placeholder: {
       type: String,
       default: "search..."
     },
-    imageFilePath: {},
-    keys: {},
-    json: {},
-    jsonUUID: {}
+    imageFilePath: {
+      type: String,
+      default: null
+    },
+    method: {
+      type: Function
+    }
   },
   data() {
     return {
-      input: "",
-      results: this.json,
-      searcher: this.createSearcher()
+      input: null
     };
   },
   methods: {
@@ -45,20 +45,10 @@ export default {
       this.$refs.search.$el.getElementsByTagName("input")[0].blur();
     },
     search: function() {
-      if (this.input === "") {
-        this.results = this.json;
-      } else {
-        this.results = this.searcher.search(this.input);
+      this.blurThis();
+      if (this.input != null) {
+        return this.method(this.input);
       }
-      this.$emit("output", this.results);
-    },
-    createSearcher: function() {
-      var search = new JsSearch.Search(this.jsonUUID);
-      for (let key of this.keys) {
-        search.addIndex(key);
-      }
-      search.addDocuments(this.json);
-      return search;
     }
   }
 };

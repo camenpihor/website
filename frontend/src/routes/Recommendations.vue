@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="recommendations != null" class="recommendations">
-      <SearchBar
+      <ClientSideSearch
         class="recommendations__search"
         :keys="searchKeys"
         :json="recommendations"
@@ -10,56 +10,54 @@
         v-on:output="searchResults = $event"
       />
 
-      <div class="recommendations__groups">
-        <div v-if="searchResults.length > 0">
-          <ul
-            class="recommendation__group"
-            v-for="(groupData, groupLabel, index) in groupBy(
-              searchResults,
-              'kind'
-            )"
-            :key="groupLabel"
+      <div v-if="searchResults.length > 0" class="recommendations__groups">
+        <ul
+          class="recommendation__group"
+          v-for="(groupData, groupLabel, index) in groupedRecommendations"
+          :key="groupLabel"
+        >
+          <p class="recommendation__group__header">
+            <img
+              v-if="index === 1"
+              class="person-computer"
+              :src="personComputerFilePath"
+            />
+            {{ groupLabel }}
+          </p>
+          <li
+            class="recommendation__group__item"
+            v-for="item in groupData"
+            :key="item.label"
           >
-            <p class="recommendation__group__header">
-              <img
-                v-if="index === 1"
-                class="person-computer"
-                :src="personComputerFilePath"
-              />
-              {{ groupLabel }}
+            <p class="recommendation__group__item__label">
+              <a :href="item.url">{{ item.label }}</a>
+              <span v-if="item.group_label !== null">
+                by {{ item.group_label }}</span
+              >
             </p>
-            <li
-              class="recommendation__group__item"
-              v-for="item in groupData"
-              :key="item.label"
-            >
-              <p class="recommendation__group__item__label">
-                <a :href="item.url">{{ item.label }}</a>
-                <span v-if="item.group_label !== null">
-                  by {{ item.group_label }}</span
-                >
-              </p>
-            </li>
-          </ul>
-        </div>
-        <div v-else class="recommendations__no-results">
-          <NoResults message="No Results :(" />
-        </div>
+          </li>
+        </ul>
       </div>
+      <NoResults
+        v-else
+        class="recommendations__no-results"
+        message="No Results :("
+      />
     </div>
   </div>
 </template>
 
 <script>
 import NoResults from "@/components/NoResults.vue";
-import SearchBar from "@/components/SearchBar.vue";
+import ClientSideSearch from "@/components/search/ClientSideSearch.vue";
 
-import recommendationsJson from "@/assets/recommendations.json";
+import recommendationsJson from "@/assets/json/recommendations.json";
+import { groupBy } from "@/assets/js/utilities.js";
 
 export default {
   components: {
     NoResults,
-    SearchBar
+    ClientSideSearch
   },
   data() {
     return {
@@ -71,13 +69,9 @@ export default {
       searchUUID: "url"
     };
   },
-  methods: {
-    groupBy: function(xs, key) {
-      // https://stackoverflow.com/a/38575908
-      return xs.reduce(function(rv, x) {
-        (rv[x[key]] = rv[x[key]] || []).push(x);
-        return rv;
-      }, {});
+  computed: {
+    groupedRecommendations() {
+      return groupBy(this.searchResults, "kind");
     }
   }
 };

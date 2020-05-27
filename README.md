@@ -27,8 +27,6 @@ Vue
 - next steps
   - link checker test
   - add all actual text
-  - add dao for nature items
-  - add api endpoints for nature items
 
 - pages
   - tree count

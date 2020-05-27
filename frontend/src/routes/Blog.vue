@@ -1,6 +1,6 @@
 <template>
   <div class="blog">
-    <SearchBar
+    <ClientSideSearch
       class="blog__search"
       placeholder="search..."
       :imageFilePath="personReadingFilePath"
@@ -39,13 +39,14 @@
 
 <script>
 import NoResults from "@/components/NoResults.vue";
-import SearchBar from "@/components/SearchBar.vue";
-import blogPostsJson from "@/assets/blog_posts.json";
+import ClientSideSearch from "@/components/search/ClientSideSearch.vue";
+
+import blogPostsJson from "@/assets/json/blog_posts.json";
 
 export default {
   components: {
     NoResults,
-    SearchBar
+    ClientSideSearch
   },
   data() {
     return {
