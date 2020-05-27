@@ -2,12 +2,12 @@
   <div>
     <NotFound v-if="error === true" :requestedPath="this.$route.fullPath" />
     <div v-if="post !== null" class="blog-post">
-      <SearchBar class="blog-post__search" />
-      <div class="blog-post__body">
-        <h1 class="blog-post__title">{{ post.title }}</h1>
-        <p class="blog-post__date">{{ post.created }}</p>
-        <div class="blog-post__text" v-html="post.html" />
-      </div>
+      <h1 class="blog-post__title">
+        {{ post.title }}
+        <img class="person-wave-move-image" :src="personWaveMoveFilePath" />
+      </h1>
+      <p class="blog-post__date">{{ post.created }}</p>
+      <div class="blog-post__text" v-html="post.html" />
       <img class="person-bowling" :src="personBowlingFilepath" />
     </div>
   </div>
@@ -15,17 +15,16 @@
 
 <script>
 import NotFound from "@/routes/NotFound.vue";
-import SearchBar from "@/components/SearchBar.vue";
 
 import blogPostsJson from "@/assets/blog_posts.json";
 
 export default {
   components: {
-    NotFound,
-    SearchBar
+    NotFound
   },
   data() {
     return {
+      personWaveMoveFilePath: require("@/assets/people/person-wave-move.svg"),
       error: false,
       postURL: null,
       post: null,
@@ -63,16 +62,8 @@ export default {
 
 <style>
 .blog-post {
+  margin-top: 1rem;
   padding-bottom: 7rem;
-}
-
-.blog-post__search {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.blog-post__body {
-  margin-top: 5rem;
 }
 
 .blog-post__title {
@@ -92,6 +83,12 @@ export default {
 
 .blog-post__text p {
   margin-top: 1rem;
+}
+
+.person-wave-move-image {
+  float: right;
+  width: 1rem;
+  margin-right: 4rem;
 }
 
 .person-bowling {

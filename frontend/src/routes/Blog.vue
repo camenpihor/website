@@ -73,7 +73,7 @@ export default {
 }
 
 .blog__posts {
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .blog__post:first-of-type {
