@@ -27,16 +27,12 @@ Vue
 - next steps
   - link checker test
   - add all actual text
-  - add dao for recommendations
   - add dao for nature items
-  - add api endpoints for recommendations and nature items
-  - use api endpoints for recommendations and nature items search
+  - add api endpoints for nature items
+  - use api endpoints for nature items search
+  - add search for blogs
 
 - pages
   - tree count
   - measurements
   - nature identification
-
-- pair programming
-  - recommendations search
-  - blog post search
