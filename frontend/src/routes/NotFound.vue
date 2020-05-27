@@ -5,28 +5,22 @@
     <p v-if="requestedPath !== ''" class="not-found__requested-url">
       {{ createUrl() }}
     </p>
-    <img
-      class="not-found__image"
-      v-if="Math.random() > 0.5"
-      :src="fishPeopleingFilePath"
-    />
-    <img class="not-found__image" v-else :src="personFishingFilePath" />
+    <NoResults />
   </div>
 </template>
 
 <script>
+import NoResults from "@/components/NoResults.vue";
+
 export default {
+  components: {
+    NoResults
+  },
   props: {
     requestedPath: {
       type: String,
       default: ""
     }
-  },
-  data() {
-    return {
-      fishPeopleingFilePath: require("@/assets/people/fish-peopleing.svg"),
-      personFishingFilePath: require("@/assets/people/person-fishing.svg")
-    };
   },
   methods: {
     createUrl: function() {
@@ -56,8 +50,7 @@ export default {
   font-weight: lighter;
 }
 
-.not-found__image {
+.no-results {
   margin-top: 8rem;
-  width: 20rem;
 }
 </style>
