@@ -29,8 +29,6 @@ Vue
   - add all actual text
   - add dao for nature items
   - add api endpoints for nature items
-  - use api endpoints for nature items search
-  - add search for blogs
 
 - pages
   - tree count

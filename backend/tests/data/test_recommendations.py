@@ -33,41 +33,9 @@ def test_insert_csv(database, recommendations_data):
         assert cursor.rowcount == 28
 
 
-def test_get_by_kind(database, recommendations_data):
-    kind = "blog"
-
+def test_get(database, recommendations_data):
     with utilities.pg_cursor(pg_url=database) as cursor:
         recommendations.insert_csv(cursor=cursor, csv=recommendations_data)
 
-    actual = recommendations.get_by_kind(kind=kind, pg_url=database)
-    assert len(actual) == 4
-    for row in actual:
-        assert row["kind"] == kind
-
-
-def test_get_by_tag(database, recommendations_data):
-    tag = "nature"
-
-    with utilities.pg_cursor(pg_url=database) as cursor:
-        recommendations.insert_csv(cursor=cursor, csv=recommendations_data)
-
-    actual = recommendations.get_by_tag(tag=tag, pg_url=database)
-    assert len(actual) == 5
-    for row in actual:
-        assert tag in row["tags"]
-
-
-def test_get_unique_tags(database, recommendations_data):
-    with utilities.pg_cursor(pg_url=database) as cursor:
-        recommendations.insert_csv(cursor=cursor, csv=recommendations_data)
-
-    actual = recommendations.get_unique_tags(pg_url=database)
-    assert len(actual) == 20
-
-
-def test_get_unique_kinds(database, recommendations_data):
-    with utilities.pg_cursor(pg_url=database) as cursor:
-        recommendations.insert_csv(cursor=cursor, csv=recommendations_data)
-
-    actual = recommendations.get_unique_kinds(pg_url=database)
-    assert len(actual) == 5
+    actual = recommendations.get(pg_url=database)
+    assert len(actual) == 28

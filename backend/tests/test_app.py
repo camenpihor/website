@@ -50,33 +50,3 @@ def test_get_recommendations(backend_api_client, database, recommendations_data)
     assert not set(actual[0].keys()) - set(
         ["url", "group_label", "label", "kind", "tags"]
     )
-
-    response = backend_api_client.get("/api/recommendations?kind=book")
-    assert response.status_code == 200
-    actual = response.get_json()
-    assert len(actual) == 5
-    assert not set(actual[0].keys()) - set(
-        ["url", "group_label", "label", "kind", "tags"]
-    )
-    for item in actual:
-        assert item["kind"] == "book"
-
-    response = backend_api_client.get("/api/recommendations?kind=unique")
-    assert response.status_code == 200
-    actual = response.get_json()
-    assert len(actual) == 5
-
-    response = backend_api_client.get("/api/recommendations?tag=fantasy")
-    assert response.status_code == 200
-    actual = response.get_json()
-    assert len(actual) == 9
-    assert not set(actual[0].keys()) - set(
-        ["url", "group_label", "label", "kind", "tags"]
-    )
-    for item in actual:
-        assert "fantasy" in item["tags"]
-
-    response = backend_api_client.get("/api/recommendations?tag=unique")
-    assert response.status_code == 200
-    actual = response.get_json()
-    assert len(actual) == 20

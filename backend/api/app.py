@@ -47,26 +47,7 @@ def star_visibility_forecast(latitude, longitude):
 
 @app.route("/api/recommendations")
 def get_recommendations():
-    query = request.args
-    if not query:
-        data = recommendations.get(pg_url=DATABASE_URL)
-
-    elif "tag" in query:
-        tag = query.get("tag")
-        if tag == "unique":
-            data = recommendations.get_unique_tags(pg_url=DATABASE_URL)
-        else:
-            data = recommendations.get_by_tag(tag=tag, pg_url=DATABASE_URL)
-
-    elif "kind" in query:
-        kind = query.get("kind")
-        if kind == "unique":
-            data = recommendations.get_unique_kinds(pg_url=DATABASE_URL)
-        else:
-            data = recommendations.get_by_kind(kind=kind, pg_url=DATABASE_URL)
-    else:
-        raise ValueError(f"Cannot handle query. Got {query}")
-
+    data = recommendations.get(pg_url=DATABASE_URL)
     return _json_response(data=data)
 
 
