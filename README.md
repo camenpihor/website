@@ -25,10 +25,14 @@ Vue
 ## TODO
 
 - next steps
-  - link checker test
+  - nature identification page
+  - documentation
   - add all actual text
 
-- pages
+- new pages
   - tree count
   - measurements
-  - nature identification
+
+## Nature Identification
+
+- https://www.planning.org/pas/reports/report236.htm
