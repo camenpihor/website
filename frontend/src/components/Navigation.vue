@@ -3,19 +3,17 @@
     <nav
       class="navbar"
       v-bind:class="{
-        'is-transparent-2': isTransparent,
+        'is-transparent': isTransparent,
         'is-dark': !isTransparent
       }"
     >
       <div class="navbar-brand">
-        <router-link
-          class="mobile-only navbar-item"
+        <div
+          class="is-hidden-desktop navbar-item navigation__top__route-home"
           v-if="!isTransparent"
-          :to="{ name: routeHome }"
-          ><span class="navigation__top__route-home">{{
-            formatName(routeHome)
-          }}</span></router-link
         >
+          {{ formatName(routeHome) }}
+        </div>
 
         <div
           role="button"
@@ -65,12 +63,14 @@
         <b-menu-list
           v-for="(groupRoutes, groupName) in routes"
           :key="groupName"
-          :label="groupName"
         >
+          <p class="heading  has-text-weight-bold is-size-7">
+            {{ groupName }}
+          </p>
           <div v-for="route in groupRoutes" :key="route.label">
             <b-menu-item
+              class=""
               v-if="route.internal"
-              class="sidebar__item"
               v-on:click="initialize()"
               :label="route.label"
               :to="route.to"
@@ -78,7 +78,7 @@
             />
             <b-menu-item
               v-else
-              class="sidebar__item"
+              class=""
               v-on:click="initialize()"
               :label="route.label"
               :href="route.to"
@@ -143,14 +143,9 @@ export default {
 };
 </script>
 <style>
-.navbar {
-  height: 3.25rem;
-}
-
 .navigation__top__route-home {
   color: white;
 }
-
 
 @media only screen and (min-width: 1024px) {
   .navbar {
@@ -173,30 +168,40 @@ li.navbar-item {
   background-color: #f5f5f5;
 }
 
-.sidebar__item {
-  font-size: 1rem;
-  color: black;
+/* buefy class */
+.menu-list {
+  margin: 3rem 1.5rem;
 }
 
-/* buefy class */
+.menu-list a:hover {
+  color: black !important;
+}
+
 .sidebar-content {
-  padding: 32px;
   transition-duration: 0.8s !important;
 }
 
-.sidebar-content p {
-  font-weight: bold;
-  text-transform: capitalize;
-  font-size: 18px;
-  color: #000000;
-}
-
 .sidebar-content a {
-  color: inherit !important;
+  color: hsl(0, 0%, 35%) !important;
   padding: 0.75rem !important;
 }
 
-.sidebar__item:hover {
-  color: #3273dc;
+.navbar.is-transparent a {
+  color: rgb(168, 168, 168) !important;
+}
+
+.navbar.is-transparent a:hover {
+  color: white !important;
+}
+
+.navbar.is-transparent .navbar-burger {
+  color: rgb(168, 168, 168) !important;
+}
+.navbar.is-transparent .navbar-burger:hover {
+  color: white !important;
+}
+
+.navbar.is-transparent a:hover {
+  color: white !important;
 }
 </style>

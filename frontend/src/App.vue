@@ -22,14 +22,20 @@ export default {
 <style lang="scss">
 @import "~bulma/sass/utilities/_all";
 
+// COLORS
+$button-over-grey: #979797;
 $off-white: #f0f0f0;
 $blue: #3273dc;
-$green: rgb(0, 117, 0);
-$purple: #7957d5;
-$button-over-grey: #979797;
 
-// buefy and bulma variables
-$family-primary: "Helvetica";
+$body-background-color: $white-ter;
+$body-family: "Noto Sans JP", sans-serif;
+$body-color: $grey-dark;
+
+// elements
+$section-padding: 4rem 1.5rem;
+$hr-background-color: $button-over-grey;
+$hr-height: 1px;
+$hr-margin: 1.5rem 20%;
 $menu-item-hover-color: $blue;
 $menu-item-hover-background-color: transparent;
 $input-background-color: #ebebeb;
@@ -44,25 +50,17 @@ $colors: (
     $off-white,
     findColorInvert($off-white)
   ),
-  "transparent-2": (
-    #f0f0f000,
+  "transparent": (
+    #00000000,
     #ffffff
   ),
-  "dark": (
+  "grey-dark": (
     #5b5b5f,
     #ffffff
   ),
   "blue": (
     $blue,
     findColorInvert($blue)
-  ),
-  "green": (
-    $green,
-    findColorInvert($green)
-  ),
-  "purple": (
-    $purple,
-    findColorInvert($purple)
   )
 );
 
@@ -70,18 +68,14 @@ $colors: (
 @import "~buefy/src/scss/buefy";
 
 html {
-  font-size: 16px;
+  font-size: 18px;
   @include from($desktop) {
     font-size: 20px;
   }
 }
 
-a {
-  color: inherit;
-}
-
-a:hover {
-  color: $blue;
+.subsection {
+  padding-top: 2rem;
 }
 
 #app {
@@ -90,19 +84,19 @@ a:hover {
 }
 
 .route-view {
-  max-width: 700px;
+  max-width: 750px;
+  margin-top: 3.25rem; /* height of navbar */
   margin-left: auto;
   margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 2.5rem;
   padding-bottom: 10rem;
 }
 
-@include from($desktop) {
-  .mobile-only {
-    display: none !important;
-  }
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: $blue;
 }
 
 @media only screen and (max-width: 1024px) {

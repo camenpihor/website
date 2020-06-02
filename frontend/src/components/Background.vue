@@ -1,8 +1,10 @@
 <template>
-  <div
-    class="background__image"
-    v-bind:style="{ 'background-image': 'url(' + filePath + ')' }"
-  />
+  <section class="hero">
+    <div
+      class="hero-body background__image"
+      v-bind:style="{ 'background-image': 'url(' + filePath + ')' }"
+    ></div>
+  </section>
 </template>
 
 <script>
@@ -13,9 +15,7 @@ export default {
 
 <style>
 .background__image {
-  background-position: center center;
-  background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: 100vw;
 }
 </style>
