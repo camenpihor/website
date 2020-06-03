@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="289px" height="208px" viewBox="0 0 289 208" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>person-mountain-moon</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="phone-rogue-sky" transform="translate(-7.000000, -1112.000000)">
+            <g id="footer" transform="translate(1.000000, 1113.000000)">
+                <g id="person-mountain-moon" transform="translate(6.000000, 0.000000)">
+                    <g id="mountain" transform="translate(0.000000, 83.000000)">
+                        <path d="M38,1.70177685 L1.17677567,121.5 L74.8232243,121.5 L38,1.70177685 Z" stroke="#979797" fill="#D8D8D8"></path>
+                        <polygon id="Triangle" fill="#FFFFFF" points="38 3 43.5 20 33 20"></polygon>
+                        <polygon id="Triangle" fill="#FFFFFF" transform="translate(38.250000, 25.000000) scale(1, -1) translate(-38.250000, -25.000000) " points="38 20 43.5 30 33 30"></polygon>
+                        <line x1="33" y1="20.5" x2="38" y2="29.5" id="Line-7" stroke="#979797" stroke-linecap="square"></line>
+                        <line x1="38.5" y1="20" x2="43.5" y2="29" id="Line-7-Copy" stroke="#979797" stroke-linecap="square" transform="translate(41.000000, 24.500000) scale(-1, 1) translate(-41.000000, -24.500000) "></line>
+                    </g>
+                    <path d="M269.83669,-9.9475983e-14 L269.89,0.172 L269.752778,0.276106554 C262.606888,5.75968629 258,14.3871488 258,24.0906077 C258,40.2654602 270.800743,53.4505389 286.824382,54.0679957 C282.150151,57.1793776 276.536837,58.9926898 270.5,58.9926898 C254.2076,58.9926898 241,45.7850899 241,29.4926898 C241,13.4219727 253.850626,0.352680107 269.83669,-9.9475983e-14 L269.83669,-9.9475983e-14 Z" id="moon" stroke="#979797" fill="#FFFFFF"></path>
+                    <g id="person" transform="translate(29.500000, 102.000000)" stroke="#979797">
+                        <g id="legs" transform="translate(58.521739, 96.565217)" stroke-linecap="square">
+                            <line x1="7.23913043" y1="0" x2="0" y2="6.43478261" id="Line-2"></line>
+                            <line x1="7.23913043" y1="-6.47726639e-15" x2="14.4782609" y2="6.43478261" id="Line-2-Copy"></line>
+                        </g>
+                        <line x1="64" y1="93.5" x2="53.6956522" y2="94.9565217" id="arm" stroke-linecap="square"></line>
+                        <line x1="47.2608696" y1="83.6956522" x2="58.4019426" y2="102.879348" id="body" stroke-linecap="square"></line>
+                        <circle id="head" cx="44.8478261" cy="74.8478261" r="8.34782609"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

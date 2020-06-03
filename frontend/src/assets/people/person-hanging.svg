@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="41px" viewBox="0 0 36 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>person-hanging</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="phone-recommendations" transform="translate(-299.000000, -86.000000)" stroke="#858585" stroke-width="0.5">
+            <g id="person-hanging" transform="translate(318.000000, 106.000000) rotate(34.000000) translate(-318.000000, -106.000000) translate(310.000000, 88.000000)">
+                <line x1="9.29060557" y1="12.5321216" x2="9.29060557" y2="31.4111025" id="Line" stroke-linecap="square"></line>
+                <line x1="9.40261288" y1="31.167558" x2="5.40261288" y2="35.167558" id="Line-2" stroke-linecap="square"></line>
+                <line x1="9.44397384" y1="31.2336158" x2="12.8483537" y2="35.7513804" id="Line-2-Copy" stroke-linecap="square"></line>
+                <line x1="8.87050554" y1="17.3589823" x2="0.0644628607" y2="12.7852168" id="Line-3" stroke-linecap="square"></line>
+                <circle id="Oval" fill="#FFFFFF" cx="9.23448678" cy="6.87100338" r="5.75"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

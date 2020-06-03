@@ -1,5 +1,19 @@
 <template>
-  <b-loading is-full-page active>
-      <b-icon icon="sync-alt" size="is-large" custom-class="fa-spin"></b-icon>
-  </b-loading>
+  <div class="loading">
+    <b-loading :is-full-page="isFullPage" active />
+  </div>
 </template>
+
+<script>
+export default {
+  props: {
+    isFullPage: {
+      type: Boolean,
+      default: false
+    }
+  }
+};
+</script>
+
+<style>
+</style>

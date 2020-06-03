@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Oval</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="phone-home" transform="translate(-204.000000, -220.000000)" fill="#AF3B3B" stroke="#979797">
+            <g id="life-icons" transform="translate(20.000000, 218.000000)">
+                <circle id="Oval" cx="214" cy="32" r="29.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

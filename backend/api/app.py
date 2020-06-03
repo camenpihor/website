@@ -17,7 +17,7 @@ DARKSKY_SECRET_KEY = os.environ["DARKSKY_SECRET_KEY"]
 @app.route("/")
 def ping_test():
     """Backend API ping test."""
-    return "Success"
+    return _json_response(data={"status": "ok"})
 
 
 @app.route("/api/coordinates/<query>")

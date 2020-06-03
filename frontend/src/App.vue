@@ -1,54 +1,115 @@
 <template>
   <div id="app">
     <Navigation />
-    <router-view id="page-container" />
+    <router-view class="route-view" />
     <Footer />
   </div>
 </template>
 
 <script>
-import Navigation from "./components/Navigation.vue";
-import Footer from "./components/Footer.vue";
+import Footer from "@/components/Footer.vue";
+import Navigation from "@/components/Navigation.vue";
 
 export default {
   name: "app",
   components: {
-    Navigation,
-    Footer
+    Footer,
+    Navigation
   }
 };
 </script>
 
-<style>
-#app {
-  text-align: center;
-}
-
-#page-container {
-  min-height: 100vh;
-  padding-bottom: 50px;
-}
-</style>
-
 <style lang="scss">
 @import "~bulma/sass/utilities/_all";
 
-$gap: 200px;
-$family-primary: "Open Sans";
-$primary: #057715;
-$primary-invert: findColorInvert($primary);
+// COLORS
+$button-over-grey: #979797;
+$grey-dark: #5b5b5f;
+$off-white: #f0f0f0;
+$blue: #3273dc;
+
+$body-background-color: $white-ter;
+$body-family: "Noto Sans JP", sans-serif;
+$body-color: $grey-dark;
+
+// elements
+$footer-background-color: $grey-lighter;
+$footer-padding: 4rem 1.5rem 5rem;
+$section-padding: 4rem 1.5rem;
+$hr-background-color: $button-over-grey;
+$hr-height: 1px;
+$hr-margin: 1.5rem 20%;
+$menu-item-hover-color: $blue;
+$menu-item-hover-background-color: transparent;
+$input-background-color: #ebebeb;
+$input-border-color: $button-over-grey;
+$input-focus-border-color: $button-over-grey;
+$input-hover-border-color: $button-over-grey;
+$input-focus-box-shadow-size: 0 0 0;
+$input-focus-box-shadow-color: $button-over-grey;
 
 $colors: (
-  "primary": (
-    $primary,
-    $primary-invert
+  "off-white": (
+    $off-white,
+    findColorInvert($off-white)
+  ),
+  "transparent": (
+    #00000000,
+    #ffffff
+  ),
+  "grey-dark": (
+    $grey-dark,
+    #ffffff
+  ),
+  "blue": (
+    $blue,
+    findColorInvert($blue)
   )
 );
 
-$link: $primary;
-$link-invert: $primary-invert;
-$link-focus-border: $primary;
-
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
+
+html {
+  font-size: 18px;
+  @include from($desktop) {
+    font-size: 20px;
+  }
+}
+
+.subsection {
+  padding-top: 2rem;
+}
+
+#app {
+  position: relative;
+  min-height: 100vh;
+}
+
+.route-view {
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 90vh;
+  padding-bottom: 8rem;
+}
+
+a {
+  color: inherit;
+}
+
+p a {
+  color: $blue;
+}
+
+a:hover {
+  color: $blue;
+}
+
+@media only screen and (max-width: 1024px) {
+  // all touch screens
+  a {
+    color: $blue !important;
+  }
+}
 </style>

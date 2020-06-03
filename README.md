@@ -24,17 +24,18 @@ Vue
 
 ## TODO
 
-- thoughts
-  - database
-  - how to save file with formatting
-  - script to upload file (while on local copy to server)
-  - listing
-  - searching
-- treecounter
-  - python cnn repository
-- roguesky
-  - show more not tell more
-  - idea for table: title = day name, summary, star forecast; data underneath = everything
-  else and try to think of a way to combine precip prob, type, and intensity
-- fade in star image
-- update global page layout
+- next steps
+  - simplify css using bulma
+    - finish rogue sky
+  - add all actual text
+  - recommendations 
+  - nature identification page
+  - documentation
+
+- new pages
+  - tree count
+  - measurements
+
+## Nature Identification
+
+- https://www.planning.org/pas/reports/report236.htm

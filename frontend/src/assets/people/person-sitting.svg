@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="33px" viewBox="0 0 15 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>person-sitting</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="phone-home" transform="translate(-43.000000, -974.000000)" stroke="#979797">
+            <g id="footer" transform="translate(-1.000000, 974.000000)">
+                <g id="person-sitting" transform="translate(44.000000, 0.000000)">
+                    <circle id="Oval" cx="5" cy="5" r="4.5"></circle>
+                    <line x1="4.07142857" y1="10.1014493" x2="4.92857143" y2="23.8985507" id="Line-13" stroke-linecap="square"></line>
+                    <line x1="5" y1="24" x2="14.4411058" y2="24.8378378" id="Line" stroke-linecap="square"></line>
+                    <line x1="14.5" y1="25.5" x2="12.0125" y2="32.402027" id="Line-2" stroke-linecap="square"></line>
+                    <line x1="4.5" y1="14.5" x2="9.50195312" y2="18.6036036" id="Line-3" stroke-linecap="square"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

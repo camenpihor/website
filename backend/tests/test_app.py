@@ -1,4 +1,3 @@
-import json
 import os
 
 from rogue_sky import darksky
@@ -9,6 +8,7 @@ DARKSKY_API_KEY = os.environ["DARKSKY_SECRET_KEY"]
 def test_ping(backend_api_client):
     response = backend_api_client.get("/")
     assert response.status_code == 200
+    assert response.get_json() == {"status": "ok"}
 
 
 def test_star_forecast(requests_mock, backend_api_client, darksky_json_response):
@@ -25,7 +25,7 @@ def test_star_forecast(requests_mock, backend_api_client, darksky_json_response)
     response = backend_api_client.get(f"api/stars/{latitude}/{longitude}")
     assert response.status_code == 200
 
-    actual = json.loads(response.data)
+    actual = response.get_json()
     assert len(actual["daily_forecast"]) == 8
     assert set(actual.keys()) == set(
         ["latitude", "longitude", "queried_date_utc", "daily_forecast", "city", "state"]

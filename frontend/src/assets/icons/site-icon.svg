@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="122px" viewBox="0 0 120 122" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>camen-logo-icon</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="sketch" transform="translate(-218.000000, -246.000000)" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="10">
+            <g id="camen-logo-icon" transform="translate(219.000000, 247.000000)">
+                <line x1="39.5" y1="39.5" x2="78.5" y2="39.5" id="Line"></line>
+                <line x1="0.5" y1="79.5" x2="39.5" y2="79.5" id="Line"></line>
+                <line x1="39.5" y1="40.5" x2="39.5" y2="79.5" id="Line"></line>
+                <line x1="78.5" y1="0.5" x2="117.5" y2="0.5" id="Line"></line>
+                <line x1="78.5" y1="0.5" x2="78.5" y2="39.5" id="Line"></line>
+                <line x1="117.5" y1="0.5" x2="117.5" y2="39.5" id="Line"></line>
+                <line x1="117.5" y1="40.5" x2="117.5" y2="79.5" id="Line"></line>
+                <line x1="117.5" y1="80.5" x2="117.5" y2="119.5" id="Line"></line>
+            </g>
+        </g>
+    </g>
+</svg>

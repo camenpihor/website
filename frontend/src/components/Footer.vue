@@ -1,66 +1,13 @@
 <template>
-  <section id="footer">
-    <div class="container">
-      <div id="footer-info" class="columns is-centered">
-        <aside class="menu column">
-          <p class="menu-label">Website of Camen Piho</p>
-          <ul class="menu-list">
-            <li><router-link :to="{ name: 'about' }">About</router-link></li>
-            <li><a href="https://github.com/camenpihor">GitHub</a></li>
-          </ul>
-        </aside>
-        <aside class="menu column">
-          <p class="menu-label">General</p>
-          <ul class="menu-list">
-            <li>
-              <router-link :to="{ name: 'home' }">Home</router-link>
-            </li>
-            <li>
-              <router-link :to="{ name: 'documentation' }">Documentation</router-link>
-            </li>
-          </ul>
-        </aside>
-        <aside class="menu column">
-          <p class="menu-label">Projects</p>
-          <ul class="menu-list">
-            <li><router-link :to="{ name: '404' }">Thoughts</router-link></li>
-            <li><router-link :to="{ name: '404' }">Books</router-link></li>
-            <li><router-link :to="{ name: 'rogue-sky-home' }">RogueSky</router-link></li>
-            <li><router-link :to="{ name: '404' }">TreeCount</router-link></li>
-          </ul>
-        </aside>
-      </div>
+  <div class="footer">
+    <div class="content has-text-centered">
+      <p class="is-size-7">
+        Website by <router-link :to="{ name: 'about' }">me</router-link>. The <a href="https://github.com/camenpihor/website" target="_blank">source code</a> is licensed <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>.
+        </p>
     </div>
-  </section>
+  </div>
 </template>
 
-<style>
-#footer {
-  background: #343434;
-  color: #aaa;
-}
-
-#footer-info {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-#footer .menu-label {
-  color: #a3a3a3;
-  font-size: 14px;
-  margin-top: 14px;
-}
-
-#footer-info .menu-list a {
-  color: #5f5f5f;
-  font-size: 16px;
-  padding: 0.8em 0.75em
-}
-
-#footer-info .menu-list a:hover {
-  background-color: transparent;
-  color: white;
-}
-</style>
+<script>
+export default {};
+</script>

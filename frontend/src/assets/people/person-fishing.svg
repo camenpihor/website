@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="203px" height="112px" viewBox="0 0 203 112" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>person-fishing</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="phone-404" transform="translate(-96.000000, -229.000000)">
+            <g id="person-fishing" transform="translate(96.000000, 231.000000)">
+                <g id="person" transform="translate(0.000000, 27.000000)" stroke="#979797">
+                    <g>
+                        <g id="legs" transform="translate(24.347826, 33.869565)" stroke-linecap="square">
+                            <line x1="7.82608696" y1="0" x2="0" y2="7.13043478" id="Line-2"></line>
+                            <line x1="7.82608696" y1="-7.1775114e-15" x2="15.6521739" y2="7.13043478" id="Line-2-Copy"></line>
+                        </g>
+                        <line x1="27.826087" y1="19.6086957" x2="19.2198582" y2="31.9131206" id="arm" stroke-linecap="square"></line>
+                        <line x1="12.1276596" y1="19.2641844" x2="24.2183164" y2="40.8663043" id="body" stroke-linecap="square"></line>
+                        <ellipse id="head" cx="9.56521739" cy="9.80434783" rx="9.06521739" ry="9.30434783"></ellipse>
+                    </g>
+                </g>
+                <g id="fishing-pole" transform="translate(25.000000, 0.000000)" stroke="#979797" stroke-linecap="square">
+                    <line x1="0.22826087" y1="53.7711864" x2="20.7717391" y2="0.228813559" id="Line-8" stroke-width="2"></line>
+                    <line x1="21.2287449" y1="0.228873239" x2="134" y2="65" id="Line-9" stroke-width="0.5"></line>
+                </g>
+                <g id="water" transform="translate(131.000000, 61.000000)" stroke="#979797">
+                    <path d="M0,7 C1.95224312,5.9085571 3.26207621,4.97350553 3.92949927,4.19484529 C4.59692233,3.41618505 5.28708924,2.01790329 6,0 C6.43435971,1.93598211 7.02036017,3.33426388 7.75800138,4.19484529 C8.4956426,5.05542671 9.90964214,5.99047828 12,7" id="Path"></path>
+                    <path d="M12,7 C13.9522431,5.9085571 15.2620762,4.97350553 15.9294993,4.19484529 C16.5969223,3.41618505 17.2870892,2.01790329 18,0 C18.4343597,1.93598211 19.0203602,3.33426388 19.7580014,4.19484529 C20.4956426,5.05542671 21.9096421,5.99047828 24,7" id="Path-Copy"></path>
+                    <path d="M24,7 C25.9522431,5.9085571 27.2620762,4.97350553 27.9294993,4.19484529 C28.5969223,3.41618505 29.2870892,2.01790329 30,0 C30.4343597,1.93598211 31.0203602,3.33426388 31.7580014,4.19484529 C32.4956426,5.05542671 33.9096421,5.99047828 36,7" id="Path-Copy-2"></path>
+                    <path d="M36,7 C37.9522431,5.9085571 39.2620762,4.97350553 39.9294993,4.19484529 C40.5969223,3.41618505 41.2870892,2.01790329 42,0 C42.4343597,1.93598211 43.0203602,3.33426388 43.7580014,4.19484529 C44.4956426,5.05542671 45.9096421,5.99047828 48,7" id="Path-Copy-3"></path>
+                    <path d="M47,7 C48.9522431,5.9085571 50.2620762,4.97350553 50.9294993,4.19484529 C51.5969223,3.41618505 52.2870892,2.01790329 53,0 C53.4343597,1.93598211 54.0203602,3.33426388 54.7580014,4.19484529 C55.4956426,5.05542671 56.9096421,5.99047828 59,7" id="Path-Copy-4"></path>
+                    <path d="M59,7 C60.9522431,5.9085571 62.2620762,4.97350553 62.9294993,4.19484529 C63.5969223,3.41618505 64.2870892,2.01790329 65,0 C65.4343597,1.93598211 66.0203602,3.33426388 66.7580014,4.19484529 C67.4956426,5.05542671 68.9096421,5.99047828 71,7" id="Path-Copy-5"></path>
+                </g>
+                <g id="fish" transform="translate(131.000000, 76.000000)" stroke="#979797">
+                    <g transform="translate(0.000000, 16.000000)">
+                        <ellipse id="Oval" cx="9.37142857" cy="3.5" rx="6.12857143" ry="1.6875"></ellipse>
+                        <path d="M1.6,2.78025377 L-0.303505007,4.37142857 L3.50350501,4.37142857 L1.6,2.78025377 Z" id="Triangle" transform="translate(1.600000, 3.500000) rotate(90.000000) translate(-1.600000, -3.500000) "></path>
+                    </g>
+                    <g id="fish-copy" transform="translate(15.000000, 27.000000)">
+                        <ellipse id="Oval" cx="9.37142857" cy="3.5" rx="6.12857143" ry="1.6875"></ellipse>
+                        <path d="M1.6,2.78025377 L-0.303505007,4.37142857 L3.50350501,4.37142857 L1.6,2.78025377 Z" id="Triangle" transform="translate(1.600000, 3.500000) rotate(90.000000) translate(-1.600000, -3.500000) "></path>
+                    </g>
+                    <g id="fish-copy-2" transform="translate(36.000000, 9.000000)">
+                        <ellipse id="Oval" cx="9.37142857" cy="3.5" rx="6.12857143" ry="1.6875"></ellipse>
+                        <path d="M1.6,2.78025377 L-0.303505007,4.37142857 L3.50350501,4.37142857 L1.6,2.78025377 Z" id="Triangle" transform="translate(1.600000, 3.500000) rotate(90.000000) translate(-1.600000, -3.500000) "></path>
+                    </g>
+                    <g id="fish-copy-3" transform="translate(52.000000, 19.000000)">
+                        <ellipse id="Oval" cx="9.37142857" cy="3.5" rx="6.12857143" ry="1.6875"></ellipse>
+                        <path d="M1.6,2.78025377 L-0.303505007,4.37142857 L3.50350501,4.37142857 L1.6,2.78025377 Z" id="Triangle" transform="translate(1.600000, 3.500000) rotate(90.000000) translate(-1.600000, -3.500000) "></path>
+                    </g>
+                    <g id="fish-copy-4" transform="translate(20.000000, 3.500000) scale(-1, 1) translate(-20.000000, -3.500000) translate(12.000000, 0.000000)">
+                        <ellipse id="Oval" cx="9.37142857" cy="3.5" rx="6.12857143" ry="1.6875"></ellipse>
+                        <path d="M1.6,2.78025377 L-0.303505007,4.37142857 L3.50350501,4.37142857 L1.6,2.78025377 Z" id="Triangle" transform="translate(1.600000, 3.500000) rotate(90.000000) translate(-1.600000, -3.500000) "></path>
+                    </g>
+                </g>
+                <g id="music-notes" transform="translate(11.000000, 7.000000)">
+                    <g id="music-note" transform="translate(5.000000, 10.000000)">
+                        <line x1="1.92105263" y1="0.227272727" x2="1.42105263" y2="4.31818182" id="Line-10" stroke="#000000" stroke-width="0.5" stroke-linecap="square"></line>
+                        <line x1="4.42105263" y1="0.681818182" x2="3.92105263" y2="4.77272727" id="Line-10-Copy" stroke="#000000" stroke-width="0.5" stroke-linecap="square"></line>
+                        <ellipse id="Oval" fill="#090909" cx="0.921052632" cy="4.54545455" rx="1" ry="1"></ellipse>
+                        <ellipse id="Oval-Copy" fill="#090909" cx="3.42105263" cy="4.54545455" rx="1" ry="1"></ellipse>
+                        <line x1="1.98855263" y1="0.340909091" x2="4.83855263" y2="0.454545455" id="Line" stroke="#000000" stroke-width="0.5" stroke-linecap="square"></line>
+                    </g>
+                    <g id="music-note-copy" transform="translate(0.000000, 5.000000)">
+                        <line x1="1.92105263" y1="0.227272727" x2="1.42105263" y2="4.31818182" id="Line-10" stroke="#000000" stroke-width="0.5" stroke-linecap="square"></line>
+                        <line x1="4.42105263" y1="0.681818182" x2="3.92105263" y2="4.77272727" id="Line-10-Copy" stroke="#000000" stroke-width="0.5" stroke-linecap="square"></line>
+                        <ellipse id="Oval" fill="#090909" cx="0.921052632" cy="4.54545455" rx="1" ry="1"></ellipse>
+                        <ellipse id="Oval-Copy" fill="#090909" cx="3.42105263" cy="4.54545455" rx="1" ry="1"></ellipse>
+                        <line x1="1.98855263" y1="0.340909091" x2="4.83855263" y2="0.454545455" id="Line" stroke="#000000" stroke-width="0.5" stroke-linecap="square"></line>
+                    </g>
+                    <g id="music-note-copy-2" transform="translate(7.000000, 0.000000)">
+                        <line x1="1.92105263" y1="0.227272727" x2="1.42105263" y2="4.31818182" id="Line-10" stroke="#000000" stroke-width="0.5" stroke-linecap="square"></line>
+                        <line x1="4.42105263" y1="0.681818182" x2="3.92105263" y2="4.77272727" id="Line-10-Copy" stroke="#000000" stroke-width="0.5" stroke-linecap="square"></line>
+                        <ellipse id="Oval" fill="#090909" cx="0.921052632" cy="4.54545455" rx="1" ry="1"></ellipse>
+                        <ellipse id="Oval-Copy" fill="#090909" cx="3.42105263" cy="4.54545455" rx="1" ry="1"></ellipse>
+                        <line x1="1.98855263" y1="0.340909091" x2="4.83855263" y2="0.454545455" id="Line" stroke="#000000" stroke-width="0.5" stroke-linecap="square"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
