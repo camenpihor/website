@@ -1,5 +1,5 @@
 <template>
-  <div class="weather columns is-mobile">
+  <div class="weather columns">
     <div class="column">
       <h1 class="weather__title">Star Visibility</h1>
       <div class="weather__value">{{ starVisibility }}%</div>

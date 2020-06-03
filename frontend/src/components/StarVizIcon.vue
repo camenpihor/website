@@ -1,7 +1,9 @@
 <template>
-  <div class="star-viz">
-    <i class="star-viz__icon" v-bind:class="wordToIconClass()" />
-    <div class="star-viz__date">{{ date }}</div>
+  <div>
+    <div>
+      <i v-bind:class="wordToIconClass()" />
+      <p>{{ date }}</p>
+    </div>
   </div>
 </template>
 
@@ -35,7 +37,4 @@ export default {
 </script>
 
 <style>
-.star-viz {
-  text-align: center;
-}
 </style>

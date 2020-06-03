@@ -24,6 +24,7 @@ export default {
 
 // COLORS
 $button-over-grey: #979797;
+$grey-dark: #5b5b5f;
 $off-white: #f0f0f0;
 $blue: #3273dc;
 
@@ -32,6 +33,8 @@ $body-family: "Noto Sans JP", sans-serif;
 $body-color: $grey-dark;
 
 // elements
+$footer-background-color: $grey-lighter;
+$footer-padding: 4rem 1.5rem 5rem;
 $section-padding: 4rem 1.5rem;
 $hr-background-color: $button-over-grey;
 $hr-height: 1px;
@@ -55,7 +58,7 @@ $colors: (
     #ffffff
   ),
   "grey-dark": (
-    #5b5b5f,
+    $grey-dark,
     #ffffff
   ),
   "blue": (
@@ -85,14 +88,18 @@ html {
 
 .route-view {
   max-width: 750px;
-  margin-top: 3.25rem; /* height of navbar */
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 10rem;
+  min-height: 90vh;
+  padding-bottom: 8rem;
 }
 
 a {
   color: inherit;
+}
+
+p a {
+  color: $blue;
 }
 
 a:hover {

@@ -140,6 +140,10 @@ export default {
   max-width: 90vw;
 }
 
+.nature__search {
+  margin-top: 3.25rem;
+}
+
 .tabs {
   margin-left: auto;
   margin-right: auto;

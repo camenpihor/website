@@ -1,6 +1,6 @@
 <template>
   <div class="calendar">
-    <ul v-if="colorKey != null" class="calendar__key">
+    <ul v-if="colorKey != null" class="has-text-centered">
       <li
         v-for="(color, key) in colorKey"
         :key="key"
@@ -85,10 +85,6 @@ export default {
 </script>
 
 <style>
-.calendar__key {
-  text-align: center;
-}
-
 .calendar__key__value {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -98,7 +94,7 @@ export default {
 }
 
 .calendar__key__color:before {
-  content: " \25AC";
+  content: "\25AC";
 }
 
 .calendar__popover {

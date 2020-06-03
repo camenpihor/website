@@ -25,9 +25,12 @@ Vue
 ## TODO
 
 - next steps
+  - simplify css using bulma
+    - finish rogue sky
+  - add all actual text
+  - recommendations 
   - nature identification page
   - documentation
-  - add all actual text
 
 - new pages
   - tree count

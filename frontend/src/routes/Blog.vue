@@ -1,5 +1,5 @@
 <template>
-  <div class="blog">
+  <section class="blog">
     <ClientSideSearch
       class="blog__search"
       placeholder="search..."
@@ -9,32 +9,23 @@
       :json="blogPostsJson"
       v-on:output="searchResults = $event"
     />
-    <div v-if="searchResults.length > 0" class="blog__posts">
-      <div class="blog__posts__desktop">
-        <div class="blog__post" v-for="post in searchResults" :key="post.title">
-          <router-link :to="{ name: 'blog-post', params: { id: post.url } }">
-            <h1 class="blog__post__title">{{ post.title }}</h1>
-            <p class="blog__post__date">{{ post.created }}</p>
-            <div class="blog__post__text">{{ truncateText(post.intro) }}</div>
-          </router-link>
-        </div>
-      </div>
-      <div class="blog__posts__touch">
-        <div class="blog__post" v-for="post in searchResults" :key="post.title">
-          <h1 class="blog__post__title">{{ post.title }}</h1>
-          <p class="blog__post__date">{{ post.created }}</p>
-          <div class="blog__post__text">{{ truncateText(post.intro) }}</div>
+    <div v-if="searchResults.length > 0" class="section">
+      <div class="subsection" v-for="post in searchResults" :key="post.title">
+        <h1 class="title is-4">{{ post.title }}</h1>
+        <p class="subtitle is-7">{{ post.created }}</p>
+        <div>{{ truncateText(post.intro) }}</div>
+        <p>
           <router-link :to="{ name: 'blog-post', params: { id: post.url } }">
             read more
           </router-link>
-        </div>
+        </p>
       </div>
       <img class="person-wave" :src="personWaveFilePath" />
     </div>
     <div v-else>
       <NoResults message="No Results :(" />
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -69,35 +60,9 @@ export default {
 
 <style>
 .blog__search {
+  margin-top: 3.25rem;
   margin-left: auto;
   margin-right: auto;
-}
-
-.blog__posts {
-  margin-top: 3rem;
-}
-
-.blog__post:first-of-type {
-  margin-top: 0rem;
-}
-
-.blog__post {
-  margin-top: 3rem;
-}
-
-.blog__post__title {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.blog__post__date {
-  margin-top: 0.2rem;
-  font-weight: lighter;
-  font-size: 0.7rem;
-}
-
-.blog__post__text {
-  margin-top: 1rem;
 }
 
 .person-wave {
@@ -110,38 +75,5 @@ export default {
   position: relative;
   top: -25px;
   left: 23px;
-}
-
-.blog__posts__desktop {
-  display: none;
-}
-
-.blog__posts__touch {
-  display: none;
-}
-
-@media only screen and (max-width: 1024px) {
-  .blog__posts__desktop {
-    display: none;
-  }
-
-  .blog__posts__touch {
-    display: inherit;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .blog__post:hover {
-    margin-left: 10px;
-    margin-right: -10px;
-  }
-
-  .blog__posts__touch {
-    display: none;
-  }
-
-  .blog__posts__desktop {
-    display: inherit;
-  }
 }
 </style>

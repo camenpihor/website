@@ -1,5 +1,5 @@
 <template>
-  <div class="recommendations">
+  <section class="recommendations">
     <ClientSideSearch
       class="recommendations__search"
       :keys="searchKeys"
@@ -9,13 +9,13 @@
       v-on:output="searchResults = $event"
     />
 
-    <div v-if="searchResults.length > 0" class="recommendations__groups">
+    <div v-if="searchResults.length > 0" class="section">
       <ul
-        class="recommendation__group"
+        class="subsection"
         v-for="(groupData, groupLabel, index) in groupedRecommendations"
         :key="groupLabel"
       >
-        <p class="recommendation__group__header">
+        <p class="heading is-size-5">
           <img
             v-if="index === 1"
             class="person-computer"
@@ -23,13 +23,9 @@
           />
           {{ groupLabel }}
         </p>
-        <li
-          class="recommendation__group__item"
-          v-for="item in groupData"
-          :key="item.label"
-        >
-          <p class="recommendation__group__item__label">
-            <a :href="item.url">{{ item.label }}</a>
+        <li v-for="item in groupData" :key="item.label">
+          <p class="recommendation__group__item">
+            <a :href="item.url" target="_blank">{{ item.label }}</a>
             <span v-if="item.group_label !== null">
               by {{ item.group_label }}</span
             >
@@ -42,7 +38,7 @@
       class="recommendations__no-results"
       message="No Results :("
     />
-  </div>
+  </section>
 </template>
 
 <script>
@@ -77,32 +73,19 @@ export default {
 
 <style>
 .recommendations__search {
+  margin-top: 3.25rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-.recommendation__group {
-  margin-top: 3rem;
-}
-
-.recommendation__group__header {
-  text-transform: capitalize;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
 .recommendation__group__item {
-  margin-left: 1rem;
-}
-
-.recommendation__group__item__label {
   text-indent: -1rem;
   padding-left: 1rem;
 }
 
 .person-computer {
   width: 1rem;
-  margin-left: -1rem; /* negative of width */
+  margin-left: -1rem; /* negative of character width */
   float: left;
   position: relative;
   top: 0.6rem;

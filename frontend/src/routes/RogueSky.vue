@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <section>
     <EventListener :method="searchListener" />
+
     <BackendSearch
       class="rogue-sky__search"
       placeholder="search address..."
@@ -8,150 +9,193 @@
       ref="search"
       :imageFilePath="personHangingFilePath"
     />
-    <NotFound
-      class="rogue-sky__section"
-      v-if="error"
-      :requestedPath="this.$route.fullPath"
-    />
+
+    <NotFound v-if="error" :requestedPath="this.$route.fullPath" />
     <Loading v-if="!error & (star_forecast == null)" :isFullPage="false" />
-    <div v-if="star_forecast != null" class="rogue-sky">
-      <div class="rogue-sky__location rogue-sky__section">
-        <h1 class="rogue-sky__header rogue-sky__location__name">
-          {{ this.city }}, {{ this.state }}
-        </h1>
-        <div class="rogue-sky__week columns is-mobile">
-          <StarVizIcon
-            class="column"
-            v-for="star in star_forecast"
-            :key="star.weather_date_local"
-            :word="star.icon"
-            :date="humanizeDate(star.weather_date_local)"
-          />
-        </div>
-        <hr class="rogue-sky__break-line" />
-      </div>
-
-      <div class="rogue-sky__weather rogue-sky__section">
-        <h1 class="rogue-sky__header">Weather</h1>
-        <h1 class="rogue-sky__sub-header">Today</h1>
-        <WeatherSummary
-          class="rogue-sky__weather__day"
-          :starVisibility="floatToPercent(today.star_visibility)"
-          :precipitationProbability="floatToPercent(today.precip_probability)"
-          :precipitationType="
-            precipitationIntensityToType(today.precip_intensity_max_in_hr) +
-              ' ' +
-              today.precip_type
-          "
-          :temperatureLow="Math.round(today.temperature_min_f)"
-          :temperatureHigh="Math.round(today.temperature_max_f)"
-          :moonPhase="floatToPercent(today.moon_phase_pct)"
+    <div v-if="star_forecast != null">
+      <h1 class="title is-3 has-text-centered">
+        {{ this.city }}, {{ this.state }}
+      </h1>
+      <div class="level is-mobile rogue-sky__icon-summary">
+        <StarVizIcon
+          class="level-item has-text-centered is-size-7"
+          v-for="star in star_forecast"
+          :key="star.weather_date_local"
+          :word="star.icon"
+          :date="humanizeDate(star.weather_date_local)"
         />
-        <div class="rogue-sky__sub-header">
-          <p>Best of Week</p>
-          <p
-            v-if="bestDay.weather_date_local != today.weather_date_local"
-            class="rogue-sky__header__subtext"
-          >
-            {{ bestDay.weather_date_local | moment("dddd, MMMM Do") }}
-          </p>
-          <p v-else class="rogue-sky__header__subtext">
-            Today
-          </p>
-        </div>
-        <WeatherSummary
-          class="rogue-sky__weather__day"
-          :starVisibility="floatToPercent(bestDay.star_visibility)"
-          :precipitationProbability="floatToPercent(bestDay.precip_probability)"
-          :precipitationType="
-            precipitationIntensityToType(bestDay.precip_intensity_max_in_hr) +
-              ' ' +
-              bestDay.precip_type
-          "
-          :temperatureLow="Math.round(bestDay.temperature_min_f)"
-          :temperatureHigh="Math.round(bestDay.temperature_max_f)"
-          :moonPhase="floatToPercent(bestDay.moon_phase_pct)"
+      </div>
+      <hr />
+
+      <div class="rogue-sky__map__wrapper">
+        <Map
+          class="rogue-sky__map__image"
+          :latitude="parseFloat(latitude)"
+          :longitude="parseFloat(longitude)"
+          :zoom="6"
+          :onLoad="cloudCoverLayer"
         />
       </div>
 
-      <div class="rogue-sky__map rogue-sky__section">
-        <div class="rogue-sky__header">
-          Map
+      <div class="section">
+        <h1 class="title is-3 has-text-centered">
+          Week
           <img class="person-wave-move-image" :src="personWaveMoveFilePath" />
-          <p class="rogue-sky__header__subtext">
-            Star visibility spatial projections
-          </p>
-        </div>
-
-        <div class="rogue-sky__map__wrapper">
-          <Map
-            class="rogue-sky__map__image"
-            :latitude="parseFloat(latitude)"
-            :longitude="parseFloat(longitude)"
-            :zoom="6"
-            :onLoad="cloudCoverLayer"
-          />
-        </div>
-      </div>
-
-      <div class="rogue-sky__month rogue-sky__section">
-        <div class="rogue-sky__header">
-          Month
-          <div class="rogue-sky__header__subtext">
-            <p>Star visibility temporal projections</p>
-            <p style="margin-top: -0.3rem;">Astronomical events</p>
+        </h1>
+        <div class="is-hidden-touch">
+          <div>
+            <h1 class="heading is-size-7">Today</h1>
+            <WeatherSummary
+              :starVisibility="floatToPercent(today.star_visibility)"
+              :precipitationProbability="
+                floatToPercent(today.precip_probability)
+              "
+              :precipitationType="
+                precipitationIntensityToType(today.precip_intensity_max_in_hr) +
+                  ' ' +
+                  today.precip_type
+              "
+              :temperatureLow="Math.round(today.temperature_min_f)"
+              :temperatureHigh="Math.round(today.temperature_max_f)"
+              :moonPhase="floatToPercent(today.moon_phase_pct)"
+            />
+          </div>
+          <div>
+            <div>
+              <p class="heading is-size-7">Best</p>
+              <p
+                v-if="bestDay.weather_date_local != today.weather_date_local"
+                class="heading is-size-9"
+              >
+                {{ bestDay.weather_date_local | moment("dddd, MMMM Do") }}
+              </p>
+              <p v-else class="heading is-size-9">
+                Today
+              </p>
+            </div>
+            <WeatherSummary
+              :starVisibility="floatToPercent(bestDay.star_visibility)"
+              :precipitationProbability="
+                floatToPercent(bestDay.precip_probability)
+              "
+              :precipitationType="
+                precipitationIntensityToType(
+                  bestDay.precip_intensity_max_in_hr
+                ) +
+                  ' ' +
+                  bestDay.precip_type
+              "
+              :temperatureLow="Math.round(bestDay.temperature_min_f)"
+              :temperatureHigh="Math.round(bestDay.temperature_max_f)"
+              :moonPhase="floatToPercent(bestDay.moon_phase_pct)"
+            />
           </div>
         </div>
-        <div class="rogue-sky__calendar__wrapper">
-          <Calendar
-            class="rogue-sky__calendar"
-            :attributes="attributes"
-            minDate="2020-01-02"
-            maxDate="2021-01-01"
-            :colorKey="calendarColors"
-          />
+        <div
+          class="columns is-mobile is-hidden-desktop subsection"
+          style="margin-left:auto"
+        >
+          <div class="column">
+            <div>
+              <h1 class="heading is-size-7">Today</h1>
+              <p class="heading is-size-9">
+                {{ today.weather_date_local | moment("dddd, MMMM Do") }}
+              </p>
+            </div>
+            <WeatherSummary
+              :starVisibility="floatToPercent(today.star_visibility)"
+              :precipitationProbability="
+                floatToPercent(today.precip_probability)
+              "
+              :precipitationType="
+                precipitationIntensityToType(today.precip_intensity_max_in_hr) +
+                  ' ' +
+                  today.precip_type
+              "
+              :temperatureLow="Math.round(today.temperature_min_f)"
+              :temperatureHigh="Math.round(today.temperature_max_f)"
+              :moonPhase="floatToPercent(today.moon_phase_pct)"
+            />
+          </div>
+          <div class="column">
+            <div>
+              <p class="heading is-size-7">Best</p>
+              <p
+                v-if="bestDay.weather_date_local != today.weather_date_local"
+                class="heading is-size-9"
+              >
+                {{ bestDay.weather_date_local | moment("dddd, MMMM Do") }}
+              </p>
+              <p v-else class="heading is-size-9">
+                Today
+              </p>
+            </div>
+            <WeatherSummary
+              :starVisibility="floatToPercent(bestDay.star_visibility)"
+              :precipitationProbability="
+                floatToPercent(bestDay.precip_probability)
+              "
+              :precipitationType="
+                precipitationIntensityToType(
+                  bestDay.precip_intensity_max_in_hr
+                ) +
+                  ' ' +
+                  bestDay.precip_type
+              "
+              :temperatureLow="Math.round(bestDay.temperature_min_f)"
+              :temperatureHigh="Math.round(bestDay.temperature_max_f)"
+              :moonPhase="floatToPercent(bestDay.moon_phase_pct)"
+            />
+          </div>
         </div>
       </div>
 
-      <div class="rogue-sky__addition-info rogue-sky__section">
-        <h1 class="rogue-sky__header">Additional Information</h1>
-        <ul>
-          <li>
-            <router-link :to="{ name: 'documentation' }">{{
-              resolveURL({ name: "documentation" })
-            }}</router-link>
-          </li>
+      <div class="section">
+        <p class="title is-3 has-text-centered">Month</p>
+        <p class="subtitle is-7 has-text-centered">
+          Star visibility temporal projections | Astronomical events
+        </p>
+        <Calendar
+          class="rogue-sky__calendar"
+          :attributes="attributes"
+          minDate="2020-01-02"
+          maxDate="2021-01-01"
+          :colorKey="calendarColors"
+        />
+      </div>
+
+      <div class="section">
+        <p class="title is-3 has-text-centered">Additional Information</p>
+        <ul class="has-text-centered">
           <li>
             <a
               target="_blank"
               :href="
                 `https://www.darksky.net/forecast/${latitude},${longitude}`
               "
-              >www.darksky.net/forecast/{{ latitude }},{{ longitude }}</a
+              >darksky.net/forecast/{{ latitude }},{{ longitude }}</a
             >
           </li>
           <li>
             <a
               target="_blank"
               href="https://www.darksitefinder.com/maps/world.html"
-              >www.darksitefinder.com/maps/world.html</a
+              >darksitefinder.com/maps/world.html</a
             >
           </li>
           <li>
-            <a target="_blank" href="https://www.darksky.org"
-              >www.darksky.org</a
-            >
+            <a target="_blank" href="https://www.darksky.org">darksky.org</a>
           </li>
           <li>
             <a target="_blank" href="https://www.starwalk.space"
-              >www.starwalk.space</a
+              >starwalk.space</a
             >
           </li>
         </ul>
       </div>
-      <img class="person-mountain-moon" :src="personMountainMoonFilePath" />
     </div>
-  </div>
+    <img class="person-mountain-moon" :src="personMountainMoonFilePath" />
+  </section>
 </template>
 
 <script>
@@ -286,10 +330,6 @@ export default {
         return date.format("ddd");
       }
     },
-    resolveURL: function(routerParams) {
-      let resolved = this.$router.resolve(routerParams);
-      return `www.${window.location.hostname}${resolved.route.fullPath}`;
-    },
     cloudCoverLayer: function(map) {
       map.addLayer({
         id: "simple-tiles",
@@ -392,76 +432,16 @@ export default {
 </script>
 
 <style>
-.rogue-sky {
-  padding-bottom: 10rem;
-}
-
 .rogue-sky__search {
+  margin-top: 3.25rem;
   margin-left: auto;
   margin-right: auto;
 }
 
 .rogue-sky__search .search__image {
-  float: right;
   position: relative;
   top: -12px;
-}
-
-.rogue-sky__section {
-  margin-bottom: 4rem;
-}
-
-.rogue-sky__section:first-of-type {
-  margin-top: 2.5rem;
-  margin-bottom: 4rem;
-}
-
-.rogue-sky__section:last-of-type {
-  margin-bottom: 0;
-}
-
-.rogue-sky__header {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.rogue-sky__header__subtext {
-  font-size: 0.7rem;
-  font-weight: lighter;
-  margin-top: -0.5rem;
-}
-
-.rogue-sky__break-line {
-  margin-left: 39.5px;
-  margin-right: 39.5px;
-  color: #979797;
-  background-color: #979797;
-  height: 1px;
-  border: none;
-}
-
-.rogue-sky__location__name {
-  text-align: center;
-  font-size: 2rem;
-}
-
-.rogue-sky__week {
-  margin-left: -2rem; /* same as padding-left on router-view */
-  margin-right: -2rem; /* same as padding-right on router-view */
-}
-
-.rogue-sky__weather__day {
-  margin-left: -2rem; /* same as padding-left on router-view */
-  margin-right: -2rem; /* same as padding-right on router-view */
-  font-size: 0.9rem;
-}
-
-.rogue-sky__week {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
+  left: 1rem;
 }
 
 .person-wave-move-image {
@@ -471,8 +451,10 @@ export default {
   right: 20%;
 }
 
-.rogue-sky__map .rogue-sky__header {
-  margin-right: -1rem;
+.rogue-sky__icon-summary {
+  max-width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .rogue-sky__map__wrapper {
@@ -488,20 +470,11 @@ export default {
   margin: auto;
 }
 
-.rogue-sky__calendar__wrapper {
-  margin-left: -2rem; /* same as padding-left on router-view */
-  margin-right: -2rem; /* same as padding-right on router-view */
-}
-
-.rogue-sky__addition-info {
-  text-align: center;
-}
-
 .person-mountain-moon {
+  z-index: -1;
   position: absolute;
   width: 15rem;
-  bottom: 2.3rem; /* height of footer - a smidgeon */
-  left: 15vw;
-  z-index: -1;
+  bottom: calc(1rem + 4rem + 5rem);
+  /* footer fontsize + footer top padding + footer bottom padding */
 }
 </style>

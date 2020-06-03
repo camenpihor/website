@@ -1,16 +1,16 @@
 <template>
-  <div>
+  <section class="blog-post">
     <NotFound v-if="error === true" :requestedPath="this.$route.fullPath" />
-    <div v-if="post !== null" class="blog-post">
-      <h1 class="blog-post__title">
+    <div v-if="post !== null" class="section">
+      <h1 class="title is-3">
         {{ post.title }}
-        <img class="person-wave-move-image" :src="personWaveMoveFilePath" />
       </h1>
-      <p class="blog-post__date">{{ post.created }}</p>
-      <div class="blog-post__text" v-html="post.html" />
+      <p class="subtitle is-7">{{ post.created }}</p>
+      <img class="person-wave-move-image" :src="personWaveMoveFilePath" />
+      <div class="content" v-html="post.html" />
       <img class="person-bowling" :src="personBowlingFilepath" />
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -61,39 +61,16 @@ export default {
 </script>
 
 <style>
-.blog-post {
-  margin-top: 1rem;
-  padding-bottom: 7rem;
-}
-
-.blog-post__title {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.blog-post__date {
-  margin-top: 0.2rem;
-  font-weight: lighter;
-  font-size: 0.7rem;
-}
-
-.blog-post__text {
-  margin-top: 1rem;
-}
-
-.blog-post__text p {
-  margin-top: 1rem;
-}
-
 .person-wave-move-image {
   float: right;
   width: 1rem;
-  margin-right: 4rem;
+  margin-right: 1rem;
 }
 
 .person-bowling {
   position: absolute;
-  bottom: 2.5rem; /* height of footer */
   left: 2rem;
+  bottom: calc(1rem + 4rem + 5rem);
+  /* footer fontsize + footer top padding + footer bottom padding */
 }
 </style>

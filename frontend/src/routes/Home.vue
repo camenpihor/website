@@ -22,10 +22,62 @@
           memoriter, tum etiam erga nos amice et via.
         </p>
       </div>
+
       <hr />
 
       <div class="section">
-        <img class="person-parachute" :src="personParachuteFilePath" />
+        <h1 class="title is-4 has-text-centered">
+          And these are my projects
+        </h1>
+
+        <div class="subsection">
+          <router-link :to="{ name: 'blog' }">
+            <span class="is-size-5 has-text-weight-bold">Blog</span>
+          </router-link>
+          <p class="subtitle is-6">
+            et aperta iudicari ea voluptate velit esse, quam interrogare aut
+            contra sit, amet, consectetur, adipisci velit
+          </p>
+        </div>
+        <div class="subsection">
+          <router-link :to="{ name: 'math' }">
+            <span class="is-size-5 has-text-weight-bold"
+              >Math Implementations</span
+            >
+          </router-link>
+          <p class="subtitle is-6">
+            et aperta iudicari ea voluptate velit esse, quam interrogare aut
+            contra sit, amet, consectetur, adipisci velit
+          </p>
+        </div>
+        <div class="subsection">
+          <router-link :to="{ name: 'nature' }">
+            <span class="is-size-5 has-text-weight-bold"
+              >Nature Identification</span
+            >
+          </router-link>
+          <p class="subtitle is-6">
+            et aperta iudicari ea voluptate velit esse, quam interrogare aut
+            contra sit, amet, consectetur, adipisci velit
+          </p>
+        </div>
+        <div class="subsection">
+          <router-link :to="{ name: 'rogue-sky' }">
+            <span class="is-size-5 has-text-weight-bold">RogueSky</span>
+          </router-link>
+          <p class="subtitle is-6">
+            et aperta iudicari ea voluptate velit esse, quam interrogare aut
+            contra sit, amet, consectetur, adipisci velit
+          </p>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="section">
+        <div class="is-relative">
+          <img class="person-parachute" :src="personParachuteFilePath" />
+        </div>
         <h1 class="title is-4 has-text-centered">
           And this is my website
         </h1>
@@ -97,16 +149,15 @@ export default {
 }
 
 .person-parachute {
-  float: left;
-  position: relative;
+  position: absolute;
   left: 1.5rem;
   top: -3.5rem;
 }
 
 .person-sitting {
   position: absolute;
-  bottom: 2rem; /* height of footer - a smidgeon */
-  z-index: 91; /* footer is 90 */
-  left: 23vw;
+  left: 10vw;
+  bottom: calc(1rem + 4rem + 5rem - 0.3rem);
+  /* footer fontsize + footer top padding + footer bottom padding - a smidgeon */
 }
 </style>
