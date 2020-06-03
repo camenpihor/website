@@ -59,12 +59,6 @@ const router = new VueRouter({
       meta: { pageHome: "rogue-sky" },
     },
     {
-      path: '/documentation',
-      name: "documentation",
-      component: () => import("./Documentation.vue"),
-      meta: { pageHome: "documentation" },
-    },
-    {
       path: '/nature',
       name: "nature",
       component: () => import("./Nature.vue"),

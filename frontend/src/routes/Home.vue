@@ -145,19 +145,22 @@ export default {
 .person-wave {
   position: absolute;
   margin-left: 1rem;
-  top: 0.3rem;
+  top: -0.3rem;
+  width: 0.8rem;
 }
 
 .person-parachute {
   position: absolute;
+  width: 2.5rem;
   left: 1.5rem;
   top: -3.5rem;
 }
 
 .person-sitting {
+  width: 1rem;
   position: absolute;
   left: 10vw;
-  bottom: calc(1rem + 4rem + 5rem - 0.3rem);
+  bottom: calc(1rem + 4rem + 5rem - 0.5rem);
   /* footer fontsize + footer top padding + footer bottom padding - a smidgeon */
 }
 </style>

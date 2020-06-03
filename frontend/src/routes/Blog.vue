@@ -2,7 +2,6 @@
   <section class="blog">
     <ClientSideSearch
       class="blog__search"
-      placeholder="search..."
       :imageFilePath="personReadingFilePath"
       :keys="searchKeys"
       :jsonUUID="searchUUID"
@@ -66,14 +65,17 @@ export default {
 }
 
 .person-wave {
+  width: 1rem;
   position: absolute;
-  bottom: 2.5rem; /* footer height */
+  bottom: calc(1rem + 4rem + 5rem);
+  /* footer fontsize + footer top padding + footer bottom padding */
 }
 
-.search__image {
+.blog__search .search__image {
+  width: 1.5rem;
   float: right;
   position: relative;
-  top: -25px;
-  left: 23px;
+  top: -1.5rem;
+  left: 1.5rem;
 }
 </style>

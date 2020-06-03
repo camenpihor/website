@@ -92,9 +92,10 @@ export default {
   left: 0.1rem;
 }
 
-.search__image {
+.recommendations__search .search__image {
+  width: 3rem;
   float: right;
   position: relative;
-  top: -12px;
+  top: -1rem;
 }
 </style>
