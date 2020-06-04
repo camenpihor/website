@@ -25,15 +25,14 @@ Vue
 ## TODO
 
 - next steps
-  - simplify css using bulma
-    - finish rogue sky
-  - add all actual text
-  - recommendations 
+  - recommendations
+    - add
+    - mechanism to show tags/endorsement
   - nature identification page
-  - documentation
 
 - new pages
   - tree count
+  - documentation
   - measurements
 
 ## Nature Identification
