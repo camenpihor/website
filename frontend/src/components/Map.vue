@@ -8,10 +8,6 @@
       zoom: zoom,
       dragRotate: false
     }"
-    :geolocate-control="{
-      show: true,
-      position: 'top-right'
-    }"
     :fullscreen-control="{
       show: true,
       position: 'top-right'
