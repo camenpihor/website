@@ -26,15 +26,38 @@
     </div>
     <div class="section">
       <p class="title is-5">And here is some stuff about me…</p>
-      <p>
-        Space, earth systems, nature, wonder, thinking, speaking. Laudem et
-        impetus quo minus id, de homine sensibus reliqui nihil impedit, quo
-        ignorare vos arbitrer, sed et dolorum effugiendorum gratia et dolorem?
-        sunt autem nusquam hoc epicurus in armatum hostem impetum fecisse aut ad
-        respondendum reddidisti quorum facta quem modo ista sis aequitate.
-      </p>
+      <div class="content">
+        <p>
+          Hai! I'm a recently unemployed data scientist in my late 20s, who is
+          taking some time to amble. My background is in math, physics, and
+          greek classics. My foreground is in... well, I'm not sure yet. I
+          currently really enjoy learning about the natural world, atmospheric
+          physics, and astronomy. I think the kindest things I can say about
+          myself are that I actively seek wonder and laughter.
+        </p>
+        <p>
+          Every now and then, I get really excited about a topic, and then do a
+          bunch of research. This website started out as (and is mostly still) a
+          place to host
+          <router-link :to="{ name: 'rogue-sky' }">RogueSky</router-link>, a
+          project used to aid my stargazing.
+        </p>
+        <p>
+          Like most people, I would describe myself as really bad at describing
+          myself, so instead of a longer narrative, I'm going to just list fun
+          facts about me. Maybe one day I'll get better at it...
+        </p>
+        <div class="has-text-centered section">
+          <p class="button is-marginless" v-on:click="setRandomFacts()">Random Facts</p>
+          <div class="subsection">
+            <p v-for="(fact, idx) in randomFacts" :key="idx">
+              {{ fact }}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="section">
+    <div class="section about__recommendations">
       <p class="title is-5">And here are some things that I like…</p>
       <p class="subtitle is-7">
         <span>(I post a lot more recommendations </span>
@@ -43,7 +66,7 @@
         >
         <span>!)</span>
       </p>
-      <div class="subsection">
+      <div>
         <p class="heading is-size-7">Blogs</p>
         <ul class="about__me__list__sub">
           <li v-for="blog in blogRoutes" :key="blog.label">
@@ -79,6 +102,9 @@ export default {
       resumeIconFilePath: require("@/assets/icons/resume-icon.svg"),
       githubIconFilePath: require("@/assets/icons/github-icon.svg"),
       emailIconFilePath: require("@/assets/icons/email-icon.svg"),
+      camenFacts: require("@/assets/json/camen_facts.json"),
+      numRandomFacts: 3,
+      randomFacts: this.setRandomFacts(),
       blogRoutes: [
         {
           to: "https://slatestarcodex.com/",
@@ -131,6 +157,28 @@ export default {
         }
       ]
     };
+  },
+  mounted() {
+    this.setRandomFacts();
+  },
+  methods: {
+    setRandomFacts: function() {
+      if (this.camenFacts != null) {
+        let size = this.numRandomFacts;
+        var arr = Array.from(this.camenFacts);
+
+        var result = new Array(size);
+
+        for (let i = 0; i < size; i++) {
+          let randomIdx = Math.floor(Math.random() * arr.length);
+          let random = arr.splice(randomIdx, 1);
+          result[i] = random[0];
+        }
+        this.randomFacts = result;
+      } else {
+        this.randomFacts = null;
+      }
+    }
   }
 };
 </script>
@@ -160,6 +208,10 @@ export default {
 .about__icon:hover {
   background-color: rgba(165, 159, 159, 0.199);
   border-radius: 6px;
+}
+
+.about__recommendations {
+  padding-top: 0;
 }
 
 .person-hot-air-balloon {
