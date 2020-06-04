@@ -11,15 +11,15 @@
     />
 
     <NotFound v-if="error" :requestedPath="this.$route.fullPath" />
-    <Loading v-if="!error & (star_forecast == null)" :isFullPage="false" />
-    <div v-if="star_forecast != null">
+    <Loading v-if="!error & (starForecast == null)" :isFullPage="false" />
+    <div v-if="starForecast != null">
       <h1 class="title is-3 has-text-centered">
         {{ this.city }}, {{ this.state }}
       </h1>
       <div class="level is-mobile rogue-sky__icon-summary">
         <StarVizIcon
           class="level-item has-text-centered is-size-7"
-          v-for="star in star_forecast"
+          v-for="star in starForecast"
           :key="star.weather_date_local"
           :word="star.icon"
           :date="humanizeDate(star.weather_date_local)"
@@ -45,6 +45,9 @@
         <div class="is-hidden-touch">
           <div>
             <h1 class="heading is-size-7">Today</h1>
+            <p class="heading is-size-9">
+              {{ today.weather_date_local | moment("dddd, MMMM Do") }}
+            </p>
             <WeatherSummary
               :starVisibility="floatToPercent(today.star_visibility)"
               :precipitationProbability="
@@ -74,6 +77,7 @@
               </p>
             </div>
             <WeatherSummary
+              v-if="bestDay.weather_date_local != today.weather_date_local"
               :starVisibility="floatToPercent(bestDay.star_visibility)"
               :precipitationProbability="
                 floatToPercent(bestDay.precip_probability)
@@ -131,6 +135,7 @@
               </p>
             </div>
             <WeatherSummary
+              v-if="bestDay.weather_date_local != today.weather_date_local"
               :starVisibility="floatToPercent(bestDay.star_visibility)"
               :precipitationProbability="
                 floatToPercent(bestDay.precip_probability)
@@ -235,7 +240,7 @@ export default {
         meteorShower: "purple",
         other: "blue"
       },
-      star_forecast: null,
+      starForecast: null,
       city: null,
       state: null,
       latitude: null,
@@ -250,7 +255,7 @@ export default {
       this.longitude = null;
       this.city = null;
       this.state = null;
-      this.star_forecast = null;
+      this.starForecast = null;
     },
     initialize: function() {
       this.reset();
@@ -289,7 +294,7 @@ export default {
     fetchForecast: function() {
       getStarForecast(this.latitude, this.longitude)
         .then(response => {
-          this.star_forecast = response.data.daily_forecast.slice(0, 7);
+          this.starForecast = response.data.daily_forecast.slice(0, 7);
           this.city = response.data.city;
           this.state = response.data.state;
         })
@@ -348,14 +353,14 @@ export default {
   },
   computed: {
     today() {
-      if (this.star_forecast != null) {
-        return this.star_forecast[0];
+      if (this.starForecast != null) {
+        return this.starForecast[0];
       }
       return null;
     },
     bestDay() {
-      if (this.star_forecast != null) {
-        let arr = this.star_forecast;
+      if (this.starForecast != null) {
+        let arr = this.starForecast;
         let maxObject = arr[0];
 
         for (let i = 0, len = arr.length; i < len; i++) {
@@ -369,7 +374,7 @@ export default {
       return null;
     },
     attributes() {
-      if (this.star_forecast != null) {
+      if (this.starForecast != null) {
         let today = {
           key: "today",
           highlight: {
@@ -399,6 +404,30 @@ export default {
         };
 
         var allEvents = [today, bestDay];
+
+        for (let dayForecast of this.starForecast) {
+          if (
+            dayForecast.weather_date_local !== this.bestDay.weather_date_local
+          ) {
+            allEvents.push({
+              dates: dayForecast.weather_date_local,
+              highlight: {
+                color: "gray",
+                fillMode: "light"
+              },
+              popover: {
+                label: dayForecast.star_visibility,
+                placement: "auto",
+                isInteractive: true
+              },
+              customData: {
+                event: `Expected star visibility is ${this.floatToPercent(
+                  dayForecast.star_visibility
+                )}%`
+              }
+            });
+          }
+        }
         for (const [label, data] of Object.entries(astronomicalJson)) {
           allEvents = allEvents.concat([
             ...data.map(datum => ({

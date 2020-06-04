@@ -1,12 +1,12 @@
 <template>
   <div class="weather columns">
     <div class="column">
-      <h1 class="weather__title">Star Visibility</h1>
-      <div class="weather__value">{{ starVisibility }}%</div>
+      <h1 class="has-text-weight-bold">Star Visibility</h1>
+      <div class="is-size-7">{{ starVisibility }}%</div>
     </div>
     <div class="column">
-      <h1 class="weather__title">Precipitation</h1>
-      <div class="weather__value">
+      <h1 class="has-text-weight-bold">Precipitation</h1>
+      <div class="is-size-7">
         {{ precipitationProbability }}%
         <span v-if="precipitationProbability != 0">{{
           precipitationType
@@ -14,8 +14,8 @@
       </div>
     </div>
     <div class="column">
-      <h1 class="weather__title">Temperature</h1>
-      <div class="weather__value">
+      <h1 class="has-text-weight-bold">Temperature</h1>
+      <div class="is-size-7">
         <ul>
           <li>Low: {{ temperatureLow }}°F</li>
           <li>High: {{ temperatureHigh }}°F</li>
@@ -23,8 +23,8 @@
       </div>
     </div>
     <div class="column">
-      <h1 class="weather__title">Moon Phase</h1>
-      <div class="weather__value">{{ moonPhase }}%</div>
+      <h1 class="has-text-weight-bold">Moon Phase</h1>
+      <div class="is-size-7">{{ moonPhase }}%</div>
     </div>
   </div>
 </template>
@@ -41,13 +41,3 @@ export default {
   ]
 };
 </script>
-
-<style>
-.weather__title {
-  font-weight: bold;
-}
-
-.weather__value {
-  font-weight: lighter;
-}
-</style>
