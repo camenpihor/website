@@ -1,43 +1,45 @@
 <template>
   <section class="recommendations">
-    <ClientSideSearch
-      class="recommendations__search"
-      :keys="searchKeys"
-      :json="recommendations"
-      :jsonUUID="searchUUID"
-      :imageFilePath="personHangingFilePath"
-      v-on:output="searchResults = $event"
-    />
+    <div v-if="recommendations != null">
+      <ClientSideSearch
+        class="recommendations__search"
+        :keys="searchKeys"
+        :json="recommendations"
+        :jsonUUID="searchUUID"
+        :imageFilePath="personHangingFilePath"
+        v-on:output="searchResults = $event"
+      />
 
-    <div v-if="searchResults.length > 0" class="section">
-      <ul
-        class="subsection"
-        v-for="(groupData, groupLabel, index) in groupedRecommendations"
-        :key="groupLabel"
-      >
-        <p class="heading is-size-5">
-          <img
-            v-if="index === 1"
-            class="person-computer"
-            :src="personComputerFilePath"
-          />
-          {{ groupLabel }}
-        </p>
-        <li v-for="item in groupData" :key="item.label">
-          <p class="recommendation__group__item">
-            <a :href="item.url" target="_blank">{{ item.label }}</a>
-            <span v-if="item.group_label !== null">
-              by {{ item.group_label }}</span
-            >
+      <div v-if="searchResults.length > 0" class="section">
+        <ul
+          class="subsection"
+          v-for="(groupData, groupLabel, index) in groupedRecommendations"
+          :key="groupLabel"
+        >
+          <p class="heading is-size-5">
+            <img
+              v-if="index === 1"
+              class="person-computer"
+              :src="personComputerFilePath"
+            />
+            {{ groupLabel }}
           </p>
-        </li>
-      </ul>
+          <li v-for="item in groupData" :key="item.label">
+            <p class="recommendation__group__item">
+              <a :href="item.url" target="_blank">{{ item.label }}</a>
+              <span v-if="item.group_label !== null">
+                by {{ item.group_label }}</span
+              >
+            </p>
+          </li>
+        </ul>
+      </div>
+      <NoResults
+        v-else
+        class="recommendations__no-results"
+        message="No Results :("
+      />
     </div>
-    <NoResults
-      v-else
-      class="recommendations__no-results"
-      message="No Results :("
-    />
   </section>
 </template>
 
@@ -46,7 +48,7 @@ import ClientSideSearch from "@/components/search/ClientSideSearch.vue";
 import NoResults from "@/components/NoResults.vue";
 
 import recommendationsJson from "@/assets/json/recommendations.json";
-import { groupBy } from "@/assets/js/utilities.js";
+import { compare, groupBy } from "@/assets/js/utilities.js";
 
 export default {
   components: {
@@ -57,8 +59,8 @@ export default {
     return {
       personComputerFilePath: require("@/assets/people/person-computer.svg"),
       personHangingFilePath: require("@/assets/people/person-hanging.svg"),
-      recommendations: recommendationsJson,
-      searchResults: recommendationsJson,
+      recommendations: null,
+      searchResults: null,
       searchKeys: ["group_label", "label", "kind", "tags"],
       searchUUID: "label"
     };
@@ -67,6 +69,16 @@ export default {
     groupedRecommendations() {
       return groupBy(this.searchResults, "kind");
     }
+  },
+  methods: {
+    initialize: function() {
+      let arr = recommendationsJson.sort(compare("label"));
+      this.recommendations = arr;
+      this.searchResults = arr;
+    }
+  },
+  mounted() {
+    this.initialize();
   }
 };
 </script>

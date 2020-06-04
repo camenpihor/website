@@ -273,5 +273,91 @@
             "funny"
         ],
         "kind": "youtube"
+    },
+    {
+        "url": "https://en.wikipedia.org/wiki/Neverwhere_(novel)",
+        "group_label": "neil gaiman",
+        "label": "neverwhere",
+        "tags": [
+            "fantasy",
+            "fiction"
+        ],
+        "kind": "book"
+    },
+    {
+        "url": "https://en.wikipedia.org/wiki/The_History_of_Love",
+        "group_label": "nicole krauss",
+        "label": "the history of love",
+        "tags": [
+            "emotional",
+            "fiction"
+        ],
+        "kind": "book"
+    },
+    {
+        "url": "https://en.wikipedia.org/wiki/Ender%27s_Game",
+        "group_label": "orson scott card",
+        "label": "ender's game",
+        "tags": [
+            "fantasy",
+            "sci-fi",
+            "science"
+        ],
+        "kind": "book"
+    },
+    {
+        "url": "https://www.preposterousuniverse.com/bigpicture/",
+        "group_label": "sean carroll",
+        "label": "the big picture",
+        "tags": [
+            "science",
+            "time",
+            "education",
+            "physics"
+        ],
+        "kind": "book"
+    },
+    {
+        "url": "https://en.wikipedia.org/wiki/Steven_Brust#Vlad_Taltos",
+        "group_label": "steven brust",
+        "label": "vlad taltos",
+        "tags": [
+            "fantasy",
+            "funny"
+        ],
+        "kind": "book"
+    },
+    {
+        "url": "https://en.wikipedia.org/wiki/The_Unlikely_Pilgrimage_of_Harold_Fry",
+        "group_label": "rachel joyce",
+        "label": "the unlikely pilgramage of harold fry",
+        "tags": [
+            "fiction",
+            "emotional"
+        ],
+        "kind": "book"
+    },
+    {
+        "url": "https://www.goodreads.com/book/show/28256439-the-hidden-life-of-trees",
+        "group_label": "peter wohlleben",
+        "label": "the hidden life of trees",
+        "tags": [
+            "nature",
+            "trees",
+            "education"
+        ],
+        "kind": "book"
+    },
+    {
+        "url": "https://en.wikipedia.org/wiki/The_Selfish_Gene",
+        "group_label": "richard dawkins",
+        "label": "the selfish gene",
+        "tags": [
+            "biology",
+            "science",
+            "evolution",
+            "education"
+        ],
+        "kind": "book"
     }
 ]
