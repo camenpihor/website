@@ -22,9 +22,19 @@ Flask
 
 Vue
 
+## Nginx
+
+- https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04#step-5-setting-up-server-blocks-(recommended)
+- https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04
+
 ## TODO
 
 - next steps
+  - clean up nginx config
+  - write my own cron job
+  - add top margin to 404
+  - add caching logic
+  - use local storage 
   - recommendations
     - add
     - mechanism to show tags/endorsement
