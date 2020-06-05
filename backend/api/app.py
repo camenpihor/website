@@ -14,7 +14,7 @@ FRONTEND_ADDRESS = os.environ.get("FRONTEND_ADDRESS", None)
 DARKSKY_SECRET_KEY = os.environ["DARKSKY_SECRET_KEY"]
 
 
-@app.route("/")
+@app.route("/api/health")
 def ping_test():
     """Backend API ping test."""
     return _json_response(data={"status": "ok"})

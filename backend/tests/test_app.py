@@ -6,7 +6,7 @@ DARKSKY_API_KEY = os.environ["DARKSKY_SECRET_KEY"]
 
 
 def test_ping(backend_api_client):
-    response = backend_api_client.get("/")
+    response = backend_api_client.get("/api/health")
     assert response.status_code == 200
     assert response.get_json() == {"status": "ok"}
 
