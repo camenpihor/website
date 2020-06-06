@@ -226,7 +226,7 @@ export default {
 .person-tree-reading {
   z-index: -1;
   position: absolute;
-  left: 55vw;
+  right: 0.5rem;
   bottom: calc(1rem + 4rem + 5rem - 0.15rem);
   /* footer fontsize + footer top padding + footer bottom padding - a smidgeon */
 }

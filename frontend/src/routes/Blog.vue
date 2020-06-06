@@ -9,7 +9,7 @@
       v-on:output="searchResults = $event"
     />
     <div v-if="searchResults.length > 0" class="section">
-      <div class="subsection" v-for="post in searchResults" :key="post.title">
+      <div class="blog__post subsection" v-for="post in searchResults" :key="post.title">
         <h1 class="title is-4">{{ post.title }}</h1>
         <p class="subtitle is-7">{{ post.created }}</p>
         <div>{{ truncateText(post.intro) }}</div>
@@ -62,6 +62,12 @@ export default {
   margin-top: 3.25rem;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 2.5rem;
+}
+
+.blog__post:first-of-type {
+  padding-top: 0;
 }
 
 .person-wave {

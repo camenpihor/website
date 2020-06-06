@@ -67,7 +67,9 @@ export default {
 
 <style>
 .search-bar {
-  max-width: 18rem;
+  max-width: 20rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 /* buefy class */
