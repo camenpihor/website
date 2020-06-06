@@ -29,11 +29,13 @@
             </p>
             <p>
               Anyways, if you've found this page, I hope that you enjoy it. If
-              you feel like you want to, feel free to send me an email
-              (camen[dot]rogue[at]gmail[dot]com) with a question! I like talking
-              about most things for a short while, but I can talk forever about
-              physics, statistics, astronomy, ecology, fantasy, and science
-              fiction. I may even have a fun fact or two to share :)
+              you feel like you want to, feel free to send me an email (<span
+                class="is-size-7"
+                >camen[dot]rogue[at]gmail[dot]com</span
+              >) with a question! I like talking about most things for a short
+              while, but I can talk forever about physics, statistics,
+              astronomy, ecology, fantasy, and science fiction. I may even have
+              a fun fact or two to share :)
             </p>
           </div>
         </div>
@@ -86,9 +88,9 @@
             <span class="is-size-5 has-text-weight-bold">RogueSky</span>
           </router-link>
           <p class="subtitle is-6">
-            One of the places to where I can constantly go to feel wonder is the sky.
-            Albeit not incredibly surprising, it took me a long while to learn
-            this about myself. To aid my ability to look up, I created a
+            One of the places to where I can constantly go to feel wonder is the
+            sky. Albeit not incredibly surprising, it took me a long while to
+            learn this about myself. To aid my ability to look up, I created a
             forecast of star visibility over the short-term, and a collection of
             astronomical events over the long-term.
           </p>
@@ -162,7 +164,13 @@ export default {
 }
 
 .home__text {
-  margin-top: 20vh;
+  margin-top: 18vh;
+}
+
+@media only screen and (max-width: 1024px) {
+  .home__text {
+    margin-top: 12vh;
+  }
 }
 
 .person-wave {
