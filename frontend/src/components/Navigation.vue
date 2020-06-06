@@ -64,25 +64,16 @@
           v-for="(groupRoutes, groupName) in routes"
           :key="groupName"
         >
-          <p class="heading  has-text-weight-bold is-size-7">
+          <p class="heading  has-text-weight-bold is-size-6">
             {{ groupName }}
           </p>
           <div v-for="route in groupRoutes" :key="route.label">
             <b-menu-item
-              class=""
               v-if="route.internal"
               v-on:click="initialize()"
               :label="route.label"
               :to="route.to"
               tag="router-link"
-            />
-            <b-menu-item
-              v-else
-              class=""
-              v-on:click="initialize()"
-              :label="route.label"
-              :href="route.to"
-              tag="a"
             />
           </div>
         </b-menu-list>
@@ -178,7 +169,7 @@ li.navbar-item {
 }
 
 .sidebar-content {
-  transition-duration: 0.8s !important;
+  transition-duration: 0.4s !important;
 }
 
 .sidebar-content a {
