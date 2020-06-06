@@ -2,17 +2,16 @@
   <section>
     <EventListener :method="searchListener" />
 
-    <BackendSearch
-      class="rogue-sky__search"
-      placeholder="search address..."
-      :method="search"
-      ref="search"
-      :imageFilePath="personHangingFilePath"
-    />
-
     <NotFound v-if="error" :requestedPath="this.$route.fullPath" />
     <Loading v-if="!error & (starForecast == null)" :isFullPage="false" />
     <div v-if="starForecast != null">
+      <BackendSearch
+        class="rogue-sky__search"
+        placeholder="search address..."
+        :method="search"
+        ref="search"
+        :imageFilePath="personHangingFilePath"
+      />
       <h1 class="title is-3 has-text-centered">
         {{ this.city }}, {{ this.state }}
       </h1>
@@ -169,10 +168,10 @@
         />
       </div>
 
-      <div class="section">
+      <div class="section rogue-sky__additional-info">
         <p class="title is-3 has-text-centered">Additional Information</p>
         <ul class="has-text-centered">
-          <li>
+          <li class="is-size-7">
             <a
               target="_blank"
               :href="
@@ -181,25 +180,25 @@
               >darksky.net/forecast/{{ latitude }},{{ longitude }}</a
             >
           </li>
-          <li>
+          <li class="is-size-7">
             <a
               target="_blank"
               href="https://www.darksitefinder.com/maps/world.html"
               >darksitefinder.com/maps/world.html</a
             >
           </li>
-          <li>
+          <li class="is-size-7">
             <a target="_blank" href="https://www.darksky.org">darksky.org</a>
           </li>
-          <li>
+          <li class="is-size-7">
             <a target="_blank" href="https://www.starwalk.space"
               >starwalk.space</a
             >
           </li>
         </ul>
       </div>
+      <img class="person-mountain-moon" :src="personMountainMoonFilePath" />
     </div>
-    <img class="person-mountain-moon" :src="personMountainMoonFilePath" />
   </section>
 </template>
 
@@ -497,6 +496,10 @@ export default {
   right: 0;
   max-width: 700px; /* same as max-width on router-view */
   margin: auto;
+}
+
+.rogue-sky__additional-info {
+  margin-bottom: 5rem;
 }
 
 .person-mountain-moon {
