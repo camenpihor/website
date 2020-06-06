@@ -171,7 +171,7 @@
       <div class="section rogue-sky__additional-info">
         <p class="title is-3 has-text-centered">Additional Information</p>
         <ul class="has-text-centered">
-          <li class="is-size-7">
+          <li class="is-size-6">
             <a
               target="_blank"
               :href="
@@ -180,17 +180,17 @@
               >darksky.net/forecast/{{ latitude }},{{ longitude }}</a
             >
           </li>
-          <li class="is-size-7">
+          <li class="is-size-6">
             <a
               target="_blank"
               href="https://www.darksitefinder.com/maps/world.html"
               >darksitefinder.com/maps/world.html</a
             >
           </li>
-          <li class="is-size-7">
+          <li class="is-size-6">
             <a target="_blank" href="https://www.darksky.org">darksky.org</a>
           </li>
-          <li class="is-size-7">
+          <li class="is-size-6">
             <a target="_blank" href="https://www.starwalk.space"
               >starwalk.space</a
             >
