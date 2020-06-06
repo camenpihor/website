@@ -25,15 +25,15 @@
               I made this site as a collection for my amblings. Here, you'll
               find some thoughts of mine, some projects, and some of the things
               that I enjoy. I try to link to as many things that I can, in order
-              to spread my objectively good tastes as far as I can.
+              to spread my objectively good tastes.
             </p>
             <p>
               Anyways, if you've found this page, I hope that you enjoy it. If
-              you feel like you want to, feel free to send me an email with a
-              question! I like talking about most things for a short while, but
-              I can talk forever about physics, statistics, astronomy, ecology,
-              fantasy, and science fiction. I may even have a fun fact or two to
-              share :)
+              you feel like you want to, feel free to send me an email
+              (camen[dot]rogue[at]gmail[dot]com) with a question! I like talking
+              about most things for a short while, but I can talk forever about
+              physics, statistics, astronomy, ecology, fantasy, and science
+              fiction. I may even have a fun fact or two to share :)
             </p>
           </div>
         </div>
@@ -52,7 +52,7 @@
           </router-link>
           <p class="subtitle is-6">
             Just a space for my thoughts on things. Probably mostly on topics
-            that I find interesting or wondrous. And probably not much on
+            that I find interesting or wondrous, and probably not much on
             current events.
           </p>
         </div>
@@ -64,7 +64,7 @@
           </router-link>
           <p class="subtitle is-6">
             Every once in a while, I try to see how much I understand a math or
-            stats topic by trying to implement it.
+            stats topic by trying to implement something.
           </p>
         </div>
         <div class="subsection">
@@ -74,8 +74,8 @@
             >
           </router-link>
           <p class="subtitle is-6">
-            I used to find it really hard to not be trapped inside my own brain
-            when walking through the natual world. So, I tried just being able
+            I used to find it really hard not to be trapped inside my own brain
+            while walking through the natual world. So, I tried just being able
             to name the things I was seeing, and I actually found this
             incredibly enriching to my day-to-day. This is a place to gather the
             names I've learned and the things that make of the places I've been.
@@ -86,9 +86,9 @@
             <span class="is-size-5 has-text-weight-bold">RogueSky</span>
           </router-link>
           <p class="subtitle is-6">
-            One of the places I can constantly go to feel wonder is the sky.
+            One of the places to where I can constantly go to feel wonder is the sky.
             Albeit not incredibly surprising, it took me a long while to learn
-            this about myself! To aid my ability to look up, I created a
+            this about myself. To aid my ability to look up, I created a
             forecast of star visibility over the short-term, and a collection of
             astronomical events over the long-term.
           </p>

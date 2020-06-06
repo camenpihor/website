@@ -28,27 +28,25 @@
       <p class="title is-5">And here is some stuff about me…</p>
       <div class="content">
         <p>
-          Hai! I'm a recently unemployed data scientist in my late 20s, who is
-          taking some time to amble. My background is in math, physics, and
-          greek classics. My foreground is in... well, I'm not sure yet. I
-          currently really enjoy learning about the natural world, atmospheric
-          physics, and astronomy. I think the kindest things I can say about
-          myself are that I actively seek wonder and laughter.
+          Hai! My background is in math, physics, and greek classics. My
+          foreground is in... well, I'm not sure yet. I currently really enjoy
+          learning about the natural world, atmospheric physics, and astronomy.
+          I think the kindest things I can say about myself are that I actively
+          seek wonder and laughter.
         </p>
         <p>
           Every now and then, I get really excited about a topic, and then do a
-          bunch of research. This website started out as (and is mostly still) a
-          place to host
-          <router-link :to="{ name: 'rogue-sky' }">RogueSky</router-link>, a
-          project used to aid my stargazing.
+          bunch of research. This website started out as a way to collect these thoughts.
         </p>
         <p>
-          Like most people, I would describe myself as really bad at describing
+          Like most people, I would describe myself as being really bad at describing
           myself, so instead of a longer narrative, I'm going to just list fun
           facts about me. Maybe one day I'll get better at it...
         </p>
         <div class="has-text-centered section">
-          <p class="button is-marginless" v-on:click="setRandomFacts()">Random Facts</p>
+          <p class="button is-marginless" v-on:click="setRandomFacts()">
+            Random Facts
+          </p>
           <div class="subsection">
             <p v-for="(fact, idx) in randomFacts" :key="idx">
               {{ fact }}
