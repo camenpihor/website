@@ -12,7 +12,7 @@
 
       <div v-if="searchResults.length > 0" class="section">
         <ul
-          class="subsection"
+          class="recommendations__group subsection"
           v-for="(groupData, groupLabel, index) in groupedRecommendations"
           :key="groupLabel"
         >
@@ -88,6 +88,10 @@ export default {
   margin-top: 3.25rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+.recommendations__group:first-of-type {
+  padding-top: 0;
 }
 
 .recommendation__group__item {
