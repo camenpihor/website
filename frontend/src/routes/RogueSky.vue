@@ -102,7 +102,7 @@
             <div>
               <h1 class="heading is-size-7">Today</h1>
               <p class="heading is-size-9">
-                {{ today.weather_date_local | moment("dddd, MMMM Do") }}
+                {{ today.weather_date_local | moment("ddd, MMM Do") }}
               </p>
             </div>
             <WeatherSummary
@@ -127,7 +127,7 @@
                 v-if="bestDay.weather_date_local != today.weather_date_local"
                 class="heading is-size-9"
               >
-                {{ bestDay.weather_date_local | moment("dddd, MMMM Do") }}
+                {{ bestDay.weather_date_local | moment("ddd, MMM Do") }}
               </p>
               <p v-else class="heading is-size-9">
                 Today
