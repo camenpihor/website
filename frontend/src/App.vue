@@ -71,7 +71,7 @@ $colors: (
 @import "~buefy/src/scss/buefy";
 
 html {
-  font-size: 18px;
+  font-size: 16px;
   @include from($desktop) {
     font-size: 20px;
   }
