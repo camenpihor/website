@@ -30,6 +30,8 @@ Vue
 ## TODO
 
 - next steps
+  - install scripts should re-install
+  - re-install before start
   - add caching logic
   - use local storage
   - recommendations
@@ -38,6 +40,7 @@ Vue
   - nature identification page
   - rogue sky add light pollution layer
     - https://blog.mapbox.com/mapping-the-lights-of-the-night-bd32d5a1bdf8
+  - rogue sky add moonrise time
 
 - new pages
   - tree count

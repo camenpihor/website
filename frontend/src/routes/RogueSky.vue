@@ -536,8 +536,8 @@ export default {
                 isInteractive: true
               },
               customData: {
-                event: `Expected star visibility is ${this.floatToPercent(
-                  this.humanizeStarVisibility(dayForecast.star_visibility)
+                event: `Expected star visibility is ${this.humanizeStarVisibility(
+                  dayForecast.star_visibility
                 )}`
               }
             });
