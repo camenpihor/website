@@ -30,15 +30,14 @@ Vue
 ## TODO
 
 - next steps
-  - clean up nginx config
-  - write my own cron job
-  - add top margin to 404
   - add caching logic
-  - use local storage 
+  - use local storage
   - recommendations
     - add
     - mechanism to show tags/endorsement
   - nature identification page
+  - rogue sky add light pollution layer
+    - https://blog.mapbox.com/mapping-the-lights-of-the-night-bd32d5a1bdf8
 
 - new pages
   - tree count

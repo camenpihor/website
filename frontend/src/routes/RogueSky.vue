@@ -48,12 +48,14 @@
               {{ today.weather_date_local | moment("dddd, MMMM Do") }}
             </p>
             <WeatherSummary
-              :starVisibility="floatToPercent(today.star_visibility)"
+              :starVisibility="humanizeStarVisibility(today.star_visibility)"
               :precipitationProbability="
                 floatToPercent(today.precip_probability)
               "
               :precipitationType="
-                precipitationIntensityToType(today.precip_intensity_max_in_hr) +
+                humanizePrecipitationIntensity(
+                  today.precip_intensity_max_in_hr
+                ) +
                   ' ' +
                   today.precip_type
               "
@@ -77,12 +79,12 @@
             </div>
             <WeatherSummary
               v-if="bestDay.weather_date_local != today.weather_date_local"
-              :starVisibility="floatToPercent(bestDay.star_visibility)"
+              :starVisibility="humanizeStarVisibility(bestDay.star_visibility)"
               :precipitationProbability="
                 floatToPercent(bestDay.precip_probability)
               "
               :precipitationType="
-                precipitationIntensityToType(
+                humanizePrecipitationIntensity(
                   bestDay.precip_intensity_max_in_hr
                 ) +
                   ' ' +
@@ -106,12 +108,14 @@
               </p>
             </div>
             <WeatherSummary
-              :starVisibility="floatToPercent(today.star_visibility)"
+              :starVisibility="humanizeStarVisibility(today.star_visibility)"
               :precipitationProbability="
                 floatToPercent(today.precip_probability)
               "
               :precipitationType="
-                precipitationIntensityToType(today.precip_intensity_max_in_hr) +
+                humanizePrecipitationIntensity(
+                  today.precip_intensity_max_in_hr
+                ) +
                   ' ' +
                   today.precip_type
               "
@@ -135,12 +139,12 @@
             </div>
             <WeatherSummary
               v-if="bestDay.weather_date_local != today.weather_date_local"
-              :starVisibility="floatToPercent(bestDay.star_visibility)"
+              :starVisibility="humanizeStarVisibility(bestDay.star_visibility)"
               :precipitationProbability="
                 floatToPercent(bestDay.precip_probability)
               "
               :precipitationType="
-                precipitationIntensityToType(
+                humanizePrecipitationIntensity(
                   bestDay.precip_intensity_max_in_hr
                 ) +
                   ' ' +
@@ -152,6 +156,97 @@
             />
           </div>
         </div>
+      </div>
+
+      <div class="section">
+        <p class="title is-3 has-text-centered">Weather</p>
+        <p class="subtitle is-7 has-text-centered">
+          daily weather summaries
+        </p>
+        <b-tabs position="is-centered" expanded>
+          <b-tab-item
+            v-for="dailyWeather in starForecast"
+            :key="dailyWeather.weather_date_local"
+          >
+            <template slot="header">
+              <StarVizIcon
+                class="level-item has-text-centered is-size-7"
+                :word="dailyWeather.icon"
+                :date="humanizeDate(dailyWeather.weather_date_local)"
+              />
+            </template>
+            <p class="title is-5 has-text-centered">
+              {{
+                dailyWeather.weather_date_local | moment("dddd, MMMM Do YYYY")
+              }}
+            </p>
+            <p class="subtitle is-7 has-text-centered">
+              <span>{{ dailyWeather.summary }}</span>
+            </p>
+            <div class="subsection">
+              <div class="columns is-mobile rogue-sky__weather__item">
+                <span class="column is-4-desktop has-text-weight-semibold	"
+                  >Star Visibility</span
+                >
+                <span class="column is-capitalized">{{
+                  humanizeStarVisibility(dailyWeather.star_visibility)
+                }}</span>
+              </div>
+              <div class="columns is-mobile rogue-sky__weather__item">
+                <span class="column is-4-desktop has-text-weight-semibold	"
+                  >Moon Phase</span
+                >
+                <span class="column">{{
+                  floatToPercent(dailyWeather.moon_phase_pct) + "%"
+                }}</span>
+              </div>
+              <div class="columns is-mobile rogue-sky__weather__item">
+                <span class="column is-4-desktop has-text-weight-semibold	"
+                  >Precipitation</span
+                >
+                <span class="column">{{
+                  floatToPercent(dailyWeather.precip_probability) +
+                    "% chance" +
+                    " of " +
+                    humanizePrecipitationIntensity(
+                      dailyWeather.precip_intensity_max_in_hr
+                    ) +
+                    " " +
+                    dailyWeather.precip_type
+                }}</span>
+              </div>
+              <div class="columns is-mobile rogue-sky__weather__item">
+                <span class="column is-4-desktop has-text-weight-semibold	">Sunset</span>
+                <span class="column">{{
+                  dailyWeather.sunset_time_local | moment("h:mm a")
+                }}</span>
+              </div>
+              <div class="columns is-mobile rogue-sky__weather__item">
+                <span class="column is-4-desktop has-text-weight-semibold	"
+                  >Temperature</span
+                >
+                <span class="column">
+                  <p>Low: {{ dailyWeather.temperature_min_f }}°F</p>
+                  <p>High: {{ dailyWeather.temperature_max_f }}°F</p>
+                </span>
+              </div>
+              <div class="columns is-mobile rogue-sky__weather__item">
+                <span class="column is-4-desktop has-text-weight-semibold	">Wind</span>
+                <span class="column"
+                  >{{ dailyWeather.wind_speed_mph }} mph</span
+                >
+              </div>
+              <div class="columns is-mobile rogue-sky__weather__item">
+                <span class="column is-4-desktop has-text-weight-semibold	"
+                  >Cloud Cover</span
+                >
+                <span class="column">{{
+                  floatToPercent(dailyWeather.cloud_cover_pct) + "%"
+                }}</span>
+              </div>
+            </div>
+          </b-tab-item>
+        </b-tabs>
       </div>
 
       <div class="section">
@@ -301,10 +396,23 @@ export default {
           this.error = true;
         });
     },
+    humanizeStarVisibility: function(percent) {
+      if (percent != null) {
+        if (percent < 0.8) {
+          return "poor";
+        } else if (percent < 0.85) {
+          return "fair";
+        } else if (percent < 0.95) {
+          return "good";
+        } else {
+          return "great";
+        }
+      }
+    },
     floatToPercent: function(float) {
       return Math.round(float * 100);
     },
-    precipitationIntensityToType: function(precip_in_per_hour) {
+    humanizePrecipitationIntensity: function(precip_in_per_hour) {
       if (precip_in_per_hour < 0.1) {
         return "light";
       } else if (precip_in_per_hour < 0.3) {
@@ -388,9 +496,9 @@ export default {
           customData: { event: "Today" }
         };
 
-        let bestDayEvent = `Best day of star visibility over the next week (${this.floatToPercent(
+        let bestDayEvent = `Best day of star visibility over the next week (${this.humanizeStarVisibility(
           this.bestDay.star_visibility
-        )}%)`;
+        )})`;
         let bestDay = {
           key: "bestDay",
           bar: "yellow",
@@ -415,14 +523,14 @@ export default {
                 fillMode: "light"
               },
               popover: {
-                label: dayForecast.star_visibility,
+                label: this.humanizeStarVisibility(dayForecast.star_visibility),
                 placement: "auto",
                 isInteractive: true
               },
               customData: {
                 event: `Expected star visibility is ${this.floatToPercent(
-                  dayForecast.star_visibility
-                )}%`
+                  this.humanizeStarVisibility(dayForecast.star_visibility)
+                )}`
               }
             });
           }
@@ -483,6 +591,14 @@ export default {
   max-width: 25rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+.rogue-sky__weather__item {
+  margin: 0 0 0.5rem 0 !important;
+}
+
+.rogue-sky__weather__item .column {
+  padding: 0;
 }
 
 .rogue-sky__map__wrapper {
