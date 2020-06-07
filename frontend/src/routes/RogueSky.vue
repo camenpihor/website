@@ -216,9 +216,12 @@
                 }}</span>
               </div>
               <div class="columns is-mobile rogue-sky__weather__item">
-                <span class="column is-4-desktop has-text-weight-semibold	">Sunset</span>
+                <span class="column is-4-desktop has-text-weight-semibold	"
+                  >Sunset</span
+                >
                 <span class="column">{{
-                  dailyWeather.sunset_time_local | moment("h:mm a")
+                  dailyWeather.sunset_time_local
+                    | moment("timezone", timezone, "h:mm a z")
                 }}</span>
               </div>
               <div class="columns is-mobile rogue-sky__weather__item">
@@ -231,7 +234,9 @@
                 </span>
               </div>
               <div class="columns is-mobile rogue-sky__weather__item">
-                <span class="column is-4-desktop has-text-weight-semibold	">Wind</span>
+                <span class="column is-4-desktop has-text-weight-semibold	"
+                  >Wind</span
+                >
                 <span class="column"
                   >{{ dailyWeather.wind_speed_mph }} mph</span
                 >
@@ -335,6 +340,7 @@ export default {
         other: "blue"
       },
       starForecast: null,
+      timezone: null,
       city: null,
       state: null,
       latitude: null,
@@ -347,6 +353,7 @@ export default {
       this.error = false;
       this.latitude = null;
       this.longitude = null;
+      this.timezone = null;
       this.city = null;
       this.state = null;
       this.starForecast = null;
@@ -391,6 +398,7 @@ export default {
           this.starForecast = response.data.daily_forecast.slice(0, 7);
           this.city = response.data.city;
           this.state = response.data.state;
+          this.timezone = response.data.timezone;
         })
         .catch(() => {
           this.error = true;
