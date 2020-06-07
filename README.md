@@ -41,6 +41,8 @@ Vue
   - rogue sky add light pollution layer
     - https://blog.mapbox.com/mapping-the-lights-of-the-night-bd32d5a1bdf8
   - rogue sky add moonrise time
+  - add report a bug feature
+  - rogue sky: report the max cloud cover from like 6pm to midnight each day
 
 - new pages
   - tree count
