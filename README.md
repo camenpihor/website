@@ -35,20 +35,19 @@ Vue
 
 ## TODO
 
-- next steps
-  - add caching logic
-  - use local storage
-  - recommendations
-    - add
-    - mechanism to show tags/endorsement
-  - nature identification page
-  - rogue sky add light pollution layer
+- add caching logic
+- use local storage
+- recommendations
+  - mechanism to show tags/endorsement
+- rogue sky
+  - add light pollution layer
     - https://blog.mapbox.com/mapping-the-lights-of-the-night-bd32d5a1bdf8
-  - add report a bug feature
-  - rogue sky: add weather to calendar
-  - rogue sky: report the max cloud cover from like 6pm to midnight each day
+  - add weather to calendar
+  - report the max cloud cover from like 6pm to midnight each day
+- add report a bug feature
 
 - new pages
+  - nature identification
   - tree count
   - documentation
   - measurements
