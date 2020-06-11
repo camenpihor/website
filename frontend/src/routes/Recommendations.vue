@@ -8,6 +8,7 @@
         :jsonUUID="searchUUID"
         :imageFilePath="personHangingFilePath"
         v-on:output="searchResults = $event"
+        ref="search"
       />
 
       <div v-if="searchResults.length > 0" class="section">
@@ -28,8 +29,18 @@
             <p class="recommendation__group__item">
               <a :href="item.url" target="_blank">{{ item.label }}</a>
               <span v-if="item.group_label !== null">
-                by {{ item.group_label }}</span
-              >
+                by {{ item.group_label }}
+              </span>
+              <span class="tags">
+                <span
+                  v-for="tag in item.tags"
+                  :key="tag"
+                  class="tag"
+                  @click="search(tag)"
+                >
+                  {{ tag }}
+                </span>
+              </span>
             </p>
           </li>
         </ul>
@@ -75,6 +86,10 @@ export default {
       let arr = recommendationsJson.sort(compare("label"));
       this.recommendations = arr;
       this.searchResults = arr;
+    },
+    search: function(word) {
+      this.$refs.search.input = word;
+      this.$refs.search.search();
     }
   },
   mounted() {
@@ -97,6 +112,16 @@ export default {
 .recommendation__group__item {
   text-indent: -1rem;
   padding-left: 1rem;
+  padding-bottom: 1rem;
+}
+
+.recommendation__group__item .tags .tag {
+  cursor: pointer;
+  font-size: 0.6rem;
+}
+
+.recommendation__group__item .tags .tag:hover {
+  text-decoration: underline;
 }
 
 .person-computer {
