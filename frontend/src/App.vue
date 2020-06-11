@@ -91,6 +91,7 @@ html {
   margin-left: auto;
   margin-right: auto;
   min-height: 90vh;
+  padding-top: 3.25rem; /* height of navbar */
   padding-bottom: 8rem;
 }
 

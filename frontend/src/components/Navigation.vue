@@ -1,10 +1,12 @@
 <template>
   <div class="navigation">
+    <EventListener :eventType="'scroll'" :method="onScroll" />
     <nav
       class="navbar"
       v-bind:class="{
         'is-transparent': isTransparent,
-        'is-dark': !isTransparent
+        'is-dark': !isTransparent,
+        navbar__hidden: !showTopBar
       }"
     >
       <div class="navbar-brand">
@@ -18,7 +20,7 @@
         <div
           role="button"
           class="navbar-burger burger"
-          v-on:click="open = true"
+          v-on:click="showSideBar = true"
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -58,7 +60,13 @@
       </div>
     </nav>
 
-    <b-sidebar type="is-off-white" fullheight overlay right :open.sync="open">
+    <b-sidebar
+      type="is-off-white"
+      fullheight
+      overlay
+      right
+      :open.sync="showSideBar"
+    >
       <b-menu>
         <b-menu-list
           v-for="(groupRoutes, groupName) in routes"
@@ -83,17 +91,25 @@
 </template>
 
 <script>
+import EventListener from "@/components/EventListener.vue";
+
 import routeJson from "@/assets/json/routes.json";
 
 export default {
+  components: {
+    EventListener
+  },
   data() {
     return {
-      open: false,
+      showTopBar: true,
+      showSideBar: false,
+      originallyTransparent: false,
       isTransparent: false,
       routeHome: this.$route.meta.pageHome,
       currentRoute: this.$route.name,
       routes: routeJson,
-      siteIconFilePath: require("@/assets/icons/site-icon.svg")
+      siteIconFilePath: require("@/assets/icons/site-icon.svg"),
+      lastScrollPosition: 0
     };
   },
   methods: {
@@ -106,9 +122,8 @@ export default {
       this.currentRoute = currentRoute;
 
       if (transparentRoutes.includes(currentRoute)) {
+        this.originallyTransparent = true;
         this.isTransparent = true;
-      } else {
-        this.isTransparent = false;
       }
     },
     formatName: function(name) {
@@ -119,6 +134,27 @@ export default {
           .map(s => s.charAt(0).toUpperCase() + s.substring(1))
           .join("");
       }
+    },
+    onScroll: function() {
+      let currentScrollPosition =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScrollPosition < 0) {
+        return;
+      }
+
+      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
+        return;
+      }
+      if (this.originallyTransparent) {
+        if (currentScrollPosition > 150) {
+          this.isTransparent = false;
+        } else {
+          this.isTransparent = true;
+        }
+      }
+      this.showTopBar = currentScrollPosition < this.lastScrollPosition;
+      this.lastScrollPosition = currentScrollPosition;
     }
   },
   watch: {
@@ -134,12 +170,23 @@ export default {
 };
 </script>
 <style>
+.navigation .navbar {
+  width: 100%;
+  position: fixed;
+  transform: translate3d(0, 0, 0);
+  transition: 0.3s all ease-out;
+}
+
+.navigation .navbar.navbar__hidden {
+  transform: translate3d(0, -100%, 0);
+}
+
 .navigation__top__route-home {
   color: white;
 }
 
 @media only screen and (min-width: 1024px) {
-  .navbar {
+  .navigation .navbar {
     padding-left: 15rem;
     padding-right: 15rem;
   }

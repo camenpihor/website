@@ -9,7 +9,11 @@
       v-on:output="searchResults = $event"
     />
     <div v-if="searchResults.length > 0" class="section">
-      <div class="blog__post subsection" v-for="post in searchResults" :key="post.title">
+      <div
+        class="blog__post subsection"
+        v-for="post in searchResults"
+        :key="post.title"
+      >
         <h1 class="title is-4">{{ post.title }}</h1>
         <p class="subtitle is-7">{{ post.created }}</p>
         <div>{{ truncateText(post.intro) }}</div>
@@ -19,7 +23,6 @@
           </router-link>
         </p>
       </div>
-      <img class="person-wave" :src="personWaveFilePath" />
     </div>
     <div v-else>
       <NoResults message="No Results :(" />
@@ -42,7 +45,6 @@ export default {
     return {
       blogPostsJson: blogPostsJson,
       personReadingFilePath: require("@/assets/people/person-reading.svg"),
-      personWaveFilePath: require("@/assets/people/person-wave.svg"),
       isSmallWindow: window.innerWidth <= 1023,
       searchKeys: ["html", "title"],
       searchUUID: "url",
@@ -68,13 +70,6 @@ export default {
 
 .blog__post:first-of-type {
   padding-top: 0;
-}
-
-.person-wave {
-  width: 1rem;
-  position: absolute;
-  bottom: calc(1rem + 4rem + 5rem);
-  /* footer fontsize + footer top padding + footer bottom padding */
 }
 
 .blog__search .search__image {

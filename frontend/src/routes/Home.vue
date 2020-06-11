@@ -154,15 +154,14 @@ export default {
 };
 </script>
 
-<style style="scss">
+<style>
 .home__image__wrapper {
-  /* height of home__image - navbar height - padding on hero class */
-  height: calc(33vh - 3.25rem - 3rem);
+  margin-top: -3.25rem; /* amound of top padding on .route-view */
+  height: 33vh; /* height of .home__image */
 }
 
 .home__image {
   position: absolute;
-  top: -3.25rem; /*  offset navbar */
   left: 0;
   right: 0;
   height: 33vh;
@@ -187,7 +186,7 @@ export default {
   width: 1rem;
   position: absolute;
   left: 10vw;
-  bottom: calc(1rem + 4rem + 5rem - 0.5rem);
   /* footer fontsize + footer top padding + footer bottom padding - a smidgeon */
+  bottom: calc(1rem + 4rem + 5rem - 0.5rem);
 }
 </style>
