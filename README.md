@@ -27,11 +27,15 @@ Vue
 - https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04#step-5-setting-up-server-blocks-(recommended)
 - https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04
 
+## Caching
+
+- Cache ttl
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag
+
 ## TODO
 
 - next steps
-  - install scripts should re-install
-  - re-install before start
   - add caching logic
   - use local storage
   - recommendations
@@ -40,8 +44,8 @@ Vue
   - nature identification page
   - rogue sky add light pollution layer
     - https://blog.mapbox.com/mapping-the-lights-of-the-night-bd32d5a1bdf8
-  - rogue sky add moonrise time
   - add report a bug feature
+  - rogue sky: add weather to calendar
   - rogue sky: report the max cloud cover from like 6pm to midnight each day
 
 - new pages
