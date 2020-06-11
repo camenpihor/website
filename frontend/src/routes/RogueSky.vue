@@ -48,6 +48,118 @@
       </div>
 
       <div class="section">
+        <h1 class="title is-3 has-text-centered">
+          Week
+          <img class="person-wave-move-image" :src="personWaveMoveFilePath" />
+        </h1>
+        <div class="is-hidden-touch">
+          <div>
+            <h1 class="heading is-size-7">Today</h1>
+            <p class="heading is-size-9">
+              {{ today.weather_date_local | moment("dddd, MMMM Do") }}
+            </p>
+            <WeatherSummary
+              :starVisibility="humanizeStarVisibility(today.star_visibility)"
+              :precipitationSummary="
+                humanizePrecipitation(
+                  today.precip_type,
+                  today.precip_intensity_max_in_hr,
+                  today.precip_probability
+                )
+              "
+              :temperatureLow="Math.round(today.temperature_min_f)"
+              :temperatureHigh="Math.round(today.temperature_max_f)"
+              :moonIllumination="floatToPercent(today.moon_illumination)"
+            />
+          </div>
+          <div class="subsection">
+            <div>
+              <p class="heading is-size-7">Suggested</p>
+              <p
+                v-if="bestDay.weather_date_local != today.weather_date_local"
+                class="heading is-size-9"
+              >
+                {{ bestDay.weather_date_local | moment("dddd, MMMM Do") }}
+              </p>
+              <p v-else class="heading is-size-9">
+                Today
+              </p>
+            </div>
+            <WeatherSummary
+              v-if="bestDay.weather_date_local != today.weather_date_local"
+              :starVisibility="humanizeStarVisibility(bestDay.star_visibility)"
+              :precipitationSummary="
+                humanizePrecipitation(
+                  bestDay.precip_type,
+                  bestDay.precip_intensity_max_in_hr,
+                  bestDay.precip_probability
+                )
+              "
+              :temperatureLow="Math.round(bestDay.temperature_min_f)"
+              :temperatureHigh="Math.round(bestDay.temperature_max_f)"
+              :moonIllumination="floatToPercent(bestDay.moon_illumination)"
+            />
+          </div>
+        </div>
+        <div
+          class="columns is-mobile is-hidden-desktop subsection"
+          style="margin-left:auto"
+        >
+          <div class="column">
+            <div>
+              <h1 class="heading is-size-7">Today</h1>
+              <p class="heading is-size-9">
+                {{ today.weather_date_local | moment("ddd, MMM Do") }}
+              </p>
+            </div>
+            <WeatherSummary
+              :starVisibility="humanizeStarVisibility(today.star_visibility)"
+              :precipitationSummary="
+                humanizePrecipitation(
+                  today.precip_type,
+                  today.precip_intensity_max_in_hr,
+                  today.precip_probability,
+                  true
+                )
+              "
+              :temperatureLow="Math.round(today.temperature_min_f)"
+              :temperatureHigh="Math.round(today.temperature_max_f)"
+              :moonIllumination="floatToPercent(today.moon_illumination)"
+            />
+          </div>
+          <div class="column">
+            <div>
+              <p class="heading is-size-7">Suggested</p>
+              <p
+                v-if="bestDay.weather_date_local != today.weather_date_local"
+                class="heading is-size-9"
+              >
+                {{ bestDay.weather_date_local | moment("ddd, MMM Do") }}
+              </p>
+              <p v-else class="heading is-size-9">
+                Today
+              </p>
+            </div>
+            <WeatherSummary
+              v-if="bestDay.weather_date_local != today.weather_date_local"
+              :starVisibility="humanizeStarVisibility(bestDay.star_visibility)"
+              :precipitationSummary="
+                humanizePrecipitation(
+                  bestDay.precip_type,
+                  bestDay.precip_intensity_max_in_hr,
+                  bestDay.precip_probabilitym,
+                  true
+                )
+              "
+              :temperatureLow="Math.round(bestDay.temperature_min_f)"
+              :temperatureHigh="Math.round(bestDay.temperature_max_f)"
+              :moonIllumination="floatToPercent(bestDay.moon_illumination)"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
         <p class="title is-3 has-text-centered">Weather</p>
         <p class="subtitle is-7 has-text-centered">
           daily weather summaries
@@ -108,9 +220,10 @@
                 }}</span>
               </div>
               <div class="columns is-mobile rogue-sky__weather__item">
-                <span class="column is-4-desktop has-text-weight-semibold	"
-                  >Moon Illumination</span
-                >
+                <span class="column is-4-desktop has-text-weight-semibold">
+                  <span class="is-hidden-touch">Moon Illumination</span>
+                  <span class="is-hidden-desktop">Moon Fullness</span>
+                </span>
                 <span class="column"
                   >{{ floatToPercent(dailyWeather.moon_illumination) }}
                   <i
@@ -212,6 +325,7 @@ import Loading from "@/components/Loading.vue";
 import Map from "@/components/Map.vue";
 import NotFound from "@/routes/NotFound.vue";
 import StarVizIcon from "@/components/StarVizIcon.vue";
+import WeatherSummary from "@/components/WeatherSummary.vue";
 
 import { getCoordinates, getStarForecast } from "@/assets/js/api.js";
 import astronomicalJson from "@/assets/json/astronomical_events.json";
@@ -224,7 +338,8 @@ export default {
     Loading,
     Map,
     NotFound,
-    StarVizIcon
+    StarVizIcon,
+    WeatherSummary
   },
   data() {
     return {
@@ -320,7 +435,7 @@ export default {
     floatToPercent: function(float) {
       return `${Math.round(float * 100)}%`;
     },
-    humanizePrecipitation: function(type, intensity, probability) {
+    humanizePrecipitation: function(type, intensity, probability, summarize) {
       if (probability < 0.01 || type == null) {
         return "None";
       }
@@ -334,6 +449,10 @@ export default {
         intensityHuman = "moderate";
       } else {
         intensityHuman = "heavy";
+      }
+
+      if (summarize) {
+        return `${percent} chance of ${type}`;
       }
 
       return `There is a ${percent} chance of ${intensityHuman} ${type}`;

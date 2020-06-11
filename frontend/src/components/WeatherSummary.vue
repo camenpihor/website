@@ -7,10 +7,7 @@
     <div class="column">
       <h1 class="has-text-weight-bold">Precipitation</h1>
       <div class="is-size-7">
-        {{ precipitationProbability }}%
-        <span v-if="precipitationProbability != 0">{{
-          precipitationType
-        }}</span>
+        {{ precipitationSummary }}
       </div>
     </div>
     <div class="column">
@@ -23,8 +20,8 @@
       </div>
     </div>
     <div class="column">
-      <h1 class="has-text-weight-bold">Moon Phase</h1>
-      <div class="is-size-7">{{ moonPhase }}%</div>
+      <h1 class="has-text-weight-bold">Moon</h1>
+      <div class="is-size-7">{{ moonIllumination }}</div>
     </div>
   </div>
 </template>
@@ -33,11 +30,10 @@
 export default {
   props: [
     "starVisibility",
-    "precipitationProbability",
-    "precipitationType",
+    "precipitationSummary",
     "temperatureLow",
     "temperatureHigh",
-    "moonPhase"
+    "moonIllumination"
   ]
 };
 </script>
