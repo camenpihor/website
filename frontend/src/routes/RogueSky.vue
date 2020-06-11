@@ -1,7 +1,5 @@
 <template>
   <section>
-    <EventListener :method="searchListener" />
-
     <div v-if="error" class="section">
       <BackendSearch
         class="rogue-sky__search"
@@ -320,7 +318,6 @@
 <script>
 import BackendSearch from "@/components/search/BackendSearch.vue";
 import Calendar from "@/components/Calendar.vue";
-import EventListener from "@/components/EventListener.vue";
 import Loading from "@/components/Loading.vue";
 import Map from "@/components/Map.vue";
 import NotFound from "@/routes/NotFound.vue";
@@ -334,7 +331,6 @@ export default {
   components: {
     BackendSearch,
     Calendar,
-    EventListener,
     Loading,
     Map,
     NotFound,
@@ -463,12 +459,6 @@ export default {
         name: "rogue-sky",
         query: { address: input }
       });
-    },
-    searchListener: function(event) {
-      let badTags = ["INPUT", "TEXTAREA"];
-      if ((event.code === "Slash") & !badTags.includes(event.target.tagName)) {
-        this.$refs.search.$el.getElementsByTagName("input")[0].focus();
-      }
     },
     humanizeDate: function(date) {
       date = this.$moment(date);

@@ -1,5 +1,7 @@
 <template>
   <div class="search-bar">
+    <EventListener :method="focusSearch" />
+
     <b-input
       v-model="input"
       rounded
@@ -21,7 +23,12 @@
 </template>
 
 <script>
+import EventListener from "@/components/EventListener.vue";
+
 export default {
+  components: {
+    EventListener
+  },
   props: {
     placeholder: {
       type: String,
@@ -41,13 +48,19 @@ export default {
     };
   },
   methods: {
-    blurThis: function() {
-      this.$refs.search.$el.getElementsByTagName("input")[0].blur();
-    },
     search: function() {
-      this.blurThis();
+      this.blurSearch();
       if (this.input != null) {
         return this.method(this.input);
+      }
+    },
+    blurSearch: function() {
+      this.$refs.search.$el.getElementsByTagName("input")[0].blur();
+    },
+    focusSearch: function(event) {
+      let badTags = ["INPUT", "TEXTAREA"];
+      if ((event.code === "Slash") & !badTags.includes(event.target.tagName)) {
+        this.$refs.search.$el.getElementsByTagName("input")[0].focus();
       }
     }
   }

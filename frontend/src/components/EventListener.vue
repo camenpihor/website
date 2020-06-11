@@ -7,13 +7,17 @@ export default {
   props: {
     method: {
       type: Function
+    },
+    eventType: {
+      type: String,
+      default: "keyup"
     }
   },
   created() {
-    window.addEventListener("keyup", this.method);
+    window.addEventListener(this.eventType, this.method);
   },
   beforeDestroy() {
-    window.removeEventListener("keyup", this.method);
+    window.removeEventListener(this.eventType, this.method);
   }
 };
 </script>

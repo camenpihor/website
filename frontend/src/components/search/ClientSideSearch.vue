@@ -1,5 +1,7 @@
 <template>
   <div class="search-bar">
+    <EventListener :method="focusSearch" />
+
     <b-input
       v-model="input"
       rounded
@@ -8,7 +10,7 @@
       icon-pack="fal"
       icon="search"
       @input="search"
-      @keyup.native.enter="blurThis"
+      @keyup.native.enter="blurSearch"
       ref="search"
     />
     <img
@@ -20,9 +22,14 @@
 </template>
 
 <script>
+import EventListener from "@/components/EventListener.vue";
+
 import * as JsSearch from "js-search";
 
 export default {
+  components: {
+    EventListener
+  },
   props: {
     placeholder: {
       type: String,
@@ -42,9 +49,6 @@ export default {
     };
   },
   methods: {
-    blurThis: function() {
-      this.$refs.search.$el.getElementsByTagName("input")[0].blur();
-    },
     search: function() {
       if (this.input === "") {
         this.results = this.json;
@@ -52,6 +56,15 @@ export default {
         this.results = this.searcher.search(this.input);
       }
       this.$emit("output", this.results);
+    },
+    blurSearch: function() {
+      this.$refs.search.$el.getElementsByTagName("input")[0].blur();
+    },
+    focusSearch: function(event) {
+      let badTags = ["INPUT", "TEXTAREA"];
+      if ((event.code === "Slash") & !badTags.includes(event.target.tagName)) {
+        this.$refs.search.$el.getElementsByTagName("input")[0].focus();
+      }
     },
     createSearcher: function() {
       var search = new JsSearch.Search(this.jsonUUID);
