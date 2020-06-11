@@ -124,6 +124,9 @@ export default {
       if (transparentRoutes.includes(currentRoute)) {
         this.originallyTransparent = true;
         this.isTransparent = true;
+      } else {
+        this.originallyTransparent = false;
+        this.isTransparent = false;
       }
     },
     formatName: function(name) {
