@@ -117,7 +117,7 @@ export default {
       let transparentRoutes = ["home"];
       let currentRoute = this.$route.name;
 
-      this.open = false;
+      this.showSideBar = false;
       this.routeHome = this.$route.meta.pageHome;
       this.currentRoute = currentRoute;
 
