@@ -25,7 +25,7 @@
       <img class="person-hot-air-balloon" :src="personHotAirBalloonFilePath" />
     </div>
     <div class="section">
-      <p class="title is-5">And here is some stuff about me…</p>
+      <p class="title is-5">And here is some stuff about me...</p>
       <div class="content">
         <p>
           Hai! My background is in math, physics, and greek classics. My
@@ -36,12 +36,13 @@
         </p>
         <p>
           Every now and then, I get really excited about a topic, and then do a
-          bunch of research. This website started out as a way to collect these thoughts.
+          bunch of research. This website started out as a way to collect these
+          thoughts.
         </p>
         <p>
-          Like most people, I would describe myself as being really bad at describing
-          myself, so instead of a longer narrative, I’m going to just list fun
-          facts about me. Maybe one day I’ll get better at it...
+          Like most people, I would describe myself as being really bad at
+          describing myself, so instead of a longer narrative, I’m going to just
+          list fun facts about me. Maybe one day I’ll get better at it...
         </p>
         <div class="has-text-centered section">
           <p class="button is-marginless" v-on:click="setRandomFacts()">
