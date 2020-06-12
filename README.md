@@ -37,9 +37,6 @@ Vue
 
 - add caching logic
 - use local storage
-- scroll to center search when focused
-- recommendations
-  - mechanism to show tags/endorsement
 - rogue sky
   - add light pollution layer
     - https://blog.mapbox.com/mapping-the-lights-of-the-night-bd32d5a1bdf8

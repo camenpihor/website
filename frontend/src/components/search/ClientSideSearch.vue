@@ -7,10 +7,9 @@
       rounded
       :placeholder="placeholder"
       type="search"
-      icon-pack="fal"
-      icon="search"
       @input="search"
       @keyup.native.enter="blurSearch"
+      @keyup.native.esc="blurSearch"
       ref="search"
     />
     <img
