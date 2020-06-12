@@ -79,4 +79,8 @@ export default {
   top: -1.5rem;
   left: 1.5rem;
 }
+
+.blog__post .subtitle {
+  margin-top: -1.05rem !important;
+}
 </style>

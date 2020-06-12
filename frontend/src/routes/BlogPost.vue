@@ -61,6 +61,10 @@ export default {
 </script>
 
 <style>
+.blog-post .subtitle {
+  margin-top: -1.05rem !important;
+}
+
 .person-wave-move-image {
   float: right;
   width: 1rem;
