@@ -29,7 +29,7 @@
       <div class="content">
         <p>
           Hai! My background is in math, physics, and greek classics. My
-          foreground is in... well, I'm not sure yet. I currently really enjoy
+          foreground is in... well, I’m not sure yet. I currently really enjoy
           learning about the natural world, atmospheric physics, and astronomy.
           I think the kindest things I can say about myself are that I actively
           seek wonder and laughter.
@@ -40,8 +40,8 @@
         </p>
         <p>
           Like most people, I would describe myself as being really bad at describing
-          myself, so instead of a longer narrative, I'm going to just list fun
-          facts about me. Maybe one day I'll get better at it...
+          myself, so instead of a longer narrative, I’m going to just list fun
+          facts about me. Maybe one day I’ll get better at it...
         </p>
         <div class="has-text-centered section">
           <p class="button is-marginless" v-on:click="setRandomFacts()">
