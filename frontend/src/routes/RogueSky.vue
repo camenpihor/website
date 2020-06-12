@@ -10,7 +10,7 @@
       />
       <NotFound :requestedPath="this.$route.fullPath" />
     </div>
-    <Loading v-if="!error & (starForecast == null)" :isFullPage="false" />
+    <Loading v-if="!error & (starForecast == null)" :isFullPage="true" />
     <div v-if="starForecast != null">
       <div class="section">
         <BackendSearch
