@@ -8,6 +8,7 @@
             "animals",
             "nature"
         ],
+        "endorsement": "Some really interesting facts about bees!",
         "kind": "blog"
     },
     {
@@ -18,16 +19,18 @@
             "ethics",
             "morality"
         ],
+        "endorsement": null,
         "kind": "blog"
     },
     {
         "url": "https://slatestarcodex.com/2014/02/23/in-favor-of-niceness-community-and-civilization/",
         "group_label": "ssc",
-        "label": "in favor of niceness community and civilization",
+        "label": "in favor of niceness, community, and civilization",
         "tags": [
             "ethics",
             "morality"
         ],
+        "endorsement": null,
         "kind": "blog"
     },
     {
@@ -38,6 +41,7 @@
             "ethics",
             "morality"
         ],
+        "endorsement": "This is a super long series in which Nate Soares explores how he has come to orient to guilt. I found the framings incredibly useful as it guided my own, and the tools espoused less so, but most likely because they are more life-journey-esque rather than something one can just do to affect immediate change. In particular, the conversation around 'shoulds' is what I find myself thinking about most.",
         "kind": "blog"
     },
     {
@@ -47,6 +51,7 @@
         "tags": [
             "fantasy"
         ],
+        "endorsement": null,
         "kind": "book"
     },
     {
@@ -58,6 +63,7 @@
             "science",
             "nature"
         ],
+        "endorsement": null,
         "kind": "book"
     },
     {
@@ -68,6 +74,7 @@
             "fantasy",
             "female author"
         ],
+        "endorsement": null,
         "kind": "book"
     },
     {
@@ -77,6 +84,7 @@
         "tags": [
             "fantasy"
         ],
+        "endorsement": null,
         "kind": "book"
     },
     {
@@ -86,6 +94,7 @@
         "tags": [
             "fantasy"
         ],
+        "endorsement": null,
         "kind": "book"
     },
     {
@@ -97,6 +106,7 @@
             "morality",
             "effective altruism"
         ],
+        "endorsement": null,
         "kind": "random"
     },
     {
@@ -108,6 +118,7 @@
             "music",
             "technology"
         ],
+        "endorsement": null,
         "kind": "random"
     },
     {
@@ -117,6 +128,7 @@
         "tags": [
             "clothing"
         ],
+        "endorsement": "I have worn these pants almost daily for over a year, and they have not ripped yet (I usually get tears between my legs after a couple months). They are also incredibly light, but still warm for winter yet breathable for summer. Lastly, they are quick drying. I will buy these forever.",
         "kind": "random"
     },
     {
@@ -128,6 +140,7 @@
             "music",
             "sleeping"
         ],
+        "endorsement": "I am kept awake a lot by an unqiet mind. I found that listening to a story while in bed incredibly useful in finding sleep. But, being a side sleeper, headphones are a no-go, and most earbuds are so bulky that they hurt my ears and give me a headache. These headphones don't hurt at all, and are cheap enough that buying them for this singular purpose was 100% worthwhile. The 3 audiobook apps I have used (kindle, audible, and libby) all have a sleep timer, which also acts as a cool way to see how long it took to fall asleep. When having a light on is okay, I mostly just read a book, but at times when its not, I found this routine incredibly useful, and these earbuds are great for that.",
         "kind": "random"
     },
     {
@@ -137,6 +150,7 @@
         "tags": [
             "sleeping"
         ],
+        "endorsement": null,
         "kind": "random"
     },
     {
@@ -146,6 +160,7 @@
         "tags": [
             "programming"
         ],
+        "endorsement": "Gah, I love this so much... It's so customizable, but also has insanely good presets. Starting from IntelliJ and PyCharm, I was so frustrated with setting it up on different computers, so ugly, and just incredibly weighted down by all these features that I didn't want. VSCode starts as lightweight and beautiful, but also has a rich ecosystem of add-ons so you can pick and choose. Also, the support for languages is great. As beutiful as emacs, but comes with just enough presets to be sooooo much easier. I'm a minimalist though, so I am incredibly aware that all may not agree.",
         "kind": "random"
     },
     {
@@ -155,6 +170,7 @@
         "tags": [
             "fantasy"
         ],
+        "endorsement": null,
         "kind": "web fiction"
     },
     {
@@ -164,6 +180,7 @@
         "tags": [
             "fantasy"
         ],
+        "endorsement": "I do really like the story of Harry Potter, and while still being able to enjoy the setting and the characters that I know so well, I found this a great alternate universe, with changes that just make sense and decision-making that is sooo much more relatable. You know the plot, but you also don't and it surprises you with turns. Its written as an entry guide to the rationality of lesswrong, but just ignore that and its gold. Also, its free.",
         "kind": "web fiction"
     },
     {
@@ -174,6 +191,7 @@
             "fantasy",
             "female author"
         ],
+        "endorsement": "I do read a lot of fantasy... But lately, I've become really annoyed with the constant glory of violence and 18th century societies. I found this long series so refreshing from this tendency of fantasy. It begins as an introduction to LitRPG and the huge world, while slowly giving you glimpses of what's moving behind the curtain. I'm very thankful for this long, ongoing series by pirateaba. Great for plane rides. Also, like all the webfiction here, its free.",
         "kind": "web fiction"
     },
     {
@@ -183,6 +201,7 @@
         "tags": [
             "fantasy"
         ],
+        "endorsement": "So different and funny, and great. Just go read the first prologue (http://unsongbook.com/prologue-2/).",
         "kind": "web fiction"
     },
     {
@@ -192,6 +211,7 @@
         "tags": [
             "fantasy"
         ],
+        "endorsement": null,
         "kind": "web fiction"
     },
     {
@@ -201,6 +221,7 @@
         "tags": [
             "engineering"
         ],
+        "endorsement": "I knew nothing about blacksmithing and found myself really intrigued. He talks along the way explaining his thought processes or some tidbits about his craft, its not enough to learn blacksmithing by any means, but you feel like you are learning something. Also, its actually pretty therapeutic to just watch someone work sometimes haha. He's just a nice, jubilant fellow.",
         "kind": "youtube"
     },
     {
@@ -211,6 +232,7 @@
             "education",
             "astonomy"
         ],
+        "endorsement": "Astronomy just has this ability to inspire wonder so easily... Maybe because its so huge, but also just on the edge of understanding (even when its very much not), I don't know... But I found this series a great way build curiosity by also satisfying it.",
         "kind": "youtube"
     },
     {
@@ -220,6 +242,7 @@
         "tags": [
             "education"
         ],
+        "endorsement": "I think of this as a video version of xkcd. You learn things which are mostly unnecessary, but still fun to know/learn, and every once in a while there's some gem that just enriches you as a person.",
         "kind": "youtube"
     },
     {
@@ -230,6 +253,7 @@
             "nature",
             "education"
         ],
+        "endorsement": "Very quick `here's some cool thing about nature` videos. I think the word for it is wholesome.",
         "kind": "youtube"
     },
     {
@@ -240,6 +264,7 @@
             "engineering",
             "funny"
         ],
+        "endorsement": "I really don't learn anything, but you feel like you do while laughing a lot at watching someone so thoroughly engage in the love of making things even when the outcome is bad. Do you like robots?",
         "kind": "youtube"
     },
     {
@@ -250,6 +275,7 @@
             "nature",
             "education"
         ],
+        "endorsement": null,
         "kind": "youtube"
     },
     {
@@ -261,6 +287,7 @@
             "education",
             "zoology"
         ],
+        "endorsement": "Learn zoology through video game lingo. So cheesy, so great.",
         "kind": "youtube"
     },
     {
@@ -272,6 +299,7 @@
             "education",
             "funny"
         ],
+        "endorsement": "Every week two brothers make a video and send it to each other. It ranges from funny to wholesome to inspiring to thoughful to thought-provoking. They have a community, and they love it, and you feel welcomed to it.",
         "kind": "youtube"
     },
     {
@@ -282,6 +310,7 @@
             "fantasy",
             "fiction"
         ],
+        "endorsement": null,
         "kind": "book"
     },
     {
@@ -292,6 +321,7 @@
             "emotional",
             "fiction"
         ],
+        "endorsement": null,
         "kind": "book"
     },
     {
@@ -303,6 +333,7 @@
             "sci-fi",
             "science"
         ],
+        "endorsement": null,
         "kind": "book"
     },
     {
@@ -315,6 +346,7 @@
             "education",
             "physics"
         ],
+        "endorsement": null,
         "kind": "book"
     },
     {
@@ -325,6 +357,7 @@
             "fantasy",
             "funny"
         ],
+        "endorsement": null,
         "kind": "book"
     },
     {
@@ -335,6 +368,7 @@
             "fiction",
             "emotional"
         ],
+        "endorsement": null,
         "kind": "book"
     },
     {
@@ -346,6 +380,7 @@
             "trees",
             "education"
         ],
+        "endorsement": null,
         "kind": "book"
     },
     {
@@ -358,6 +393,7 @@
             "evolution",
             "education"
         ],
+        "endorsement": null,
         "kind": "book"
     }
 ]

@@ -25,23 +25,18 @@
             />
             {{ groupLabel }}
           </p>
-          <li v-for="item in groupData" :key="item.label">
-            <p class="recommendation__group__item">
-              <a :href="item.url" target="_blank">{{ item.label }}</a>
-              <span v-if="item.group_label !== null">
-                by {{ item.group_label }}
-              </span>
-              <span class="tags">
-                <span
-                  v-for="tag in item.tags"
-                  :key="tag"
-                  class="tag"
-                  @click="search(tag)"
-                >
-                  {{ tag }}
-                </span>
-              </span>
-            </p>
+          <li
+            v-for="item in groupData"
+            :key="item.label"
+            class="recommendations__item"
+          >
+            <RecommendationItem
+              :href="item.url"
+              :label="item.label"
+              :group="item.group_label"
+              :tags="item.tags"
+              :info="item.endorsement"
+            />
           </li>
         </ul>
       </div>
@@ -57,6 +52,7 @@
 <script>
 import ClientSideSearch from "@/components/search/ClientSideSearch.vue";
 import NoResults from "@/components/NoResults.vue";
+import RecommendationItem from "@/components/RecommendationItem.vue";
 
 import recommendationsJson from "@/assets/json/recommendations.json";
 import { compare, groupBy } from "@/assets/js/utilities.js";
@@ -64,7 +60,8 @@ import { compare, groupBy } from "@/assets/js/utilities.js";
 export default {
   components: {
     ClientSideSearch,
-    NoResults
+    NoResults,
+    RecommendationItem
   },
   data() {
     return {
@@ -88,8 +85,18 @@ export default {
       this.searchResults = arr;
     },
     search: function(word) {
+      window.scrollTo(0, 0);
       this.$refs.search.input = word;
       this.$refs.search.search();
+    },
+    toggleInfo: function(event) {
+      console.log(event);
+
+      let recommendationItem = event.target.parentElement.parentElement;
+      let endorsement = recommendationItem.querySelector(
+        ".recommendation__group__item__info"
+      );
+      endorsement.classList.toggle("is-hidden");
     }
   },
   mounted() {
@@ -109,22 +116,11 @@ export default {
   padding-top: 0;
 }
 
-.recommendation__group__item {
-  text-indent: -1rem;
-  padding-left: 1rem;
+.recommendations__item {
   padding-bottom: 1rem;
 }
 
-.recommendation__group__item .tags .tag {
-  cursor: pointer;
-  font-size: 0.6rem;
-}
-
-.recommendation__group__item .tags .tag:hover {
-  text-decoration: underline;
-}
-
-.person-computer {
+.recommendations__group .person-computer {
   width: 1rem;
   margin-left: -1rem; /* negative of character width */
   float: left;

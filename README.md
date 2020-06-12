@@ -37,6 +37,7 @@ Vue
 
 - add caching logic
 - use local storage
+- scroll to center search when focused
 - recommendations
   - mechanism to show tags/endorsement
 - rogue sky
