@@ -10,8 +10,10 @@
         <span
           v-if="info != null"
           class="tag recommendation__info-button"
+          v-bind:class="{ active: showInfo }"
           @click="toggleInfo(showInfo)"
-          >why?</span>
+          >why?</span
+        >
       </div>
     </div>
     <div
@@ -47,6 +49,11 @@ export default {
 
 .recommendation__info-button {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.recommendation__info-button.active {
+  text-decoration: underline;
 }
 
 .recommendation__info-button:hover {
