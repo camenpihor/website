@@ -161,9 +161,16 @@ export default {
     }
   },
   watch: {
-    $route(to, from) {
+    $route: function(to, from) {
       if (to !== from) {
         this.initialize();
+      }
+    },
+    showSideBar: function(to) {
+      if (to) {
+        document.body.classList.add("overlaid");
+      } else {
+        document.body.classList.remove("overlaid");
       }
     }
   },
@@ -173,6 +180,10 @@ export default {
 };
 </script>
 <style>
+.overlaid {
+  position: fixed;
+}
+
 .navigation .navbar {
   width: 100%;
   position: fixed;
