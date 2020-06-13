@@ -10,7 +10,7 @@ const router = new VueRouter({
       path: "/",
       name: "home",
       component: () => import("./Home.vue"),
-      meta: { pageTitle: "" }
+      meta: { pageHome: "home" }
     },
     {
       path: "/about",
