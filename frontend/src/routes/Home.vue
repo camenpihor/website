@@ -18,7 +18,7 @@
             I’m a recently unemployed data scientist in my late 20s, who is
             taking some time to amble. My roaming is currently taking me to the
             stars, trees, birds, and the clouds, but I’m not too sure where I’ll
-            end up. I like to think that I am a good Bayesian and scientist, but
+            end up. I like to think that I am a good Bayesian, but
             I also like seeking wonder which makes me want to talk about the
             world in different ways.
           </p>
