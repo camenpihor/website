@@ -432,7 +432,7 @@ export default {
       return `${Math.round(float * 100)}%`;
     },
     humanizePrecipitation: function(type, intensity, probability, summarize) {
-      if (probability < 0.01 || type == null) {
+      if (probability <= 0.01 || type == null || probability == null) {
         return "None";
       }
 
