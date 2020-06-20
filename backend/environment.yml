@@ -8,6 +8,7 @@ dependencies:
   - pip:
     - click==7.0
     - flask==1.1
+    - mistune==2.0.0a4
     - waitress==1.4
     - git+git://github.com/camenpihor/rogue-sky.git#egg=rogue-sky
 
