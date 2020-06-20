@@ -1,9 +1,11 @@
 <template>
-  <div class="section has-text-centered">
-    <p class="title is-3">404</p>
-    <p class="subtitle is-5">We could not find your request</p>
-    <NoResults class="subsection" />
-  </div>
+  <section class="has-text-centered">
+    <div class="section">
+      <p class="title is-3">404</p>
+      <p class="subtitle is-5">We could not find your request</p>
+      <NoResults class="subsection" />
+    </div>
+  </section>
 </template>
 
 <script>
@@ -21,9 +23,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.not-found {
-  text-align: center;
-}
-</style>

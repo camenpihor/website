@@ -1,13 +1,10 @@
 <template>
   <section class="blog-post">
     <NotFound v-if="error === true" :requestedPath="this.$route.fullPath" />
-    <div v-if="post !== null" class="section">
-      <h1 class="title is-3">
-        {{ post.title }}
-      </h1>
-      <p class="subtitle is-7">{{ post.created }}</p>
-      <img class="person-wave-move-image" :src="personWaveMoveFilePath" />
-      <div class="content" v-html="post.html" />
+    <div v-if="postTitle != null" class="section">
+      <h1 class="title is-3 is-capitalized">{{ postTitle }}</h1>
+      <p class="subtitle is-7">{{ postDate }}</p>
+      <div class="content" v-html="postContent" />
       <img class="person-bowling" :src="personBowlingFilepath" />
     </div>
   </section>
@@ -16,7 +13,7 @@
 <script>
 import NotFound from "@/routes/NotFound.vue";
 
-import blogPostsJson from "@/assets/json/blog_posts.json";
+import { getBlogPost } from "@/assets/js/api.js";
 
 export default {
   components: {
@@ -24,27 +21,30 @@ export default {
   },
   data() {
     return {
-      personWaveMoveFilePath: require("@/assets/people/person-wave-move.svg"),
       error: false,
-      postURL: null,
-      post: null,
+      postTitle: null,
+      postContent: null,
+      postDate: null,
       personBowlingFilepath: require("@/assets/people/person-bowling.svg")
     };
   },
   methods: {
     initialize: function() {
       this.error = false;
-      this.postURL = this.$route.params.id;
-      this.post = this.getPost(blogPostsJson, this.postURL);
+      this.postID = this.$route.params.id;
+      this.getPost(this.postID);
     },
-    getPost: function(allPosts, postID) {
-      for (var i = 0; i < allPosts.length; i++) {
-        if (allPosts[i]["url"] == postID) {
-          return allPosts[i];
+    getPost: function(postID) {
+      getBlogPost(postID).then(response => {
+        if (response.data != null) {
+          this.postTitle = response.data.title;
+          this.postDate = response.data.date;
+          this.postContent = response.data.content;
+        } else {
+          this.error = true;
+          return null;
         }
-      }
-      this.error = true;
-      return null;
+      });
     }
   },
   watch: {

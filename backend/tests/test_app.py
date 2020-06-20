@@ -11,7 +11,9 @@ def test_ping(backend_api_client):
     assert response.get_json() == {"status": "ok"}
 
 
-def test_star_forecast(requests_mock, backend_api_client, darksky_json_response):
+def test_star_visibility_forecast(
+    requests_mock, backend_api_client, darksky_json_response
+):
     latitude = 47.6038321
     longitude = -122.3300624
     api_key = DARKSKY_API_KEY
@@ -28,10 +30,42 @@ def test_star_forecast(requests_mock, backend_api_client, darksky_json_response)
     actual = response.get_json()
     assert len(actual["daily_forecast"]) == 8
     assert set(actual.keys()) == set(
-        ["latitude", "longitude", "queried_date_utc", "daily_forecast", "city", "state"]
+        [
+            "latitude",
+            "longitude",
+            "queried_date_utc",
+            "daily_forecast",
+            "city",
+            "state",
+            "timezone",
+        ]
     )
     assert set(actual["daily_forecast"][0].keys()) == set(
         [key.replace("utc", "local") for key in darksky.DAILY_WEATHER_MAPPING]
-        + ["star_visibility"]
+        + ["star_visibility", "moon_illumination", "moonrise_time_local"]
     )
     assert actual["daily_forecast"][0]["sunset_time_local"] == "2019-11-10T16:29:00-05:00"
+
+
+def test_coordinates(backend_api_client):
+    response = backend_api_client.get("/api/coordinates/seattle")
+    assert response.status_code == 200
+
+
+def test_blog_posts(backend_api_client):
+    response = backend_api_client.get("/api/blog")
+    assert response.status_code == 200
+
+    actual = response.get_json()
+    assert isinstance(actual, list)
+    assert len(actual) > 0
+    assert not set(actual[0]) - set(["title", "date", "summary", "url"])
+
+
+def test_blog_post(backend_api_client):
+    response = backend_api_client.get("/api/blog/something-worth-writing")
+    assert response.status_code == 200
+
+    actual = response.get_json()
+    assert isinstance(actual, dict)
+    assert not set(actual) - set(["title", "date", "summary", "content", "url"])

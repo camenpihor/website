@@ -1,8 +1,10 @@
 """Flask application for the backend API."""
+import glob
 import json
 import os
 
 from flask import Flask, Response
+import mistune
 from rogue_sky import darksky, stars
 
 from api import logger
@@ -21,7 +23,7 @@ def ping_test():
 
 
 @app.route("/api/coordinates/<query>")
-def get_coordinates(query):
+def coordinates(query):
     """Get coordinates from query."""
     _logger.info("Getting coordinates for %s", query)
     latitude, longitude = darksky.parse_address(address=query)
@@ -41,6 +43,45 @@ def star_visibility_forecast(latitude, longitude):
             api_key=DARKSKY_SECRET_KEY,
         )
     )
+
+
+@app.route("/api/blog")
+def blog_posts():
+    """Get blog posts."""
+    _logger.info("Getting blog posts...")
+    filepaths = glob.glob(os.path.join("api", "blog", "final", "*.md"))
+    data = [_parse_blog_post(filepath=filepath, content=False) for filepath in filepaths]
+    return _json_response(data=data)
+
+
+@app.route("/api/blog/<title>")
+def blog_post(title):
+    """Get blog post."""
+    _logger.info("Getting blog post %s...", title)
+    filepath = os.path.join("api", "blog", "final", f"{title}.md")
+    data = _parse_blog_post(filepath=filepath) if os.path.exists(filepath) else None
+    return _json_response(data=data)
+
+
+def _parse_blog_post(filepath, content=True):
+    class CustomRenderer(mistune.HTMLRenderer):
+        """Custom markdown renderer."""
+
+        def link(self, link, text=None, title=None):
+            """Add target="_blank" to links."""
+            return f"<a href={link} target='_blank'>{text}</a>"
+
+    markdown = mistune.create_markdown(renderer=CustomRenderer())
+
+    with open(filepath, "r") as buffer:
+        data = buffer.read()
+
+    _, metadata, post_markdown = data.split("---", 2)
+
+    metadata = json.loads(metadata.replace("\n", "").replace("  ", " "))
+    if content:
+        metadata["content"] = markdown(post_markdown)
+    return metadata
 
 
 def _json_response(data):

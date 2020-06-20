@@ -14,4 +14,14 @@ function getCoordinates(query) {
   return axios.get(url)
 }
 
-export { getStarForecast, getCoordinates }
+function getBlogPosts() {
+  const url = `${backendUrl}/blog`;
+  return axios.get(url)
+}
+
+function getBlogPost(query) {
+  const url = `${backendUrl}/blog/${query}`;
+  return axios.get(url)
+}
+
+export { getStarForecast, getCoordinates, getBlogPosts, getBlogPost }

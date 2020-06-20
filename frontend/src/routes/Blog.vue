@@ -1,31 +1,33 @@
 <template>
   <section class="blog">
-    <ClientSideSearch
-      class="blog__search"
-      :imageFilePath="personReadingFilePath"
-      :keys="searchKeys"
-      :jsonUUID="searchUUID"
-      :json="blogPostsJson"
-      v-on:output="searchResults = $event"
-    />
-    <div v-if="searchResults.length > 0" class="section">
-      <div
-        class="blog__post subsection"
-        v-for="post in searchResults"
-        :key="post.title"
-      >
-        <h1 class="title is-4">{{ post.title }}</h1>
-        <p class="subtitle is-7">{{ post.created }}</p>
-        <div>{{ truncateText(post.intro) }}</div>
-        <p>
-          <router-link :to="{ name: 'blog-post', params: { id: post.url } }">
-            read more
-          </router-link>
-        </p>
+    <div v-if="searchResults != null">
+      <ClientSideSearch
+        class="blog__search"
+        :imageFilePath="personReadingFilePath"
+        :keys="searchKeys"
+        :jsonUUID="searchUUID"
+        :json="blogPostsJson"
+        v-on:output="searchResults = $event"
+      />
+      <div v-if="searchResults.length > 0" class="section">
+        <div
+          class="blog__post subsection"
+          v-for="post in searchResults"
+          :key="post.title"
+        >
+          <h1 class="title is-4 is-capitalized">{{ post.title }}</h1>
+          <p class="subtitle is-7">{{ post.date }}</p>
+          <div>{{ post.summary }}</div>
+          <p>
+            <router-link :to="{ name: 'blog-post', params: { id: post.url } }">
+              read more
+            </router-link>
+          </p>
+        </div>
       </div>
-    </div>
-    <div v-else>
-      <NoResults message="No Results :(" />
+      <div v-else>
+        <NoResults message="No Results :(" />
+      </div>
     </div>
   </section>
 </template>
@@ -34,7 +36,7 @@
 import NoResults from "@/components/NoResults.vue";
 import ClientSideSearch from "@/components/search/ClientSideSearch.vue";
 
-import blogPostsJson from "@/assets/json/blog_posts.json";
+import { getBlogPosts } from "@/assets/js/api.js";
 
 export default {
   components: {
@@ -43,18 +45,24 @@ export default {
   },
   data() {
     return {
-      blogPostsJson: blogPostsJson,
+      blogPostsJson: null,
       personReadingFilePath: require("@/assets/people/person-reading.svg"),
       isSmallWindow: window.innerWidth <= 1023,
       searchKeys: ["html", "title"],
       searchUUID: "url",
-      searchResults: blogPostsJson
+      searchResults: null
     };
   },
   methods: {
-    truncateText: function(text) {
-      return text.slice(3, 500) + "...";
+    initialize: function() {
+      getBlogPosts().then(response => {
+        this.blogPostsJson = response.data;
+        this.searchResults = response.data;
+      });
     }
+  },
+  mounted() {
+    this.initialize();
   }
 };
 </script>

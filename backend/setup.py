@@ -4,8 +4,8 @@ from setuptools import find_packages, setup
 
 def get_version():
     """Get backend version."""
-    with open("VERSION") as f:
-        return f.read()
+    with open("VERSION") as buffer:
+        return buffer.read()
 
 
 setup(
