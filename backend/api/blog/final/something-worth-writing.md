@@ -53,5 +53,5 @@ universe, and I want to train myself to notice that more, and I want this space 
 platform for sharing that journey with others.
 
 So, if any of this sounds interesting, that makes me happy, and if not, many other people
-have words to share and [you should check them out](https://camenpiho.com/recommendations)
+have words to share and [you should check them out](https://www.camenpiho.com/recommendations)
 and that makes me happy too :).
