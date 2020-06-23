@@ -44,6 +44,7 @@ Vue
 - add report a bug feature
 - rss
   - max of 10 blog posts
+  - mimetype for xml
 - test astronomical events on frontend
 - fix star visibility and coordinate test such that it doesn't need internet (geopy)
 
