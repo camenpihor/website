@@ -9,6 +9,7 @@
         :imageFilePath="personHangingFilePath"
         v-on:output="searchResults = $event"
         ref="search"
+        :initial="query"
       />
 
       <div v-if="searchResults.length > 0" class="section">
@@ -69,6 +70,7 @@ export default {
       personHangingFilePath: require("@/assets/people/person-hanging.svg"),
       recommendations: null,
       searchResults: null,
+      query: null,
       searchKeys: ["group_label", "label", "kind", "tags"],
       searchUUID: "label"
     };
@@ -83,15 +85,14 @@ export default {
       let arr = recommendationsJson.sort(compare("label"));
       this.recommendations = arr;
       this.searchResults = arr;
-    },
-    search: function(word) {
-      window.scrollTo(0, 0);
-      this.$refs.search.input = word;
-      this.$refs.search.search();
+
+      this.query = "";
+      if (this.$route.query.search != null) {
+        this.query = this.$route.query.search;
+        this.$router.replace("");
+      }
     },
     toggleInfo: function(event) {
-      console.log(event);
-
       let recommendationItem = event.target.parentElement.parentElement;
       let endorsement = recommendationItem.querySelector(
         ".recommendation__group__item__info"
@@ -131,8 +132,8 @@ export default {
 
 .recommendations__search .search__image {
   width: 3rem;
-  float: right;
-  position: relative;
-  top: -1rem;
+  position: absolute;
+  top: 1.3rem;
+  right: 1rem;
 }
 </style>

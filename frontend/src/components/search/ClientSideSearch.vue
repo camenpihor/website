@@ -1,5 +1,5 @@
 <template>
-  <div class="search-bar">
+  <div class="search-bar is-relative">
     <EventListener :method="focusSearch" />
 
     <b-input
@@ -38,11 +38,14 @@ export default {
     keys: {},
     json: {},
     jsonUUID: {},
-    method: {}
+    initial: {
+      type: String,
+      default: ""
+    }
   },
   data() {
     return {
-      input: "",
+      input: this.initial,
       results: this.json,
       searcher: this.createSearcher()
     };
@@ -73,6 +76,9 @@ export default {
       search.addDocuments(this.json);
       return search;
     }
+  },
+  mounted() {
+    this.search();
   }
 };
 </script>

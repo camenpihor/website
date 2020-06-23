@@ -1,8 +1,8 @@
 <template>
-  <div class="no-results">
-    <p v-if="message != null" class="no-results__message">
+  <div class="no-results has-text-centered">
+    <div v-if="message != null" class="no-results__message has-text-centered">
       {{ message }}
-    </p>
+    </div>
     <img
       class="no-results__image"
       v-if="Math.random() > 0.5"
@@ -13,7 +13,6 @@
 </template>
 
 <script>
-
 export default {
   props: ["message"],
   data() {
@@ -30,7 +29,6 @@ export default {
   margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
 }
 
 .no-results__message {
