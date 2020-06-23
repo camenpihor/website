@@ -2,13 +2,18 @@
 import logging
 import subprocess
 
+import click
+
 logging.basicConfig(level=logging.INFO)
 _logger = logging.getLogger(__name__)
 
 
-def test():
+@click.command()
+@click.option("--it", is_flag=True)
+def test(it):
     _logger.info("Testing backend...")
-    subprocess.check_call("scripts/test", cwd="./backend")
+    backend_command = "scripts/test-it" if it else "scripts/test"
+    subprocess.check_call(backend_command, cwd="backend")
 
     _logger.info("Testing frontend...")
     subprocess.check_call("scripts/test", cwd="./frontend")

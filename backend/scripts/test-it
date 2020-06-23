@@ -3,6 +3,6 @@ set -ex # fail on first error, print commands
 
 scripts/lint
 
-echo "Running unit tests..."
-python3 -m pytest
+echo "Running unit and integration tests..."
+python3 -m pytest tests
 echo "Success!"

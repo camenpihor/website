@@ -11,7 +11,7 @@
 1. `source activate website3.8` to activate virtual environment created at (1)
 1. `cp .sample_env .env` and update any necessary environment variables
 1. `set -o allexport; source .env; set +o allexport` to export environment variables
-1. `scripts/test` to verify install
+1. `scripts/test --it` to verify install
 1. `scripts/start` to start server
 
 ## Backend
@@ -44,9 +44,6 @@ Vue
 - add report a bug feature
 - rss
   - max of 10 blog posts
-  - mimetype for xml
-- test astronomical events on frontend
-- fix star visibility and coordinate test such that it doesn't need internet (geopy)
 
 - new pages
   - nature identification
