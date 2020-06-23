@@ -42,6 +42,10 @@ Vue
     - https://blog.mapbox.com/mapping-the-lights-of-the-night-bd32d5a1bdf8
   - report the max cloud cover from like 6pm to midnight each day
 - add report a bug feature
+- rss
+  - max of 10 blog posts
+- test astronomical events on frontend
+- fix star visibility and coordinate test such that it doesn't need internet (geopy)
 
 - new pages
   - nature identification

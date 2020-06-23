@@ -24,4 +24,11 @@ function getBlogPost(query) {
   return axios.get(url)
 }
 
-export { getStarForecast, getCoordinates, getBlogPosts, getBlogPost }
+function getAstronomicalEvents() {
+  const url = `${backendUrl}/astronomical_events`;
+  return axios.get(url)
+}
+
+export {
+  getStarForecast, getCoordinates, getBlogPosts, getBlogPost, getAstronomicalEvents
+}

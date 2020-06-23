@@ -1,4 +1,5 @@
 import os
+import xml.etree.ElementTree as ET
 
 from rogue_sky import darksky
 
@@ -11,7 +12,7 @@ def test_ping(backend_api_client):
     assert response.get_json() == {"status": "ok"}
 
 
-def test_star_visibility_forecast(
+def test_get_star_visibility_forecast(
     requests_mock, backend_api_client, darksky_json_response
 ):
     latitude = 47.6038321
@@ -47,12 +48,16 @@ def test_star_visibility_forecast(
     assert actual["daily_forecast"][0]["sunset_time_local"] == "2019-11-10T16:29:00-05:00"
 
 
-def test_coordinates(backend_api_client):
+def test_get_coordinates(backend_api_client, requests_mock):
+    requests_mock.get(
+        "https://nominatim.openstreetmap.org/search?q=seattle&format=json&limit=1",
+        json={"lat": 50, "lon": 50, "display_name": "Seattle, WA"},
+    )
     response = backend_api_client.get("/api/coordinates/seattle")
     assert response.status_code == 200
 
 
-def test_blog_posts(backend_api_client):
+def test_get_blog_posts(backend_api_client):
     response = backend_api_client.get("/api/blog")
     assert response.status_code == 200
 
@@ -62,10 +67,29 @@ def test_blog_posts(backend_api_client):
     assert not set(actual[0]) - set(["title", "date", "summary", "url"])
 
 
-def test_blog_post(backend_api_client):
+def test_get_blog_post(backend_api_client):
     response = backend_api_client.get("/api/blog/something-worth-writing")
     assert response.status_code == 200
 
     actual = response.get_json()
     assert isinstance(actual, dict)
     assert not set(actual) - set(["title", "date", "summary", "content", "url"])
+
+
+def test_get_rss(backend_api_client):
+    response = backend_api_client.get("/api/rss")
+    assert response.status_code == 200
+    assert ET.fromstring(response.data.decode())
+
+
+def test_get_astronomical_events(backend_api_client):
+    response = backend_api_client.get("/api/astronomical_events")
+    assert response.status_code == 200
+
+    actual = response.get_json()
+    assert isinstance(actual, list)
+    assert len(actual) > 0
+
+    actual = actual[0]
+    assert isinstance(actual, dict)
+    assert not set(actual) - set(["date", "event", "info", "type"])

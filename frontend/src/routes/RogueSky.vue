@@ -324,8 +324,11 @@ import NotFound from "@/routes/NotFound.vue";
 import StarVizIcon from "@/components/StarVizIcon.vue";
 import WeatherSummary from "@/components/WeatherSummary.vue";
 
-import { getCoordinates, getStarForecast } from "@/assets/js/api.js";
-import astronomicalJson from "@/assets/json/astronomical_events.json";
+import {
+  getAstronomicalEvents,
+  getCoordinates,
+  getStarForecast
+} from "@/assets/js/api.js";
 
 export default {
   components: {
@@ -351,6 +354,7 @@ export default {
         other: "blue"
       },
       starForecast: null,
+      astronomicalEvents: null,
       timezone: null,
       city: null,
       state: null,
@@ -380,6 +384,7 @@ export default {
         this.latitude = this.$route.params.latitude;
         this.longitude = this.$route.params.longitude;
         this.fetchForecast();
+        this.fetchAstronomicalEvents();
       } else {
         let seattle_lat = 47.687;
         let seattle_lon = -122.377;
@@ -388,6 +393,15 @@ export default {
           params: { latitude: seattle_lat, longitude: seattle_lon }
         });
       }
+    },
+    fetchAstronomicalEvents: function() {
+      getAstronomicalEvents()
+        .then(response => {
+          this.astronomicalEvents = response.data;
+        })
+        .catch(() => {
+          this.error = true;
+        });
     },
     fetchCoordinates: function() {
       getCoordinates(this.$route.query.address)
@@ -507,7 +521,7 @@ export default {
       return null;
     },
     attributes() {
-      if (this.starForecast != null) {
+      if ((this.starForecast != null) & (this.astronomicalEvents != null)) {
         let today = {
           key: "today",
           highlight: {
@@ -561,20 +575,18 @@ export default {
             });
           }
         }
-        for (const [label, data] of Object.entries(astronomicalJson)) {
-          allEvents = allEvents.concat([
-            ...data.map(datum => ({
-              dates: datum.date,
-              bar: this.calendarColors[label],
-              popover: {
-                label: datum.event,
-                placement: "auto",
-                isInteractive: true
-              },
-              customData: datum
-            }))
-          ]);
-        }
+        allEvents = allEvents.concat([
+          ...this.astronomicalEvents.map(event => ({
+            dates: event.date,
+            bar: this.calendarColors[event.type],
+            popover: {
+              label: event.event,
+              placement: "auto",
+              isInteractive: true
+            },
+            customData: event
+          }))
+        ]);
         return allEvents;
       }
       return null;

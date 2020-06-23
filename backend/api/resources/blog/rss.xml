@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>Camen Piho</title>
+  <link>https://www.camenpiho.com/api/rss</link>
+  <description>Blog of Camen Piho</description>
+  <language>en-us</language>
+  <pubDate>Sun, 21 Jun 2020 00:00:00 GMT</pubDate>
+  <category>Blog</category>
+
+  <item>
+    <title>Something Worth Writing</title>
+    <link>https://www.camenpiho.com/blog/something-worth-writing</link>
+    <guid>https://www.camenpiho.com/blog/something-worth-writing</guid>
+    <description>
+        <![CDATA[
+            
+        ]]>
+    </description>
+    <author>camen.rogue@gmail.com (Camen Piho)</author>
+    <pubDate>Sat, 20 Jun 2020 00:00:00 GMT</pubDate>
+  </item>
+
+</channel>
+</rss>
