@@ -54,4 +54,4 @@ and (2) notice wonder more.
 
 So, if any of this sounds interesting, that makes me happy, and if not, many other people
 have words to share and [you should check them
-out](https://www.camenpiho.com/recommendations) and that makes me happy too :).
+out](https://www.camenpiho.com/recommendations?search=blog) and that makes me happy too :).
