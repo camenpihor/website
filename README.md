@@ -38,6 +38,7 @@ Vue
 - add caching logic
 - use local storage
 - rogue sky
+  - change weather provider
   - add light pollution layer
     - https://blog.mapbox.com/mapping-the-lights-of-the-night-bd32d5a1bdf8
   - report the max cloud cover from like 6pm to midnight each day

@@ -11,15 +11,15 @@ _logger = logging.getLogger(__name__)
 @click.command()
 @click.option("--production", is_flag=True)
 def start(production):
-    if production:
-        _logger.info("Starting backend...")
-        subprocess.Popen(["scripts/start", "--production"], cwd="frontend")
-        subprocess.Popen(["scripts/start", "--production"], cwd="backend")
+    backend_script = ["scripts/start"]
+    frontend_script = ["scripts/start"]
 
-    else:
-        _logger.info("Starting backend...")
-        subprocess.Popen("scripts/start", cwd="frontend")
-        subprocess.check_call("scripts/start", cwd="backend")
+    if production:
+        backend_script.append("--production")
+        frontend_script.append("--production")
+
+    with subprocess.Popen("scripts/start", cwd="backend") as _:
+        subprocess.check_call("scripts/start", cwd="frontend")
 
 
 if __name__ == "__main__":

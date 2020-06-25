@@ -13,6 +13,8 @@ def install():
     _logger.info("Installing backend...")
     subprocess.check_call("scripts/install", cwd="./backend")
 
+    _logger.info("Success!")
+
 
 if __name__ == "__main__":
     install()

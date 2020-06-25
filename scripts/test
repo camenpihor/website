@@ -16,7 +16,7 @@ def test(it):
     subprocess.check_call(backend_command, cwd="backend")
 
     _logger.info("Testing frontend...")
-    subprocess.check_call("scripts/test", cwd="./frontend")
+    subprocess.check_call("scripts/test", cwd="frontend")
 
     _logger.info("Success!")
 

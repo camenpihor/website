@@ -24,7 +24,7 @@ def start(production):
     """
     if production:
         _logger.info("Building production frontend into `frontend/dist/`")
-        subprocess.check_call(["npx", "vue-cli-service", "build"])
+        subprocess.check_call(["npm", "run", "build"])
 
     else:
         _logger.info(
@@ -34,7 +34,7 @@ def start(production):
             PORT,
         )
         subprocess.check_call(
-            ["npx", "vue-cli-service", "serve", "--host", HOST, "--port", PORT],
+            ["npm", "run", "serve", "--", f"--host={HOST}", f"--port={PORT}"],
             env=os.environ.copy(),
         )
 
