@@ -1,29 +1,29 @@
 <template>
-  <Mapbox
+  <MglMap
     class="map"
     :access-token="this.getToken()"
-    :map-options="{
-      style: 'mapbox://styles/mapbox/dark-v10',
-      center: [longitude, latitude],
-      zoom: zoom,
-      dragRotate: false
-    }"
-    :fullscreen-control="{
-      show: true,
-      position: 'top-right'
-    }"
-    :nav-control="{
-      show: false
-    }"
-    @map-load="onLoad"
-  />
+    mapStyle="mapbox://styles/mapbox/dark-v10"
+    :minZoom="2"
+    :center="[longitude, latitude]"
+    :zoom="zoom"
+    logoPosition="bottom-right"
+    :boxZoom="false"
+    :scrollZoom="false"
+    :dragRotate="false"
+    :keyboard="false"
+    :touchZoomRotate="false"
+    @load="onLoad"
+  >
+    <MglNavigationControl position="top-right" :showCompass="false" />
+  </MglMap>
 </template>
 
 <script>
-import Mapbox from "mapbox-gl-vue";
+import Mapbox from "mapbox-gl";
+import { MglMap, MglNavigationControl } from "vue-mapbox";
 
 export default {
-  components: { Mapbox },
+  components: { MglMap, MglNavigationControl },
   props: {
     latitude: {
       type: Number,
@@ -46,6 +46,10 @@ export default {
     getToken: function() {
       return process.env.VUE_APP_MAPBOX_SECRET_TOKEN;
     }
+  },
+  created() {
+    // We need to set mapbox-gl library here in order to use it in template
+    this.mapbox = Mapbox;
   }
 };
 </script>

@@ -1,9 +1,7 @@
 import Buefy from 'buefy'
-import moment from 'moment-timezone'
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import VueMoment from 'vue-moment'
 import VCalendar from 'v-calendar';
+import VueRouter from 'vue-router';
 
 import 'buefy/dist/buefy.css'
 
@@ -12,11 +10,8 @@ import router from './routes/index.js'
 
 
 Vue.use(Buefy);
-Vue.use(VueRouter);
-Vue.use(VueMoment, {
-  moment,
-})
 Vue.use(VCalendar, { componentPrefix: 'vc' });
+Vue.use(VueRouter);
 
 new Vue({
   router,

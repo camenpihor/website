@@ -78,6 +78,6 @@ const router = new VueRouter({
       meta: { pageHome: "error" }
     },
   ],
-});
+})
 
 export default router;

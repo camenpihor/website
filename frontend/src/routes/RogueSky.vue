@@ -54,7 +54,7 @@
           <div>
             <h1 class="heading is-size-7">Today</h1>
             <p class="heading is-size-9">
-              {{ today.weather_date_local | moment("dddd, MMMM Do") }}
+              {{ today.weather_date_local }}
             </p>
             <WeatherSummary
               :starVisibility="humanizeStarVisibility(today.star_visibility)"
@@ -77,7 +77,7 @@
                 v-if="bestDay.weather_date_local != today.weather_date_local"
                 class="heading is-size-9"
               >
-                {{ bestDay.weather_date_local | moment("dddd, MMMM Do") }}
+                {{ printDate(bestDay.weather_date_local) }}
               </p>
               <p v-else class="heading is-size-9">
                 Today
@@ -107,7 +107,7 @@
             <div>
               <h1 class="heading is-size-7">Today</h1>
               <p class="heading is-size-9">
-                {{ today.weather_date_local | moment("ddd, MMM Do") }}
+                {{ printDate(today.weather_date_local) }}
               </p>
             </div>
             <WeatherSummary
@@ -132,7 +132,7 @@
                 v-if="bestDay.weather_date_local != today.weather_date_local"
                 class="heading is-size-9"
               >
-                {{ bestDay.weather_date_local | moment("ddd, MMM Do") }}
+                {{ printDate(bestDay.weather_date_local) }}
               </p>
               <p v-else class="heading is-size-9">
                 Today
@@ -175,9 +175,7 @@
               />
             </template>
             <p class="title is-5 has-text-centered">
-              {{
-                dailyWeather.weather_date_local | moment("dddd, MMMM Do YYYY")
-              }}
+              {{ printDate(dailyWeather.weather_date_local) }}
             </p>
             <p class="subtitle is-7 has-text-centered">
               <span>{{ dailyWeather.summary }}</span>
@@ -203,10 +201,7 @@
                 <span class="column is-4-desktop has-text-weight-semibold	"
                   >Sunset</span
                 >
-                <span class="column">{{
-                  dailyWeather.sunset_time_local
-                    | moment("timezone", timezone, "h:mm a z")
-                }}</span>
+                <span class="column">{{ dailyWeather.sunset_time_local }}</span>
               </div>
               <div class="columns is-mobile rogue-sky__weather__item">
                 <span class="column is-4-desktop has-text-weight-semibold	"
@@ -214,7 +209,6 @@
                 >
                 <span class="column">{{
                   dailyWeather.moonrise_time_local
-                    | moment("timezone", timezone, "h:mm a z")
                 }}</span>
               </div>
               <div class="columns is-mobile rogue-sky__weather__item">
@@ -323,6 +317,8 @@ import Map from "@/components/Map.vue";
 import NotFound from "@/routes/NotFound.vue";
 import StarVizIcon from "@/components/StarVizIcon.vue";
 import WeatherSummary from "@/components/WeatherSummary.vue";
+
+import { format, parseISO } from "date-fns";
 
 import {
   getAstronomicalEvents,
@@ -474,15 +470,15 @@ export default {
         query: { address: input }
       });
     },
-    humanizeDate: function(date) {
-      date = this.$moment(date);
-      if (date.isSame(this.$moment(), "day")) {
-        return "Today";
-      } else {
-        return date.format("ddd");
-      }
+    printDate: function(date) {
+      return format(parseISO(date), "eeee, MMMM do yyyy");
     },
-    cloudCoverLayer: function(map) {
+    humanizeDate: function(date) {
+      return format(parseISO(date), "eee");
+    },
+    cloudCoverLayer: function(event) {
+      let map = event.map;
+
       map.addLayer({
         id: "simple-tiles",
         type: "raster",
