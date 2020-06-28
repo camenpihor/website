@@ -101,13 +101,18 @@ def get_rss():
 
     channel = add_subelement(rss, "channel")
     add_subelement(channel, "title", "Camen Piho")
-    add_subelement(channel, "link", "https://www.camenpiho.com/api/rss")
+    add_subelement(channel, "link", "https://www.camenpiho.com/blog")
     add_subelement(channel, "description", "Blog and Astronomical Events by Camen Piho")
     add_subelement(channel, "language", "en-us")
     add_subelement(
         channel, "pubDate", datetime.datetime.utcnow().strftime(XML_DATETIME_FORMAT)
     )
     add_subelement(channel, "category", "Blog")
+
+    image = add_subelement(channel, "image")
+    add_subelement(image, "url", "https://www.camenpiho.com/site-icon.png")
+    add_subelement(image, "title", "Camen Piho")
+    add_subelement(image, "link", "https://www.camenpiho.com/blog")
 
     for post in posts:
         post_url = f"https://www.camenpiho.com/blog/{post['url']}"
@@ -141,6 +146,7 @@ def get_rss():
 
     rss_string = ET.tostring(rss, xml_declaration=True, encoding="UTF-8").decode()
     rss_string = rss_string.replace(" /></description>", "></description>")
+
     resp = Response(rss_string, mimetype="text/xml",)
     return resp
 

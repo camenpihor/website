@@ -10,7 +10,6 @@
       />
       <NotFound :requestedPath="this.$route.fullPath" />
     </div>
-    <Loading v-if="!error & (starForecast == null)" :isFullPage="true" />
     <div v-if="starForecast != null">
       <div class="section">
         <BackendSearch
@@ -25,11 +24,12 @@
         </h1>
         <div class="level is-mobile rogue-sky__icon-summary">
           <StarVizIcon
-            class="level-item has-text-centered is-size-7"
-            v-for="star in starForecast"
+            class="level-item has-text-centered is-size-7 star-viz-icon"
+            v-for="(star, idx) in starForecast"
             :key="star.weather_date_local"
             :word="star.icon"
             :date="humanizeDate(star.weather_date_local)"
+            v-on:click.native="focusWeather(idx)"
           />
         </div>
         <hr />
@@ -47,7 +47,7 @@
 
       <div class="section">
         <h1 class="title is-3 has-text-centered">
-          Week
+          Best
           <img class="person-wave-move-image" :src="personWaveMoveFilePath" />
         </h1>
         <div class="is-hidden-touch">
@@ -72,7 +72,7 @@
           </div>
           <div class="subsection">
             <div>
-              <p class="heading is-size-7">Suggested</p>
+              <p class="heading is-size-7">Best</p>
               <p
                 v-if="bestDay.weather_date_local != today.weather_date_local"
                 class="heading is-size-9"
@@ -157,12 +157,12 @@
         </div>
       </div>
 
-      <div class="section">
+      <div class="section" ref="weather">
         <p class="title is-3 has-text-centered">Weather</p>
         <p class="subtitle is-7 has-text-centered">
           daily weather summaries
         </p>
-        <b-tabs position="is-centered" expanded>
+        <b-tabs position="is-centered" v-model="weatherIdx" expanded>
           <b-tab-item
             v-for="dailyWeather in starForecast"
             :key="dailyWeather.weather_date_local"
@@ -312,7 +312,6 @@
 <script>
 import BackendSearch from "@/components/search/BackendSearch.vue";
 import Calendar from "@/components/Calendar.vue";
-import Loading from "@/components/Loading.vue";
 import Map from "@/components/Map.vue";
 import NotFound from "@/routes/NotFound.vue";
 import StarVizIcon from "@/components/StarVizIcon.vue";
@@ -330,7 +329,6 @@ export default {
   components: {
     BackendSearch,
     Calendar,
-    Loading,
     Map,
     NotFound,
     StarVizIcon,
@@ -356,6 +354,7 @@ export default {
       state: null,
       latitude: null,
       longitude: null,
+      weatherIdx: 0,
       error: false
     };
   },
@@ -475,6 +474,14 @@ export default {
     },
     humanizeDate: function(date) {
       return format(parseISO(date), "eee");
+    },
+    focusWeather: function(idx) {
+      this.weatherIdx = idx;
+      let weatherSection = this.$refs.weather;
+      window.scrollTo({
+        top: weatherSection.offsetTop,
+        behavior: "smooth"
+      });
     },
     cloudCoverLayer: function(event) {
       let map = event.map;
@@ -626,6 +633,14 @@ export default {
   margin-right: auto;
 }
 
+.star-viz-icon {
+  cursor: pointer;
+}
+
+.star-viz-icon:hover {
+  color: #3273dc;
+}
+
 .rogue-sky__weather__item {
   margin: 0 0 0.5rem 0 !important;
 }
@@ -643,12 +658,20 @@ export default {
   position: absolute;
   left: 0;
   right: 0;
-  max-width: 700px; /* same as max-width on router-view */
+  max-width: 1000px;
   margin: auto;
+}
+
+.vc-container {
+  --day-content-height: 2rem;
 }
 
 .rogue-sky__additional-info {
   margin-bottom: 5rem;
+}
+
+.tabs a {
+  color: inherit !important;
 }
 
 .person-mountain-moon {

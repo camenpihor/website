@@ -12,18 +12,24 @@
     :dragRotate="false"
     :keyboard="false"
     :touchZoomRotate="false"
+    :attributionControl="false"
     @load="onLoad"
   >
     <MglNavigationControl position="top-right" :showCompass="false" />
+    <MglAttributionControl :compact="true" />
   </MglMap>
 </template>
 
 <script>
 import Mapbox from "mapbox-gl";
-import { MglMap, MglNavigationControl } from "vue-mapbox";
+import {
+  MglMap,
+  MglNavigationControl,
+  MglAttributionControl
+} from "vue-mapbox";
 
 export default {
-  components: { MglMap, MglNavigationControl },
+  components: { MglMap, MglNavigationControl, MglAttributionControl },
   props: {
     latitude: {
       type: Number,

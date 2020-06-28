@@ -29,4 +29,16 @@ function compare(key) {
   };
 }
 
-export { compare, groupBy }
+function asyncComponent(component) {
+  return () => ({
+    component: new Promise(resolve => {
+      setTimeout(() => {
+        resolve(component);
+      }, 1000);
+    }),
+    delay: 0,
+    timeout: 3000
+  });
+}
+
+export { asyncComponent, compare, groupBy }
