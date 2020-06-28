@@ -50,7 +50,7 @@
           Best
           <img class="person-wave-move-image" :src="personWaveMoveFilePath" />
         </h1>
-        <div class="is-hidden-touch">
+        <div class="is-hidden-mobile">
           <div>
             <h1 class="heading is-size-7">Today</h1>
             <p class="heading is-size-9">
@@ -100,7 +100,7 @@
           </div>
         </div>
         <div
-          class="columns is-mobile is-hidden-desktop subsection"
+          class="columns is-mobile is-hidden-tablet subsection"
           style="margin-left:auto"
         >
           <div class="column">
