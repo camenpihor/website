@@ -136,8 +136,8 @@ def get_rss():
     for event in astronomical_events:
         item = add_subelement(channel, "item")
         add_subelement(item, "title", event["event"])
-        add_subelement(item, "link", "https://wwww.camenpiho.com/roguesky")
-        add_subelement(item, "guid", "https://wwww.camenpiho.com/roguesky")
+        add_subelement(item, "link", "https://www.camenpiho.com/roguesky")
+        add_subelement(item, "guid", "https://www.camenpiho.com/roguesky")
         add_subelement(item, "author", "camen.rogue@gmail.com (Camen Piho)")
         add_subelement(
             item, "pubDate", datetime.datetime.utcnow().strftime(XML_DATETIME_FORMAT),
