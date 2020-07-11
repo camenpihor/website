@@ -18,9 +18,9 @@
             I’m a recently unemployed data scientist in my late 20s, who is
             taking some time to amble. My roaming is currently taking me to the
             stars, trees, birds, and the clouds, but I’m not too sure where I’ll
-            end up. I like to think that I am a good Bayesian, but
-            I also like seeking wonder which makes me want to talk about the
-            world in different ways.
+            end up. I like to think that I am a good Bayesian, but I also like
+            seeking wonder which makes me want to talk about the world in
+            different ways.
           </p>
           <p>
             I made this site as a collection for my amblings. Here, you’ll find
@@ -45,6 +45,9 @@
     <hr />
 
     <div class="section">
+      <div class="is-relative">
+        <img class="person-parachute" :src="personParachuteFilePath" />
+      </div>
       <h1 class="title is-4 has-text-centered">
         These are my projects
       </h1>
@@ -56,7 +59,15 @@
         <p class="subtitle is-6">
           Just a space for my thoughts on things. Probably mostly on topics that
           I find interesting or wondrous, and probably not much on current
-          events.
+          events. I write some long-form entries on particular topics, and also
+          <router-link
+            :to="{
+              name: 'blog-post',
+              params: { id: 'introducing-nature-and-links' }
+            }"
+          >
+            two series on nature and interesting links </router-link
+          >.
         </p>
       </div>
       <div class="subsection">
@@ -101,9 +112,6 @@
     <hr />
 
     <div class="section">
-      <div class="is-relative">
-        <img class="person-parachute" :src="personParachuteFilePath" />
-      </div>
       <h1 class="title is-4 has-text-centered">
         And this is my website
       </h1>
