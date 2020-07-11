@@ -59,3 +59,13 @@ Governed by the formula (Jurin's Law):
   for water this works out to:
     h ~ (1.48 * 10^-5 m^2) / r
 
+
+What is capillary action?
+
+The ability of a liquid to flow in narrows spaces without the assistance of external
+forces due to cohesion and adhesion.
+
+Cohesion is the manifestation of the bonding electrostatic force of similar molecules, and
+adhesion is the bonding electrostatic force of dissimilar molecules (things and cohere and
+adhere for reasons other than the electrostatic force, but in trees this is the case).
+

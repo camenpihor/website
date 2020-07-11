@@ -45,9 +45,7 @@ Vue
 - add report a bug feature
 - rss
   - max of 10 blog posts
-- figure out how to slim down hosted fontawesome
-- figure out how to slim down asset size
-- use vue-mapbox
+- background color and fade in on click
 
 - new pages
   - nature identification
