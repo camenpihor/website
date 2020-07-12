@@ -66,7 +66,7 @@
               params: { id: 'introducing-nature-and-links' }
             }"
           >
-            two series on nature and interesting links </router-link
+            two series on nature and interesting links</router-link
           >.
         </p>
       </div>
