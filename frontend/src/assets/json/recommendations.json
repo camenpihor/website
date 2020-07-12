@@ -188,8 +188,7 @@
         "group_label": "pirateaba",
         "label": "the wandering inn",
         "tags": [
-            "fantasy",
-            "female author"
+            "fantasy"
         ],
         "endorsement": "I do read a lot of fantasy... But lately, I've become really annoyed with the constant glory of violence and 18th century societies. I found this long series so refreshing from this tendency of fantasy. It begins as an introduction to LitRPG and the huge world, while slowly giving you glimpses of what's moving behind the curtain. I'm very thankful for this long, ongoing series by pirateaba. Great for plane rides. Also, like all the webfiction here, its free.",
         "kind": "web fiction"
@@ -394,6 +393,20 @@
             "education"
         ],
         "endorsement": null,
+        "kind": "book"
+    },
+    {
+        "url": "https://www.goodreads.com/book/show/50887097-why-fish-don-t-exist",
+        "group_label": "lulu miller",
+        "label": "why fish don't exist",
+        "tags": [
+            "biology",
+            "science",
+            "biography",
+            "history",
+            "emotional"
+        ],
+        "endorsement": "An extremely personal narrative of the author's pursuit of meaning. I found it incredibly tender and vulnerable. Reading it, I was inspired to fight the fear of being vulnerable and the fear of thinking about the hard questions that live with us. The content is definitely interesting, but I mostly came away extremely thankful for the author's sincerity.",
         "kind": "book"
     }
 ]
