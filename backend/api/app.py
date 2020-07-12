@@ -59,7 +59,6 @@ def get_astronomical_events():
 def get_blog_posts():
     """Get blog posts."""
     _logger.info("Getting blog posts...")
-    print("here")
     data = _read_blog_posts(include_content=False)
     return _json_response(data=data)
 
@@ -75,10 +74,14 @@ def get_blog_post(title):
 
 @app.route("/api/rss")
 def get_rss():
-    """Get the RSS feed."""
+    """Create the RSS feed.
+
+    Includes up to 10 of the most recent blog posts and any asttronomical events happening
+    today.
+    """
     _logger.info("Serving RSS...")
 
-    posts = _read_blog_posts()
+    posts = _read_blog_posts()[:10]
 
     astronomical_events = [
         event
@@ -155,6 +158,7 @@ def _read_astronomical_events():
 
 
 def _read_blog_posts(include_content=True):
+    """Read, parse, and order blog posts."""
     posts = [
         _parse_blog_post(filepath=filepath, include_content=include_content)
         for filepath in glob.glob(
