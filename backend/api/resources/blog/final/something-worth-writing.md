@@ -1,6 +1,6 @@
 ---
 {
-  "title": "something worth writing", "url": "something-worth-writing", "date": "20 June
+  "title": "Something Worth Writing", "url": "something-worth-writing", "date": "20 June
   2020", "summary": "There doesn't seem to be any standard way to start a blog, and
   there's probably a good reason for that. So, instead of trying to optimize how to start
   this one, I'm just going to start writing..."

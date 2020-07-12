@@ -1,6 +1,6 @@
 ---
 {
-  "title": "Introducing the Nature Journal and Links Series",
+  "title": "Introducing a Nature Journal and Links Series",
   "url": "introducing-nature-and-links",
   "date": "11 July 2020",
   "summary": "I am continung to write long-form posts on specific topics, but I want to

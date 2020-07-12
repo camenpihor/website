@@ -2,7 +2,7 @@
   <section class="blog-post">
     <NotFound v-if="error === true" :requestedPath="this.$route.fullPath" />
     <div v-if="postTitle != null" class="section">
-      <h1 class="title is-3 is-capitalized">{{ postTitle }}</h1>
+      <h1 class="title is-3">{{ postTitle }}</h1>
       <p class="subtitle is-7">{{ postDate }}</p>
       <div class="content" v-html="postContent" />
       <img class="person-bowling" :src="personBowlingFilepath" />

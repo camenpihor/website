@@ -15,7 +15,7 @@
           v-for="post in searchResults"
           :key="post.title"
         >
-          <h1 class="title is-4 is-capitalized">{{ post.title }}</h1>
+          <h1 class="title is-4">{{ post.title }}</h1>
           <p class="subtitle is-7">{{ post.date }}</p>
           <div>{{ post.summary }}</div>
           <p>

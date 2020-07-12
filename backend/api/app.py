@@ -59,8 +59,8 @@ def get_astronomical_events():
 def get_blog_posts():
     """Get blog posts."""
     _logger.info("Getting blog posts...")
-    filepaths = glob.glob(os.path.join("api", "resources", "blog", "final", "*.md"))
-    data = [_parse_blog_post(filepath=filepath, content=False) for filepath in filepaths]
+    print("here")
+    data = _read_blog_posts(include_content=False)
     return _json_response(data=data)
 
 
@@ -78,12 +78,8 @@ def get_rss():
     """Get the RSS feed."""
     _logger.info("Serving RSS...")
 
-    posts = [
-        _parse_blog_post(filepath=filepath)
-        for filepath in glob.glob(
-            os.path.join("api", "resources", "blog", "final", "*.md")
-        )
-    ]
+    posts = _read_blog_posts()
+
     astronomical_events = [
         event
         for event in _read_astronomical_events()
@@ -158,13 +154,28 @@ def _read_astronomical_events():
     return events
 
 
-def _parse_blog_post(filepath, content=True):
+def _read_blog_posts(include_content=True):
+    posts = [
+        _parse_blog_post(filepath=filepath, include_content=include_content)
+        for filepath in glob.glob(
+            os.path.join("api", "resources", "blog", "final", "*.md")
+        )
+    ]
+    posts = sorted(
+        posts,
+        key=lambda post: datetime.datetime.strptime(post["date"], "%d %B %Y"),
+        reverse=True,
+    )
+    return posts
+
+
+def _parse_blog_post(filepath, include_content=True):
     """Parse blog post markdown into HTML.
 
     Parameters
     ----------
     filepath : str
-    content : bool, optional
+    include_content : bool, optional
         Whether to include blog content, or just summary, by default True
 
     Returns
@@ -194,7 +205,7 @@ def _parse_blog_post(filepath, content=True):
     _, metadata, post_markdown = data.split("---", 2)
 
     metadata = json.loads(metadata.replace("\n", "").replace("  ", " "))
-    if content:
+    if include_content:
         metadata["content"] = markdown(post_markdown)
     return metadata
 
