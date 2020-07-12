@@ -82,20 +82,6 @@
         </p>
       </div>
       <div class="subsection">
-        <router-link :to="{ name: 'nature' }">
-          <span class="is-size-5 has-text-weight-bold"
-            >Nature Identification</span
-          >
-        </router-link>
-        <p class="subtitle is-6">
-          I used to find it really hard not to be trapped inside my own brain
-          while walking through the natual world. So, I tried just being able to
-          name the things I was seeing, and I actually found this incredibly
-          enriching to my day-to-day. This is a place to gather the names I’ve
-          learned and the things that make of the places I’ve been.
-        </p>
-      </div>
-      <div class="subsection">
         <router-link :to="{ name: 'rogue-sky' }">
           <span class="is-size-5 has-text-weight-bold">RogueSky</span>
         </router-link>

@@ -47,13 +47,6 @@
         {
             "internal": true,
             "to": {
-                "name": "nature"
-            },
-            "label": "Nature Identification"
-        },
-        {
-            "internal": true,
-            "to": {
                 "name": "rogue-sky"
             },
             "label": "RogueSky"
