@@ -96,10 +96,14 @@ html {
 }
 
 a {
-  color: inherit;
+  color: $blue;
 }
 
-p a {
+.non-blue-link {
+  color: $grey-dark;
+}
+
+.non-blue-link:hover {
   color: $blue;
 }
 

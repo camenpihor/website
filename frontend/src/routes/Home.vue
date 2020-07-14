@@ -54,7 +54,7 @@
 
       <div class="subsection">
         <router-link :to="{ name: 'blog' }">
-          <span class="is-size-5 has-text-weight-bold">Blog</span>
+          <span class="is-size-5 has-text-weight-bold non-blue-link">Blog</span>
         </router-link>
         <p class="subtitle is-6">
           Just a space for my thoughts on things. Probably mostly on topics that
@@ -72,7 +72,7 @@
       </div>
       <div class="subsection">
         <router-link :to="{ name: 'math' }">
-          <span class="is-size-5 has-text-weight-bold"
+          <span class="is-size-5 has-text-weight-bold non-blue-link"
             >Math Implementations</span
           >
         </router-link>
@@ -83,7 +83,9 @@
       </div>
       <div class="subsection">
         <router-link :to="{ name: 'rogue-sky' }">
-          <span class="is-size-5 has-text-weight-bold">RogueSky</span>
+          <span class="is-size-5 has-text-weight-bold non-blue-link"
+            >RogueSky</span
+          >
         </router-link>
         <p class="subtitle is-6">
           One of the places to where I can constantly go to feel wonder is the
@@ -108,7 +110,9 @@
       >
         <p class="heading is-size-7">{{ group.groupLabel }}</p>
         <li v-for="route in group.routes" :key="route.label">
-          <router-link :to="route.to">{{ route.label }}</router-link>
+          <router-link class="non-blue-link" :to="route.to">{{
+            route.label
+          }}</router-link>
         </li>
       </ul>
     </div>
