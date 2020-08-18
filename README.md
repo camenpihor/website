@@ -53,3 +53,8 @@ Vue
 ## Nature Identification
 
 - https://www.planning.org/pas/reports/report236.htm
+
+## Recommendations to add
+
+- my drill
+- my water cup
