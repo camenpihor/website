@@ -41,8 +41,7 @@
           improving the ways in which we interact with and affect the world we inhabit.
         </p>
         <p>I'm on the job market looking for a platform that will allow me to continue my
-          practice and research into climatological phenomena using tools like machine
-        learning, computer vision, and numerical simulation before entering graduate study
+          practice and research into climatological phenomena before entering graduate study
         in Fall 2022. During my graduate study I plan to use numerical simulation and machine
         learning to pursue
           fundamental research into the earth's atmosphere and climate.
