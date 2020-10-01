@@ -40,15 +40,16 @@
           <a href="camen_piho_resume.pdf">4 years of training</a> who's all about
           improving the ways in which we interact with and affect the world we inhabit.
         </p>
-        <p>I am
-          looking to continue developing practical application and research
-          skills before entering graduate study in Fall 2022. During my graduate study I will be using numerical simulation and machine learning to pursue
+        <p>I'm on the job market looking for a platform that will allow me to continue my
+          practice and research into climatological phenomena using tools like machine
+        learning, computer vision, and numerical simulation before entering graduate study
+        in Fall 2022. During my graduate study I plan to use numerical simulation and machine
+        learning to pursue
           fundamental research into the earth's atmosphere and climate.
-
         </p>
         <p>I look not just at
           humanity's current planet, Earth, but beyond -- developing fundamental
-          understanding of climatology is instrumental to humanity's longetivity, wherever
+          understanding of climatology is instrumental to humanity's longevity, wherever
           we may be.
         </p>
         <p class="job__questions">
@@ -83,24 +84,25 @@
           I've worked in multiple research and industrial settings using tools like MCMC predictive
           modeling, causal inference, computer vision, data pipelining, and satellite
           imagery looking at critical interactions between humans and weather.
-          </p><p>With NASA
+          </p>
+          <p>With NASA
           we built computer vision models for wildfire detection using geostationary
           satellite imagery. With Freebird we built computational models to understand
           extreme weather events and how they impact air travel. And in my own time I've
-          maintained a longterm study of how evapotranspiration in trees drive global
+          maintained a long term study of how evapotranspiration in trees global
           weather patterns.
         </p>
         <p>
-          Currently, I am looking for platforms that will empower me to continue my
-          practice and research into climatological phenomena using tools like machine
-          learning, computer vision, and numerical simulation over the next 2 years.
+          Currently, I am looking for places where I can continue to learn about
+          climatological phenomena and practice state-of-the-art
+          techniques in machine learning, computer vision, and numerical simulation over the next 2 years.
         </p>
-        <p>Outside of jobs over the next 2 years, I am also extremeley interested in talking
+        <p>Outside of jobs over the next 2 years, I am also extremely interested in talking
         about academia, possible research directions, and life as a career scientist.
         </p>
         <p>
-          Some experiences that I think it would be really helpful to hear about (however,
-         by no means is this an exhaustive list):
+          Some experiences that I think it would be helpful to hear about (this, however,
+         is not an exhaustive list):
           <ul>
             <li>Research or industrial application in the domain of complex planetary
             systems (atmosphere, ecology, biosphere, ocean sciences, etc.)</li>
@@ -111,8 +113,8 @@
         </p>
         <p>
           Reach out to me at <a href="mailto://camen.piho.r@gamil.com">camen[dot]piho[dot]r@gmail.com</a>, if you are interested in
-          talking with me. I think continued fundamental research into climatology is
-          critical and any opportunity to talk more about it, is a good
+          talking. I think continued fundamental research into climatology is
+          critical and any opportunity to talk more about it is a good
           opportunity to me!
         </p>
       </div>
