@@ -30,6 +30,12 @@ const router = new VueRouter({
       beforeEnter() { location.href = "http://github.com/camenpihor" }
     },
     {
+      path: "/jobs",
+      name: "jobs",
+      component: () => import("./Jobs.vue"),
+      meta: { pageHome: "jobs" }
+    },
+    {
       path: "/blog",
       name: "blog",
       component: () => import("./Blog.vue"),
