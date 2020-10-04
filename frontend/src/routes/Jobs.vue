@@ -22,7 +22,7 @@
               /></a>
             </li>
             <li class="job__external">
-              <a href="mailto:camenrogue@gmail.com">
+              <a href="mailto:camen.piho.r@gmail.com">
                 <img :src="emailIconFilePath" class="job__icon" />
               </a>
             </li>
@@ -38,27 +38,66 @@
     <div class="section">
       <div class="content">
         <p class="has-text-centered is-size-3">
-          I'm on the job market!
+          I’m on the job market!
         </p>
         <p>
-          I'm a Data Scientist with
-          <a href="camen_piho_resume.pdf">4 years of training</a> who's
-          passionate about improving the ways in which we interact with and
-          affect the world we inhabit at a planetary scale.
+          I’m a Data Scientist who’s passionate about improving how we interact
+          with and affect the world we inhabit at planetary scale.
         </p>
         <p>
-          I'm on the job market looking for a platform that will allow me to
-          continue my practice and research in climatological phenomena before
-          entering graduate study in Fall 2022. During graduate study I plan to
-          use numerical simulation and machine learning to pursue fundamental
-          research into the earth's atmosphere and climate.
-        </p>
-        <p>
-          I look not just at humanity's current planet, Earth, but beyond --
+          After
+          <a href="camen_piho_resume.pdf" target="_blank">4 years of training</a
+          >, I want to use the tools that I’ve learned to take on what I see as
+          the one of the most important questions in science:
+          <strong
+            >How far can we push our understanding of planetary climates using
+            state-of-the-art machine learning and numerical simulation?</strong
+          >
+          I look not just at humanity’s current planet, Earth, but beyond --
           developing a fundamental understanding of climatology is instrumental
-          to humanity's longevity, wherever we may be.
+          to humanity’s longevity, wherever we may be.
         </p>
-        <p class="job__questions">
+        <p>
+          <strong
+            >I am looking for a job that will allow me to continue learning
+            about climate science and to stay abreast of new techniques in
+            machine learning, computer vision, and numerical simulation</strong
+          >
+          until beginning graduate school, which I aim to do in Fall 2022.
+        </p>
+        <p>
+          In my career so far, I’ve applied MCMC predictive modeling, causal
+          inference, computer vision, data pipelining, and satellite imagery
+          analysis to study how humans and weather systems impact one another.
+        </p>
+        <p>
+          With NASA, I built computer vision models for wildfire detection using
+          geostationary satellite imagery; with Freebird, I built computational
+          models to understand extreme weather events and how they impact air
+          travel; and in a long-running personal project, I’ve studied how
+          evapotranspiration in trees affects global weather patterns.
+        </p>
+        <p>
+          In addition to trying to find the best job for the next two years,
+          <strong
+            >I’m also broadly interested in talking to climate researchers
+            working in academia or industry</strong
+          >.
+        </p>
+        <p>
+          I think continued fundamental research into climatology is critical
+          and any opportunity to talk more about it is a great opportunity to
+          me. If you think I could contribute to your work or you would be open
+          to receive questions about the intersection between machine learning
+          and climatology, please reach out to me at
+          <a href="mailto:camen.piho.r@gmail.com"
+            >camen[dot]piho[dot]r@gmail.com</a
+          >.
+        </p>
+        <div class="job__questions">
+          <h1 class="title is-4">
+            Some specific questions
+          </h1>
           <b-collapse
             animation="slide"
             v-for="(collapse, index) of collapses"
@@ -89,55 +128,33 @@
               </ul>
             </div>
           </b-collapse>
-        </p>
-        <p>
-          In order to build up my toolbox to tackle these complex systems, I've
-          worked in multiple research and industrial settings using tools like
-          MCMC predictive modeling, causal inference, computer vision, data
-          pipelining, and satellite imagery looking at critical interactions
-          between humans and weather.
-        </p>
-        <p>
-          With NASA I built computer vision models for wildfire detection using
-          geostationary satellite imagery; with Freebird I built computational
-          models to understand extreme weather events and how they impact air
-          travel.; and in my own time I've maintained a long term study of how
-          evapotranspiration in trees global weather patterns.
-        </p>
-        <p>
-          Currently, I am looking for places where I can continue to learn about
-          climatological phenomena and practice state-of-the-art techniques in
-          machine learning, computer vision, and numerical simulation until
-          graduate school in Fall 2022.
-        </p>
-        <p>
-          Outside of talking about jobs, I am also extremely interested in
-          talking about academia, possible research directions, and life as a
-          career scientist.
-        </p>
-        <p>
-          Some experiences that I think it would be helpful to hear about (not
-          an exhaustive list):
-        </p>
-        <ul>
+        </div>
+        <ul class="jobs__links">
           <li>
-            Research or industrial application in the domain of complex
-            planetary systems (atmosphere, ecology, biosphere, ocean sciences,
-            etc.)
+            <span class="has-text-weight-bold">GitHub</span>:
+            <router-link :to="{ name: 'github' }" target="_blank"
+              >github.com/camenpihor</router-link
+            >
           </li>
-          <li>The intersection between tech and climate research</li>
-          <li>Chicago-based data scientists</li>
-          <li>Scalable Bayesian modeling</li>
-          <li>Applied statistics</li>
+          <li>
+            <span class="has-text-weight-bold">Resume</span>:
+            <a href="camen_piho_resume.pdf" target="_blank"
+              >camenpiho.com/camen_piho_resume.pdf</a
+            >
+          </li>
+          <li>
+            <span class="has-text-weight-bold">Email</span>:
+            <a href="mailto:camen.piho.r@gmail.com"
+              >camen[dot]piho[dot]r@gmail.com</a
+            >
+          </li>
+          <li>
+            <span class="has-text-weight-bold">LinkedIn</span>:
+            <a href="https://www.linkedin.com/in/camen-piho/" target="_blank">
+              linkedin.com/in/camen-piho/
+            </a>
+          </li>
         </ul>
-        <p>
-          Reach out to me at
-          <a href="mailto://camen.piho.r@gmail.com"
-            >camen[dot]piho[dot]r@gmail.com</a
-          >, if you are interested in talking. I think continued fundamental
-          research into climatology is critical and any opportunity to talk more
-          about it is a great opportunity to me!
-        </p>
       </div>
     </div>
   </section>
@@ -152,13 +169,13 @@ export default {
       githubIconFilePath: require("@/assets/icons/github-icon.svg"),
       emailIconFilePath: require("@/assets/icons/email-icon.svg"),
       linkedinIconFilePath: require("@/assets/icons/linkedin-icon.svg"),
-      isOpen: 0,
+      isOpen: -1,
       collapses: [
         {
           title: "Jobs",
           questions: [
-            "Do you know of any academic labs that would be interested in an industrially-trained data scientist?",
-            "Do you know of any companies inhabiting the intersection between tech and earth science?",
+            "Do you know of any academic labs that would be interested in an industrially trained data scientist?",
+            "Do you know of any companies inhabiting the intersection between machine learning and earth science?",
             "Do you know of any geospatial companies looking for a data scientist or python engineer?",
             "Do you know any people that would be interested in talking more with me?",
           ],
@@ -182,19 +199,12 @@ export default {
           ],
         },
         {
-          title: "Bayesian Statistics in Academia",
-          questions: [
-            "How is the adoption of Bayes?",
-            "How do people communicate Bayesian approaches in their research?",
-          ],
-        },
-        {
           title: "Applied Statistics Graduate Study",
           questions: [
             "What does a program tend to look like?",
             "How much freedom is there to work with other departments while pursuing your degree?",
             "What type of experience is useful when applying?",
-            "Do you know anyone with a graduate degree in applied statistics that would want to talk with me about their work and path?",
+            "Do you know anyone with a graduate degree in applied statistics who might be willing to talk with me about their work and path?",
           ],
         },
       ],
@@ -210,7 +220,7 @@ export default {
 }
 
 .job__externals {
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .job__external {
@@ -219,8 +229,8 @@ export default {
 
 .job__icon {
   cursor: pointer;
-  margin-right: 1rem;
-  margin-left: 1rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
   height: 3rem;
   width: 3rem;
 }
@@ -233,5 +243,10 @@ export default {
 .job__questions {
   margin-top: 3rem !important;
   margin-bottom: 3rem !important;
+}
+
+.jobs__links {
+  list-style: none !important;
+  margin-left: 0 !important;
 }
 </style>

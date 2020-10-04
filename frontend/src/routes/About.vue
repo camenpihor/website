@@ -14,7 +14,7 @@
           /></a>
         </li>
         <li class="about__external">
-          <a href="mailto:camenrogue@gmail.com">
+          <a href="mailto:camen.piho.r@gmail.com">
             <img :src="emailIconFilePath" class="about__icon" />
           </a>
         </li>

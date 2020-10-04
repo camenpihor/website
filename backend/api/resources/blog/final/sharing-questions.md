@@ -48,4 +48,4 @@ In no particular order:
 
 If you would like to see a post on one of these before the others or would be interested in
 collaboration, let me know! I can be reached at
-[camen[dot]rogue[at]gmail.com](mailto:camen.rogue@gmail.com) :)
+[camen[dot]piho[dot]r@gmail.com](mailto:camen.piho.r@gmail.com) :)

@@ -31,9 +31,9 @@
           <p>
             Anyways, if you’ve found this page, I hope that you enjoy it. If you
             feel like you want to, feel free to send me an email (<a
-              href="mailto://camen.piho.r@gmail.com"
+              href="mailto:camen.piho.r@gmail.com"
               class="is-size-7"
-              >camen[dot]piho[dot]r@gmail.com</a
+            >camen[dot]piho[dot]r@gmail.com</a
             >) with a question! I like talking about most things for a short
             while, but I can talk forever about physics, statistics, astronomy,
             ecology, fantasy, and science fiction. I may even have a fun fact or

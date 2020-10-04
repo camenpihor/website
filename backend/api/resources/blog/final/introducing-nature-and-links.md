@@ -47,4 +47,4 @@ that it could be nice to share some of that with others.
 
 Thanks for reading! If any of these seem particularly interesting, or you would like to
 encourage me to highlight something in the nature journal or links posts, let me
-know at [camen[dot]piho[at]gmail.com](mailto:camen.rogue@gmail.com). :)
+know at [camen[dot]piho[dot]r@gmail.com](mailto:camen.piho.r@gmail.com). :)
