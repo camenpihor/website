@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>linkedin-icon</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="linkedin-icon">
+            <rect id="Rectangle" stroke="#979797" x="0.5" y="0.5" width="199" height="199" rx="20"></rect>
+            <g id="linkedin" transform="translate(44.000000, 44.000000)" fill="#4C4C4C" fill-rule="nonzero">
+                <polygon id="Path-Copy" points="24.9654135 112 2 112 2 37 25 37 25 112"></polygon>
+                <path d="M13.5,27 C6.03116883,27 0,20.9337662 0,13.5 C0,6.06623377 6.03116883,0 13.5,0 C20.9337662,0 27,6.06623377 27,13.5 C27,20.9688312 20.9688312,27 13.5,27 L13.5,27 Z" id="Path-Copy-2"></path>
+                <path d="M112,112 L88.6061776,112 L88.6061776,75.4504792 C88.6061776,66.7348243 88.4300193,55.5239617 76.4512548,55.5239617 C64.2611004,55.5239617 62.3938224,65.0127796 62.3938224,74.8178914 L62.3938224,112 L39,112 L39,36.8626198 L61.4425676,36.8626198 L61.4425676,47.1246006 L61.7596525,47.1246006 C64.8952703,41.2204473 72.5405405,35 83.9203668,35 C107.596042,35 112,50.5686901 112,70.8115016 L112,112 L112,112 Z" id="Path-Copy-3"></path>
+            </g>
+        </g>
+    </g>
+</svg>

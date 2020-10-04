@@ -26,6 +26,11 @@
                 <img :src="emailIconFilePath" class="job__icon" />
               </a>
             </li>
+            <li class="job__external">
+              <a href="https://www.linkedin.com/in/camen-piho/" target="_blank"
+                ><img :src="linkedinIconFilePath" class="job__icon"
+              /></a>
+            </li>
           </ul>
         </div>
       </div>
@@ -36,85 +41,101 @@
           I'm on the job market!
         </p>
         <p>
-          I'm a Data Scientist with about
-          <a href="camen_piho_resume.pdf">4 years of training</a> who's all about
-          improving the ways in which we interact with and affect the world we inhabit.
+          I'm a Data Scientist with
+          <a href="camen_piho_resume.pdf">4 years of training</a> who's
+          passionate about improving the ways in which we interact with and
+          affect the world we inhabit at a planetary scale.
         </p>
-        <p>I'm on the job market looking for a platform that will allow me to continue my
-          practice and research into climatological phenomena before entering graduate study
-        in Fall 2022. During my graduate study I plan to use numerical simulation and machine
-        learning to pursue
-          fundamental research into the earth's atmosphere and climate.
+        <p>
+          I'm on the job market looking for a platform that will allow me to
+          continue my practice and research in climatological phenomena before
+          entering graduate study in Fall 2022. During graduate study I plan to
+          use numerical simulation and machine learning to pursue fundamental
+          research into the earth's atmosphere and climate.
         </p>
-        <p>I look not just at
-          humanity's current planet, Earth, but beyond -- developing fundamental
-          understanding of climatology is instrumental to humanity's longevity, wherever
-          we may be.
+        <p>
+          I look not just at humanity's current planet, Earth, but beyond --
+          developing a fundamental understanding of climatology is instrumental
+          to humanity's longevity, wherever we may be.
         </p>
         <p class="job__questions">
-        <b-collapse
+          <b-collapse
             animation="slide"
             v-for="(collapse, index) of collapses"
             :key="index"
             :open="isOpen == index"
             @open="isOpen = index"
+          >
+            <div
+              slot="trigger"
+              slot-scope="props"
+              class="card-header"
+              role="button"
             >
-            <div slot="trigger" slot-scope="props" class="card-header"
-                role="button">
               <a class="card-header-icon">
-                    <b-icon
-                        pack="fas" :icon="props.open ? 'chevron-down' : 'chevron-right'">
-                    </b-icon>
-                </a>
-                <p class="card-header-title">
-                    {{ collapse.title }}
-                </p>
+                <b-icon
+                  pack="fas"
+                  :icon="props.open ? 'chevron-down' : 'chevron-right'"
+                >
+                </b-icon>
+              </a>
+              <p class="card-header-title">{{ collapse.title }}</p>
             </div>
             <div class="card-content">
-                <ul>
-                  <li v-for="question in collapse.questions" :key="question">
-                    {{ question }}
-                  </li>
-                </ul>
+              <ul>
+                <li v-for="question in collapse.questions" :key="question">
+                  {{ question }}
+                </li>
+              </ul>
             </div>
-        </b-collapse>
+          </b-collapse>
         </p>
         <p>
-          I've worked in multiple research and industrial settings using tools like MCMC predictive
-          modeling, causal inference, computer vision, data pipelining, and satellite
-          imagery looking at critical interactions between humans and weather.
-          </p>
-          <p>With NASA
-          we built computer vision models for wildfire detection using geostationary
-          satellite imagery. With Freebird we built computational models to understand
-          extreme weather events and how they impact air travel. And in my own time I've
-          maintained a long term study of how evapotranspiration in trees global
-          weather patterns.
+          In order to build up my toolbox to tackle these complex systems, I've
+          worked in multiple research and industrial settings using tools like
+          MCMC predictive modeling, causal inference, computer vision, data
+          pipelining, and satellite imagery looking at critical interactions
+          between humans and weather.
+        </p>
+        <p>
+          With NASA I built computer vision models for wildfire detection using
+          geostationary satellite imagery; with Freebird I built computational
+          models to understand extreme weather events and how they impact air
+          travel.; and in my own time I've maintained a long term study of how
+          evapotranspiration in trees global weather patterns.
         </p>
         <p>
           Currently, I am looking for places where I can continue to learn about
-          climatological phenomena and practice state-of-the-art
-          techniques in machine learning, computer vision, and numerical simulation over the next 2 years.
-        </p>
-        <p>Outside of jobs over the next 2 years, I am also extremely interested in talking
-        about academia, possible research directions, and life as a career scientist.
+          climatological phenomena and practice state-of-the-art techniques in
+          machine learning, computer vision, and numerical simulation until
+          graduate school in Fall 2022.
         </p>
         <p>
-          Some experiences that I think it would be helpful to hear about (this, however,
-         is not an exhaustive list):
-          <ul>
-            <li>Research or industrial application in the domain of complex planetary
-            systems (atmosphere, ecology, biosphere, ocean sciences, etc.)</li>
-            <li>Chicago-based data scientists</li>
-            <li>Research into scalable Bayesian modeling</li>
-            <li>Research into applied statistics</li>
-          </ul>
+          Outside of talking about jobs, I am also extremely interested in
+          talking about academia, possible research directions, and life as a
+          career scientist.
         </p>
         <p>
-          Reach out to me at <a href="mailto://camen.piho.r@gamil.com">camen[dot]piho[dot]r@gmail.com</a>, if you are interested in
-          talking. I think continued fundamental research into climatology is
-          critical and any opportunity to talk more about it is a good
-          opportunity to me!
+          Some experiences that I think it would be helpful to hear about (not an exhaustive list):
+        </p>
+        <ul>
+          <li>
+            Research or industrial application in the domain of complex
+            planetary systems (atmosphere, ecology, biosphere, ocean sciences,
+            etc.)
+          </li>
+          <li>The intersection between tech and climate research</li>
+          <li>Chicago-based data scientists</li>
+          <li>Scalable Bayesian modeling</li>
+          <li>Applied statistics</li>
+        </ul>
+        <p>
+          Reach out to me at
+          <a href="mailto://camen.piho.r@gamil.com"
+            >camen[dot]piho[dot]r@gmail.com</a
+          >, if you are interested in talking. I think continued fundamental
+          research into climatology is critical and any opportunity to talk more
+          about it is a great opportunity to me!
         </p>
       </div>
     </div>
@@ -129,27 +150,51 @@ export default {
       resumeIconFilePath: require("@/assets/icons/resume-icon.svg"),
       githubIconFilePath: require("@/assets/icons/github-icon.svg"),
       emailIconFilePath: require("@/assets/icons/email-icon.svg"),
+      linkedinIconFilePath: require("@/assets/icons/linkedin-icon.svg"),
       isOpen: 0,
       collapses: [
         {
           title: "Jobs",
-          questions: ["This is a question?", "And this is another question?", "But this is also a question?"],
+          questions: [
+            "Do you know of any academic labs that would be interested in an industrially-trained data scientist?",
+            "Do you know of any companies inhabiting the intersection between tech and earth science?",
+            "Do you know of any geospatial companies looking for a data scientist or python engineer?",
+            "Do you know any people that would be interested in talking more with me?",
+          ],
         },
         {
           title: "Earth Sciences",
-          questions: ["This is a question?", "And this is another question?", "But this is also a question?"],
+          questions: [
+            "Do you know any active researchers that would be interested in talking with me about their work and path?",
+            "Do you know of any interesting projects that I should check out?",
+            "Do you know of any labs that would be interested in a data scientist?",
+          ],
         },
         {
           title: "Machine Learning in Earth Sciences",
-          questions: ["This is a question?", "And this is another question?", "But this is also a question?"],
+          questions: [
+            "What are the effects of pursuing a graduate degree in earth science versus applied statistics?",
+            "What tools are currently being developed?",
+            "Do you know of any departments, labs, or people inhabiting this space that I should reach out to?",
+            "What's the bread-and-butter toolbox used?",
+            "Do you know of any interesting papers or research being conducted in this space?",
+          ],
         },
         {
           title: "Bayesian Statistics in Academia",
-          questions: ["This is a question?", "And this is another question?", "But this is also a question?"],
+          questions: [
+            "How is the adoption of Bayes?",
+            "How do people communicate Bayesian approaches in their research?",
+          ],
         },
         {
           title: "Applied Statistics Graduate Study",
-          questions: ["This is a question?", "And this is another question?", "But this is also a question?"],
+          questions: [
+            "What does a program tend to look like?",
+            "How much freedom is there to work with other departments while pursuing your degree?",
+            "What type of experience is useful when applying?",
+            "Do you know anyone with a graduate degree in applied statistics that would want to talk with me about their work and path?",
+          ],
         },
       ],
     };
