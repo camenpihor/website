@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <div class="section">
+    <div class="section jobs__text">
       <div class="content">
         <p class="has-text-centered is-size-3">
           I’m on the job market!
@@ -94,7 +94,7 @@
             >camen[dot]piho[dot]r@gmail.com</a
           >.
         </p>
-        <div class="job__questions">
+        <div class="jobs__questions">
           <h1 class="title is-4">
             Some specific questions
           </h1>
@@ -215,8 +215,8 @@ export default {
 
 <style>
 .job__image {
-  height: 12rem;
-  width: 12rem;
+  height: 10rem;
+  width: 10rem;
 }
 
 .job__externals {
@@ -240,7 +240,11 @@ export default {
   border-radius: 6px;
 }
 
-.job__questions {
+.jobs__text {
+  padding-top: 2rem;
+}
+
+.jobs__questions {
   margin-top: 3rem !important;
   margin-bottom: 3rem !important;
 }
