@@ -132,7 +132,7 @@
         </ul>
         <p>
           Reach out to me at
-          <a href="mailto://camen.piho.r@gamil.com"
+          <a href="mailto://camen.piho.r@gmail.com"
             >camen[dot]piho[dot]r@gmail.com</a
           >, if you are interested in talking. I think continued fundamental
           research into climatology is critical and any opportunity to talk more
