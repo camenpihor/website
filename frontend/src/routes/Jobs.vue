@@ -116,7 +116,8 @@
           career scientist.
         </p>
         <p>
-          Some experiences that I think it would be helpful to hear about (not an exhaustive list):
+          Some experiences that I think it would be helpful to hear about (not
+          an exhaustive list):
         </p>
         <ul>
           <li>

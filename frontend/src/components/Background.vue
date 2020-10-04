@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  props: ["filePath"]
+  props: ["filePath"],
 };
 </script>
 

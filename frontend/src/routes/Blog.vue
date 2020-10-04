@@ -41,7 +41,7 @@ import { getBlogPosts } from "@/assets/js/api.js";
 export default {
   components: {
     NoResults,
-    ClientSideSearch
+    ClientSideSearch,
   },
   data() {
     return {
@@ -50,20 +50,20 @@ export default {
       isSmallWindow: window.innerWidth <= 1023,
       searchKeys: ["html", "title"],
       searchUUID: "url",
-      searchResults: null
+      searchResults: null,
     };
   },
   methods: {
     initialize: function() {
-      getBlogPosts().then(response => {
+      getBlogPosts().then((response) => {
         this.blogPostsJson = response.data;
         this.searchResults = response.data;
       });
-    }
+    },
   },
   mounted() {
     this.initialize();
-  }
+  },
 };
 </script>
 

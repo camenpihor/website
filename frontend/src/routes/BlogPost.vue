@@ -17,7 +17,7 @@ import { getBlogPost } from "@/assets/js/api.js";
 
 export default {
   components: {
-    NotFound
+    NotFound,
   },
   data() {
     return {
@@ -25,7 +25,7 @@ export default {
       postTitle: null,
       postContent: null,
       postDate: null,
-      personBowlingFilepath: require("@/assets/people/person-bowling.svg")
+      personBowlingFilepath: require("@/assets/people/person-bowling.svg"),
     };
   },
   methods: {
@@ -35,7 +35,7 @@ export default {
       this.getPost(this.postID);
     },
     getPost: function(postID) {
-      getBlogPost(postID).then(response => {
+      getBlogPost(postID).then((response) => {
         if (response.data != null) {
           this.postTitle = response.data.title;
           this.postDate = response.data.date;
@@ -45,18 +45,18 @@ export default {
           return null;
         }
       });
-    }
+    },
   },
   watch: {
     $route(to, from) {
       if (to !== from) {
         this.initialize();
       }
-    }
+    },
   },
   mounted() {
     this.initialize();
-  }
+  },
 };
 </script>
 

@@ -1,412 +1,298 @@
 [
-    {
-        "url": "https://eukaryotewritesblog.com/2017/05/29/beespotting-on-i-5/",
-        "group_label": "eukaryote writes blog",
-        "label": "animal welfare approach to honey",
-        "tags": [
-            "ethics",
-            "animals",
-            "nature"
-        ],
-        "endorsement": "Some really interesting facts about bees!",
-        "kind": "blog"
-    },
-    {
-        "url": "https://www.lesswrong.com/posts/GLMFmFvXGyAcG25ni/i-can-tolerate-anything-except-the-outgroup",
-        "group_label": "ssc",
-        "label": "i can tolerate anything except the outgroup",
-        "tags": [
-            "ethics",
-            "morality"
-        ],
-        "endorsement": null,
-        "kind": "blog"
-    },
-    {
-        "url": "https://www.lesswrong.com/posts/rkpDX7j7va6c8Q7cZ/in-favor-of-niceness-community-and-civilization",
-        "group_label": "ssc",
-        "label": "in favor of niceness, community, and civilization",
-        "tags": [
-            "ethics",
-            "morality"
-        ],
-        "endorsement": null,
-        "kind": "blog"
-    },
-    {
-        "url": "http://mindingourway.com/guilt/",
-        "group_label": "minding our way",
-        "label": "replacing guilt",
-        "tags": [
-            "ethics",
-            "morality"
-        ],
-        "endorsement": "This is a super long series in which Nate Soares explores how he has come to orient to guilt. I found the framings incredibly useful as it guided my own, and the tools espoused less so, but most likely because they are more life-journey-esque rather than something one can just do to affect immediate change. In particular, the conversation around 'shoulds' is what I find myself thinking about most.",
-        "kind": "blog"
-    },
-    {
-        "url": "https://en.wikipedia.org/wiki/Mistborn:_The_Final_Empire",
-        "group_label": "brandon sanderson",
-        "label": "mistborn: the final empire",
-        "tags": [
-            "fantasy"
-        ],
-        "endorsement": "Really interesting hard magic system that feels rich and fully explored. Brandon Sanderson is just a great world builder.",
-        "kind": "book"
-    },
-    {
-        "url": "https://en.wikipedia.org/wiki/Mars_trilogy",
-        "group_label": "kim stanley robinson",
-        "label": "red mars",
-        "tags": [
-            "sci-fi",
-            "science",
-            "nature"
-        ],
-        "endorsement": "What's it like to colonize Mars? This is a trilogy exploring that question in all its science, philosophy, politcal science, climate change.",
-        "kind": "book"
-    },
-    {
-        "url": "https://en.wikipedia.org/wiki/The_Fifth_Season_(novel)",
-        "group_label": "n.k. jemisin",
-        "label": "the fifth season",
-        "tags": [
-            "fantasy",
-            "female author"
-        ],
-        "endorsement": null,
-        "kind": "book"
-    },
-    {
-        "url": "https://en.wikipedia.org/wiki/The_Lies_of_Locke_Lamora",
-        "group_label": "scott lynch",
-        "label": "the lies of locke lamora",
-        "tags": [
-            "fantasy"
-        ],
-        "endorsement": null,
-        "kind": "book"
-    },
-    {
-        "url": "https://en.wikipedia.org/wiki/The_Way_of_Kings",
-        "group_label": "brandon sanderson",
-        "label": "the way of kings",
-        "tags": [
-            "fantasy"
-        ],
-        "endorsement": null,
-        "kind": "book"
-    },
-    {
-        "url": "https://www.givewell.org/",
-        "group_label": null,
-        "label": "give well",
-        "tags": [
-            "ethics",
-            "morality",
-            "effective altruism"
-        ],
-        "endorsement": null,
-        "kind": "random"
-    },
-    {
-        "url": "https://www.sony.com/electronics/headband-headphones/wh-1000xm3",
-        "group_label": null,
-        "label": "these headphones",
-        "tags": [
-            "programming",
-            "music",
-            "technology"
-        ],
-        "endorsement": "I got headaches from a pair of Bose noise cancelling headphones and was afraid to try other ones. These, while pricey, are great. I don't get headaches, they're comfortable, bluetooth works great but can also be wired, good audio quality, charge with usb-c.",
-        "kind": "random"
-    },
-    {
-        "url": "https://www.outdoorresearch.com/us/mens-ferrosi-pants-269176",
-        "group_label": null,
-        "label": "these pants",
-        "tags": [
-            "clothing"
-        ],
-        "endorsement": "I have worn these pants almost daily for over a year, and they have not ripped yet (I usually get tears between my legs after a couple months). They are also incredibly light, but still warm for winter yet breathable for summer. Lastly, they are quick drying. I will buy these forever.",
-        "kind": "random"
-    },
-    {
-        "url": "https://www.amazon.com/MAXROCK-Sleep-Earplugs-Headphones-Meditation/dp/B071WRSL38",
-        "group_label": null,
-        "label": "these sleep earbuds",
-        "tags": [
-            "technology",
-            "music",
-            "sleeping"
-        ],
-        "endorsement": "I am kept awake a lot by an unqiet mind. I found that listening to a story while in bed incredibly useful in finding sleep. But, being a side sleeper, headphones are a no-go, and most earbuds are so bulky that they hurt my ears and give me a headache. These headphones don't hurt at all, and are cheap enough that buying them for this singular purpose was 100% worthwhile. The 3 audiobook apps I have used (kindle, audible, and libby) all have a sleep timer, which also acts as a cool way to see how long it took to fall asleep. When having a light on is okay, I mostly just read a book, but at times when its not, I found this routine incredibly useful, and these earbuds are great for that.",
-        "kind": "random"
-    },
-    {
-        "url": "https://coophomegoods.com/products/king-bamboo-shredded-memory-foam-pillow",
-        "group_label": null,
-        "label": "this pillow",
-        "tags": [
-            "sleeping"
-        ],
-        "endorsement": null,
-        "kind": "random"
-    },
-    {
-        "url": "https://code.visualstudio.com/",
-        "group_label": null,
-        "label": "vscode",
-        "tags": [
-            "programming"
-        ],
-        "endorsement": "Gah, I love this so much... It's so customizable, but also has insanely good presets. Starting from IntelliJ and PyCharm, I was so frustrated with setting it up on different computers, so ugly, and just incredibly weighted down by all these features that I didn't want. VSCode starts as lightweight and beautiful, but also has a rich ecosystem of add-ons so you can pick and choose. Also, the support for languages is great. As beutiful as emacs, but comes with just enough presets to be sooooo much easier. I'm a minimalist though, so I am incredibly aware that all may not agree.",
-        "kind": "random"
-    },
-    {
-        "url": "https://practicalguidetoevil.wordpress.com/",
-        "group_label": "erraticerrata",
-        "label": "a practical guide to evil",
-        "tags": [
-            "fantasy"
-        ],
-        "endorsement": null,
-        "kind": "web fiction"
-    },
-    {
-        "url": "http://www.hpmor.com/",
-        "group_label": "eliezer yudkowsky",
-        "label": "harry potter and the methods of rationality",
-        "tags": [
-            "fantasy"
-        ],
-        "endorsement": "I do really like the story of Harry Potter, and while still being able to enjoy the setting and the characters that I know so well, I found this a great alternate universe, with changes that just make sense and decision-making that is sooo much more relatable. You know the plot, but you also don't and it surprises you with turns. Its written as an entry guide to the rationality of lesswrong, but just ignore that and its gold. Also, its free.",
-        "kind": "web fiction"
-    },
-    {
-        "url": "https://wanderinginn.com/",
-        "group_label": "pirateaba",
-        "label": "the wandering inn",
-        "tags": [
-            "fantasy"
-        ],
-        "endorsement": "I do read a lot of fantasy... But lately, I've become really annoyed with the constant glory of violence and 18th century societies. I found this long series so refreshing from this tendency of fantasy. It begins as an introduction to LitRPG and the huge world, while slowly giving you glimpses of what's moving behind the curtain. I'm very thankful for this long, ongoing series by pirateaba. Great for plane rides. Also, like all the webfiction here, its free.",
-        "kind": "web fiction"
-    },
-    {
-        "url": "http://unsongbook.com/",
-        "group_label": "scott alexander",
-        "label": "unsong",
-        "tags": [
-            "fantasy"
-        ],
-        "endorsement": "So different and funny, and great. Just go read the first prologue (http://unsongbook.com/prologue-2/).",
-        "kind": "web fiction"
-    },
-    {
-        "url": "https://parahumans.wordpress.com/",
-        "group_label": "wildbow",
-        "label": "worm",
-        "tags": [
-            "fantasy"
-        ],
-        "endorsement": null,
-        "kind": "web fiction"
-    },
-    {
-        "url": "https://www.youtube.com/user/alectheblacksmith",
-        "group_label": null,
-        "label": "alec steele",
-        "tags": [
-            "engineering"
-        ],
-        "endorsement": "I knew nothing about blacksmithing and found myself really intrigued. He talks along the way explaining his thought processes or some tidbits about his craft, its not enough to learn blacksmithing by any means, but you feel like you are learning something. Also, its actually pretty therapeutic to just watch someone work sometimes haha. He's just a nice, jubilant fellow.",
-        "kind": "youtube"
-    },
-    {
-        "url": "https://www.youtube.com/watch?v=0rHUDWjR5gg&list=PL8dPuuaLjXtPAJr1ysd5yGIyiSFuh0mIL",
-        "group_label": "crash course",
-        "label": "astronomy",
-        "tags": [
-            "education",
-            "astonomy"
-        ],
-        "endorsement": "Astronomy just has this ability to inspire wonder so easily... Maybe because its so huge, but also just on the edge of understanding (even when its very much not), I don't know... But I found this series a great way build curiosity by also satisfying it.",
-        "kind": "youtube"
-    },
-    {
-        "url": "https://www.youtube.com/user/CGPGrey",
-        "group_label": null,
-        "label": "cgp grey",
-        "tags": [
-            "education"
-        ],
-        "endorsement": "I think of this as a video version of xkcd. You learn things which are mostly unnecessary, but still fun to know/learn, and every once in a while there's some gem that just enriches you as a person.",
-        "kind": "youtube"
-    },
-    {
-        "url": "https://www.youtube.com/user/minuteearth",
-        "group_label": null,
-        "label": "minuteearth",
-        "tags": [
-            "nature",
-            "education"
-        ],
-        "endorsement": "Very quick `here's some cool thing about nature` videos. I think the word for it is wholesome.",
-        "kind": "youtube"
-    },
-    {
-        "url": "https://www.youtube.com/channel/UC3KEoMzNz8eYnwBC34RaKCQ",
-        "group_label": null,
-        "label": "simone giertz",
-        "tags": [
-            "engineering",
-            "funny"
-        ],
-        "endorsement": "I really don't learn anything, but you feel like you do while laughing a lot at watching someone so thoroughly engage in the love of making things even when the outcome is bad. Do you like robots?",
-        "kind": "youtube"
-    },
-    {
-        "url": "https://www.youtube.com/user/thebrainscoop",
-        "group_label": null,
-        "label": "the brain scoop",
-        "tags": [
-            "nature",
-            "education"
-        ],
-        "endorsement": null,
-        "kind": "youtube"
-    },
-    {
-        "url": "https://www.youtube.com/channel/UCHsRtomD4twRf5WVHHk-cMw",
-        "group_label": null,
-        "label": "tier zoo",
-        "tags": [
-            "nature",
-            "education",
-            "zoology"
-        ],
-        "endorsement": "Learn zoology through video game lingo. So cheesy, so great.",
-        "kind": "youtube"
-    },
-    {
-        "url": "https://www.youtube.com/user/vlogbrothers",
-        "group_label": null,
-        "label": "vlogbrothers",
-        "tags": [
-            "nerdy",
-            "education",
-            "funny"
-        ],
-        "endorsement": "Every week two brothers make a video and send it to each other. It ranges from funny to wholesome to inspiring to thoughful to thought-provoking. They have a community, and they love it, and you feel welcomed to it.",
-        "kind": "youtube"
-    },
-    {
-        "url": "https://en.wikipedia.org/wiki/Neverwhere_(novel)",
-        "group_label": "neil gaiman",
-        "label": "neverwhere",
-        "tags": [
-            "fantasy",
-            "fiction"
-        ],
-        "endorsement": null,
-        "kind": "book"
-    },
-    {
-        "url": "https://en.wikipedia.org/wiki/The_History_of_Love",
-        "group_label": "nicole krauss",
-        "label": "the history of love",
-        "tags": [
-            "emotional",
-            "fiction"
-        ],
-        "endorsement": null,
-        "kind": "book"
-    },
-    {
-        "url": "https://en.wikipedia.org/wiki/Ender%27s_Game",
-        "group_label": "orson scott card",
-        "label": "ender's game",
-        "tags": [
-            "fantasy",
-            "sci-fi",
-            "science"
-        ],
-        "endorsement": null,
-        "kind": "book"
-    },
-    {
-        "url": "https://www.preposterousuniverse.com/bigpicture/",
-        "group_label": "sean carroll",
-        "label": "the big picture",
-        "tags": [
-            "science",
-            "time",
-            "education",
-            "physics"
-        ],
-        "endorsement": null,
-        "kind": "book"
-    },
-    {
-        "url": "https://en.wikipedia.org/wiki/Steven_Brust#Vlad_Taltos",
-        "group_label": "steven brust",
-        "label": "vlad taltos",
-        "tags": [
-            "fantasy",
-            "funny"
-        ],
-        "endorsement": null,
-        "kind": "book"
-    },
-    {
-        "url": "https://en.wikipedia.org/wiki/The_Unlikely_Pilgrimage_of_Harold_Fry",
-        "group_label": "rachel joyce",
-        "label": "the unlikely pilgramage of harold fry",
-        "tags": [
-            "fiction",
-            "emotional"
-        ],
-        "endorsement": null,
-        "kind": "book"
-    },
-    {
-        "url": "https://www.goodreads.com/book/show/28256439-the-hidden-life-of-trees",
-        "group_label": "peter wohlleben",
-        "label": "the hidden life of trees",
-        "tags": [
-            "nature",
-            "trees",
-            "education"
-        ],
-        "endorsement": null,
-        "kind": "book"
-    },
-    {
-        "url": "https://en.wikipedia.org/wiki/The_Selfish_Gene",
-        "group_label": "richard dawkins",
-        "label": "the selfish gene",
-        "tags": [
-            "biology",
-            "science",
-            "evolution",
-            "education"
-        ],
-        "endorsement": null,
-        "kind": "book"
-    },
-    {
-        "url": "https://www.goodreads.com/book/show/50887097-why-fish-don-t-exist",
-        "group_label": "lulu miller",
-        "label": "why fish don't exist",
-        "tags": [
-            "biology",
-            "science",
-            "biography",
-            "history",
-            "emotional"
-        ],
-        "endorsement": "An extremely personal narrative of the author's pursuit of meaning. I found it incredibly tender and vulnerable. Reading it, I was inspired to fight the fear of being vulnerable and the fear of thinking about the hard questions that live with us. The content is definitely interesting, but I mostly came away gracefully thankful for the author's sincerity.",
-        "kind": "book"
-    }
+  {
+    "url": "https://eukaryotewritesblog.com/2017/05/29/beespotting-on-i-5/",
+    "group_label": "eukaryote writes blog",
+    "label": "animal welfare approach to honey",
+    "tags": ["ethics", "animals", "nature"],
+    "endorsement": "Some really interesting facts about bees!",
+    "kind": "blog"
+  },
+  {
+    "url": "https://www.lesswrong.com/posts/GLMFmFvXGyAcG25ni/i-can-tolerate-anything-except-the-outgroup",
+    "group_label": "ssc",
+    "label": "i can tolerate anything except the outgroup",
+    "tags": ["ethics", "morality"],
+    "endorsement": null,
+    "kind": "blog"
+  },
+  {
+    "url": "https://www.lesswrong.com/posts/rkpDX7j7va6c8Q7cZ/in-favor-of-niceness-community-and-civilization",
+    "group_label": "ssc",
+    "label": "in favor of niceness, community, and civilization",
+    "tags": ["ethics", "morality"],
+    "endorsement": null,
+    "kind": "blog"
+  },
+  {
+    "url": "http://mindingourway.com/guilt/",
+    "group_label": "minding our way",
+    "label": "replacing guilt",
+    "tags": ["ethics", "morality"],
+    "endorsement": "This is a super long series in which Nate Soares explores how he has come to orient to guilt. I found the framings incredibly useful as it guided my own, and the tools espoused less so, but most likely because they are more life-journey-esque rather than something one can just do to affect immediate change. In particular, the conversation around 'shoulds' is what I find myself thinking about most.",
+    "kind": "blog"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Mistborn:_The_Final_Empire",
+    "group_label": "brandon sanderson",
+    "label": "mistborn: the final empire",
+    "tags": ["fantasy"],
+    "endorsement": "Really interesting hard magic system that feels rich and fully explored. Brandon Sanderson is just a great world builder.",
+    "kind": "book"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Mars_trilogy",
+    "group_label": "kim stanley robinson",
+    "label": "red mars",
+    "tags": ["sci-fi", "science", "nature"],
+    "endorsement": "What's it like to colonize Mars? This is a trilogy exploring that question in all its science, philosophy, politcal science, climate change.",
+    "kind": "book"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/The_Fifth_Season_(novel)",
+    "group_label": "n.k. jemisin",
+    "label": "the fifth season",
+    "tags": ["fantasy", "female author"],
+    "endorsement": null,
+    "kind": "book"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/The_Lies_of_Locke_Lamora",
+    "group_label": "scott lynch",
+    "label": "the lies of locke lamora",
+    "tags": ["fantasy"],
+    "endorsement": null,
+    "kind": "book"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/The_Way_of_Kings",
+    "group_label": "brandon sanderson",
+    "label": "the way of kings",
+    "tags": ["fantasy"],
+    "endorsement": null,
+    "kind": "book"
+  },
+  {
+    "url": "https://www.givewell.org/",
+    "group_label": null,
+    "label": "give well",
+    "tags": ["ethics", "morality", "effective altruism"],
+    "endorsement": null,
+    "kind": "random"
+  },
+  {
+    "url": "https://www.sony.com/electronics/headband-headphones/wh-1000xm3",
+    "group_label": null,
+    "label": "these headphones",
+    "tags": ["programming", "music", "technology"],
+    "endorsement": "I got headaches from a pair of Bose noise cancelling headphones and was afraid to try other ones. These, while pricey, are great. I don't get headaches, they're comfortable, bluetooth works great but can also be wired, good audio quality, charge with usb-c.",
+    "kind": "random"
+  },
+  {
+    "url": "https://www.outdoorresearch.com/us/mens-ferrosi-pants-269176",
+    "group_label": null,
+    "label": "these pants",
+    "tags": ["clothing"],
+    "endorsement": "I have worn these pants almost daily for over a year, and they have not ripped yet (I usually get tears between my legs after a couple months). They are also incredibly light, but still warm for winter yet breathable for summer. Lastly, they are quick drying. I will buy these forever.",
+    "kind": "random"
+  },
+  {
+    "url": "https://www.amazon.com/MAXROCK-Sleep-Earplugs-Headphones-Meditation/dp/B071WRSL38",
+    "group_label": null,
+    "label": "these sleep earbuds",
+    "tags": ["technology", "music", "sleeping"],
+    "endorsement": "I am kept awake a lot by an unqiet mind. I found that listening to a story while in bed incredibly useful in finding sleep. But, being a side sleeper, headphones are a no-go, and most earbuds are so bulky that they hurt my ears and give me a headache. These headphones don't hurt at all, and are cheap enough that buying them for this singular purpose was 100% worthwhile. The 3 audiobook apps I have used (kindle, audible, and libby) all have a sleep timer, which also acts as a cool way to see how long it took to fall asleep. When having a light on is okay, I mostly just read a book, but at times when its not, I found this routine incredibly useful, and these earbuds are great for that.",
+    "kind": "random"
+  },
+  {
+    "url": "https://coophomegoods.com/products/king-bamboo-shredded-memory-foam-pillow",
+    "group_label": null,
+    "label": "this pillow",
+    "tags": ["sleeping"],
+    "endorsement": null,
+    "kind": "random"
+  },
+  {
+    "url": "https://code.visualstudio.com/",
+    "group_label": null,
+    "label": "vscode",
+    "tags": ["programming"],
+    "endorsement": "Gah, I love this so much... It's so customizable, but also has insanely good presets. Starting from IntelliJ and PyCharm, I was so frustrated with setting it up on different computers, so ugly, and just incredibly weighted down by all these features that I didn't want. VSCode starts as lightweight and beautiful, but also has a rich ecosystem of add-ons so you can pick and choose. Also, the support for languages is great. As beutiful as emacs, but comes with just enough presets to be sooooo much easier. I'm a minimalist though, so I am incredibly aware that all may not agree.",
+    "kind": "random"
+  },
+  {
+    "url": "https://practicalguidetoevil.wordpress.com/",
+    "group_label": "erraticerrata",
+    "label": "a practical guide to evil",
+    "tags": ["fantasy"],
+    "endorsement": null,
+    "kind": "web fiction"
+  },
+  {
+    "url": "http://www.hpmor.com/",
+    "group_label": "eliezer yudkowsky",
+    "label": "harry potter and the methods of rationality",
+    "tags": ["fantasy"],
+    "endorsement": "I do really like the story of Harry Potter, and while still being able to enjoy the setting and the characters that I know so well, I found this a great alternate universe, with changes that just make sense and decision-making that is sooo much more relatable. You know the plot, but you also don't and it surprises you with turns. Its written as an entry guide to the rationality of lesswrong, but just ignore that and its gold. Also, its free.",
+    "kind": "web fiction"
+  },
+  {
+    "url": "https://wanderinginn.com/",
+    "group_label": "pirateaba",
+    "label": "the wandering inn",
+    "tags": ["fantasy"],
+    "endorsement": "I do read a lot of fantasy... But lately, I've become really annoyed with the constant glory of violence and 18th century societies. I found this long series so refreshing from this tendency of fantasy. It begins as an introduction to LitRPG and the huge world, while slowly giving you glimpses of what's moving behind the curtain. I'm very thankful for this long, ongoing series by pirateaba. Great for plane rides. Also, like all the webfiction here, its free.",
+    "kind": "web fiction"
+  },
+  {
+    "url": "http://unsongbook.com/",
+    "group_label": "scott alexander",
+    "label": "unsong",
+    "tags": ["fantasy"],
+    "endorsement": "So different and funny, and great. Just go read the first prologue (http://unsongbook.com/prologue-2/).",
+    "kind": "web fiction"
+  },
+  {
+    "url": "https://parahumans.wordpress.com/",
+    "group_label": "wildbow",
+    "label": "worm",
+    "tags": ["fantasy"],
+    "endorsement": null,
+    "kind": "web fiction"
+  },
+  {
+    "url": "https://www.youtube.com/user/alectheblacksmith",
+    "group_label": null,
+    "label": "alec steele",
+    "tags": ["engineering"],
+    "endorsement": "I knew nothing about blacksmithing and found myself really intrigued. He talks along the way explaining his thought processes or some tidbits about his craft, its not enough to learn blacksmithing by any means, but you feel like you are learning something. Also, its actually pretty therapeutic to just watch someone work sometimes haha. He's just a nice, jubilant fellow.",
+    "kind": "youtube"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=0rHUDWjR5gg&list=PL8dPuuaLjXtPAJr1ysd5yGIyiSFuh0mIL",
+    "group_label": "crash course",
+    "label": "astronomy",
+    "tags": ["education", "astonomy"],
+    "endorsement": "Astronomy just has this ability to inspire wonder so easily... Maybe because its so huge, but also just on the edge of understanding (even when its very much not), I don't know... But I found this series a great way build curiosity by also satisfying it.",
+    "kind": "youtube"
+  },
+  {
+    "url": "https://www.youtube.com/user/CGPGrey",
+    "group_label": null,
+    "label": "cgp grey",
+    "tags": ["education"],
+    "endorsement": "I think of this as a video version of xkcd. You learn things which are mostly unnecessary, but still fun to know/learn, and every once in a while there's some gem that just enriches you as a person.",
+    "kind": "youtube"
+  },
+  {
+    "url": "https://www.youtube.com/user/minuteearth",
+    "group_label": null,
+    "label": "minuteearth",
+    "tags": ["nature", "education"],
+    "endorsement": "Very quick `here's some cool thing about nature` videos. I think the word for it is wholesome.",
+    "kind": "youtube"
+  },
+  {
+    "url": "https://www.youtube.com/channel/UC3KEoMzNz8eYnwBC34RaKCQ",
+    "group_label": null,
+    "label": "simone giertz",
+    "tags": ["engineering", "funny"],
+    "endorsement": "I really don't learn anything, but you feel like you do while laughing a lot at watching someone so thoroughly engage in the love of making things even when the outcome is bad. Do you like robots?",
+    "kind": "youtube"
+  },
+  {
+    "url": "https://www.youtube.com/user/thebrainscoop",
+    "group_label": null,
+    "label": "the brain scoop",
+    "tags": ["nature", "education"],
+    "endorsement": null,
+    "kind": "youtube"
+  },
+  {
+    "url": "https://www.youtube.com/channel/UCHsRtomD4twRf5WVHHk-cMw",
+    "group_label": null,
+    "label": "tier zoo",
+    "tags": ["nature", "education", "zoology"],
+    "endorsement": "Learn zoology through video game lingo. So cheesy, so great.",
+    "kind": "youtube"
+  },
+  {
+    "url": "https://www.youtube.com/user/vlogbrothers",
+    "group_label": null,
+    "label": "vlogbrothers",
+    "tags": ["nerdy", "education", "funny"],
+    "endorsement": "Every week two brothers make a video and send it to each other. It ranges from funny to wholesome to inspiring to thoughful to thought-provoking. They have a community, and they love it, and you feel welcomed to it.",
+    "kind": "youtube"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Neverwhere_(novel)",
+    "group_label": "neil gaiman",
+    "label": "neverwhere",
+    "tags": ["fantasy", "fiction"],
+    "endorsement": null,
+    "kind": "book"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/The_History_of_Love",
+    "group_label": "nicole krauss",
+    "label": "the history of love",
+    "tags": ["emotional", "fiction"],
+    "endorsement": null,
+    "kind": "book"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Ender%27s_Game",
+    "group_label": "orson scott card",
+    "label": "ender's game",
+    "tags": ["fantasy", "sci-fi", "science"],
+    "endorsement": null,
+    "kind": "book"
+  },
+  {
+    "url": "https://www.preposterousuniverse.com/bigpicture/",
+    "group_label": "sean carroll",
+    "label": "the big picture",
+    "tags": ["science", "time", "education", "physics"],
+    "endorsement": null,
+    "kind": "book"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Steven_Brust#Vlad_Taltos",
+    "group_label": "steven brust",
+    "label": "vlad taltos",
+    "tags": ["fantasy", "funny"],
+    "endorsement": null,
+    "kind": "book"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/The_Unlikely_Pilgrimage_of_Harold_Fry",
+    "group_label": "rachel joyce",
+    "label": "the unlikely pilgramage of harold fry",
+    "tags": ["fiction", "emotional"],
+    "endorsement": null,
+    "kind": "book"
+  },
+  {
+    "url": "https://www.goodreads.com/book/show/28256439-the-hidden-life-of-trees",
+    "group_label": "peter wohlleben",
+    "label": "the hidden life of trees",
+    "tags": ["nature", "trees", "education"],
+    "endorsement": null,
+    "kind": "book"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/The_Selfish_Gene",
+    "group_label": "richard dawkins",
+    "label": "the selfish gene",
+    "tags": ["biology", "science", "evolution", "education"],
+    "endorsement": null,
+    "kind": "book"
+  },
+  {
+    "url": "https://www.goodreads.com/book/show/50887097-why-fish-don-t-exist",
+    "group_label": "lulu miller",
+    "label": "why fish don't exist",
+    "tags": ["biology", "science", "biography", "history", "emotional"],
+    "endorsement": "An extremely personal narrative of the author's pursuit of meaning. I found it incredibly tender and vulnerable. Reading it, I was inspired to fight the fear of being vulnerable and the fear of thinking about the hard questions that live with us. The content is definitely interesting, but I mostly came away gracefully thankful for the author's sincerity.",
+    "kind": "book"
+  }
 ]

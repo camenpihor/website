@@ -1,55 +1,55 @@
 {
-    "general": [
-        {
-            "internal": true,
-            "to": {
-                "name": "home"
-            },
-            "label": "Home"
-        },
-        {
-            "internal": true,
-            "to": {
-                "name": "about"
-            },
-            "label": "About"
-        },
-        {
-            "internal": true,
-            "to": {
-                "name": "recommendations"
-            },
-            "label": "Recommendations"
-        },
-        {
-            "internal": true,
-            "to": {
-                "name": "github"
-            },
-            "label": "GitHub"
-        }
-    ],
-    "projects": [
-        {
-            "internal": true,
-            "to": {
-                "name": "blog"
-            },
-            "label": "Blog"
-        },
-        {
-            "internal": true,
-            "to": {
-                "name": "math"
-            },
-            "label": "Math Implementations"
-        },
-        {
-            "internal": true,
-            "to": {
-                "name": "rogue-sky"
-            },
-            "label": "RogueSky"
-        }
-    ]
+  "general": [
+    {
+      "internal": true,
+      "to": {
+        "name": "home"
+      },
+      "label": "Home"
+    },
+    {
+      "internal": true,
+      "to": {
+        "name": "about"
+      },
+      "label": "About"
+    },
+    {
+      "internal": true,
+      "to": {
+        "name": "recommendations"
+      },
+      "label": "Recommendations"
+    },
+    {
+      "internal": true,
+      "to": {
+        "name": "github"
+      },
+      "label": "GitHub"
+    }
+  ],
+  "projects": [
+    {
+      "internal": true,
+      "to": {
+        "name": "blog"
+      },
+      "label": "Blog"
+    },
+    {
+      "internal": true,
+      "to": {
+        "name": "math"
+      },
+      "label": "Math Implementations"
+    },
+    {
+      "internal": true,
+      "to": {
+        "name": "rogue-sky"
+      },
+      "label": "RogueSky"
+    }
+  ]
 }

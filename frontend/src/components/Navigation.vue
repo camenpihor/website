@@ -6,7 +6,7 @@
       v-bind:class="{
         'is-transparent': isTransparent,
         'is-dark': !isTransparent,
-        navbar__hidden: !showTopBar
+        navbar__hidden: !showTopBar,
       }"
     >
       <div class="navbar-brand">
@@ -97,7 +97,7 @@ import routeJson from "@/assets/json/routes.json";
 
 export default {
   components: {
-    EventListener
+    EventListener,
   },
   data() {
     return {
@@ -109,7 +109,7 @@ export default {
       currentRoute: this.$route.name,
       routes: routeJson,
       siteIconFilePath: require("@/assets/icons/site-icon.svg"),
-      lastScrollPosition: 0
+      lastScrollPosition: 0,
     };
   },
   methods: {
@@ -134,7 +134,7 @@ export default {
         return name
           .toLowerCase()
           .split("-")
-          .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+          .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
           .join("");
       }
     },
@@ -158,7 +158,7 @@ export default {
       }
       this.showTopBar = currentScrollPosition < this.lastScrollPosition;
       this.lastScrollPosition = currentScrollPosition;
-    }
+    },
   },
   watch: {
     $route: function(to, from) {
@@ -172,11 +172,11 @@ export default {
       } else {
         document.body.classList.remove("overlaid");
       }
-    }
+    },
   },
   mounted() {
     this.initialize();
-  }
+  },
 };
 </script>
 <style>

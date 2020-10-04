@@ -107,54 +107,54 @@ export default {
       blogRoutes: [
         {
           to: "https://slatestarcodex.com/",
-          label: "slatestarcodex.com"
+          label: "slatestarcodex.com",
         },
         {
           to: "http://mindingourway.com/",
-          label: "mindingourway.com"
+          label: "mindingourway.com",
         },
         {
           to: "https://eukaryotewritesblog.com/",
-          label: "eukaryotewritesblog.com"
+          label: "eukaryotewritesblog.com",
         },
         {
           to: "https://theunitofcaring.tumblr.com/",
-          label: "theunitofcaring.com"
+          label: "theunitofcaring.com",
         },
         {
           to: "http://www.bldgblog.com/",
-          label: "bldgblog.com"
-        }
+          label: "bldgblog.com",
+        },
       ],
       bookRoutes: [
         {
           to: "https://en.wikipedia.org/wiki/The_Way_of_Kings",
           label: "the way of kings",
-          author: "brandon sanderson"
+          author: "brandon sanderson",
         },
         {
           to: "https://en.wikipedia.org/wiki/The_Fifth_Season_(novel)",
           label: "the fifth season",
-          author: "n.k. jemisin"
+          author: "n.k. jemisin",
         },
         {
           to: "https://wanderinginn.com/",
           label: "the wandering inn",
-          author: "pirateaba"
+          author: "pirateaba",
         },
         {
           to:
             "https://www.goodreads.com/en/book/show/38746152-the-book-of-delights",
           label: "the book of delights",
-          author: "ross gay"
+          author: "ross gay",
         },
         {
           to:
             "https://www.goodreads.com/book/show/28256439-the-hidden-life-of-trees",
           label: "the hidden life of trees",
-          author: "peter wohlleben"
-        }
-      ]
+          author: "peter wohlleben",
+        },
+      ],
     };
   },
   mounted() {
@@ -177,8 +177,8 @@ export default {
       } else {
         this.randomFacts = null;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

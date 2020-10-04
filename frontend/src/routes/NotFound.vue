@@ -13,13 +13,13 @@ import NoResults from "@/components/NoResults.vue";
 
 export default {
   components: {
-    NoResults
+    NoResults,
   },
   props: {
     requestedPath: {
       type: String,
-      default: ""
-    }
-  }
+      default: "",
+    },
+  },
 };
 </script>

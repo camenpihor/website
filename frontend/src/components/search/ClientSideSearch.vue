@@ -27,12 +27,12 @@ import * as JsSearch from "js-search";
 
 export default {
   components: {
-    EventListener
+    EventListener,
   },
   props: {
     placeholder: {
       type: String,
-      default: "search..."
+      default: "search...",
     },
     imageFilePath: {},
     keys: {},
@@ -40,14 +40,14 @@ export default {
     jsonUUID: {},
     initial: {
       type: String,
-      default: ""
-    }
+      default: "",
+    },
   },
   data() {
     return {
       input: this.initial,
       results: this.json,
-      searcher: this.createSearcher()
+      searcher: this.createSearcher(),
     };
   },
   methods: {
@@ -75,11 +75,11 @@ export default {
       }
       search.addDocuments(this.json);
       return search;
-    }
+    },
   },
   mounted() {
     this.search();
-  }
+  },
 };
 </script>
 

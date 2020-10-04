@@ -6,19 +6,19 @@
 export default {
   props: {
     method: {
-      type: Function
+      type: Function,
     },
     eventType: {
       type: String,
-      default: "keyup"
-    }
+      default: "keyup",
+    },
   },
   created() {
     window.addEventListener(this.eventType, this.method);
   },
   beforeDestroy() {
     window.removeEventListener(this.eventType, this.method);
-  }
+  },
 };
 </script>
 

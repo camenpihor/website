@@ -25,7 +25,7 @@ import Mapbox from "mapbox-gl";
 import {
   MglMap,
   MglNavigationControl,
-  MglAttributionControl
+  MglAttributionControl,
 } from "vue-mapbox";
 
 export default {
@@ -33,30 +33,30 @@ export default {
   props: {
     latitude: {
       type: Number,
-      default: 37.8
+      default: 37.8,
     },
     longitude: {
       type: Number,
-      default: -96
+      default: -96,
     },
     zoom: {
       type: Number,
-      default: 2
+      default: 2,
     },
     onLoad: {
       type: Function,
-      default: () => null
-    }
+      default: () => null,
+    },
   },
   methods: {
     getToken: function() {
       return process.env.VUE_APP_MAPBOX_SECRET_TOKEN;
-    }
+    },
   },
   created() {
     // We need to set mapbox-gl library here in order to use it in template
     this.mapbox = Mapbox;
-  }
+  },
 };
 </script>
 

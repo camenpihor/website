@@ -322,7 +322,7 @@ import { format, parseISO } from "date-fns";
 import {
   getAstronomicalEvents,
   getCoordinates,
-  getStarForecast
+  getStarForecast,
 } from "@/assets/js/api.js";
 
 export default {
@@ -332,7 +332,7 @@ export default {
     Map,
     NotFound,
     StarVizIcon,
-    WeatherSummary
+    WeatherSummary,
   },
   data() {
     return {
@@ -345,7 +345,7 @@ export default {
         eclipse: "gray",
         planetary: "red",
         meteorShower: "purple",
-        other: "blue"
+        other: "blue",
       },
       starForecast: null,
       astronomicalEvents: null,
@@ -355,7 +355,7 @@ export default {
       latitude: null,
       longitude: null,
       weatherIdx: 0,
-      error: false
+      error: false,
     };
   },
   methods: {
@@ -385,13 +385,13 @@ export default {
         let seattle_lon = -122.377;
         this.$router.replace({
           name: "rogue-sky-location",
-          params: { latitude: seattle_lat, longitude: seattle_lon }
+          params: { latitude: seattle_lat, longitude: seattle_lon },
         });
       }
     },
     fetchAstronomicalEvents: function() {
       getAstronomicalEvents()
-        .then(response => {
+        .then((response) => {
           this.astronomicalEvents = response.data;
         })
         .catch(() => {
@@ -400,12 +400,12 @@ export default {
     },
     fetchCoordinates: function() {
       getCoordinates(this.$route.query.address)
-        .then(response => {
+        .then((response) => {
           let latitude = response.data.latitude.toFixed(3);
           let longitude = response.data.longitude.toFixed(3);
           this.$router.replace({
             name: "rogue-sky-location",
-            params: { latitude: latitude, longitude: longitude }
+            params: { latitude: latitude, longitude: longitude },
           });
         })
         .catch(() => {
@@ -414,7 +414,7 @@ export default {
     },
     fetchForecast: function() {
       getStarForecast(this.latitude, this.longitude)
-        .then(response => {
+        .then((response) => {
           this.timezone = response.data.timezone;
           this.starForecast = response.data.daily_forecast.slice(0, 7);
           this.city = response.data.city;
@@ -466,7 +466,7 @@ export default {
       this.reset();
       this.$router.push({
         name: "rogue-sky",
-        query: { address: input }
+        query: { address: input },
       });
     },
     printDate: function(date) {
@@ -480,7 +480,7 @@ export default {
       let weatherSection = this.$refs.weather;
       window.scrollTo({
         top: weatherSection.offsetTop,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     },
     cloudCoverLayer: function(event) {
@@ -492,14 +492,14 @@ export default {
         source: {
           type: "raster",
           tiles: [
-            `https://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png?appid=${process.env.VUE_APP_WEATHERMAP_SECRET_TOKEN}`
+            `https://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png?appid=${process.env.VUE_APP_WEATHERMAP_SECRET_TOKEN}`,
           ],
-          tileSize: 256
+          tileSize: 256,
         },
         minzoom: 0,
-        maxzoom: 22
+        maxzoom: 22,
       });
-    }
+    },
   },
   computed: {
     today() {
@@ -529,14 +529,14 @@ export default {
           key: "today",
           highlight: {
             color: "blue",
-            fillMode: "light"
+            fillMode: "light",
           },
           dates: new Date(),
           popover: {
             label: "Today",
-            placement: "auto"
+            placement: "auto",
           },
-          customData: { event: "Today" }
+          customData: { event: "Today" },
         };
 
         let bestDayEvent = `Best day of star visibility over the next week (${this.humanizeStarVisibility(
@@ -548,9 +548,9 @@ export default {
           dates: this.bestDay.weather_date_local,
           popover: {
             label: bestDayEvent,
-            placement: "auto"
+            placement: "auto",
           },
-          customData: { event: bestDayEvent }
+          customData: { event: bestDayEvent },
         };
 
         var allEvents = [today, bestDay];
@@ -563,48 +563,48 @@ export default {
               dates: dayForecast.weather_date_local,
               highlight: {
                 color: "gray",
-                fillMode: "light"
+                fillMode: "light",
               },
               popover: {
                 label: this.humanizeStarVisibility(dayForecast.star_visibility),
                 placement: "auto",
-                isInteractive: true
+                isInteractive: true,
               },
               customData: {
                 event: `Expected star visibility is ${this.humanizeStarVisibility(
                   dayForecast.star_visibility
-                )}`
-              }
+                )}`,
+              },
             });
           }
         }
         allEvents = allEvents.concat([
-          ...this.astronomicalEvents.map(event => ({
+          ...this.astronomicalEvents.map((event) => ({
             dates: event.date,
             bar: this.calendarColors[event.type],
             popover: {
               label: event.event,
               placement: "auto",
-              isInteractive: true
+              isInteractive: true,
             },
-            customData: event
-          }))
+            customData: event,
+          })),
         ]);
         return allEvents;
       }
       return null;
-    }
+    },
   },
   watch: {
     $route(to, from) {
       if (to !== from) {
         this.initialize();
       }
-    }
+    },
   },
   mounted() {
     this.initialize();
-  }
+  },
 };
 </script>
 

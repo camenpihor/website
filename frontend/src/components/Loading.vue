@@ -9,11 +9,10 @@ export default {
   props: {
     isFullPage: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>

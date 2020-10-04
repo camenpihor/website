@@ -14,8 +14,8 @@ export default {
   name: "app",
   components: {
     Footer,
-    Navigation
-  }
+    Navigation,
+  },
 };
 </script>
 
@@ -51,20 +51,20 @@ $input-focus-box-shadow-color: $button-over-grey;
 $colors: (
   "off-white": (
     $off-white,
-    findColorInvert($off-white)
+    findColorInvert($off-white),
   ),
   "transparent": (
     #00000000,
-    #ffffff
+    #ffffff,
   ),
   "grey-dark": (
     $grey-dark,
-    #ffffff
+    #ffffff,
   ),
   "blue": (
     $blue,
-    findColorInvert($blue)
-  )
+    findColorInvert($blue),
+  ),
 );
 
 @import "~bulma";

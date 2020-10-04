@@ -30,14 +30,14 @@ export default {
   props: ["href", "label", "group", "tags", "info"],
   data() {
     return {
-      showInfo: false
+      showInfo: false,
     };
   },
   methods: {
     toggleInfo: function() {
       this.showInfo = !this.showInfo;
-    }
-  }
+    },
+  },
 };
 </script>
 

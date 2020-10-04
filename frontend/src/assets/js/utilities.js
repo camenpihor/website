@@ -1,23 +1,23 @@
 function groupBy(xs, key) {
   // https://stackoverflow.com/a/38575908
-  let grouped = xs.reduce(function (rv, x) {
+  let grouped = xs.reduce(function(rv, x) {
     (rv[x[key]] = rv[x[key]] || []).push(x);
     return rv;
   }, {});
 
   let ordered = {};
-  Object.keys(grouped).sort().forEach(function (key) {
-    ordered[key] = grouped[key];
-  });
+  Object.keys(grouped)
+    .sort()
+    .forEach(function(key) {
+      ordered[key] = grouped[key];
+    });
   return ordered;
 }
 
 function compare(key) {
   return function innerSort(a, b) {
-    const valueA = (typeof a[key] === 'string')
-      ? a[key].toUpperCase() : a[key];
-    const valueB = (typeof b[key] === 'string')
-      ? b[key].toUpperCase() : b[key];
+    const valueA = typeof a[key] === "string" ? a[key].toUpperCase() : a[key];
+    const valueB = typeof b[key] === "string" ? b[key].toUpperCase() : b[key];
 
     let comparison = 0;
     if (valueA > valueB) {
@@ -25,20 +25,20 @@ function compare(key) {
     } else if (valueA < valueB) {
       comparison = -1;
     }
-    return comparison
+    return comparison;
   };
 }
 
 function asyncComponent(component) {
   return () => ({
-    component: new Promise(resolve => {
+    component: new Promise((resolve) => {
       setTimeout(() => {
         resolve(component);
       }, 1000);
     }),
     delay: 0,
-    timeout: 3000
+    timeout: 3000,
   });
 }
 
-export { asyncComponent, compare, groupBy }
+export { asyncComponent, compare, groupBy };

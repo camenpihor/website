@@ -57,30 +57,30 @@ import PopoverRow from "v-calendar/lib/components/popover-row.umd.min";
 
 export default {
   components: {
-    PopoverRow
+    PopoverRow,
   },
   props: {
     attributes: {
-      type: Array
+      type: Array,
     },
     minDate: {
       type: String,
-      default: "2020-01-02"
+      default: "2020-01-02",
     },
     maxDate: {
       type: String,
-      default: "2021-01-01"
+      default: "2021-01-01",
     },
     colorKey: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
   methods: {
     camelCaseToWords: function(camelCase) {
       return camelCase.replace(/([A-Z])/g, " $1").toLowerCase();
-    }
-  }
+    },
+  },
 };
 </script>
 

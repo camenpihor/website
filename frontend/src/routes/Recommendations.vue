@@ -62,7 +62,7 @@ export default {
   components: {
     ClientSideSearch,
     NoResults,
-    RecommendationItem
+    RecommendationItem,
   },
   data() {
     return {
@@ -72,13 +72,13 @@ export default {
       searchResults: null,
       query: null,
       searchKeys: ["group_label", "label", "kind", "tags"],
-      searchUUID: "label"
+      searchUUID: "label",
     };
   },
   computed: {
     groupedRecommendations() {
       return groupBy(this.searchResults, "kind");
-    }
+    },
   },
   methods: {
     initialize: function() {
@@ -98,11 +98,11 @@ export default {
         ".recommendation__group__item__info"
       );
       endorsement.classList.toggle("is-hidden");
-    }
+    },
   },
   mounted() {
     this.initialize();
-  }
+  },
 };
 </script>
 

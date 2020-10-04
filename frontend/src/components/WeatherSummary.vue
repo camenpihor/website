@@ -33,7 +33,7 @@ export default {
     "precipitationSummary",
     "temperatureLow",
     "temperatureHigh",
-    "moonIllumination"
-  ]
+    "moonIllumination",
+  ],
 };
 </script>

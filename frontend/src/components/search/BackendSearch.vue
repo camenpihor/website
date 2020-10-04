@@ -24,24 +24,24 @@ import EventListener from "@/components/EventListener.vue";
 
 export default {
   components: {
-    EventListener
+    EventListener,
   },
   props: {
     placeholder: {
       type: String,
-      default: "search..."
+      default: "search...",
     },
     imageFilePath: {
       type: String,
-      default: null
+      default: null,
     },
     method: {
-      type: Function
-    }
+      type: Function,
+    },
   },
   data() {
     return {
-      input: null
+      input: null,
     };
   },
   methods: {
@@ -59,8 +59,8 @@ export default {
       if ((event.code === "Slash") & !badTags.includes(event.target.tagName)) {
         this.$refs.search.$el.getElementsByTagName("input")[0].focus();
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
