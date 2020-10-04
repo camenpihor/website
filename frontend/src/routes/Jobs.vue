@@ -86,9 +86,9 @@
         </p>
         <p>
           I think continued fundamental research into climatology is critical
-          and any opportunity to talk more about it is a great opportunity to
+          and any chance to talk more about it is a great opportunity to
           me. If you think I could contribute to your work or you would be open
-          to receive questions about the intersection between machine learning
+          to fielding questions about the intersection between machine learning
           and climatology, please reach out to me at
           <a href="mailto:camen.piho.r@gmail.com"
             >camen[dot]piho[dot]r@gmail.com</a
