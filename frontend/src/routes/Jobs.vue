@@ -50,7 +50,7 @@
           >, I want to use the tools that I’ve learned to take on what I see as
           the one of the most important questions in science:
           <strong
-            >How far can we push our understanding of planetary climates using
+            >How far can we increase our understanding of planetary climates using
             state-of-the-art machine learning and numerical simulation?</strong
           >
           I look not just at humanity’s current planet, Earth, but beyond --
