@@ -10,16 +10,36 @@ _logger = logging.getLogger(__name__)
 
 @click.command()
 @click.option("--production", is_flag=True)
-def start(production):
+@click.option("--backend", is_flag=True)
+@click.option("--frontend", is_flag=True)
+def start(production, backend, frontend):
     backend_script = ["scripts/start"]
     frontend_script = ["scripts/start"]
 
+    if backend and frontend:
+        # this case is handled by default in the `else` statement
+        _logger.warning("Both the back and front ends are started by default")
+        backend = False
+        frontend = False
+
     if production:
+        _logger.info("Running in production mode...")
         backend_script.append("--production")
         frontend_script.append("--production")
+    else:
+        _logger.info("Running in developement mode...")
 
-    with subprocess.Popen("scripts/start", cwd="backend") as _:
-        subprocess.check_call("scripts/start", cwd="frontend")
+    if backend:
+        _logger.info("Starting only the backend...")
+        subprocess.check_call(backend_script, cwd="backend")
+
+    elif frontend:
+        _logger.info("Starting only the frontend...")
+        subprocess.check_call(frontend_script, cwd="frontned")
+
+    else:
+        with subprocess.Popen(backend_script, cwd="backend") as _:
+            subprocess.check_call(frontend_script, cwd="frontend")
 
 
 if __name__ == "__main__":
