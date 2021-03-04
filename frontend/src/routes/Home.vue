@@ -15,28 +15,28 @@
         </h1>
         <div class="content">
           <p>
-            I’m a recently unemployed data scientist in my late 20s, who is
-            taking some time to amble. My roaming is currently taking me to the
-            stars, trees, birds, and the clouds, but I’m not too sure where I’ll
-            end up. I like to think that I am a good Bayesian, but I also like
-            seeking wonder which makes me want to talk about the world in
-            different ways.
+            I’m a data scientist and software engineer in my late 20s, who
+            enjoys ambling. My roaming is currently taking me to the stars,
+            trees, birds, and the clouds, but I’m not too sure where I’ll end
+            up. I like to think that I am a good Bayesian, but I also enjoy
+            seeking wonder which makes me want to talk about the world using
+            different vocabularies.
           </p>
           <p>
             I made this site as a collection for my amblings. Here, you’ll find
             some thoughts of mine, some projects, and some of the things that I
-            enjoy. I try to link to as many things that I can, in order to
-            spread my objectively good tastes.
+            enjoy. I try to link to as many things that I can, in order to share
+            where I go.
           </p>
           <p>
             Anyways, if you’ve found this page, I hope that you enjoy it. If you
-            feel like you want to, feel free to send me an email (<a
+            feel like you want to, send me an email (<a
               href="mailto:camen.piho.r@gmail.com"
               class="is-size-7"
               >camen[dot]piho[dot]r@gmail.com</a
             >) with a question! I like talking about most things for a short
-            while, but I can talk forever about physics, statistics, astronomy,
-            ecology, fantasy, and science fiction. I may even have a fun fact or
+            while, but I can talk about physics, statistics, astronomy, ecology,
+            fantasy, and science fiction forever. I may even have a fun fact or
             two to share :)
           </p>
         </div>
@@ -76,8 +76,8 @@
           <span class="is-size-5 has-text-weight-bold non-blue-link">Math</span>
         </router-link>
         <p class="subtitle is-6">
-          Every once in a while, I try to see how much I understand a math or
-          stats topic by trying to implement something.
+          Every once in a while, I try to see how much I understand a math or a
+          stats topic by trying to implement it.
         </p>
       </div>
       <div class="subsection">
@@ -87,11 +87,11 @@
           >
         </router-link>
         <p class="subtitle is-6">
-          One of the places to where I can constantly go to feel wonder is the
+          One of the places to where I can consistently go to feel wonder is the
           sky. Albeit not incredibly surprising, it took me a long while to
-          learn this about myself. To aid my ability to look up, I created a
-          forecast of star visibility over the short-term, and a collection of
-          astronomical events over the long-term.
+          learn this about myself. As an aid for my ability to look up, I
+          created a forecast of star visibility over the short-term, and a
+          collection of astronomical events over the long-term.
         </p>
       </div>
     </div>

@@ -29,13 +29,13 @@
       <div class="content">
         <p>
           Hai! My background is in math, physics, and greek classics. My
-          foreground is in... well, I’m not sure yet. I currently really enjoy
-          learning about the natural world, atmospheric physics, and astronomy.
-          I think the kindest things I can say about myself are that I actively
-          seek wonder and laughter.
+          foreground is in... well, I’m not sure yet. I currently enjoy learning
+          about the natural world, atmospheric physics, and astronomy. I think
+          the kindest thing I can say about myself is that I actively seek
+          wonder and laughter.
         </p>
         <p>
-          Every now and then, I get really excited about a topic, and then do a
+          Every now and then I get really excited about a topic, and then do a
           bunch of research. This website started out as a way to collect these
           thoughts.
         </p>
