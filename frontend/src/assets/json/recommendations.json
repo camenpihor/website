@@ -294,5 +294,13 @@
     "tags": ["biology", "science", "biography", "history", "emotional"],
     "endorsement": "An extremely personal narrative of the author's pursuit of meaning. I found it incredibly tender and vulnerable. Reading it, I was inspired to fight the fear of being vulnerable and the fear of thinking about the hard questions that live with us. The content is definitely interesting, but I mostly came away gracefully thankful for the author's sincerity.",
     "kind": "book"
+  },
+  {
+    "url": "https://www.goodreads.com/book/show/35187175-storm-in-a-teacup",
+    "group_label": "helen czerski",
+    "label": "storm in a teacup: the physics of everyday life",
+    "tags": ["physics", "science"],
+    "endorsement": "A nice meandering look at the physics that guides the phenomena we encounter every day. Especially enjoyable as an sleeptime audiobook.",
+    "kind": "book"
   }
 ]

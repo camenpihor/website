@@ -106,8 +106,8 @@ export default {
       randomFacts: this.setRandomFacts(),
       blogRoutes: [
         {
-          to: "https://slatestarcodex.com/",
-          label: "slatestarcodex.com",
+          to: "https://astralcodexten.substack.com/",
+          label: "astralcodexten.com",
         },
         {
           to: "http://mindingourway.com/",
