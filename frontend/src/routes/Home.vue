@@ -33,7 +33,7 @@
             feel like you want to, feel free to send me an email (<a
               href="mailto:camen.piho.r@gmail.com"
               class="is-size-7"
-            >camen[dot]piho[dot]r@gmail.com</a
+              >camen[dot]piho[dot]r@gmail.com</a
             >) with a question! I like talking about most things for a short
             while, but I can talk forever about physics, statistics, astronomy,
             ecology, fantasy, and science fiction. I may even have a fun fact or
@@ -73,9 +73,7 @@
       </div>
       <div class="subsection">
         <router-link :to="{ name: 'math' }">
-          <span class="is-size-5 has-text-weight-bold non-blue-link"
-            >Math Implementations</span
-          >
+          <span class="is-size-5 has-text-weight-bold non-blue-link">Math</span>
         </router-link>
         <p class="subtitle is-6">
           Every once in a while, I try to see how much I understand a math or
@@ -83,9 +81,9 @@
         </p>
       </div>
       <div class="subsection">
-        <router-link :to="{ name: 'rogue-sky' }">
+        <router-link :to="{ name: 'star-map' }">
           <span class="is-size-5 has-text-weight-bold non-blue-link"
-            >RogueSky</span
+            >StarMap</span
           >
         </router-link>
         <p class="subtitle is-6">

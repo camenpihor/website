@@ -42,14 +42,14 @@
       "to": {
         "name": "math"
       },
-      "label": "Math Implementations"
+      "label": "Math"
     },
     {
       "internal": true,
       "to": {
-        "name": "rogue-sky"
+        "name": "star-map"
       },
-      "label": "RogueSky"
+      "label": "StarMap"
     }
   ]
 }

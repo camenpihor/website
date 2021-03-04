@@ -25,7 +25,7 @@ In no particular order:
 
 1. What are the tools that I’ve used to make this site, and what do I think about them?
 1. I’ve approximated the moonrise given a date and latitude-longitude coordinate for
-   [RogueSky](https://www.camenpiho.com/rogue-sky), how did I do that?
+   [StarMap](https://www.camenpiho.com/star-map), how did I do that?
 1. Why has naming the nature around me enriched my life?
 1. Over the last few years, I’ve slowly realized the places where anxiety dominates my
    thinking. What has that journey been like? Where am I at now? Where do I think I’m

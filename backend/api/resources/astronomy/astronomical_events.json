@@ -1,458 +1,613 @@
 [
-    {
-        "date": "2020-01-10",
-        "event": "Full moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-02-09",
-        "event": "Full moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-03-09",
-        "event": "Full moon",
-        "info": "Supermoon",
-        "type": "moon"
-    },
-    {
-        "date": "2020-02-23",
-        "event": "New moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-03-18",
-        "event": "Conjunction of the Moon and Mars",
-        "info": "Occultation.",
-        "type": "moon"
-    },
-    {
-        "date": "2020-03-19",
-        "event": "Conjunction of the Moon and Jupiter",
-        "info": "Occultation.",
-        "type": "moon"
-    },
-    {
-        "date": "2020-03-24",
-        "event": "New moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-04-08",
-        "event": "Full moon",
-        "info": "Supermoon",
-        "type": "moon"
-    },
-    {
-        "date": "2020-04-23",
-        "event": "New moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-05-07",
-        "event": "Full moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-05-22",
-        "event": "New moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-06-05",
-        "event": "Full moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-06-19",
-        "event": "Conjunction of the Moon and Venus",
-        "info": "Occultation.",
-        "type": "moon"
-    },
-    {
-        "date": "2020-06-21",
-        "event": "New moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-07-05",
-        "event": "Full moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-07-20",
-        "event": "New moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-08-03",
-        "event": "Full moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-08-03",
-        "event": "Conjunction of the Moon and Mars",
-        "info": "Occultation.",
-        "type": "moon"
-    },
-    {
-        "date": "2020-08-19",
-        "event": "New moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-09-02",
-        "event": "Full moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-09-06",
-        "event": "Conjunction of the Moon and Mars",
-        "info": "Occultation.",
-        "type": "moon"
-    },
-    {
-        "date": "2020-09-17",
-        "event": "New moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-10-01",
-        "event": "Full moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-10-16",
-        "event": "New moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-10-31",
-        "event": "Full moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-11-15",
-        "event": "New moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-11-30",
-        "event": "Full moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-12-30",
-        "event": "Full moon",
-        "info": null,
-        "type": "moon"
-    },
-    {
-        "date": "2020-01-03",
-        "event": "Quadrantids Meteor Shower",
-        "info": "Moon phase 61%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-01-04",
-        "event": "Quadrantids Meteor Shower",
-        "info": "Moon phase 61%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-04-21",
-        "event": "Lyrids Meteor Shower",
-        "info": "Moon phase 0.8%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-04-22",
-        "event": "Lyrids Meteor Shower",
-        "info": "Moon phase 0.8%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-05-05",
-        "event": "Aquariids Meteor Shower",
-        "info": "Moon phase 99.3%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-05-06",
-        "event": "Aquariids Meteor Shower",
-        "info": "Moon phase 99.3%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-07-29",
-        "event": "Delta Aquariids Meteor Shower",
-        "info": "Moon phase 85.2%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-07-30",
-        "event": "Delta Aquariids Meteor Shower",
-        "info": "Moon phase 85.2%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-08-12",
-        "event": "Perseids Meteor Shower",
-        "info": "Moon phase: 41.9%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-08-13",
-        "event": "Perseids Meteor Shower",
-        "info": "Moon phase: 41.9%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-10-20",
-        "event": "Orionids Meteor Shower",
-        "info": "Moon phase: 25.9%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-10-21",
-        "event": "Orionids Meteor Shower",
-        "info": "Moon phase: 25.9%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-11-16",
-        "event": "Leonids Meteor Shower",
-        "info": "Moon phase: 7.2%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-11-17",
-        "event": "Leonids Meteor Shower",
-        "info": "Moon phase: 7.2%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-12-13",
-        "event": "Geminids Meteor Shower",
-        "info": "Moon phase: 0.6%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-12-14",
-        "event": "Geminids Meteor Shower",
-        "info": "Moon phase: 0.6%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-12-21",
-        "event": "Ursids Meteor Shower",
-        "info": "Moon phase: 53.9%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-12-22",
-        "event": "Ursids Meteor Shower",
-        "info": "Moon phase: 53.9%.",
-        "type": "meteorShower"
-    },
-    {
-        "date": "2020-01-10",
-        "event": "Penumbral lunar eclipse",
-        "info": "Visible throughout eastern South America, the eastern Atlantic Ocean, most of Europe, Africa, Asia, and western Australia.",
-        "type": "eclipse"
-    },
-    {
-        "date": "2020-01-11",
-        "event": "Penumbral lunar eclipse",
-        "info": "Visible throughout eastern South America, the eastern Atlantic Ocean, most of Europe, Africa, Asia, and western Australia.",
-        "type": "eclipse"
-    },
-    {
-        "date": "2020-06-05",
-        "event": "Penumbral lunar eclipse",
-        "info": "Visible throughout eastern Europe, eastern Africa, the Middle East, the Indian Ocean, Southeast Asia, and most of Australia.",
-        "type": "eclipse"
-    },
-    {
-        "date": "2020-06-06",
-        "event": "Penumbral lunar eclipse",
-        "info": "Visible throughout eastern Europe, eastern Africa, the Middle East, the Indian Ocean, Southeast Asia, and most of Australia.",
-        "type": "eclipse"
-    },
-    {
-        "date": "2020-06-21",
-        "event": "Annular solar eclipse",
-        "info": "Visible in areas of central Africa, Pakistan, western India, southern China, and Taiwan.",
-        "type": "eclipse"
-    },
-    {
-        "date": "2020-07-04",
-        "event": "Penumbral lunar eclipse",
-        "info": "Visible throughout North America, Central America, South America, and western Africa.",
-        "type": "eclipse"
-    },
-    {
-        "date": "2020-07-05",
-        "event": "Penumbral lunar eclipse",
-        "info": "Visible throughout North America, Central America, South America, and western Africa.",
-        "type": "eclipse"
-    },
-    {
-        "date": "2020-11-29",
-        "event": "Penumbral lunar eclipse",
-        "info": "Visible throughout northern Japan, eastern Russia, New Zealand, the Pacific Ocean, North America and most of Central America.",
-        "type": "eclipse"
-    },
-    {
-        "date": "2020-11-30",
-        "event": "Penumbral lunar eclipse",
-        "info": "Visible throughout northern Japan, eastern Russia, New Zealand, the Pacific Ocean, North America and most of Central America.",
-        "type": "eclipse"
-    },
-    {
-        "date": "2020-12-14",
-        "event": "Total solar eclipse",
-        "info": "The path of totality is only visible in the southern Pacific Ocean, central Chile, central Argentina and the southern Atlantic Ocean. The partial eclipse is visible in most of the southern Pacific Ocean and in most of South America.",
-        "type": "eclipse"
-    },
-    {
-        "date": "2020-02-10",
-        "event": "Mercury at Greatest Eastern Elongation",
-        "info": "The best time to photograph Mercury is shortly after sunset.",
-        "type": "planetary"
-    },
-    {
-        "date": "2020-03-23",
-        "event": "Mercury at Greatest Western Elongation",
-        "info": "The best time to photograph Mercury is shortly before sunrise.",
-        "type": "planetary"
-    },
-    {
-        "date": "2020-03-24",
-        "event": "Venus at Greatest Eastern Elongation",
-        "info": "This is the best time to view Venus since it’s so bright that it becomes the third brightest object in the sky after the Sun and the Moon.",
-        "type": "planetary"
-    },
-    {
-        "date": "2020-06-04",
-        "event": "Mercury at Greatest Eastern Elongation",
-        "info": "The best time to photograph Mercury is shortly after sunset.",
-        "type": "planetary"
-    },
-    {
-        "date": "2020-07-14",
-        "event": "Jupiter at opposition",
-        "info": "It’s brighter than at any other time of the year and is visible throughout the night. This is the best time to view and photograph Jupiter and its moons.",
-        "type": "planetary"
-    },
-    {
-        "date": "2020-08-13",
-        "event": "Venus at Greatest Western Elongation",
-        "info": "This is the best time to view Venus since it’s so bright that it becomes the third brightest object in the sky after the Sun and the Moon.",
-        "type": "planetary"
-    },
-    {
-        "date": "2020-09-11",
-        "event": "Neptune at opposition",
-        "info": "It’s brighter than at any other time of the year and is visible throughout the night.",
-        "type": "planetary"
-    },
-    {
-        "date": "2020-10-01",
-        "event": "Mercury at Greatest Eastern Elongation",
-        "info": "The best time to photograph Mercury is shortly after sunset.",
-        "type": "planetary"
-    },
-    {
-        "date": "2020-10-14",
-        "event": "Mars at opposition",
-        "info": "It’s brighter than at any other time of the year.",
-        "type": "planetary"
-    },
-    {
-        "date": "2020-10-31",
-        "event": "Uranus at opposition",
-        "info": "It’s brighter than at any other time of the year. You need a telescope.",
-        "type": "planetary"
-    },
-    {
-        "date": "2020-11-10",
-        "event": "Mercury at Greatest Western Elongation",
-        "info": "The best time to photograph Mercury is shortly before sunrise.",
-        "type": "planetary"
-    },
-    {
-        "date": "2020-12-21",
-        "event": "Conjunction of Jupiter and Saturn",
-        "info": "The great conjunction is a rare and hard to photograph spectacle but worth living.",
-        "type": "planetary"
-    },
-    {
-        "date": "2020-02-01",
-        "event": "The Milky Way season starts in the Southern Hemisphere",
-        "info": null,
-        "type": "other"
-    },
-    {
-        "date": "2020-03-20",
-        "event": "Spring/fall equinox",
-        "info": "This is the best time to photograph the zodiacal light.",
-        "type": "other"
-    },
-    {
-        "date": "2020-03-01",
-        "event": "The Milky Way season starts in March in the Northern Hemisphere",
-        "info": null,
-        "type": "other"
-    },
-    {
-        "date": "2020-06-20",
-        "event": "Summer (or winter) solstice",
-        "info": null,
-        "type": "other"
-    },
-    {
-        "date": "2020-09-22",
-        "event": "Fall or spring equinox",
-        "info": "This is the best time to photograph the zodiacal light.",
-        "type": "other"
-    },
-    {
-        "date": "2020-10-01",
-        "event": "The Milky Way season ends in the Northern and Southern Hemisphere",
-        "info": null,
-        "type": "other"
-    },
-    {
-        "date": "2020-12-21",
-        "event": "Winter (or summer) solstice",
-        "info": null,
-        "type": "other"
-    },
-    {
-        "date": "2020-05-13",
-        "event": "Comet C/2017 T2 (PANSTARRS) at perihelion",
-        "info": null,
-        "type": "other"
-    }
+  { "date": "2020-01-10", "event": "Full moon", "info": null, "type": "moon" },
+  { "date": "2020-02-09", "event": "Full moon", "info": null, "type": "moon" },
+  {
+    "date": "2020-03-09",
+    "event": "Full moon",
+    "info": "Supermoon",
+    "type": "moon"
+  },
+  { "date": "2020-02-23", "event": "New moon", "info": null, "type": "moon" },
+  {
+    "date": "2020-03-18",
+    "event": "Conjunction of the Moon and Mars",
+    "info": "Occultation.",
+    "type": "moon"
+  },
+  {
+    "date": "2020-03-19",
+    "event": "Conjunction of the Moon and Jupiter",
+    "info": "Occultation.",
+    "type": "moon"
+  },
+  { "date": "2020-03-24", "event": "New moon", "info": null, "type": "moon" },
+  {
+    "date": "2020-04-08",
+    "event": "Full moon",
+    "info": "Supermoon",
+    "type": "moon"
+  },
+  { "date": "2020-04-23", "event": "New moon", "info": null, "type": "moon" },
+  { "date": "2020-05-07", "event": "Full moon", "info": null, "type": "moon" },
+  { "date": "2020-05-22", "event": "New moon", "info": null, "type": "moon" },
+  { "date": "2020-06-05", "event": "Full moon", "info": null, "type": "moon" },
+  {
+    "date": "2020-06-19",
+    "event": "Conjunction of the Moon and Venus",
+    "info": "Occultation.",
+    "type": "moon"
+  },
+  { "date": "2020-06-21", "event": "New moon", "info": null, "type": "moon" },
+  { "date": "2020-07-05", "event": "Full moon", "info": null, "type": "moon" },
+  { "date": "2020-07-20", "event": "New moon", "info": null, "type": "moon" },
+  { "date": "2020-08-03", "event": "Full moon", "info": null, "type": "moon" },
+  {
+    "date": "2020-08-03",
+    "event": "Conjunction of the Moon and Mars",
+    "info": "Occultation.",
+    "type": "moon"
+  },
+  { "date": "2020-08-19", "event": "New moon", "info": null, "type": "moon" },
+  { "date": "2020-09-02", "event": "Full moon", "info": null, "type": "moon" },
+  {
+    "date": "2020-09-06",
+    "event": "Conjunction of the Moon and Mars",
+    "info": "Occultation.",
+    "type": "moon"
+  },
+  { "date": "2020-09-17", "event": "New moon", "info": null, "type": "moon" },
+  { "date": "2020-10-01", "event": "Full moon", "info": null, "type": "moon" },
+  { "date": "2020-10-16", "event": "New moon", "info": null, "type": "moon" },
+  { "date": "2020-10-31", "event": "Full moon", "info": null, "type": "moon" },
+  { "date": "2020-11-15", "event": "New moon", "info": null, "type": "moon" },
+  { "date": "2020-11-30", "event": "Full moon", "info": null, "type": "moon" },
+  { "date": "2020-12-30", "event": "Full moon", "info": null, "type": "moon" },
+  {
+    "date": "2020-01-03",
+    "event": "Quadrantids Meteor Shower",
+    "info": "Moon phase 61%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-01-04",
+    "event": "Quadrantids Meteor Shower",
+    "info": "Moon phase 61%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-04-21",
+    "event": "Lyrids Meteor Shower",
+    "info": "Moon phase 0.8%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-04-22",
+    "event": "Lyrids Meteor Shower",
+    "info": "Moon phase 0.8%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-05-05",
+    "event": "Aquariids Meteor Shower",
+    "info": "Moon phase 99.3%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-05-06",
+    "event": "Aquariids Meteor Shower",
+    "info": "Moon phase 99.3%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-07-29",
+    "event": "Delta Aquariids Meteor Shower",
+    "info": "Moon phase 85.2%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-07-30",
+    "event": "Delta Aquariids Meteor Shower",
+    "info": "Moon phase 85.2%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-08-12",
+    "event": "Perseids Meteor Shower",
+    "info": "Moon phase: 41.9%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-08-13",
+    "event": "Perseids Meteor Shower",
+    "info": "Moon phase: 41.9%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-10-20",
+    "event": "Orionids Meteor Shower",
+    "info": "Moon phase: 25.9%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-10-21",
+    "event": "Orionids Meteor Shower",
+    "info": "Moon phase: 25.9%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-11-16",
+    "event": "Leonids Meteor Shower",
+    "info": "Moon phase: 7.2%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-11-17",
+    "event": "Leonids Meteor Shower",
+    "info": "Moon phase: 7.2%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-12-13",
+    "event": "Geminids Meteor Shower",
+    "info": "Moon phase: 0.6%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-12-14",
+    "event": "Geminids Meteor Shower",
+    "info": "Moon phase: 0.6%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-12-21",
+    "event": "Ursids Meteor Shower",
+    "info": "Moon phase: 53.9%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-12-22",
+    "event": "Ursids Meteor Shower",
+    "info": "Moon phase: 53.9%.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2020-01-10",
+    "event": "Penumbral lunar eclipse",
+    "info": "Visible throughout eastern South America, the eastern Atlantic Ocean, most of Europe, Africa, Asia, and western Australia.",
+    "type": "eclipse"
+  },
+  {
+    "date": "2020-01-11",
+    "event": "Penumbral lunar eclipse",
+    "info": "Visible throughout eastern South America, the eastern Atlantic Ocean, most of Europe, Africa, Asia, and western Australia.",
+    "type": "eclipse"
+  },
+  {
+    "date": "2020-06-05",
+    "event": "Penumbral lunar eclipse",
+    "info": "Visible throughout eastern Europe, eastern Africa, the Middle East, the Indian Ocean, Southeast Asia, and most of Australia.",
+    "type": "eclipse"
+  },
+  {
+    "date": "2020-06-06",
+    "event": "Penumbral lunar eclipse",
+    "info": "Visible throughout eastern Europe, eastern Africa, the Middle East, the Indian Ocean, Southeast Asia, and most of Australia.",
+    "type": "eclipse"
+  },
+  {
+    "date": "2020-06-21",
+    "event": "Annular solar eclipse",
+    "info": "Visible in areas of central Africa, Pakistan, western India, southern China, and Taiwan.",
+    "type": "eclipse"
+  },
+  {
+    "date": "2020-07-04",
+    "event": "Penumbral lunar eclipse",
+    "info": "Visible throughout North America, Central America, South America, and western Africa.",
+    "type": "eclipse"
+  },
+  {
+    "date": "2020-07-05",
+    "event": "Penumbral lunar eclipse",
+    "info": "Visible throughout North America, Central America, South America, and western Africa.",
+    "type": "eclipse"
+  },
+  {
+    "date": "2020-11-29",
+    "event": "Penumbral lunar eclipse",
+    "info": "Visible throughout northern Japan, eastern Russia, New Zealand, the Pacific Ocean, North America and most of Central America.",
+    "type": "eclipse"
+  },
+  {
+    "date": "2020-11-30",
+    "event": "Penumbral lunar eclipse",
+    "info": "Visible throughout northern Japan, eastern Russia, New Zealand, the Pacific Ocean, North America and most of Central America.",
+    "type": "eclipse"
+  },
+  {
+    "date": "2020-12-14",
+    "event": "Total solar eclipse",
+    "info": "The path of totality is only visible in the southern Pacific Ocean, central Chile, central Argentina and the southern Atlantic Ocean. The partial eclipse is visible in most of the southern Pacific Ocean and in most of South America.",
+    "type": "eclipse"
+  },
+  {
+    "date": "2020-02-10",
+    "event": "Mercury at Greatest Eastern Elongation",
+    "info": "The best time to photograph Mercury is shortly after sunset.",
+    "type": "planetary"
+  },
+  {
+    "date": "2020-03-23",
+    "event": "Mercury at Greatest Western Elongation",
+    "info": "The best time to photograph Mercury is shortly before sunrise.",
+    "type": "planetary"
+  },
+  {
+    "date": "2020-03-24",
+    "event": "Venus at Greatest Eastern Elongation",
+    "info": "This is the best time to view Venus since it\u2019s so bright that it becomes the third brightest object in the sky after the Sun and the Moon.",
+    "type": "planetary"
+  },
+  {
+    "date": "2020-06-04",
+    "event": "Mercury at Greatest Eastern Elongation",
+    "info": "The best time to photograph Mercury is shortly after sunset.",
+    "type": "planetary"
+  },
+  {
+    "date": "2020-07-14",
+    "event": "Jupiter at opposition",
+    "info": "It\u2019s brighter than at any other time of the year and is visible throughout the night. This is the best time to view and photograph Jupiter and its moons.",
+    "type": "planetary"
+  },
+  {
+    "date": "2020-08-13",
+    "event": "Venus at Greatest Western Elongation",
+    "info": "This is the best time to view Venus since it\u2019s so bright that it becomes the third brightest object in the sky after the Sun and the Moon.",
+    "type": "planetary"
+  },
+  {
+    "date": "2020-09-11",
+    "event": "Neptune at opposition",
+    "info": "It\u2019s brighter than at any other time of the year and is visible throughout the night.",
+    "type": "planetary"
+  },
+  {
+    "date": "2020-10-01",
+    "event": "Mercury at Greatest Eastern Elongation",
+    "info": "The best time to photograph Mercury is shortly after sunset.",
+    "type": "planetary"
+  },
+  {
+    "date": "2020-10-14",
+    "event": "Mars at opposition",
+    "info": "It\u2019s brighter than at any other time of the year.",
+    "type": "planetary"
+  },
+  {
+    "date": "2020-10-31",
+    "event": "Uranus at opposition",
+    "info": "It\u2019s brighter than at any other time of the year. You need a telescope.",
+    "type": "planetary"
+  },
+  {
+    "date": "2020-11-10",
+    "event": "Mercury at Greatest Western Elongation",
+    "info": "The best time to photograph Mercury is shortly before sunrise.",
+    "type": "planetary"
+  },
+  {
+    "date": "2020-12-21",
+    "event": "Conjunction of Jupiter and Saturn",
+    "info": "The great conjunction is a rare and hard to photograph spectacle but worth living.",
+    "type": "planetary"
+  },
+  {
+    "date": "2020-02-01",
+    "event": "The Milky Way season starts in the Southern Hemisphere",
+    "info": null,
+    "type": "other"
+  },
+  {
+    "date": "2020-03-20",
+    "event": "Spring/fall equinox",
+    "info": "This is the best time to photograph the zodiacal light.",
+    "type": "other"
+  },
+  {
+    "date": "2020-03-01",
+    "event": "The Milky Way season starts in March in the Northern Hemisphere",
+    "info": null,
+    "type": "other"
+  },
+  {
+    "date": "2020-06-20",
+    "event": "Summer (or winter) solstice",
+    "info": null,
+    "type": "other"
+  },
+  {
+    "date": "2020-09-22",
+    "event": "Fall or spring equinox",
+    "info": "This is the best time to photograph the zodiacal light.",
+    "type": "other"
+  },
+  {
+    "date": "2020-10-01",
+    "event": "The Milky Way season ends in the Northern and Southern Hemisphere",
+    "info": null,
+    "type": "other"
+  },
+  {
+    "date": "2020-12-21",
+    "event": "Winter (or summer) solstice",
+    "info": null,
+    "type": "other"
+  },
+  {
+    "date": "2020-05-13",
+    "event": "Comet C/2017 T2 (PANSTARRS) at perihelion",
+    "info": null,
+    "type": "other"
+  },
+  {
+    "date": "2021-01-02",
+    "event": "Quadrantids meteor shower",
+    "info": "Up to 40 meteors per hour at its peak. ",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2021-01-03",
+    "event": "Quadrantids meteor shower",
+    "info": "Up to 40 meteors per hour at its peak. ",
+    "type": "meteorShower"
+  },
+  { "date": "2021-01-13", "event": "New moon", "info": null, "type": "moon" },
+  { "date": "2021-01-28", "event": "Full moon", "info": null, "type": "moon" },
+  { "date": "2021-02-11", "event": "New moon", "info": null, "type": "moon" },
+  { "date": "2021-02-27", "event": "Full moon", "info": null, "type": "moon" },
+  { "date": "2021-03-13", "event": "New moon", "info": null, "type": "moon" },
+  {
+    "date": "2021-03-20",
+    "event": "Spring/fall equinox",
+    "info": "This is the best time to photograph the zodiacal light.",
+    "type": "other"
+  },
+  {
+    "date": "2021-03-28",
+    "event": "Full moon",
+    "info": "Known as the Worm Moon as many earthworms tend to appear at this time in the Northern Hemisphere",
+    "type": "moon"
+  },
+  { "date": "2021-04-12", "event": "New moon", "info": null, "type": "moon" },
+  {
+    "date": "2021-04-22",
+    "event": "Lyrids meteor shower",
+    "info": "Up to 20 meteors per hour at its peak",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2021-04-23",
+    "event": "Lyrids meteor shower",
+    "info": "Up to 20 meteors per hour at its peak",
+    "type": "meteorShower"
+  },
+  { "date": "2021-04-27", "event": "Full moon", "info": null, "type": "moon" },
+  { "date": "2021-04-27", "event": "Supermoon", "info": null, "type": "moon" },
+  {
+    "date": "2021-05-06",
+    "event": "Eta Aquarids meteor shower",
+    "info": "Up to 60 meteors per hour at its peak. Most activity is seen in the Southern Hemisphere, in the Northern Hemisphere the rate can reach about 30 meteors per hour.",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2021-05-07",
+    "event": "Eta Aquarids meteor shower",
+    "info": "Up to 60 meteors per hour at its peak. Most activity is seen in the Southern Hemisphere, in the Northern Hemisphere the rate can reach about 30 meteors per hour.",
+    "type": "meteorShower"
+  },
+  { "date": "2021-05-11", "event": "New moon", "info": null, "type": "moon" },
+  {
+    "date": "2021-05-26",
+    "event": "Full moon",
+    "info": "Known as the Flower Moon as flowers tend to bloom at this time in the Northern Hemisphere",
+    "type": "moon"
+  },
+  { "date": "2021-05-26", "event": "Supermoon", "info": null, "type": "moon" },
+  {
+    "date": "2021-05-26",
+    "event": "Total lunar eclipse",
+    "info": "Visible throughout the Pacific Ocean and parts of eastern Asia, Japan, Australia, and western North America",
+    "type": "moon"
+  },
+  { "date": "2021-06-10", "event": "New moon", "info": null, "type": "moon" },
+  {
+    "date": "2021-06-10",
+    "event": "Annular solar eclipse",
+    "info": "Eclipse will be visible from the Arctic Ocean, western Greenland, and Canada. A partial eclipse will be visible in the northeastern United States, Europe, and Russia",
+    "type": "eclipse"
+  },
+  {
+    "date": "2021-06-21",
+    "event": "Summer (or winter) solstice",
+    "info": null,
+    "type": "other"
+  },
+  { "date": "2021-06-24", "event": "Full moon", "info": null, "type": "moon" },
+  { "date": "2021-06-24", "event": "Supermoon", "info": null, "type": "moon" },
+  { "date": "2021-07-10", "event": "New moon", "info": null, "type": "moon" },
+  { "date": "2021-07-24", "event": "Full moon", "info": null, "type": "moon" },
+  {
+    "date": "2021-07-28",
+    "event": "Delta Aquarids meteor shower",
+    "info": "Up to 20 meteors per hour at its peak",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2021-07-29",
+    "event": "Delta Aquarids meteor shower",
+    "info": "Up to 20 meteors per hour at its peak",
+    "type": "meteorShower"
+  },
+  { "date": "2021-08-08", "event": "New moon", "info": null, "type": "moon" },
+  {
+    "date": "2021-08-12",
+    "event": "Perseids meteor shower",
+    "info": "Up to 60 meteors per hour at its peak. This is a great one to catch if you can!",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2021-08-13",
+    "event": "Perseids meteor shower",
+    "info": "Up to 60 meteors per hour at its peak. This is a great one to catch if you can!",
+    "type": "meteorShower"
+  },
+  { "date": "2021-08-22", "event": "Full moon", "info": null, "type": "moon" },
+  { "date": "2021-08-22", "event": "Blue moon", "info": null, "type": "moon" },
+  { "date": "2021-09-07", "event": "New moon", "info": null, "type": "moon" },
+  { "date": "2021-09-20", "event": "Full moon", "info": null, "type": "moon" },
+  {
+    "date": "2021-09-22",
+    "event": "Fall (or spring) equinox",
+    "info": null,
+    "type": "other"
+  },
+  { "date": "2021-10-06", "event": "New moon", "info": null, "type": "moon" },
+  {
+    "date": "2021-10-07",
+    "event": "Draconids meteor shower",
+    "info": "Up to 10 meteors per hour",
+    "type": "meteorShower"
+  },
+  { "date": "2021-10-20", "event": "Full moon", "info": null, "type": "moon" },
+  { "date": "2021-11-04", "event": "New moon", "info": null, "type": "moon" },
+  {
+    "date": "2021-11-04",
+    "event": "Taurids meteor shower",
+    "info": "Up to 10 meteors per hour",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2021-11-05",
+    "event": "Taurids meteor shower",
+    "info": "Up to 10 meteors per hour",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2021-11-17",
+    "event": "Leonids meteor shower",
+    "info": "Up to 15 meteors per hour",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2021-11-18",
+    "event": "Leonids meteor shower",
+    "info": "Up to 15 meteors per hour",
+    "type": "meteorShower"
+  },
+  { "date": "2021-11-19", "event": "Full moon", "info": null, "type": "moon" },
+  {
+    "date": "2021-11-19",
+    "event": "Partial lunar eclipse",
+    "info": "Visible throughout most of Russia, Japan, the Pacific Ocean, North America, Mexico, Central America, and parts of western South America",
+    "type": "eclipse"
+  },
+  { "date": "2021-12-04", "event": "New moon", "info": null, "type": "moon" },
+  {
+    "date": "2021-12-04",
+    "event": "Total solar eclipse",
+    "info": "Visible from Antarctica and the southern Atlantic Ocean. Partial eclipse will be visible in South Africa",
+    "type": "eclipse"
+  },
+  {
+    "date": "2021-12-13",
+    "event": "Geminids meteor shower",
+    "info": "Up to 120 meteors per hour at its peak! Should still be visible despite waxing gibbous moon",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2021-12-14",
+    "event": "Geminids meteor shower",
+    "info": "Up to 120 meteors per hour at its peak! Should still be visible despite waxing gibbous moon",
+    "type": "meteorShower"
+  },
+  { "date": "2021-12-19", "event": "Full moon", "info": null, "type": "moon" },
+  {
+    "date": "2021-12-21",
+    "event": "Winter (or summer) solstice",
+    "info": null,
+    "type": "other"
+  },
+  {
+    "date": "2021-12-21",
+    "event": "Ursids meteor shower",
+    "info": "Up to 10 meteors per hour at its peak",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2021-12-22",
+    "event": "Ursids meteor shower",
+    "info": "Up to 10 meteors per hour at its peak",
+    "type": "meteorShower"
+  },
+  {
+    "date": "2021-04-08",
+    "event": "Earthshine Nights",
+    "info": "Where the unlit part of the Moon tends to be visible. Also known as the Da Vinci Glow",
+    "type": "moon"
+  },
+  {
+    "date": "2021-04-09",
+    "event": "Earthshine Nights",
+    "info": "Where the unlit part of the Moon tends to be visible. Also known as the Da Vinci Glow",
+    "type": "moon"
+  },
+  {
+    "date": "2021-04-15",
+    "event": "Earthshine Nights",
+    "info": "Where the unlit part of the Moon tends to be visible. Also known as the Da Vinci Glow",
+    "type": "moon"
+  },
+  {
+    "date": "2021-04-16",
+    "event": "Earthshine Nights",
+    "info": "Where the unlit part of the Moon tends to be visible. Also known as the Da Vinci Glow",
+    "type": "moon"
+  },
+  {
+    "date": "2021-05-06",
+    "event": "Earthshine Nights",
+    "info": "Where the unlit part of the Moon tends to be visible. Also known as the Da Vinci Glow",
+    "type": "moon"
+  },
+  {
+    "date": "2021-05-07",
+    "event": "Earthshine Nights",
+    "info": "Where the unlit part of the Moon tends to be visible. Also known as the Da Vinci Glow",
+    "type": "moon"
+  },
+  {
+    "date": "2021-05-14",
+    "event": "Earthshine Nights",
+    "info": "Where the unlit part of the Moon tends to be visible. Also known as the Da Vinci Glow",
+    "type": "moon"
+  },
+  {
+    "date": "2021-05-15",
+    "event": "Earthshine Nights",
+    "info": "Where the unlit part of the Moon tends to be visible. Also known as the Da Vinci Glow",
+    "type": "moon"
+  },
+  {
+    "date": "2021-10-01",
+    "event": "Luna 25 lunar landing",
+    "info": null,
+    "type": "moon"
+  },
+  {
+    "date": "2021-10-11",
+    "event": "IM-1 Moon Mark lunar landing",
+    "info": null,
+    "type": null
+  }
 ]

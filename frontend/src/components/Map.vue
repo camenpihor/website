@@ -33,11 +33,11 @@ export default {
   props: {
     latitude: {
       type: Number,
-      default: 37.8,
+      default: 41.8,
     },
     longitude: {
       type: Number,
-      default: -96,
+      default: -87.6,
     },
     zoom: {
       type: Number,

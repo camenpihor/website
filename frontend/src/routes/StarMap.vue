@@ -2,7 +2,7 @@
   <section>
     <div v-if="error" class="section">
       <BackendSearch
-        class="rogue-sky__search"
+        class="star-map__search"
         placeholder="search address..."
         :method="search"
         ref="search"
@@ -13,7 +13,7 @@
     <div v-if="starForecast != null">
       <div class="section">
         <BackendSearch
-          class="rogue-sky__search"
+          class="star-map__search"
           placeholder="search address..."
           :method="search"
           ref="search"
@@ -22,7 +22,7 @@
         <h1 class="title is-3 has-text-centered">
           {{ this.city }}, {{ this.state }}
         </h1>
-        <div class="level is-mobile rogue-sky__icon-summary">
+        <div class="level is-mobile star-map__icon-summary">
           <StarVizIcon
             class="level-item has-text-centered is-size-7 star-viz-icon"
             v-for="(star, idx) in starForecast"
@@ -34,9 +34,9 @@
         </div>
         <hr />
 
-        <div class="rogue-sky__map__wrapper">
+        <div class="star-map__map__wrapper">
           <Map
-            class="rogue-sky__map__image"
+            class="star-map__map__image"
             :latitude="parseFloat(latitude)"
             :longitude="parseFloat(longitude)"
             :zoom="6"
@@ -181,7 +181,7 @@
               <span>{{ dailyWeather.summary }}</span>
             </p>
             <div class="subsection">
-              <div class="columns is-mobile rogue-sky__weather__item">
+              <div class="columns is-mobile star-map__weather__item">
                 <span class="column is-4-desktop has-text-weight-semibold	"
                   >Star Visibility</span
                 >
@@ -189,7 +189,7 @@
                   humanizeStarVisibility(dailyWeather.star_visibility)
                 }}</span>
               </div>
-              <div class="columns is-mobile rogue-sky__weather__item">
+              <div class="columns is-mobile star-map__weather__item">
                 <span class="column is-4-desktop has-text-weight-semibold	"
                   >Cloud Cover</span
                 >
@@ -197,13 +197,13 @@
                   floatToPercent(dailyWeather.cloud_cover_pct)
                 }}</span>
               </div>
-              <div class="columns is-mobile rogue-sky__weather__item">
+              <div class="columns is-mobile star-map__weather__item">
                 <span class="column is-4-desktop has-text-weight-semibold	"
                   >Sunset</span
                 >
                 <span class="column">{{ dailyWeather.sunset_time_local }}</span>
               </div>
-              <div class="columns is-mobile rogue-sky__weather__item">
+              <div class="columns is-mobile star-map__weather__item">
                 <span class="column is-4-desktop has-text-weight-semibold	"
                   >Moon Rise</span
                 >
@@ -211,7 +211,7 @@
                   dailyWeather.moonrise_time_local
                 }}</span>
               </div>
-              <div class="columns is-mobile rogue-sky__weather__item">
+              <div class="columns is-mobile star-map__weather__item">
                 <span class="column is-4-desktop has-text-weight-semibold">
                   <span class="is-hidden-touch">Moon Illumination</span>
                   <span class="is-hidden-desktop">Moon Fullness</span>
@@ -225,7 +225,7 @@
                   <i v-else class="fal fa-long-arrow-down" />
                 </span>
               </div>
-              <div class="columns is-mobile rogue-sky__weather__item">
+              <div class="columns is-mobile star-map__weather__item">
                 <span class="column is-4-desktop has-text-weight-semibold	"
                   >Precipitation</span
                 >
@@ -237,7 +237,7 @@
                   )
                 }}</span>
               </div>
-              <div class="columns is-mobile rogue-sky__weather__item">
+              <div class="columns is-mobile star-map__weather__item">
                 <span class="column is-4-desktop has-text-weight-semibold	"
                   >Temperature</span
                 >
@@ -248,7 +248,7 @@
                   </p>
                 </span>
               </div>
-              <div class="columns is-mobile rogue-sky__weather__item">
+              <div class="columns is-mobile star-map__weather__item">
                 <span class="column is-4-desktop has-text-weight-semibold	"
                   >Wind</span
                 >
@@ -267,15 +267,15 @@
           Star visibility temporal projections | Astronomical events
         </p>
         <Calendar
-          class="rogue-sky__calendar"
+          class="star-map__calendar"
           :attributes="attributes"
           minDate="2020-01-02"
-          maxDate="2021-01-01"
+          maxDate="2022-01-01"
           :colorKey="calendarColors"
         />
       </div>
 
-      <div class="section rogue-sky__additional-info">
+      <div class="section star-map__additional-info">
         <p class="title is-3 has-text-centered">Additional Information</p>
         <ul class="has-text-centered">
           <li class="is-size-6">
@@ -381,11 +381,11 @@ export default {
         this.fetchForecast();
         this.fetchAstronomicalEvents();
       } else {
-        let seattle_lat = 47.687;
-        let seattle_lon = -122.377;
+        let chicago_lat = 41.876;
+        let chicago_lon = -87.624;
         this.$router.replace({
-          name: "rogue-sky-location",
-          params: { latitude: seattle_lat, longitude: seattle_lon },
+          name: "star-map-location",
+          params: { latitude: chicago_lat, longitude: chicago_lon },
         });
       }
     },
@@ -404,7 +404,7 @@ export default {
           let latitude = response.data.latitude.toFixed(3);
           let longitude = response.data.longitude.toFixed(3);
           this.$router.replace({
-            name: "rogue-sky-location",
+            name: "star-map-location",
             params: { latitude: latitude, longitude: longitude },
           });
         })
@@ -465,7 +465,7 @@ export default {
     search: function(input) {
       this.reset();
       this.$router.push({
-        name: "rogue-sky",
+        name: "star-map",
         query: { address: input },
       });
     },
@@ -609,12 +609,12 @@ export default {
 </script>
 
 <style>
-.rogue-sky__search {
+.star-map__search {
   margin-left: auto;
   margin-right: auto;
 }
 
-.rogue-sky__search .search__image {
+.star-map__search .search__image {
   position: relative;
   top: -12px;
   left: 1rem;
@@ -627,7 +627,7 @@ export default {
   right: 20%;
 }
 
-.rogue-sky__icon-summary {
+.star-map__icon-summary {
   max-width: 25rem;
   margin-left: auto;
   margin-right: auto;
@@ -641,19 +641,19 @@ export default {
   color: #3273dc;
 }
 
-.rogue-sky__weather__item {
+.star-map__weather__item {
   margin: 0 0 0.5rem 0 !important;
 }
 
-.rogue-sky__weather__item .column {
+.star-map__weather__item .column {
   padding: 0;
 }
 
-.rogue-sky__map__wrapper {
+.star-map__map__wrapper {
   height: 50vh; /* same height as map */
 }
 
-.rogue-sky__map__image {
+.star-map__map__image {
   height: 50vh;
   position: absolute;
   left: 0;
@@ -666,7 +666,7 @@ export default {
   --day-content-height: 2rem;
 }
 
-.rogue-sky__additional-info {
+.star-map__additional-info {
   margin-bottom: 5rem;
 }
 

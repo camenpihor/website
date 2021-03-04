@@ -18,6 +18,7 @@
       :min-date="minDate"
       :max-date="maxDate"
       :attributes="attributes"
+      timezone="UTC"
     >
       <div
         class="calendar__popover"
@@ -65,11 +66,11 @@ export default {
     },
     minDate: {
       type: String,
-      default: "2020-01-02",
+      default: "2020-01-01",
     },
     maxDate: {
       type: String,
-      default: "2021-01-01",
+      default: "2022-01-01",
     },
     colorKey: {
       type: Object,
