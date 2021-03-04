@@ -73,7 +73,7 @@ $colors: (
 html {
   font-size: 16px;
   @include from($desktop) {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
