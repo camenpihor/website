@@ -532,7 +532,7 @@ export default {
             color: "blue",
             fillMode: "light",
           },
-          dates: new Date(),
+          dates: this.today.weather_date_local,
           popover: {
             label: "Today",
             placement: "auto",
