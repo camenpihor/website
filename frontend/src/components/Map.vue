@@ -41,7 +41,7 @@ export default {
     },
     zoom: {
       type: Number,
-      default: 2,
+      default: 6,
     },
     onLoad: {
       type: Function,

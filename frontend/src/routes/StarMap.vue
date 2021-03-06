@@ -39,7 +39,7 @@
             class="star-map__map__image"
             :latitude="parseFloat(latitude)"
             :longitude="parseFloat(longitude)"
-            :zoom="6"
+            :zoom="4"
             :onLoad="cloudCoverLayer"
           />
         </div>
@@ -264,7 +264,7 @@
       <div class="section">
         <p class="title is-3 has-text-centered">Calendar</p>
         <p class="subtitle is-7 has-text-centered">
-          Star visibility temporal projections | Astronomical events
+          Star visibility projections | Astronomical events
         </p>
         <Calendar
           class="star-map__calendar"
