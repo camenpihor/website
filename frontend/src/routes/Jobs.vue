@@ -11,7 +11,6 @@
           <ul class="job__externals">
             <router-link
               :to="{ name: 'github' }"
-              tag="li"
               class="job__external"
             >
               <img :src="githubIconFilePath" class="job__icon"

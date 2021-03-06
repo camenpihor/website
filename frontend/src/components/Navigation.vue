@@ -50,9 +50,19 @@
                 v-for="route in routes.projects"
                 :key="route.label"
                 :to="route.to"
+                custom
                 class="navbar-item"
-                tag="li"
-                >{{ route.label }}
+                v-slot="{ navigate, isActive, isExactActive }"
+              >
+                <li
+                  :class="[
+                    isActive && 'router-link-active',
+                    isExactActive && 'router-link-exact-active',
+                  ]"
+                  @click="navigate"
+                >
+                  {{ route.label }}
+                </li>
               </router-link>
             </div>
           </div>

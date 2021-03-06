@@ -76,6 +76,10 @@ export default {
       type: Object,
       default: null,
     },
+    timezone: {
+      type: String,
+      default: "UTC",
+    },
   },
   methods: {
     camelCaseToWords: function(camelCase) {

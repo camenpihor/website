@@ -272,6 +272,7 @@
           minDate="2020-01-02"
           maxDate="2022-01-01"
           :colorKey="calendarColors"
+          :timezone="timezone"
         />
       </div>
 

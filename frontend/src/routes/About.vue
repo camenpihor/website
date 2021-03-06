@@ -5,7 +5,7 @@
       <p class="title is-3">Camen</p>
       <p class="subtitle is-5">Data Scientist</p>
       <ul class="about__externals">
-        <router-link :to="{ name: 'github' }" tag="li" class="about__external">
+        <router-link :to="{ name: 'github' }" class="about__external">
           <img :src="githubIconFilePath" class="about__icon"
         /></router-link>
         <li class="about__external">
