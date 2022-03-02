@@ -5,7 +5,7 @@
     </div>
     <img
       class="no-results__image"
-      v-if="Math.random() > 0.5"
+      v-if="Math.random() < 0.31"
       :src="fishPeopleingFilePath"
     />
     <img class="no-results__image" v-else :src="personFishingFilePath" />
