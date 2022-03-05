@@ -269,8 +269,8 @@
         <Calendar
           class="star-map__calendar"
           :attributes="attributes"
-          minDate="2020-01-02"
-          maxDate="2022-01-01"
+          minDate="2021-01-02"
+          maxDate="2024-01-01"
           :colorKey="calendarColors"
           :timezone="timezone"
         />
