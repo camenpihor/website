@@ -1,0 +1,7 @@
+black
+pip-tools
+pydocstyle
+pylint
+pytest
+pytest-cov
+requests-mock

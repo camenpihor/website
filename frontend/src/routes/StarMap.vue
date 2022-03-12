@@ -79,9 +79,7 @@
               >
                 {{ printDate(bestDay.weather_date_local) }}
               </p>
-              <p v-else class="heading is-size-9">
-                Today
-              </p>
+              <p v-else class="heading is-size-9">Today</p>
             </div>
             <WeatherSummary
               v-if="bestDay.weather_date_local != today.weather_date_local"
@@ -101,7 +99,7 @@
         </div>
         <div
           class="columns is-mobile is-hidden-tablet subsection"
-          style="margin-left:auto"
+          style="margin-left: auto"
         >
           <div class="column">
             <div>
@@ -134,9 +132,7 @@
               >
                 {{ printDate(bestDay.weather_date_local) }}
               </p>
-              <p v-else class="heading is-size-9">
-                Today
-              </p>
+              <p v-else class="heading is-size-9">Today</p>
             </div>
             <WeatherSummary
               v-if="bestDay.weather_date_local != today.weather_date_local"
@@ -159,9 +155,7 @@
 
       <div class="section" ref="weather">
         <p class="title is-3 has-text-centered">Weather</p>
-        <p class="subtitle is-7 has-text-centered">
-          daily weather summaries
-        </p>
+        <p class="subtitle is-7 has-text-centered">daily weather summaries</p>
         <b-tabs position="is-centered" v-model="weatherIdx" expanded>
           <b-tab-item
             v-for="dailyWeather in starForecast"
@@ -182,7 +176,7 @@
             </p>
             <div class="subsection">
               <div class="columns is-mobile star-map__weather__item">
-                <span class="column is-4-desktop has-text-weight-semibold	"
+                <span class="column is-4-desktop has-text-weight-semibold"
                   >Star Visibility</span
                 >
                 <span class="column is-capitalized">{{
@@ -190,7 +184,7 @@
                 }}</span>
               </div>
               <div class="columns is-mobile star-map__weather__item">
-                <span class="column is-4-desktop has-text-weight-semibold	"
+                <span class="column is-4-desktop has-text-weight-semibold"
                   >Cloud Cover</span
                 >
                 <span class="column">{{
@@ -198,13 +192,13 @@
                 }}</span>
               </div>
               <div class="columns is-mobile star-map__weather__item">
-                <span class="column is-4-desktop has-text-weight-semibold	"
+                <span class="column is-4-desktop has-text-weight-semibold"
                   >Sunset</span
                 >
                 <span class="column">{{ dailyWeather.sunset_time_local }}</span>
               </div>
               <div class="columns is-mobile star-map__weather__item">
-                <span class="column is-4-desktop has-text-weight-semibold	"
+                <span class="column is-4-desktop has-text-weight-semibold"
                   >Moon Rise</span
                 >
                 <span class="column">{{
@@ -226,7 +220,7 @@
                 </span>
               </div>
               <div class="columns is-mobile star-map__weather__item">
-                <span class="column is-4-desktop has-text-weight-semibold	"
+                <span class="column is-4-desktop has-text-weight-semibold"
                   >Precipitation</span
                 >
                 <span class="column">{{
@@ -238,7 +232,7 @@
                 }}</span>
               </div>
               <div class="columns is-mobile star-map__weather__item">
-                <span class="column is-4-desktop has-text-weight-semibold	"
+                <span class="column is-4-desktop has-text-weight-semibold"
                   >Temperature</span
                 >
                 <span class="column">
@@ -249,7 +243,7 @@
                 </span>
               </div>
               <div class="columns is-mobile star-map__weather__item">
-                <span class="column is-4-desktop has-text-weight-semibold	"
+                <span class="column is-4-desktop has-text-weight-semibold"
                   >Wind</span
                 >
                 <span class="column"
@@ -282,9 +276,7 @@
           <li class="is-size-6">
             <a
               target="_blank"
-              :href="
-                `https://www.darksky.net/forecast/${latitude},${longitude}`
-              "
+              :href="`https://www.darksky.net/forecast/${latitude},${longitude}`"
               >darksky.net/forecast/{{ latitude }},{{ longitude }}</a
             >
           </li>
@@ -360,7 +352,7 @@ export default {
     };
   },
   methods: {
-    reset: function() {
+    reset: function () {
       this.error = false;
       this.latitude = null;
       this.longitude = null;
@@ -369,7 +361,7 @@ export default {
       this.state = null;
       this.starForecast = null;
     },
-    initialize: function() {
+    initialize: function () {
       this.reset();
       if (this.$route.query.address != null) {
         this.fetchCoordinates();
@@ -390,7 +382,7 @@ export default {
         });
       }
     },
-    fetchAstronomicalEvents: function() {
+    fetchAstronomicalEvents: function () {
       getAstronomicalEvents()
         .then((response) => {
           this.astronomicalEvents = response.data;
@@ -399,7 +391,7 @@ export default {
           this.error = true;
         });
     },
-    fetchCoordinates: function() {
+    fetchCoordinates: function () {
       getCoordinates(this.$route.query.address)
         .then((response) => {
           let latitude = response.data.latitude.toFixed(3);
@@ -413,7 +405,7 @@ export default {
           this.error = true;
         });
     },
-    fetchForecast: function() {
+    fetchForecast: function () {
       getStarForecast(this.latitude, this.longitude)
         .then((response) => {
           this.timezone = response.data.timezone;
@@ -425,7 +417,7 @@ export default {
           this.error = true;
         });
     },
-    humanizeStarVisibility: function(percent) {
+    humanizeStarVisibility: function (percent) {
       if (percent != null) {
         if (percent < 0.8) {
           return "poor";
@@ -438,10 +430,10 @@ export default {
         }
       }
     },
-    floatToPercent: function(float) {
+    floatToPercent: function (float) {
       return `${Math.round(float * 100)}%`;
     },
-    humanizePrecipitation: function(type, intensity, probability, summarize) {
+    humanizePrecipitation: function (type, intensity, probability, summarize) {
       if (probability <= 0.01 || type == null || probability == null) {
         return "None";
       }
@@ -463,20 +455,20 @@ export default {
 
       return `There is a ${percent} chance of ${intensityHuman} ${type}`;
     },
-    search: function(input) {
+    search: function (input) {
       this.reset();
       this.$router.push({
         name: "star-map",
         query: { address: input },
       });
     },
-    printDate: function(date) {
+    printDate: function (date) {
       return format(parseISO(date), "eeee, MMMM do yyyy");
     },
-    humanizeDate: function(date) {
+    humanizeDate: function (date) {
       return format(parseISO(date), "eee");
     },
-    focusWeather: function(idx) {
+    focusWeather: function (idx) {
       this.weatherIdx = idx;
       let weatherSection = this.$refs.weather;
       window.scrollTo({
@@ -484,7 +476,7 @@ export default {
         behavior: "smooth",
       });
     },
-    cloudCoverLayer: function(event) {
+    cloudCoverLayer: function (event) {
       let map = event.map;
 
       map.addLayer({
