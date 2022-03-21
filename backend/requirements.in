@@ -1,5 +1,5 @@
 click ~= 8.0
 flask ~= 2.0
 mistune ~= 2.0
-waitress ~= 1.4
+waitress ~= 2.1
 git+https://github.com/camenpihor/rogue-sky.git#egg=rogue-sky
